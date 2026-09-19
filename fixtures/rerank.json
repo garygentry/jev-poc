@@ -1,0 +1,2162 @@
+{
+  "q1/p01": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.016
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p02": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.022
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p03": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.11
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p04": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.44
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p05": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.99
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p06": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.022
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p07": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.004
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p08": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p09": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.017
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.015
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p11": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.009
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p12": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.003
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p13": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.021
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p14": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.016
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p15": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p16": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p17": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.021
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p18": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.016
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p19": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p20": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.007
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p21": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.013
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p22": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.019
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p23": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q1/p24": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.007
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p01": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.023
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p02": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.017
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p03": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p04": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p05": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.023
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p06": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.017
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p07": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.29
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p08": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.004
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p09": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.98
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.08
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p11": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p12": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.002
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p13": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.008
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p14": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.014
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p15": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p16": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.026
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p17": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.12
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p18": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.013
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p19": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p20": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.023
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p21": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.017
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p22": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p23": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q2/p24": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.023
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p01": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p02": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.016
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p03": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.022
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p04": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p05": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p06": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p07": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.21
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p08": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p09": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p11": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.004
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p12": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.022
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p13": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.016
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p14": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.009
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p15": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.003
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p16": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.022
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p17": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.18
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p18": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p19": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.09
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p20": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.025
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p21": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.007
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p22": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.013
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p23": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.019
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q3/p24": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.025
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p01": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.006
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p02": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.024
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p03": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p04": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.012
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p05": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.006
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p06": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.024
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p07": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.018
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p08": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p09": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.021
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p11": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.003
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p12": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.009
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p13": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.015
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p14": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p15": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.002
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p16": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.008
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p17": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.014
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p18": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.23
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p19": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.16
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p20": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.98
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p21": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.025
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p22": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.019
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p23": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.11
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q4/p24": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.006
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p01": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p02": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.018
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p03": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.024
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p04": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p05": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p06": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.017
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p07": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.023
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p08": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.006
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p09": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.08
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p11": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.014
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p12": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.008
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p13": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.002
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p14": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p15": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.014
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p16": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.008
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p17": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.34
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p18": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.021
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p19": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.015
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p20": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.014
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p21": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.96
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p22": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p23": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.007
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q5/p24": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.013
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p01": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.004
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p02": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.022
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p03": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.016
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p04": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p05": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p06": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.023
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p07": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.017
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p08": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.011
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p09": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.005
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.019
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p11": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.025
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p12": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.008
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p13": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.014
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p14": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p15": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.026
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p16": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.008
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p17": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.014
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p18": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.09
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p19": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p20": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.019
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p21": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.013
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p22": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.27
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p23": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  },
+  "q6/p24": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.98
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 3,
+      "cost": 0.000017682
+    },
+    "provider": "TypeSafe"
+  }
+}

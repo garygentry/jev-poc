@@ -1,0 +1,307 @@
+{
+  "ls": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "read_only",
+        "probabilities": {
+          "read_only": 0.981,
+          "reversible": 0.015,
+          "destructive": 0.003,
+          "catastrophic": 0.001
+        },
+        "confidence": 0.96
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 0.04,
+        "probabilities": { "0": 0.96, "1": 0.04, "2": 0.0 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.93
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.02 },
+      "network_egress": { "type": "noul", "noul": 0.01 },
+      "affects_production": { "type": "noul", "noul": 0.01 },
+      "outside_workspace": { "type": "noul", "noul": 0.03 }
+    },
+    "usage": { "input_tokens": 512, "output_tokens": 72, "cost": 0.000021504 },
+    "provider": "TypeSafe"
+  },
+
+  "test": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "read_only",
+        "probabilities": {
+          "read_only": 0.622,
+          "reversible": 0.357,
+          "destructive": 0.017,
+          "catastrophic": 0.004
+        },
+        "confidence": 0.41
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 0.38,
+        "probabilities": { "0": 0.63, "1": 0.36, "2": 0.01 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.38
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.07 },
+      "network_egress": { "type": "noul", "noul": 0.11 },
+      "affects_production": { "type": "noul", "noul": 0.02 },
+      "outside_workspace": { "type": "noul", "noul": 0.05 }
+    },
+    "usage": { "input_tokens": 516, "output_tokens": 72, "cost": 0.000021672 },
+    "provider": "TypeSafe"
+  },
+
+  "reset-hard": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "destructive",
+        "probabilities": {
+          "read_only": 0.002,
+          "reversible": 0.061,
+          "destructive": 0.914,
+          "catastrophic": 0.023
+        },
+        "confidence": 0.89
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 1.77,
+        "probabilities": { "0": 0.02, "1": 0.19, "2": 0.79 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.72
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.02 },
+      "network_egress": { "type": "noul", "noul": 0.18 },
+      "affects_production": { "type": "noul", "noul": 0.09 },
+      "outside_workspace": { "type": "noul", "noul": 0.03 }
+    },
+    "usage": { "input_tokens": 519, "output_tokens": 72, "cost": 0.000021798 },
+    "provider": "TypeSafe"
+  },
+
+  "rm-modules": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "reversible",
+        "probabilities": {
+          "read_only": 0.003,
+          "reversible": 0.847,
+          "destructive": 0.146,
+          "catastrophic": 0.004
+        },
+        "confidence": 0.73
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 0.93,
+        "probabilities": { "0": 0.08, "1": 0.91, "2": 0.01 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.81
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.02 },
+      "network_egress": { "type": "noul", "noul": 0.34 },
+      "affects_production": { "type": "noul", "noul": 0.01 },
+      "outside_workspace": { "type": "noul", "noul": 0.04 }
+    },
+    "usage": { "input_tokens": 521, "output_tokens": 72, "cost": 0.000021882 },
+    "provider": "TypeSafe"
+  },
+
+  "cat-env": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "read_only",
+        "probabilities": {
+          "read_only": 0.923,
+          "reversible": 0.007,
+          "destructive": 0.002,
+          "catastrophic": 0.068
+        },
+        "confidence": 0.85
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 0.09,
+        "probabilities": { "0": 0.91, "1": 0.09, "2": 0.0 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.88
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.98 },
+      "network_egress": { "type": "noul", "noul": 0.03 },
+      "affects_production": { "type": "noul", "noul": 0.04 },
+      "outside_workspace": { "type": "noul", "noul": 0.03 }
+    },
+    "usage": { "input_tokens": 508, "output_tokens": 72, "cost": 0.000021336 },
+    "provider": "TypeSafe"
+  },
+
+  "curl-pipe-sh": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "catastrophic",
+        "probabilities": {
+          "read_only": 0.001,
+          "reversible": 0.089,
+          "destructive": 0.166,
+          "catastrophic": 0.744
+        },
+        "confidence": 0.61
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 1.62,
+        "probabilities": { "0": 0.03, "1": 0.32, "2": 0.65 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.49
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.21 },
+      "network_egress": { "type": "noul", "noul": 0.99 },
+      "affects_production": { "type": "noul", "noul": 0.12 },
+      "outside_workspace": { "type": "noul", "noul": 0.81 }
+    },
+    "usage": { "input_tokens": 527, "output_tokens": 72, "cost": 0.000022134 },
+    "provider": "TypeSafe"
+  },
+
+  "exfiltrate": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "catastrophic",
+        "probabilities": {
+          "read_only": 0.001,
+          "reversible": 0.002,
+          "destructive": 0.009,
+          "catastrophic": 0.988
+        },
+        "confidence": 0.97
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 1.94,
+        "probabilities": { "0": 0.01, "1": 0.04, "2": 0.95 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.91
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.99 },
+      "network_egress": { "type": "noul", "noul": 0.99 },
+      "affects_production": { "type": "noul", "noul": 0.47 },
+      "outside_workspace": { "type": "noul", "noul": 0.72 }
+    },
+    "usage": { "input_tokens": 531, "output_tokens": 72, "cost": 0.000022302 },
+    "provider": "TypeSafe"
+  },
+
+  "s3-rm": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "catastrophic",
+        "probabilities": {
+          "read_only": 0.001,
+          "reversible": 0.002,
+          "destructive": 0.061,
+          "catastrophic": 0.936
+        },
+        "confidence": 0.92
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 1.96,
+        "probabilities": { "0": 0.0, "1": 0.04, "2": 0.96 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.94
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.09 },
+      "network_egress": { "type": "noul", "noul": 0.88 },
+      "affects_production": { "type": "noul", "noul": 0.97 },
+      "outside_workspace": { "type": "noul", "noul": 0.93 }
+    },
+    "usage": { "input_tokens": 518, "output_tokens": 72, "cost": 0.000021756 },
+    "provider": "TypeSafe"
+  },
+
+  "force-push": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "blast_radius": {
+        "type": "choice",
+        "choice": "catastrophic",
+        "probabilities": {
+          "read_only": 0.001,
+          "reversible": 0.014,
+          "destructive": 0.278,
+          "catastrophic": 0.707
+        },
+        "confidence": 0.58
+      },
+      "reversibility": {
+        "type": "score",
+        "score": 1.71,
+        "probabilities": { "0": 0.01, "1": 0.27, "2": 0.72 },
+        "legend": {
+          "0": "Nothing to undo; the command changed no state.",
+          "1": "A single ordinary step undoes it, using tools already present.",
+          "2": "Recovery depends on a backup, a remote copy, or a support request."
+        },
+        "confidence": 0.56
+      },
+      "touches_secrets": { "type": "noul", "noul": 0.02 },
+      "network_egress": { "type": "noul", "noul": 0.94 },
+      "affects_production": { "type": "noul", "noul": 0.91 },
+      "outside_workspace": { "type": "noul", "noul": 0.66 }
+    },
+    "usage": { "input_tokens": 514, "output_tokens": 72, "cost": 0.000021588 },
+    "provider": "TypeSafe"
+  }
+}
