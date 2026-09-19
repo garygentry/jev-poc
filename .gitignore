@@ -16,3 +16,6 @@ screenshots/
 
 # Session scratch
 .remember/
+
+# TypeScript incremental build state
+*.tsbuildinfo
