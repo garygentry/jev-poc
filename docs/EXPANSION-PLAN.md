@@ -1,4 +1,4 @@
-# Expansion plan — a demo kit, and twenty more use cases
+# Expansion plan — a demo kit, and twelve more use cases
 
 **Status:** not started. Written 2026-09-19 to be executed in a fresh session.
 **Prerequisite:** none. This document is self-contained.
@@ -71,14 +71,14 @@ Two things, in order:
 
 1. **Build a demo kit** so a new demo is ~80 lines of its own substance and
    *zero* edits to any central file. Adding demos is currently too expensive to
-   do twenty times.
-2. **Add up to 20 demos** that show Jev displacing traditional work — a
+   do a dozen more times.
+2. **Add 12 demos** that show Jev displacing traditional work — a
    frontier-model call, a human in a queue, or a regex nobody can write — with
    a cost and latency story that is measured where it can be and labelled as an
    assumption where it cannot.
 
 The organising idea stays: **each demo is a structural shape, not a topic.**
-The existing eight cover four shapes. The twenty below add six more.
+The existing eight cover four shapes. The twelve below add six more.
 
 ---
 
@@ -95,7 +95,7 @@ Measured on the current eight:
 | Fixture keys built as raw strings | 5 construction sites across `Demo.tsx` and `capture.ts` — already caused one silent fallback-to-synthetic bug |
 | Per-demo `Demo.tsx` | 145–434 lines, most of it repeated |
 
-At 28 demos those numbers become unmanageable. Fix before adding.
+At 20 demos those numbers become unmanageable. Fix before adding.
 
 ### 3.2 The critical design constraint
 
@@ -219,7 +219,7 @@ Target: a `single` demo's `Demo.tsx` drops from ~145 lines to ~30.
 
 ### 3.8 `<Displacement>` — the cost story, told the same way every time
 
-This is what makes the twenty demos add up to an argument rather than a list.
+This is what makes the twelve demos add up to an argument rather than a list.
 It renders three rows and never conflates them:
 
 | Row | Where it comes from |
@@ -233,14 +233,61 @@ Rules, carried from the existing honesty constraints:
 - The baseline row always shows its `source` string inline.
 - Never print "10x cheaper" without the assumption visible in the same card.
 
-### 3.9 New server route: `POST /api/chat` (for cascade demos only)
+### 3.9 The baseline harness — measured comparison as a kit feature
 
-A thin proxy to OpenRouter `/chat/completions` so a cascade demo can *measure*
-both halves instead of projecting one. Same key, same sidecar, same spend
-meter. Hard-capped `max_tokens`, model restricted to an allowlist
-(`claude-haiku-4-5`, `claude-sonnet-5`, `claude-opus-5`). Off unless a demo
-asks for it, and every such demo shows a "this spends real money on a second
-model" badge before running.
+**Decision taken:** build this once, in the kit, so *most* demos get a measured
+head-to-head rather than a projected one. This is what choosing twelve demos
+over twenty buys.
+
+**New route `POST /api/chat`** — a thin proxy to OpenRouter
+`/chat/completions`. Same key, same sidecar, same spend meter. Hard-capped
+`max_tokens`, model restricted to an allowlist, and every demo that uses it
+shows a "this spends real money on a second model" badge before running.
+
+**Baseline model: `anthropic/claude-haiku-4.5`.** Verified on OpenRouter
+2026-09-19: **$1.00/M input, $5.00/M output**, 200k context, native
+`json_schema` structured output. Chosen as the cheapest model anyone would
+actually trust for this tier of work — the comparison should be against a
+credible baseline, not a weak one that flatters Jev. Sonnet 5 ($2/$10) and
+Opus 5 ($5/$25) are shown as *projected* alternatives in the same card, since
+plenty of teams do send classification to a frontier model.
+
+**`runBaseline(manifest, input)`** asks the chat model for the same structured
+answer via `json_schema`, derived automatically from the demo's
+`JevQuestionSet` — a `choice` becomes an enum, a `score` an integer, a `noul` a
+0–1 number. One implementation serves every demo that opts in.
+
+`<Displacement>` then renders **measured against measured**:
+
+| | measured |
+|---|---|
+| Jev | cost, latency, typed answer |
+| Haiku 4.5 | cost, latency, parsed answer |
+| Agreement | where the two differ, shown as data — not scored |
+
+**One real data point, gathered while writing this plan.** Same triage ticket,
+same seven fields:
+
+| | Jev | Haiku 4.5 |
+|---|---|---|
+| Cost | $0.000029 | $0.000792 |
+| Latency | 461ms | 6084ms |
+| `frustration` | 1.01 (annoyed) | 2 (angry) |
+| `threatens_churn` | 0.07 | 0.80 |
+
+27× cheaper and 13× faster on this one ticket. Caveats that must travel with
+this number wherever it appears: **it is a single example, not a benchmark**;
+the two prompts are not token-identical (517 vs 690 input tokens, because a
+question set is more verbose than a hand-written prompt); and both latencies
+include TLS setup from this machine.
+
+The disagreement is the more interesting half and is why the harness is worth
+building. The ticket is frustrated but civil and never mentions leaving, so the
+two models differ sharply on `threatens_churn` — and Haiku's `0.80` is a
+*generated token*, not a distribution, with no calibration behind it. Demos
+should show the disagreement and let the reader judge; **do not ship a UI that
+scores one model as correct**, because there is no ground truth in these
+fixtures.
 
 ### 3.10 Cost guard
 
@@ -253,13 +300,13 @@ model" badge before running.
 - `e2e/contract.spec.ts` — loops the registry and asserts the properties every
   demo must have: renders, asks, shows a wire panel, badges its source, never
   fires a fan-out on render, respects the server cap, degrades on a 502. One
-  file covers all 28.
+  file covers all twenty.
 - `e2e/demos/<slug>.spec.ts` — only the claim specific to that demo.
 - Delete the monolithic `e2e/demos.spec.ts`, distributing its assertions.
 
 ### 3.12 `/method` page
 
-At 28 demos the gallery needs a spine. One page explaining: the three
+At 20 demos the gallery needs a spine. One page explaining: the three
 primitives and how to pick one; the shapes and why a request carries one state;
 how to set a threshold (linking the `threshold-fitter` demo); and the honesty
 rules this repo holds itself to. Link it from the header.
@@ -275,52 +322,60 @@ rules this repo holds itself to. Link it from the header.
 
 ---
 
-## 4. Part two — twenty use cases
+## 4. Part two — twelve use cases
 
-Chosen for **shape diversity** and for a defensible cost story. Each names what
-it displaces. New shapes are marked ★.
+**Decision taken: twelve, not twenty.** The twelve are chosen so that **eight
+of them carry a measured head-to-head against Haiku 4.5**, which a wider set
+could not have afforded in attention. Each names what it displaces. New shapes
+are marked ★; a measured baseline is marked **M**.
 
-| # | Demo | Kind | Displaces | The claim |
-|---|---|---|---|---|
+| # | Demo | Kind | M | Displaces | The claim |
+|---|---|---|:-:|---|---|
 | **Agent control plane** |
-| 9 | Tool selection | single | A frontier call per agent step to pick a tool | Same routing at ~1/200 the cost, inside the step's latency budget |
-| 10 | Loop detector | ★ windowed | Max-iteration counters that cut off good runs and permit bad ones | Detects "no progress" from the trace, not from a counter |
-| 11 | Done-check | single (matrix) | Trusting the agent's own "done", or a human checking | One noul per acceptance criterion; evidence, not assertion |
-| 12 | Context pruner | fanout | Naive truncation, or paying a big model to summarise | Drops irrelevant context before the expensive call — the saving is the pruned tokens |
-| 13 | Escalation gate | single | A fixed rule ("3 turns then human") | Escalates on what the conversation shows |
-| **Cost cascades** |
-| 14 | Cascade router ★ | ★ cascade | Sending everything to the best model | **Both halves measured.** Jev gate + Haiku vs Opus on the same inputs |
-| 15 | RAG index filter | fanout | Embedding the whole corpus | Judge each chunk before it is indexed; report tokens not spent |
-| 16 | Completion gate | single, debounced | Calling the completion model on every pause | Only call the expensive model when the context deserves it |
+| 9 | Cascade router | ★ cascade | **M** | Sending every request to the best model | Jev gates, Haiku answers the easy ones, Opus the rest — **every figure measured** |
+| 10 | Context pruner | fanout | **M** | Truncating blindly, or paying a big model to summarise | One noul per chunk; the saving is the tokens never sent |
+| 11 | Done-check | single, matrix | **M** | Trusting an agent's own "done", or a human verifying | One noul per acceptance criterion, against evidence |
+| 12 | Loop detector | ★ windowed | — | Max-iteration counters that cut good runs short and let bad ones burn | Reads "no progress" off the trace instead of counting |
 | **Engineering workflow** |
-| 17 | PR risk triage | single | Reviewing every diff equally, or not at all | Risk dimensions → reviewer routing → "does a human need this" |
-| 18 | Flaky vs regression | single | An engineer reading CI output | Flaky / real / infra, with a confidence gate before auto-retry |
-| 19 | Alert dedup | ★ pairwise | Dedup rules on message templates | "Same incident?" across open incidents, which templates cannot see |
-| 20 | Commit ↔ diff | single | A pre-commit regex for debug code and secrets | Does the message describe the change; what was left behind |
-| 21 | Semantic grep | fanout | A regex you cannot write | One noul per function against a rule in English |
-| **Content, safety, moderation** |
-| 22 | Multi-policy moderation | single (matrix) | One large prompt covering every policy | 12 policies in one request, each with its own threshold |
-| 23 | Queue prioritiser | fanout | FIFO moderation queues | Severity-ordered queue; humans see the worst first |
-| 24 | Claim triage | fanout | Fact-checking a whole document | Which sentences carry a checkable claim |
-| **Documents & data** |
-| 25 | Clause risk | fanout (matrix) | A lawyer reading every clause | N clauses × M risk questions; only the risky ones surface |
-| 26 | Long-document sweep | ★ windowed | Stuffing a document that does not fit in 32k | Chunk, judge, aggregate — and say what chunking costs |
-| 27 | Near-duplicate clustering | ★ pairwise | Fuzzy string matching | Cheap blocking pass, then pairwise "same thing?" |
+| 13 | PR risk triage | single | **M** | Reviewing every diff alike, or not at all | Risk dimensions → reviewer → "does a human need to see this" |
+| 14 | Flaky vs regression | single | **M** | An engineer reading CI output | Flaky / real / infra, with a confidence gate before auto-retry |
+| 15 | Alert dedup | ★ pairwise | — | Dedup rules matching on message templates | "Same incident?" — which a template cannot ask |
+| 16 | Semantic grep | fanout | **M** | A regex nobody can write | One noul per function against a rule stated in English |
+| **Safety** |
+| 17 | Multi-policy moderation | single, matrix | **M** | One large prompt covering every policy at once | 12 policies in **one** request, each with its own threshold |
+| **Documents** |
+| 18 | Clause risk | fanout, matrix | **M** | A lawyer reading every clause of every contract | N clauses × M risk questions; only the risky ones surface |
+| 19 | Long-document sweep | ★ windowed | — | Stuffing a document that does not fit in 32k | Chunk, judge, aggregate — and state what chunking costs |
 | **Method** |
-| 28 | Threshold fitter | ★ offline | Guessing the numbers every other demo hardcodes | Sweeps recorded answers against labels, plots the trade-off, **zero new calls** |
+| 20 | Threshold fitter | ★ offline | — | Guessing the numbers every other demo hardcodes | Sweeps recorded answers against labels; **zero new calls** |
 
-### Why these twenty
+### Why these twelve
 
-- **Shapes:** adds windowed, pairwise, cascade, offline, and the matrix
-  layout to the existing single / fanout / rounds.
-- **Categories:** replaces-a-frontier-call (9, 12, 14, 15, 16, 22);
-  replaces-a-human (11, 17, 23, 25); replaces-a-regex (19, 20, 21, 27);
-  newly-affordable (10, 13, 18, 24, 26, 28).
-- **#28 is the most useful one.** Every other demo hardcodes thresholds. This
-  one shows how to derive them from labelled data, costs nothing to run, and
-  retroactively justifies the numbers in the other 27.
-- **#14 is the headline** for the stated goal, because both sides are measured
-  rather than one side being projected.
+- **Every new shape is present:** cascade★, windowed★ (×2), pairwise★,
+  offline★, plus the matrix layout — on top of the single / fanout / rounds
+  the existing eight already cover.
+- **Categories stay balanced:** replaces-a-frontier-call (9, 10, 17);
+  replaces-a-human (11, 13, 18); replaces-a-regex (15, 16);
+  newly-affordable (12, 14, 19, 20).
+- **#9 is the headline.** Both halves measured, so the cost claim rests on
+  nothing but `usage`.
+- **#17 carries the per-request economics.** Twelve policies share one state,
+  so they cost one request; the baseline needs twelve prompts or one long
+  fragile one. This is the clearest demonstration of the batching rule.
+- **#20 is the most useful.** Every other demo hardcodes thresholds. This one
+  derives them from labelled data, costs nothing to run, and is sequenced last
+  so it can retroactively justify the other nineteen.
+
+### Cut from the original twenty, and why
+
+Tool selection and escalation gate (too close to the existing `router` and
+`triage` shapes), completion gate (same lesson as the cascade, weaker), RAG
+index filter (same judge-then-drop shape as the context pruner, which is more
+on-brand), commit↔diff and claim triage (good, but neither adds a shape),
+queue prioritiser (a sorted fanout, which `rerank` already shows), and
+near-duplicate clustering (pairwise, already covered by alert dedup).
+
+Keep this list. If the twelve land well, these are the obvious next eight.
 
 ### Per-demo deliverable
 
@@ -341,23 +396,34 @@ Ordered so a partial run still ships something coherent.
 
 | Phase | Content | Why here |
 |---|---|---|
-| **0** | Kit (§3.1–3.7), migrate the eight, green suites | Nothing else is affordable first |
-| **1** | `<Displacement>`, cost guard, `/api/chat`, `/method` page | The spine the cost story hangs on |
-| **2** | **14** cascade router, **12** context pruner, **15** RAG filter | The strongest cost demos; validates `<Displacement>` early |
-| **3** | **9, 10, 11, 13** control plane | Most on-brand; all reuse phase-0 runners |
-| **4** | **17–21** engineering workflow | Familiar baselines, easy to judge |
-| **5** | **22, 23, 24** safety · **25, 26, 27** documents | Heaviest fan-outs; do once caps are proven |
-| **6** | **28** threshold fitter, then re-tune every earlier demo's gates with it | Needs the others' fixtures to exist |
+| **0** | Kit (§3.1–3.7), migrate the eight, green suites | Nothing else is affordable first. Ships no features — that is expected and approved |
+| **1** | `<Displacement>`, cost guard, `/api/chat` + `runBaseline` (§3.9), `/method` page | The spine every later claim hangs on. Validate the harness against the existing `triage` fixtures before building on it |
+| **2** | **9** cascade router, **10** context pruner | The two strongest cost demos; proves the measured comparison end to end |
+| **3** | **11** done-check, **12** loop detector | Control plane; introduces the windowed runner |
+| **4** | **13, 14, 15, 16** engineering workflow | Familiar baselines; introduces the pairwise runner |
+| **5** | **17** moderation, **18** clause risk, **19** long-doc sweep | Heaviest fan-outs; run once the caps are proven |
+| **6** | **20** threshold fitter, then re-tune every earlier demo's gates with it | Needs the other fixtures to exist first |
 | **7** | README, `/method` finalisation, full capture, full verification | — |
 
 Phase 6 is deliberately last: it is the demo that improves all the others.
+Phase 1 is deliberately early: building eight demos on an unvalidated
+comparison harness would mean rebuilding eight demos.
 
 ## 6. Budget and verification
 
-**Money.** Capture for 20 demos ≈ 1,500–3,000 Jev calls ≈ **under $0.15** at
-$0.042/M input. The cascade demo additionally calls Haiku/Sonnet/Opus for real:
-~30 calls ≈ **$0.10–0.20**. Total **well under $1**, against a $10 key limit.
-Re-captures are cheap; budget two full ones.
+**Money.** Capture for twelve demos ≈ 800–1,500 Jev calls ≈ **under $0.10** at
+$0.042/M input. The eight baseline demos add Haiku 4.5 calls at a **measured
+$0.0008 each** — say 8 demos × 5 examples × 3 runs ≈ 120 calls ≈ **$0.10**.
+The cascade demo also calls Opus 5 on its hard inputs: ~15 calls ≈ **$0.15**.
+
+Total **around $0.35**, against a $10 key limit with $0.0086 used to date.
+Budget two full re-captures and it is still under $1. The cost guard (§3.10)
+prints a projection and requires `--yes` above $0.25, so this cannot run away
+unnoticed.
+
+**Watch the baseline spend, not the Jev spend.** Jev is the cheap half by two
+orders of magnitude. Every unexpected bill in this project will come from
+`/api/chat`.
 
 **Verification per phase.** `pnpm typecheck && pnpm test && pnpm e2e && pnpm build`
 green, plus a browser pass on new demos at 375 / 1280 with the console clean.
@@ -382,11 +448,36 @@ These are already load-bearing in this repo. Do not relax them.
 - Fan-outs are capped server-side and never fire on render.
 - The API key stays in the sidecar.
 
-## 8. Decisions worth confirming before starting
+Two further rules the baseline harness adds:
 
-1. **Twenty, or a sharper twelve?** Twenty covers more ground; twelve would
-   allow a measured baseline on several demos rather than one.
-2. **`/api/chat` for real measured cascades** — spends real money on Claude
-   models. Worth it for #14; optional elsewhere.
-3. **Phase 0 is a refactor of working code.** It touches all eight demos and
-   ships no new features. Confirm that is acceptable before it starts.
+- **Never score one model as correct.** These fixtures have no ground truth.
+  Show the disagreement; let the reader judge. The one place a "right answer"
+  may be asserted is the `rerank` corpus, which has gold labels fixed before
+  either ranker ran.
+- **Baseline prompts are not token-identical to question sets**, and cannot
+  be. Say so in the card rather than implying a controlled experiment.
+
+## 8. Decisions taken
+
+Settled 2026-09-19; no further sign-off needed to begin.
+
+1. **Twelve, not twenty** — chosen so eight carry a *measured* baseline
+   instead of one. The cut eight are listed in §4 as the next tranche.
+2. **Baseline model: `anthropic/claude-haiku-4.5`** via OpenRouter — the
+   cheapest model anyone would actually trust for this work, verified at
+   $1.00/M in, $5.00/M out with native `json_schema` support. Sonnet 5 and
+   Opus 5 appear as projected alternatives in the same card; the cascade demo
+   calls Opus 5 for real on its hard branch.
+3. **Refactor first.** Phase 0 rewrites working code and ships no features.
+   Approved.
+
+## 9. First three steps in the new session
+
+1. Read `README.md`, then `shared/jev.ts`, then `src/demos/triage/` — the
+   smallest complete demo, and the reference for what the kit must preserve.
+2. Build `src/demos/_kit/` (§3.3–3.7) and migrate **`triage` only**. Get
+   `pnpm test`, `pnpm e2e` and `pnpm typecheck` green on that one demo before
+   touching the other seven. `Demo.tsx` under 40 lines is the signal the kit
+   is right.
+3. Migrate the remaining seven, then commit the kit and the migration
+   separately so each is reviewable on its own.
