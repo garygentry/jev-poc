@@ -154,9 +154,10 @@ dollar meter sits in the header, fed only by real `usage` blocks.
 
 This repo is a demonstration, and a few of its claims are easy to overstate, so:
 
-- **The committed fixtures are hand-written**, not recordings. They are
-  plausible and correctly shaped, but no model produced them. The UI badges
-  them; `pnpm capture` replaces them with real responses.
+- **The committed fixtures are real recordings**, captured from live Jev on
+  2026-09-19 with `pnpm capture`. They started out hand-written, and the model
+  disagreed with several of those guesses — see below. Re-run `pnpm capture`
+  to refresh them.
 - **Wide fan-outs fall back to a deterministic stand-in** derived from a hash of
   the input. It is shaped like a response and means nothing, and it is badged
   differently from a seeded fixture for that reason.
@@ -171,6 +172,41 @@ This repo is a demonstration, and a few of its claims are easy to overstate, so:
   2026-06-24) and will go stale. They are used only to project hypothetical
   spend, never to report what a call actually cost.
 - Six queries or twelve personas is **a demonstration, not a benchmark**.
+
+## What the live model changed
+
+The fixtures were hand-written first and captured afterwards. Four things the
+model did differently are worth keeping, because they are the kind of thing you
+only find by running it:
+
+**It is far more decisive than expected.** On a clear ticket Jev returns
+probability `1.0` and confidence `1.0` — not `0.91`. Thresholds tuned against
+invented fixtures do not transfer. `UNDECIDED_FLOOR` started at `0.05`; live Jev
+returned `0.09` for a score distributed `0.38 / 0.40 / 0.22`, which is about as
+undecided as an answer gets, and sailed straight over it. It is `0.15` now.
+
+**It answered a badly-posed question honestly.** The router's `is_ambiguous`
+came back above `0.6` on four of five prompts, including a plain "summarise this
+thread" — because the thread was not in the state, and because the question did
+not separate *unclear goal* from *missing material*. Fixing both took it to
+`0.04`. That loop — read the answer, blame the question, re-ask — is most of
+the work with this model.
+
+**It read a criterion more strictly than its author did.** `cat .env` was
+expected to be `read_only` and to be caught by the secrets hard stop. Jev splits
+`catastrophic` 0.51 / `read_only` 0.49, because that option says "or exposes
+credentials" and printing a key into a scrollback buffer does exactly that. The
+policy now refuses instead of prompting, which is the better answer.
+
+**A decisive model makes beam search collapse.** At probability `1.0` there is
+no second branch to carry, so on clear tickets the beam does nothing and the
+demo says so. It earns its keep only where the model is genuinely torn — which
+the SSO ticket is, at `0.88 / 0.07 / 0.05`.
+
+One bug came from the same place: the bulk demo's review queue was built from a
+single label, and live Jev called all 60 rows by sentiment but only 44 by theme
+— so it reported nothing to review while sixteen rows carried a theme nobody
+should act on. It spans every label now.
 
 ## Reference
 

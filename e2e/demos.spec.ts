@@ -43,8 +43,9 @@ test.describe("01 · ticket triage", () => {
   test("renders a flat score as 'cannot tell' rather than as a value", async ({
     page,
   }) => {
-    // Ticket 3's business_impact comes back with confidence 0.03 — a flat
-    // distribution. Showing a pin at 0.62 would invite acting on nothing.
+    // Ticket 3's business_impact comes back at confidence 0.09, distributed
+    // 0.38 / 0.40 / 0.22 — about as undecided as an answer gets. Showing a pin
+    // at 0.84 would invite acting on nothing.
     await page.goto("/demo/triage")
     await page.getByRole("button", { name: "Fourth contact, threatening chargeback" }).click()
     await waitForAnswers(page)
@@ -83,17 +84,29 @@ test.describe("02 · command guardrail", () => {
     await expect(page.locator("main")).toContainText("never run by the agent")
   })
 
-  test("stops `cat .env` even though it is read-only", async ({ page }) => {
-    // The hard stop is the point: strictly read-only, and still not safe to
-    // run unattended.
+  test("refuses `cat .env` on the strength of what it exposes", async ({ page }) => {
+    // Written expecting "read_only + secrets hard stop → ask". Live Jev splits
+    // catastrophic 0.51 / read_only 0.49 instead, applying the criterion as
+    // written — that option says "or exposes credentials". The policy refuses,
+    // which is the better answer, so the test follows the model rather than
+    // the guess.
     await page.goto("/demo/guardrail")
     await page.getByRole("button", { name: "cat .env", exact: true }).click()
     await waitForAnswers(page)
 
+    await expect(page.getByText("Refuse", { exact: true })).toBeVisible()
+    await expect(page.locator("main")).toContainText("never run by the agent")
+  })
+
+  test("prompts on a command that reaches for the network", async ({ page }) => {
+    // `rm -rf node_modules && pnpm install` reads as reversible, and the hard
+    // stop catches the second half of it.
+    await page.goto("/demo/guardrail")
+    await page.getByRole("button", { name: "rm -rf node_modules" }).click()
+    await waitForAnswers(page)
+
     await expect(page.getByText("Ask first")).toBeVisible()
-    await expect(page.locator("main")).toContainText(
-      "Needs confirmation: touches secrets.",
-    )
+    await expect(page.locator("main")).toContainText("network egress")
   })
 
   test("shows a different gate per blast radius", async ({ page }) => {
@@ -232,14 +245,34 @@ test.describe("05 · taxonomy beam search", () => {
     assertQuiet()
   })
 
-  test("carries more than one branch at a time", async ({ page }) => {
+  test("carries several branches when the model is genuinely torn", async ({
+    page,
+  }) => {
+    // The SSO ticket is the one live Jev is unsure about at the top level —
+    // account 0.88, technical 0.07, billing 0.05 — so the beam has something
+    // to carry. On a decisive ticket it collapses to one, which is the next
+    // test.
+    await page.goto("/demo/taxonomy")
+    await page.getByRole("button", { name: "SSO rollout" }).click()
+    await page.getByRole("button", { name: "Descend the tree" }).click()
+    await expect(page.getByText("Committed to")).toBeVisible({ timeout: 30_000 })
+
+    const level2 = page.getByText("Level 2 · one request").locator("..")
+    await expect(level2.locator("li")).toHaveCount(3)
+    await expect(page.locator("main")).toContainText("Account › Access › SSO setup")
+  })
+
+  test("collapses to one branch when the model is certain", async ({ page }) => {
+    // The webhook ticket comes back technical at probability 1.0, so pruning
+    // leaves nothing beside it. The beam buying nothing here is a real result,
+    // not a failure — and the demo says so rather than implying otherwise.
     await page.goto("/demo/taxonomy")
     await page.getByRole("button", { name: "Descend the tree" }).click()
     await expect(page.getByText("Committed to")).toBeVisible({ timeout: 30_000 })
 
-    // Level 2 keeps Delivery and Ingestion alive — that is the beam.
-    const level2 = page.getByText("Level 2 · one request").locator("..")
-    await expect(level2.locator("li")).toHaveCount(2)
+    const level1 = page.getByText("Level 1 · one request").locator("..")
+    await expect(level1.locator("li")).toHaveCount(1)
+    await expect(page.getByText("Greedy would have reached the same leaf.")).toBeVisible()
   })
 
   test("commits above a leaf when the children are not separable", async ({
@@ -295,8 +328,12 @@ test.describe("06 · model router", () => {
     await page.getByRole("button", { name: "Too vague to route" }).click()
     await waitForAnswers(page)
 
+    // "Make the dashboard better" is the one prompt live Jev calls ambiguous
+    // (0.85) once the question distinguishes an unclear goal from missing
+    // material. Its capability read is weak too (0.26), so it is promoted
+    // rather than acted on — two independent reasons not to route it blind.
     await expect(page.getByText("Clarify before sending")).toBeVisible()
-    await expect(page.getByText(/flat distribution — promoted/)).toBeVisible()
+    await expect(page.getByText(/confident — promoted/)).toBeVisible()
   })
 
   test("shows the cost of the ladder it chose from", async ({ page }) => {
@@ -333,7 +370,11 @@ test.describe("07 · bulk labelling", () => {
     await expect(page.getByText("Human review queue")).toBeVisible({ timeout: 60_000 })
     await expect(page.getByText("Sentiment", { exact: true })).toBeVisible()
     await expect(page.getByText(/rows confident enough to count/).first()).toBeVisible()
-    await expect(page.getByText(/excluded from the counts above/)).toBeVisible()
+
+    // The queue spans every label, not just the first one charted — live Jev
+    // called all 60 rows by sentiment and only 44 by theme.
+    await expect(page.getByText(/any.*label came back/)).toBeVisible()
+    await expect(page.getByText(/should not be in the totals/)).toBeVisible()
   })
 
   test("withholds cost and timing when the answers were not real", async ({ page }) => {
@@ -365,30 +406,38 @@ test.describe("08 · persona panel", () => {
 
     await page.getByRole("button", { name: "Poll 12 readers" }).click()
 
-    // "Would act" is also each persona card's gauge label, so the summary's
-    // own copy is picked out by the figure beside it.
-    await expect(page.getByText("6 of 12")).toBeVisible({ timeout: 60_000 })
+    // One card per persona. The counts themselves are model output and are
+    // asserted only where the demo makes a claim about their shape.
+    await expect(page.getByText("Lands", { exact: true })).toHaveCount(12, {
+      timeout: 60_000,
+    })
     await expect(page.getByText("least useful number here")).toBeVisible()
     await expect(page.getByText("Staff engineer")).toBeVisible()
-
-    // One card per persona.
-    await expect(page.getByText("Lands", { exact: true })).toHaveCount(12)
+    await expect(page.getByText("Would act").first()).toBeVisible()
 
     assertQuiet()
   })
 
   test("names the split rather than reporting only a mean", async ({ page }) => {
+    // Live Jev splits the panel on the *outcome* pitch — four would act, three
+    // would not, five on the fence. The seeded fixtures had put the split on
+    // the technical pitch; the drafts were guesses and the model disagreed.
     await page.goto("/demo/personas")
+    await page.getByRole("button", { name: "Outcome pitch" }).click()
     await page.getByRole("button", { name: "Poll 12 readers" }).click()
+
     await expect(page.getByText("The panel splits.")).toBeVisible({ timeout: 60_000 })
     await expect(page.getByText(/describes neither group/)).toBeVisible()
   })
 
-  test("distinguishes a split panel from a lukewarm one", async ({ page }) => {
-    // The two drafts sit at almost the same mean. If the UI only showed a mean
-    // it could not tell them apart, which is the whole demo.
+  test("distinguishes a split panel from one that simply lands badly", async ({
+    page,
+  }) => {
+    // The hype pitch is not divisive, it is just disliked: nobody would act,
+    // and the panel agrees about that. A mean alone cannot tell "half of them
+    // love it" from "none of them do", and this is the second case.
     await page.goto("/demo/personas")
-    await page.getByRole("button", { name: "Outcome pitch" }).click()
+    await page.getByRole("button", { name: "Hype pitch" }).click()
     await page.getByRole("button", { name: "Poll 12 readers" }).click()
 
     await expect(page.getByText("No real split.")).toBeVisible({ timeout: 60_000 })

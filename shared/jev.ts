@@ -219,14 +219,31 @@ export interface HealthResponse {
 export const JEV_USD_PER_INPUT_TOKEN = 0.042 / 1_000_000
 
 /**
- * A confidence of 0 is a flat distribution: Jev is telling you it cannot
- * distinguish between the levels, which is a different statement from a
- * middling score. Acting on the score in that case is a mistake, so callers
- * check this before branching and the UI renders it as its own state.
+ * Whether the distribution is flat enough that the answer means nothing.
+ *
+ * A near-zero confidence is Jev saying it cannot distinguish between the
+ * options, which is a different statement from a low-but-real answer. Acting
+ * on the top option in that case is a mistake, so callers check this before
+ * branching and the UI renders it as its own state.
+ *
+ * **The floor is calibrated against real output, and was wrong at first.** It
+ * started at 0.05, which was tuned against hand-written fixtures. Live Jev
+ * returned `0.09` for a three-level score distributed `0.38 / 0.40 / 0.22` —
+ * the top two within two points of each other, which is about as undecided as
+ * an answer gets, and it sailed over a 0.05 floor. Thresholds tuned against a
+ * weaker or invented model do not transfer; this one is set where live
+ * answers put it.
+ *
+ * Note what this is *not* for. A `0.34` on a genuine two-way contest (`0.51`
+ * against `0.49`, the rest zero) is a decided answer held weakly, not a flat
+ * one — that is what the per-branch confidence gates are for, and conflating
+ * the two would throw away a real signal.
  */
+export const UNDECIDED_FLOOR = 0.15
+
 export function isUndecided(
   answer: ChoiceAnswer | ScoreAnswer,
-  floor = 0.05,
+  floor = UNDECIDED_FLOOR,
 ): boolean {
   return answer.confidence <= floor
 }

@@ -1,3 +1,4 @@
+import { isUndecided } from "@shared/jev.ts"
 import type { BatchItemResult } from "@shared/jev.ts"
 
 export interface Reading {
@@ -18,7 +19,7 @@ export function readPanel(results: BatchItemResult[]): Reading[] {
       wouldAct: act.noul,
       // A flat score is excluded rather than read as its midpoint.
       lands:
-        score?.type === "score" && score.confidence > 0.05 ? score.score : null,
+        score?.type === "score" && !isUndecided(score) ? score.score : null,
     })
   }
 
