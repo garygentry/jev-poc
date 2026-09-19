@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.env
+.env.local
+*.local
+
+# Browser verification output
+screenshots/
+.playwright-mcp/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Session scratch
+.remember/

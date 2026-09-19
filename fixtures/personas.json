@@ -1,0 +1,1154 @@
+{
+  "technical/cto-fintech": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.44
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/staff-eng": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.93
+      },
+      "lands": {
+        "type": "score",
+        "score": 2.95,
+        "probabilities": {
+          "0": 0,
+          "1": 0.002,
+          "2": 0.047,
+          "3": 0.95
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/junior-dev": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/eng-manager": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.52
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/data-scientist": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.89
+      },
+      "lands": {
+        "type": "score",
+        "score": 2.95,
+        "probabilities": {
+          "0": 0,
+          "1": 0.002,
+          "2": 0.047,
+          "3": 0.95
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/sre": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "lands": {
+        "type": "score",
+        "score": 2.95,
+        "probabilities": {
+          "0": 0,
+          "1": 0.002,
+          "2": 0.047,
+          "3": 0.95
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/product-manager": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.26
+      },
+      "lands": {
+        "type": "score",
+        "score": 1,
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.907,
+          "2": 0.045,
+          "3": 0.002
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/procurement": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.14
+      },
+      "lands": {
+        "type": "score",
+        "score": 1,
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.907,
+          "2": 0.045,
+          "3": 0.002
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/security": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.48
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/founder": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.71
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/academic": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.66
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "technical/support-lead": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.18
+      },
+      "lands": {
+        "type": "score",
+        "score": 1,
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.907,
+          "2": 0.045,
+          "3": 0.002
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/cto-fintech": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/staff-eng": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.55
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/junior-dev": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.58
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/eng-manager": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.78
+      },
+      "lands": {
+        "type": "score",
+        "score": 2.95,
+        "probabilities": {
+          "0": 0,
+          "1": 0.002,
+          "2": 0.047,
+          "3": 0.95
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/data-scientist": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.49
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/sre": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/product-manager": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 2.95,
+        "probabilities": {
+          "0": 0,
+          "1": 0.002,
+          "2": 0.047,
+          "3": 0.95
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/procurement": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.69
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/security": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.41
+      },
+      "lands": {
+        "type": "score",
+        "score": 1,
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.907,
+          "2": 0.045,
+          "3": 0.002
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/founder": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.74
+      },
+      "lands": {
+        "type": "score",
+        "score": 2.95,
+        "probabilities": {
+          "0": 0,
+          "1": 0.002,
+          "2": 0.047,
+          "3": 0.95
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/academic": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.33
+      },
+      "lands": {
+        "type": "score",
+        "score": 1,
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.907,
+          "2": 0.045,
+          "3": 0.002
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "outcome/support-lead": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.67
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/cto-fintech": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/staff-eng": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/junior-dev": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.58
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/eng-manager": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/data-scientist": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/sre": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/product-manager": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.44
+      },
+      "lands": {
+        "type": "score",
+        "score": 1,
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.907,
+          "2": 0.045,
+          "3": 0.002
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/procurement": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/security": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/founder": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "lands": {
+        "type": "score",
+        "score": 1.99,
+        "probabilities": {
+          "0": 0.002,
+          "1": 0.045,
+          "2": 0.907,
+          "3": 0.045
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/academic": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "lands": {
+        "type": "score",
+        "score": 0.05,
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.047,
+          "2": 0.002,
+          "3": 0
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  },
+  "hype/support-lead": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.31
+      },
+      "lands": {
+        "type": "score",
+        "score": 1,
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.907,
+          "2": 0.045,
+          "3": 0.002
+        },
+        "legend": {
+          "0": "Actively puts them off — wrong register, or triggers their scepticism.",
+          "1": "Bounces off; they would not finish reading it.",
+          "2": "Holds their attention but leaves their main question unanswered.",
+          "3": "Speaks directly to what they care about and answers it."
+        },
+        "confidence": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 46,
+      "cost": 0.000016296
+    },
+    "provider": "TypeSafe"
+  }
+}

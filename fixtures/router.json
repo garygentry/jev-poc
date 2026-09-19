@@ -1,0 +1,252 @@
+{
+  "reformat": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "trivial",
+        "probabilities": {
+          "trivial": 0.96,
+          "simple": 0.03,
+          "reasoning": 0.01,
+          "expert": 0.01
+        },
+        "confidence": 0.83
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "extraction",
+        "probabilities": {
+          "code": 0.01,
+          "analysis": 0.05,
+          "writing": 0.3,
+          "extraction": 0.62,
+          "conversation": 0.01
+        },
+        "confidence": 0.44
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 78,
+      "cost": 0.00001806
+    },
+    "provider": "TypeSafe"
+  },
+  "summarize": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "simple",
+        "probabilities": {
+          "trivial": 0.04,
+          "simple": 0.94,
+          "reasoning": 0.01,
+          "expert": 0.01
+        },
+        "confidence": 0.8
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "writing",
+        "probabilities": {
+          "code": 0.01,
+          "analysis": 0.21,
+          "writing": 0.71,
+          "extraction": 0.06,
+          "conversation": 0.01
+        },
+        "confidence": 0.48
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.09
+      }
+    },
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 78,
+      "cost": 0.00001806
+    },
+    "provider": "TypeSafe"
+  },
+  "debug-race": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "reasoning",
+        "probabilities": {
+          "trivial": 0.01,
+          "simple": 0.01,
+          "reasoning": 0.88,
+          "expert": 0.1
+        },
+        "confidence": 0.69
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "code",
+        "probabilities": {
+          "code": 0.91,
+          "analysis": 0.07,
+          "writing": 0.01,
+          "extraction": 0.01,
+          "conversation": 0.01
+        },
+        "confidence": 0.75
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 78,
+      "cost": 0.00001806
+    },
+    "provider": "TypeSafe"
+  },
+  "migration-plan": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "expert",
+        "probabilities": {
+          "trivial": 0.01,
+          "simple": 0.01,
+          "reasoning": 0.16,
+          "expert": 0.82
+        },
+        "confidence": 0.6
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "code",
+        "probabilities": {
+          "code": 0.68,
+          "analysis": 0.29,
+          "writing": 0.01,
+          "extraction": 0.01,
+          "conversation": 0.01
+        },
+        "confidence": 0.53
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0.89
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0.96
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.22
+      }
+    },
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 78,
+      "cost": 0.00001806
+    },
+    "provider": "TypeSafe"
+  },
+  "vague": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "simple",
+        "probabilities": {
+          "trivial": 0.21,
+          "simple": 0.34,
+          "reasoning": 0.31,
+          "expert": 0.14
+        },
+        "confidence": 0.04
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "code",
+        "probabilities": {
+          "code": 0.3,
+          "analysis": 0.28,
+          "writing": 0.22,
+          "extraction": 0.01,
+          "conversation": 0.19
+        },
+        "confidence": 0.12
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0.41
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0.18
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 78,
+      "cost": 0.00001806
+    },
+    "provider": "TypeSafe"
+  }
+}
