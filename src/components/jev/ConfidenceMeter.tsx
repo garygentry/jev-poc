@@ -2,6 +2,7 @@ import { AlertTriangle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { percent } from "@/lib/format"
+import { UNDECIDED_FLOOR } from "@shared/jev.ts"
 
 interface ConfidenceMeterProps {
   confidence: number
@@ -24,7 +25,7 @@ interface ConfidenceMeterProps {
 export function ConfidenceMeter({
   confidence,
   threshold,
-  undecidedFloor = 0.05,
+  undecidedFloor = UNDECIDED_FLOOR,
   className,
 }: ConfidenceMeterProps) {
   const undecided = confidence <= undecidedFloor

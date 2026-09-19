@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { countNoul, meanScore, tally } from "./summarize"
+import { countNoul, meanScore, reviewQueue, tally } from "./summarize"
 import { REVIEW_BELOW } from "./questions"
 
 import type { BatchItemResult } from "@shared/jev.ts"
@@ -69,6 +69,65 @@ describe("tally", () => {
       "sentiment",
     )
     expect(result.failed).toBe(1)
+  })
+})
+
+describe("reviewQueue", () => {
+  const twoLabels = (
+    id: string,
+    sentiment: number,
+    theme: number,
+  ): BatchItemResult => ({
+    id,
+    answers: {
+      sentiment: {
+        type: "choice",
+        choice: "negative",
+        confidence: sentiment,
+        probabilities: { negative: sentiment },
+      },
+      theme: {
+        type: "choice",
+        choice: "reliability",
+        confidence: theme,
+        probabilities: { reliability: theme },
+      },
+    },
+  })
+
+  it("queues a row that any single label could not call", () => {
+    // The case that prompted this: live Jev labelled every row by sentiment
+    // and only some of them by theme. A queue built from one question reported
+    // nothing to review while rows carried a theme nobody should act on.
+    const results = [
+      twoLabels("a", 0.95, 0.95),
+      twoLabels("b", 0.95, 0.2),
+      twoLabels("c", 0.2, 0.95),
+    ]
+
+    expect(tally(results, "sentiment").review).toEqual(["c"])
+    expect(tally(results, "theme").review).toEqual(["b"])
+    expect(reviewQueue(results, ["sentiment", "theme"])).toEqual(["b", "c"])
+  })
+
+  it("lists a row once however many labels failed on it", () => {
+    const results = [twoLabels("a", 0.1, 0.1)]
+    expect(reviewQueue(results, ["sentiment", "theme"])).toEqual(["a"])
+  })
+
+  it("preserves input order rather than question order", () => {
+    const results = [
+      twoLabels("a", 0.95, 0.1),
+      twoLabels("b", 0.1, 0.95),
+      twoLabels("c", 0.95, 0.95),
+    ]
+    expect(reviewQueue(results, ["sentiment", "theme"])).toEqual(["a", "b"])
+  })
+
+  it("is empty when every label cleared", () => {
+    expect(reviewQueue([twoLabels("a", 0.9, 0.9)], ["sentiment", "theme"])).toEqual(
+      [],
+    )
   })
 })
 

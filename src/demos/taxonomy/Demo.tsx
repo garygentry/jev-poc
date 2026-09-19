@@ -306,6 +306,14 @@ function Tree({ run }: { run: Run }) {
           how wide the beam. Widening it buys more questions, not more round
           trips.
         </p>
+        <p className="mt-1.5 text-[11px] leading-relaxed text-ink-muted">
+          On a clear ticket Jev returns a probability of{" "}
+          <span className="font-mono text-ink-secondary">1.0</span> and the beam
+          collapses to a single branch — there is nothing for it to carry. It
+          only does visible work where the model is genuinely torn, which is the
+          honest answer to “was the beam worth it”: sometimes, and the tree
+          below shows which.
+        </p>
       </div>
 
       <div className="divide-y divide-[var(--hairline)]">

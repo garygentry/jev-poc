@@ -73,6 +73,26 @@ export function meanScore(
   return counted === 0 ? null : { mean: total / counted, counted }
 }
 
+/**
+ * Every row that at least one of `questions` could not call.
+ *
+ * The queue has to span the whole question set, not one of them. Live Jev
+ * labelled all 60 rows of the sample corpus by sentiment and only 44 by theme —
+ * a per-question queue therefore reported "0 rows need review" while sixteen
+ * rows carried a theme nobody should act on.
+ */
+export function reviewQueue(
+  results: BatchItemResult[],
+  questions: string[],
+): string[] {
+  const queued = new Set<string>()
+  for (const question of questions) {
+    for (const id of tally(results, question).review) queued.add(id)
+  }
+  // Input order, so the queue reads the same way the corpus does.
+  return results.map((row) => row.id).filter((id) => queued.has(id))
+}
+
 /** Rows where a Noul crossed `threshold`. */
 export function countNoul(
   results: BatchItemResult[],

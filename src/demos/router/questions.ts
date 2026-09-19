@@ -57,6 +57,22 @@ export const QUESTIONS: JevQuestionSet = {
   is_ambiguous: {
     type: "noul",
     instructions:
-      "The request is underspecified in a way that would change the answer — a competent responder would have to ask before starting.",
+      "The request does not say clearly enough what is wanted for anyone to begin.",
+    /*
+     * The explicit `false` case exists because the first version of this
+     * question did not have one, and live Jev answered above 0.6 on four of
+     * five example prompts — including a plain "summarise this thread".
+     *
+     * It was reading the question the broad way: almost any real request is
+     * underspecified in *some* respect. The distinction that matters to a
+     * router is between a request whose goal is unclear and one whose goal is
+     * clear but whose inputs are elsewhere — the second is `needs_tools`, not
+     * ambiguity, and routing it to a human wastes everyone's time.
+     */
+    criteria: {
+      true: "The goal itself is unclear. Two competent people would start on materially different work, and no amount of fetching context would settle which.",
+      false:
+        "The goal is clear, even if the material needed to do it is large, missing, or has to be fetched first.",
+    },
   },
 }

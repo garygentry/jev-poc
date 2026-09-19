@@ -13,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { demoBySlug } from "@/demos/registry"
 import { useJev } from "@/lib/use-jev"
 import { humanize } from "@/lib/format"
-import { rankedProbabilities } from "@shared/jev.ts"
+import { isUndecided, rankedProbabilities } from "@shared/jev.ts"
 import type { JevAnswer } from "@shared/jev.ts"
 import { cn } from "@/lib/utils"
 
@@ -206,7 +206,7 @@ function Meters({ answers }: { answers: Record<string, JevAnswer> }) {
             const answer = answers[name]
             if (answer?.type !== "score" || question.type !== "score") return null
             const top = Math.max(1, question.criteria.length - 1)
-            const undecided = answer.confidence <= 0.05
+            const undecided = isUndecided(answer)
             return (
               <div key={name} className="space-y-1">
                 <div className="flex items-baseline justify-between gap-2">

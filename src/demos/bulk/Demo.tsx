@@ -18,7 +18,7 @@ import { JEV_USD_PER_INPUT_TOKEN } from "@shared/jev.ts"
 
 import { QUESTIONS, REVIEW_BELOW } from "./questions"
 import { DEFAULT_ROWS, MAX_ROWS, buildDataset } from "./dataset"
-import { countNoul, meanScore, tally } from "./summarize"
+import { countNoul, meanScore, reviewQueue, tally } from "./summarize"
 
 import type { AnswerSource, BatchItemResult, JevUsage, JevWire } from "@shared/jev.ts"
 
@@ -86,6 +86,8 @@ export default function BulkDemo() {
   const theme = run ? tally(run.results, "theme") : null
   const severity = run ? meanScore(run.results, "severity") : null
   const actionable = run ? countNoul(run.results, "is_actionable") : null
+  // Spans every Choice question, not just the first one charted.
+  const queue = run ? reviewQueue(run.results, ["sentiment", "theme"]) : null
 
   return (
     <DemoFrame demo={demo}>
@@ -146,9 +148,7 @@ export default function BulkDemo() {
               </div>
             </Card>
 
-            {sentiment ? (
-              <ReviewQueue queue={sentiment.review} total={rows.length} />
-            ) : null}
+            {queue ? <ReviewQueue queue={queue} total={rows.length} /> : null}
           </div>
 
           <WirePanel wire={run.wire} />
@@ -363,10 +363,10 @@ function ReviewQueue({ queue, total }: { queue: string[]; total: number }) {
         </div>
 
         <p className="mt-2 text-[11px] leading-relaxed text-ink-secondary">
-          Rows whose distribution was flat, or below {percent(REVIEW_BELOW, 0)}{" "}
-          confidence. They are excluded from the counts above rather than merely
-          flagged — a label the run does not stand behind should not be in the
-          totals.
+          Rows where <strong className="text-ink">any</strong> label came back
+          flat or below {percent(REVIEW_BELOW, 0)} confidence. They are excluded
+          from that label's counts above rather than merely flagged — a label
+          the run does not stand behind should not be in the totals.
         </p>
 
         {queue.length > 0 ? (
