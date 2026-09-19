@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { Link, useParams } from "react-router-dom"
 
+import { DemoBoundary } from "@/components/layout/DemoBoundary"
 import { demoBySlug } from "@/demos/registry"
 
 export function DemoPage() {
@@ -23,9 +24,11 @@ export function DemoPage() {
 
   const { Component } = demo
   return (
-    <Suspense fallback={<Loading />}>
-      <Component key={demo.slug} />
-    </Suspense>
+    <DemoBoundary resetKey={demo.slug}>
+      <Suspense fallback={<Loading />}>
+        <Component key={demo.slug} />
+      </Suspense>
+    </DemoBoundary>
   )
 }
 

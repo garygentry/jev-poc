@@ -43,20 +43,46 @@ async function post<T>(
   return (await response.json()) as T
 }
 
-/** One state, N questions, one upstream call. */
-export function decide(
+/**
+ * One state, N questions, one upstream call.
+ *
+ * The body is checked before it is handed to a component. The sidecar already
+ * validates what the model returned, but a 200 can still arrive from something
+ * in between — a dev-server hiccup, a proxy, a captive portal — and a missing
+ * `answers` would otherwise surface as a render crash several frames later,
+ * where nothing names the real cause.
+ */
+export async function decide(
   request: DecideRequest,
   signal?: AbortSignal,
 ): Promise<DecideResponse> {
-  return post<DecideResponse>("/api/jev/decide", request, signal)
+  const body = await post<DecideResponse>("/api/jev/decide", request, signal)
+
+  if (!body || typeof body.answers !== "object" || body.answers === null) {
+    throw new JevRequestError(
+      "The sidecar returned a response with no answers.",
+      502,
+    )
+  }
+
+  return body
 }
 
 /** N states sharing one question set, fanned out under the server's cap. */
-export function batch(
+export async function batch(
   request: BatchRequest,
   signal?: AbortSignal,
 ): Promise<BatchResponse> {
-  return post<BatchResponse>("/api/jev/batch", request, signal)
+  const body = await post<BatchResponse>("/api/jev/batch", request, signal)
+
+  if (!body || !Array.isArray(body.results)) {
+    throw new JevRequestError(
+      "The sidecar returned a batch with no results.",
+      502,
+    )
+  }
+
+  return body
 }
 
 export async function health(): Promise<HealthResponse> {
