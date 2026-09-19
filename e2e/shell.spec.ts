@@ -1,0 +1,113 @@
+import { expect, test } from "@playwright/test"
+
+import { ROUTES, serverMode, watchConsole } from "./helpers"
+
+test.describe("app shell", () => {
+  test("the gallery lists all eight demos with their shapes", async ({ page }) => {
+    const assertQuiet = watchConsole(page)
+    await page.goto("/")
+
+    await expect(
+      page.getByRole("heading", { name: "A model that decides instead of writing" }),
+    ).toBeVisible()
+
+    // Scoped to the gallery grid: the sidebar links to the same eight hrefs.
+    const gallery = page.locator("main")
+    const cards = gallery.locator("a[href^='/demo/']")
+    await expect(cards).toHaveCount(8)
+
+    // The shape strip is the through-line of the tour; every card carries one.
+    for (const label of ["Questions", "States", "Requests"]) {
+      await expect(gallery.getByText(label, { exact: true })).toHaveCount(8)
+    }
+
+    assertQuiet()
+  })
+
+  test("every route renders without console errors", async ({ page }) => {
+    const assertQuiet = watchConsole(page)
+
+    for (const route of ROUTES) {
+      await page.goto(route)
+      await expect(page.locator("main")).toBeVisible()
+      // A crashed lazy chunk leaves the frame but no heading.
+      await expect(page.locator("main h1, main h2")).not.toHaveCount(0)
+    }
+
+    assertQuiet()
+  })
+
+  test("the sidebar navigates between demos", async ({ page }) => {
+    await page.goto("/")
+    // Scoped to the nav: the gallery cards link to the same places.
+    const sidebar = page.getByRole("navigation")
+
+    await sidebar.getByRole("link", { name: /Taxonomy beam search/ }).click()
+    await expect(page).toHaveURL(/\/demo\/taxonomy$/)
+    await expect(
+      page.getByRole("heading", { name: "Taxonomy beam search" }),
+    ).toBeVisible()
+
+    await sidebar.getByRole("link", { name: /Persona panel/ }).click()
+    await expect(page).toHaveURL(/\/demo\/personas$/)
+  })
+
+  test("an unknown demo slug falls back to the gallery", async ({ page }) => {
+    await page.goto("/demo/does-not-exist")
+    await expect(page.getByText(/No demo called/)).toBeVisible()
+  })
+
+  test("an unknown route redirects home", async ({ page }) => {
+    await page.goto("/nonsense")
+    await expect(page).toHaveURL(/\/$/)
+    await expect(
+      page.getByRole("heading", { name: "A model that decides instead of writing" }),
+    ).toBeVisible()
+  })
+
+  test("the theme survives navigation", async ({ page }) => {
+    await page.goto("/")
+    const html = page.locator("html")
+    await expect(html).toHaveClass(/dark/)
+
+    await page.getByRole("button", { name: "Switch to light theme" }).click()
+    await expect(html).not.toHaveClass(/dark/)
+
+    // This is the bug the persisted toggle fixes: it used to reset on every
+    // navigation because the choice lived in component state.
+    await page.goto("/demo/triage")
+    await expect(html).not.toHaveClass(/dark/)
+
+    await page.reload()
+    await expect(html).not.toHaveClass(/dark/)
+  })
+
+  test("the header reports the server's mode", async ({ page }) => {
+    await page.goto("/")
+    const mode = await serverMode(page)
+    await expect(
+      page.getByText(mode === "live" ? "live" : "fixture mode", { exact: true }),
+    ).toBeVisible()
+  })
+})
+
+test.describe("the suite's own premise", () => {
+  test("runs against fixtures, not the live model", async ({ page }) => {
+    // If this ever fails, the webServer config has regressed and the rest of
+    // the suite is asserting against model output — which would be flaky and
+    // would cost money on every run.
+    expect(await serverMode(page)).toBe("fixture")
+  })
+})
+
+test.describe("no-key state", () => {
+  test("says plainly that nothing shown is a real judgement", async ({ page }) => {
+    await page.goto("/")
+    test.skip((await serverMode(page)) === "live", "only applies without a key")
+
+    await expect(
+      page.getByText("Running without a key — nothing here is a real judgement"),
+    ).toBeVisible()
+    await expect(page.getByText("hand-seeded")).toBeVisible()
+  })
+})

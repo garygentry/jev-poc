@@ -19,3 +19,9 @@ screenshots/
 
 # TypeScript incremental build state
 *.tsbuildinfo
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+.playwright/

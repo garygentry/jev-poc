@@ -88,7 +88,10 @@ function JsonBlock({ value }: { value: unknown }) {
         {copied ? <Check /> : <Copy />}
         {copied ? "Copied" : "Copy"}
       </Button>
-      <pre className="max-h-96 overflow-auto bg-[var(--plane)] px-3.5 py-3 font-mono text-[11px] leading-relaxed text-ink-secondary">
+      <pre
+        data-testid="wire-json"
+        className="max-h-96 overflow-auto bg-[var(--plane)] px-3.5 py-3 font-mono text-[11px] leading-relaxed text-ink-secondary"
+      >
         {text}
       </pre>
     </div>

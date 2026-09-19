@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
 const SERVER_PORT = process.env.PORT ?? "8787"
+const CLIENT_PORT = Number(process.env.CLIENT_PORT ?? 5180)
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -15,8 +16,9 @@ export default defineConfig({
     },
   },
   server: {
-    // Not Vite's 5173 default: this machine already runs another app there.
-    port: 5180,
+    // Not Vite's 5173 default, which is commonly already taken. The e2e suite
+    // overrides both ports so it can run beside a dev server.
+    port: CLIENT_PORT,
     strictPort: true,
     proxy: {
       // The key lives only in the Hono sidecar; the browser never sees it.

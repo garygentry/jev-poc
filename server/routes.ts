@@ -137,7 +137,7 @@ api.post("/jev/batch", async (c) => {
 
   const results: BatchItemResult[] = settled.map((outcome, index) => {
     const id = (items[index] as { id: string }).id
-    if ("error" in outcome) return { id, error: outcome.error.message }
+    if ("error" in outcome) return { id, error: describe(outcome.error) }
     return {
       id,
       answers: outcome.value.response.answers,
@@ -156,8 +156,36 @@ api.post("/jev/batch", async (c) => {
   return c.json(batch)
 })
 
+/**
+ * Turn a failure into something worth showing a person.
+ *
+ * The common ones are given a plain sentence and a next step, because dumping
+ * an upstream JSON envelope into the UI tells the reader what happened only if
+ * they already know. Everything else falls through with its own message, which
+ * is better than a generic apology.
+ */
 function describe(error: unknown): string {
-  if (error instanceof ProviderError) return error.message
+  if (error instanceof ProviderError) {
+    const detail = error.message
+
+    if (error.status === 401 || error.status === 403) {
+      // By far the most likely failure, and the one with a clear fix.
+      return /expired/i.test(detail)
+        ? "OpenRouter rejected the API key as expired. Generate a new one at openrouter.ai/settings/keys and restart the server."
+        : "OpenRouter rejected the API key. Check OPENROUTER_API_KEY in .env and restart the server."
+    }
+
+    if (error.status === 429) {
+      return "Rate limited by OpenRouter. Wait a moment and try again, or reduce the fan-out."
+    }
+
+    if (error.status === 404) {
+      return `The decisions endpoint was not found. It is an alpha path and may have moved — override JEV_DECISIONS_URL in .env. (${detail})`
+    }
+
+    return detail
+  }
+
   if (error instanceof Error) return error.message
   return String(error)
 }

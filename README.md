@@ -49,11 +49,26 @@ itself as doing so. To go live, put an
 [OpenRouter key](https://openrouter.ai/settings/keys) in `.env` and restart.
 
 ```sh
-pnpm test        # 67 offline tests — no key, no network
+pnpm test        # 67 unit tests — pure policy logic, no key, no network
+pnpm e2e         # 71 end-to-end tests — starts its own fixture-mode server
 pnpm typecheck
 pnpm capture     # re-record the fixtures against live Jev (needs a key)
 pnpm build
 ```
+
+The two suites divide the work. **Vitest** covers the pure policy functions —
+routing, confidence gates, beam pruning, rank bounds, cost math — which is
+where the logic that can actually be wrong lives. **Playwright** covers what
+unit tests cannot: that the app renders, that a request reaches the sidecar and
+comes back, that fan-outs are capped and never fire on render, that failures
+degrade instead of white-screening, and that replayed data is never presented
+as live.
+
+`pnpm e2e` starts its own server on ports 5181/8788 with the key blanked, so it
+runs beside your dev server, costs nothing, and is deterministic — asserting on
+live model output would be flaky by construction. To exercise the suite against
+real answers, run `pnpm capture` first and it will assert against what the model
+actually said.
 
 ## The three primitives
 
@@ -100,6 +115,7 @@ src/
   demos/<slug>/      questions.ts · policy.ts · policy.test.ts · examples.ts · Demo.tsx
 fixtures/            per-demo recorded responses
 scripts/capture.ts   re-record them from live Jev
+e2e/                 Playwright: shell · demos · api · errors · responsive
 ```
 
 **Policy lives in code, not in the model.** Every demo's thresholds and
