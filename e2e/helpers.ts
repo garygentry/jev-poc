@@ -65,6 +65,7 @@ export async function readWire(page: Page) {
 /** Every page in the app, for the sweeps that visit all of them. */
 export const ROUTES = [
   "/",
+  "/method",
   "/demo/triage",
   "/demo/guardrail",
   "/demo/rerank",
