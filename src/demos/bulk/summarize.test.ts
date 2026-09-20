@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 
 import { countNoul, meanScore, reviewQueue, tally } from "./summarize"
-import { REVIEW_BELOW } from "./questions"
+import { REVIEW_BELOW } from "./demo"
 
 import type { BatchItemResult } from "@shared/jev.ts"
 

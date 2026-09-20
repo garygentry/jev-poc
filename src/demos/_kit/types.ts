@@ -8,7 +8,12 @@
  * `Demo.tsx`, and why the dependency only ever points one way: `Demo.tsx`
  * imports the manifest, never the reverse.
  */
-import type { JevQuestionSet, JevState } from "@shared/jev.ts"
+import type {
+  BatchItem,
+  JevAnswer,
+  JevQuestionSet,
+  JevState,
+} from "@shared/jev.ts"
 
 /**
  * How a demo turns input into upstream calls.
@@ -16,7 +21,8 @@ import type { JevQuestionSet, JevState } from "@shared/jev.ts"
  * This is the organising idea of the whole tour: questions batch into one
  * request *only when they share a state*. Everything below is a consequence of
  * that single rule, which is why the kind is a first-class property rather than
- * an implementation detail of each demo.
+ * an implementation detail of each demo — and why it decides, below, whether a
+ * manifest describes one state or a list of them.
  */
 export type DemoKind =
   /** One state, N questions, one request. */
@@ -91,7 +97,7 @@ export interface DemoExample<TInput> {
   input: TInput
 }
 
-export interface DemoManifest<TInput = unknown> {
+interface BaseManifest<TInput> {
   slug: string
   title: string
   tagline: string
@@ -100,14 +106,19 @@ export interface DemoManifest<TInput = unknown> {
   group: DemoGroup
   /** Position within the group. Groups are ordered by the registry. */
   order: number
-  kind: DemoKind
   shape: DemoShape
   primitives: Primitive[]
   displaces?: Displacement
   questions: JevQuestionSet
   examples: Array<DemoExample<TInput>>
-  /** The literal state posted to Jev for one example. */
-  stateFor: (input: TInput) => JevState
+  /**
+   * The example to open on, when it is not the first.
+   *
+   * The examples are listed in the order they are shown, which is not always
+   * the order that makes the best first impression — a batch-size chooser reads
+   * as 20/60/120/200 but should not land the visitor on the smallest.
+   */
+  startAt?: string
   /**
    * Upstream calls one run of this example costs.
    *
@@ -116,7 +127,80 @@ export interface DemoManifest<TInput = unknown> {
    * declares it, so neither caller needs a special case.
    */
   estimateCalls: (input: TInput) => number
+  /**
+   * False when this demo has no committed fixtures and falls back to the
+   * deterministic stand-in — the wide fan-outs, where a fixture per row would
+   * be absurd. `pnpm capture` skips these, and the UI badges them `synthetic`.
+   */
+  recorded?: boolean
 }
+
+/** One state per run: the question set batches into a single request. */
+export interface SingleManifest<TInput> extends BaseManifest<TInput> {
+  kind: "single" | "cascade"
+  stateFor: (input: TInput) => JevState
+}
+
+/**
+ * A sequential walk over one state: round *n*'s questions come from round
+ * *n−1*'s answers.
+ *
+ * `TCarry` is whatever the demo threads between rounds — a beam of branches, a
+ * shortlist, a partial path — and `TRound` whatever `plan` hands back to
+ * `advance`. Nothing outside the demo looks inside either. What the runner and
+ * the capture script both need to know is only that the state is fixed for the
+ * whole walk, which is the fact worth showing: widening a round adds
+ * *questions*, not round trips.
+ *
+ * It lives on the manifest rather than in the component so that `pnpm capture`
+ * can walk the same tree the UI does. A recording of round 2 is only valid for
+ * the questions round 1's answers produced, so capture cannot be a flat list.
+ */
+export interface RoundsSpec<TCarry, TRound> {
+  initial: TCarry
+  /** Null ends the walk — nothing left to expand. */
+  plan: (
+    depth: number,
+    carry: TCarry,
+  ) => { questions: JevQuestionSet; round: TRound } | null
+  advance: (
+    round: TRound,
+    answers: Record<string, JevAnswer>,
+    carry: TCarry,
+  ) => TCarry
+  maxDepth: number
+}
+
+export interface RoundsManifest<TInput, TCarry = unknown, TRound = unknown>
+  extends BaseManifest<TInput> {
+  kind: "rounds"
+  stateFor: (input: TInput) => JevState
+  walk: RoundsSpec<TCarry, TRound>
+}
+
+/**
+ * Many states per run, which is what forces the fan-out.
+ *
+ * Each item's `id` is the `part` half of its fixture key, so the runner and
+ * `pnpm capture` record and replay under the same name without either of them
+ * knowing what the rows are.
+ */
+export interface FanOutManifest<TInput> extends BaseManifest<TInput> {
+  kind: "fanout" | "pairwise" | "windowed"
+  itemsFor: (input: TInput) => BatchItem[]
+}
+
+/** No calls: the demo reads answers something else already recorded. */
+export interface OfflineManifest<TInput> extends BaseManifest<TInput> {
+  kind: "offline"
+}
+
+export type DemoManifest<TInput = unknown> =
+  | SingleManifest<TInput>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | RoundsManifest<TInput, any, any>
+  | FanOutManifest<TInput>
+  | OfflineManifest<TInput>
 
 /**
  * A manifest whose input type has been erased.
@@ -129,7 +213,7 @@ export interface DemoManifest<TInput = unknown> {
  * escape hatch is deliberate and is confined to this alias.
  *
  * Anything that knows which demo it is dealing with should take
- * `DemoManifest<T>` instead and stay typed.
+ * `DemoManifest<T>` — or one of its three members — and stay typed.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyDemoManifest = DemoManifest<any>

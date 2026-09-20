@@ -24,11 +24,17 @@ export default function TriageDemo() {
       manifest={manifest}
       run={run}
       policy={route}
-      thresholdFor={departmentGate}
-      answersTitle="Seven answers, one request"
-      preview={(ticket) => <TicketCard ticket={ticket} />}
+      answers={{
+        title: "Seven answers, one request",
+        thresholdFor: departmentGate,
+      }}
     >
-      {({ verdict }) => (verdict ? <Verdict routed={verdict} /> : null)}
+      {({ input, verdict }) => (
+        <>
+          <TicketCard ticket={input} />
+          {verdict ? <Verdict routed={verdict} /> : null}
+        </>
+      )}
     </DemoScaffold>
   )
 }

@@ -12,8 +12,18 @@
  * browser bundle.
  */
 export { DemoScaffold } from "./DemoScaffold"
-export type { PolicyResult, ScaffoldRender } from "./DemoScaffold"
-export { entryKey, fixtureKey } from "./fixtures"
+export type {
+  AnswerColumn,
+  PolicyResult,
+  ScaffoldRender,
+} from "./DemoScaffold"
+export { entryKey, fixtureKey, roundKey } from "./fixtures"
+export { useFanOut } from "./runners/useFanOut"
+export type { FanOutEnvelope } from "./runners/useFanOut"
+export { useLiveRun } from "./runners/useLiveRun"
+export type { LiveEnvelope } from "./runners/useLiveRun"
+export { useRounds } from "./runners/useRounds"
+export type { RoundsEnvelope } from "./runners/useRounds"
 export { useSingleRun } from "./runners/useSingleRun"
 export type { RunEnvelope, RunnerOptions } from "./runners/types"
 export { fansOut } from "./types"
@@ -25,5 +35,10 @@ export type {
   DemoManifest,
   DemoShape,
   Displacement,
+  FanOutManifest,
+  OfflineManifest,
+  RoundsManifest,
+  RoundsSpec,
   Primitive,
+  SingleManifest,
 } from "./types"

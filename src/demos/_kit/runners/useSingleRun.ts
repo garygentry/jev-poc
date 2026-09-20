@@ -1,10 +1,15 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect } from "react"
 
 import { useJev } from "@/lib/use-jev"
 
-import { fixtureKey } from "../fixtures"
-import type { DemoManifest } from "../types"
+import type { SingleManifest } from "../types"
 import type { RunEnvelope, RunnerOptions } from "./types"
+import { useExample } from "./useExample"
+
+interface SingleRunOptions extends RunnerOptions {
+  /** Drop an in-flight request when a newer one starts. See `useJev`. */
+  cancelPrevious?: boolean
+}
 
 /**
  * One state, N questions, one upstream call.
@@ -14,39 +19,29 @@ import type { RunEnvelope, RunnerOptions } from "./types"
  * them together is what lets a demo's own file hold only its view.
  */
 export function useSingleRun<TInput>(
-  manifest: DemoManifest<TInput>,
-  options: RunnerOptions = {},
+  manifest: SingleManifest<TInput>,
+  options: SingleRunOptions = {},
 ): RunEnvelope<TInput> {
-  const { auto = true } = options
-  const first = manifest.examples[0]
-  if (!first) throw new Error(`${manifest.slug}: a demo needs at least one example`)
+  const { auto = true, cancelPrevious = false } = options
+  const selection = useExample(manifest)
+  const { data, error, loading, run: ask, reset } = useJev({ cancelPrevious })
 
-  const [selected, setSelected] = useState(first.id)
-  const { data, error, loading, run: ask } = useJev()
-
-  const example = manifest.examples.find((item) => item.id === selected) ?? first
+  const { input, keyFor } = selection
 
   const run = useCallback(() => {
-    void ask(
-      manifest.stateFor(example.input),
-      manifest.questions,
-      fixtureKey(manifest.slug, example.id),
-    )
-  }, [ask, manifest, example])
+    void ask(manifest.stateFor(input), manifest.questions, keyFor())
+  }, [ask, manifest, input, keyFor])
 
   useEffect(() => {
     if (auto) run()
-    // Re-asking on example change is the whole interaction. `run` is rebuilt on
-    // every render because `example` is derived, so depending on it here would
-    // ask in a loop.
+    // Re-asking on a change of input is the whole interaction. `run` is rebuilt
+    // whenever the input object identity changes, so depending on it directly
+    // would ask in a loop on any demo whose input is edited in place.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [auto, selected])
+  }, [auto, input])
 
   return {
-    selected,
-    select: setSelected,
-    example,
-    input: example.input,
+    ...selection,
     answers: data?.answers ?? null,
     error,
     loading,
@@ -56,5 +51,6 @@ export function useSingleRun<TInput>(
     source: data?.source,
     wire: data?.wire,
     run,
+    clear: reset,
   }
 }

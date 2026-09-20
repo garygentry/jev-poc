@@ -1,7 +1,7 @@
 import { isUndecided } from "@shared/jev.ts"
 import type { BatchItemResult } from "@shared/jev.ts"
 
-import { REVIEW_BELOW } from "./questions"
+import { REVIEW_BELOW } from "./demo"
 
 export interface Tally {
   /** Counts per option, for a named Choice question. */

@@ -21,9 +21,28 @@
 export const entryKey = (exampleId: string, part?: string): string =>
   part ? `${exampleId}/${part}` : exampleId
 
-/** The key a request sends, which is what the server looks up. */
+/**
+ * The key a request sends, which is what the server looks up.
+ *
+ * A fan-out sends this *without* a part and the batch route appends each row's
+ * id, which composes to exactly what `fixtureKey(slug, example, row)` spells —
+ * the one composition that happens outside this file, in `server/routes.ts`.
+ */
 export const fixtureKey = (
   slug: string,
   exampleId: string,
   part?: string,
 ): string => `${slug}/${entryKey(exampleId, part)}`
+
+/**
+ * One round of a sequential walk.
+ *
+ * A round is not a part of its example: the questions asked at depth 2 depend
+ * on what came back at depth 1, so each round is its own recording. The depth
+ * suffix rather than a path segment is what the committed fixtures already use.
+ */
+export const roundEntry = (exampleId: string, depth: number): string =>
+  entryKey(`${exampleId}-d${depth}`)
+
+export const roundKey = (slug: string, exampleId: string, depth: number): string =>
+  `${slug}/${roundEntry(exampleId, depth)}`
