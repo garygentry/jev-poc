@@ -26,6 +26,7 @@ import { entryKey, roundEntry } from "../src/demos/_kit/fixtures.ts"
 import { loadManifests } from "../src/demos/_kit/load-manifests.ts"
 import type { AnyDemoManifest } from "../src/demos/_kit/types.ts"
 
+import { projectJevSpend } from "../shared/jev.ts"
 import type { JevQuestionSet, JevState } from "../shared/jev.ts"
 
 const FIXTURES = path.resolve(
@@ -44,16 +45,6 @@ const CONCURRENCY = 6
  * start by accident.
  */
 const CONFIRM_ABOVE_USD = 0.25
-
-/** Jev's listed input price, for the projection only — never for reporting. */
-const USD_PER_INPUT_TOKEN = 0.042 / 1_000_000
-
-/**
- * Input tokens a question set plus a state runs to, near enough to project a
- * bill from. The measured figures on this repo's demos sit between 470 and 700;
- * the high end is used so the projection errs towards asking.
- */
-const TOKENS_PER_CALL = 700
 
 interface Job {
   key: string
@@ -172,7 +163,7 @@ function project(manifests: AnyDemoManifest[]): { calls: number; usd: number } {
       ),
     0,
   )
-  return { calls, usd: calls * TOKENS_PER_CALL * USD_PER_INPUT_TOKEN }
+  return { calls, usd: projectJevSpend(calls) }
 }
 
 async function main(): Promise<number> {

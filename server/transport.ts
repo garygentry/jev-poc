@@ -1,16 +1,20 @@
 import {
   API_KEY,
   BACKOFF_MS,
+  CHAT_URL,
   DECISIONS_URL,
   MAX_ATTEMPTS,
+  MAX_CHAT_TOKENS,
   MODEL,
   REQUEST_TIMEOUT_MS,
   RETRY_STATUSES,
 } from "./config.ts"
 
+import type { StructuredSchema } from "@shared/baseline.ts"
 import type {
   JevQuestionSet,
   JevState,
+  JevUsage,
   SystemOneResponse,
 } from "@shared/jev.ts"
 
@@ -56,19 +60,35 @@ export async function askJev(
   signal?: AbortSignal,
 ): Promise<JevCallResult> {
   const body = { model: MODEL, state, questions }
+  const { raw, latencyMs } = await postJson(DECISIONS_URL, body, signal)
+  return { response: parseSystemOne(raw), latencyMs, request: body, raw }
+}
+
+/**
+ * POST a JSON body to OpenRouter with the retry, timeout and abort handling
+ * every upstream call here needs, returning the raw parsed body and the round
+ * trip that produced it.
+ *
+ * Shared by the decision endpoint and the chat proxy because the transport
+ * concerns are identical — only the URL, the body and how the reply is read
+ * differ, and those belong to the callers.
+ */
+async function postJson(
+  url: string,
+  body: unknown,
+  signal?: AbortSignal,
+): Promise<{ raw: unknown; latencyMs: number }> {
   const startedAt = performance.now()
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
     // One timeout per attempt, linked to the caller's signal so an abort from
     // upstream cancels the in-flight fetch rather than just being ignored.
     const timeout = AbortSignal.timeout(REQUEST_TIMEOUT_MS)
-    const composite = signal
-      ? AbortSignal.any([signal, timeout])
-      : timeout
+    const composite = signal ? AbortSignal.any([signal, timeout]) : timeout
 
     let response: Response
     try {
-      response = await fetch(DECISIONS_URL, {
+      response = await fetch(url, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${API_KEY}`,
@@ -103,13 +123,9 @@ export async function askJev(
       continue
     }
 
-    const raw: unknown = await response.json()
-    const parsed = parseSystemOne(raw)
     return {
-      response: parsed,
+      raw: await response.json(),
       latencyMs: Math.round(performance.now() - startedAt),
-      request: body,
-      raw,
     }
   }
 
@@ -155,5 +171,97 @@ function parseSystemOne(raw: unknown): SystemOneResponse {
       cost: 0,
     },
     provider: candidate.provider,
+  }
+}
+
+export interface ChatCallResult {
+  /** The parsed structured object the model returned, still to be validated. */
+  content: Record<string, unknown>
+  usage: JevUsage
+  latencyMs: number
+  /** The model OpenRouter actually served, which can differ from the request. */
+  model: string
+  request: unknown
+  raw: unknown
+}
+
+/**
+ * Ask an ordinary chat model for one structured answer, for the measured
+ * baseline comparison.
+ *
+ * `temperature: 0` and strict `json_schema` output make the reply a JSON object
+ * rather than prose, so there is no free-text parse step — the baseline is held
+ * to the same "typed answer" bar as Jev. `usage.include` asks OpenRouter to
+ * return the real cost, which is the only cost figure the card is allowed to
+ * show. Output tokens are the expensive half here, so `max_tokens` is capped.
+ */
+export async function askChat(
+  model: string,
+  system: string,
+  user: string,
+  schema: StructuredSchema,
+  signal?: AbortSignal,
+): Promise<ChatCallResult> {
+  const body = {
+    model,
+    messages: [
+      { role: "system", content: system },
+      { role: "user", content: user },
+    ],
+    response_format: { type: "json_schema", json_schema: schema },
+    max_tokens: MAX_CHAT_TOKENS,
+    temperature: 0,
+    usage: { include: true },
+  }
+  const { raw, latencyMs } = await postJson(CHAT_URL, body, signal)
+  const { content, usage, model: served } = parseChat(raw, model)
+  return { content, usage, latencyMs, model: served, request: body, raw }
+}
+
+/**
+ * Pull the structured object and the real usage out of a completions reply.
+ *
+ * A 2xx that is missing its content or whose content is not JSON is a provider
+ * failure like any other, not a caller bug, so it surfaces as `ProviderError`
+ * rather than crashing a component several frames later.
+ */
+function parseChat(
+  raw: unknown,
+  requested: string,
+): { content: Record<string, unknown>; usage: JevUsage; model: string } {
+  if (typeof raw !== "object" || raw === null) {
+    throw new ProviderError("OpenRouter returned a non-object chat body")
+  }
+  const candidate = raw as {
+    choices?: Array<{ message?: { content?: unknown } }>
+    usage?: { prompt_tokens?: number; completion_tokens?: number; cost?: number }
+    model?: string
+  }
+
+  const message = candidate.choices?.[0]?.message?.content
+  if (typeof message !== "string") {
+    const preview = JSON.stringify(raw).slice(0, 300)
+    throw new ProviderError(`Chat reply carried no message content: ${preview}`)
+  }
+
+  let content: unknown
+  try {
+    content = JSON.parse(message)
+  } catch {
+    throw new ProviderError(`Chat content was not JSON: ${message.slice(0, 300)}`)
+  }
+  if (typeof content !== "object" || content === null) {
+    throw new ProviderError("Chat content was not a JSON object")
+  }
+
+  const u = candidate.usage ?? {}
+  return {
+    content: content as Record<string, unknown>,
+    usage: {
+      input_tokens: Number(u.prompt_tokens ?? 0),
+      output_tokens: Number(u.completion_tokens ?? 0),
+      cost: Number(u.cost ?? 0),
+    },
+    model: candidate.model ?? requested,
   }
 }

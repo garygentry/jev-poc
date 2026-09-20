@@ -1,6 +1,7 @@
 import { Hono } from "hono"
 
 import {
+  CHAT_MODELS,
   MAX_BATCH_ITEMS,
   MAX_CONCURRENCY,
   MODE,
@@ -9,8 +10,9 @@ import {
 import { mapWithConcurrency } from "./concurrency.ts"
 import { replay } from "./fixtures.ts"
 import { record, snapshot, sumUsage } from "./spend.ts"
-import { ProviderError, askJev } from "./transport.ts"
+import { ProviderError, askChat, askJev } from "./transport.ts"
 
+import type { ChatRequest, ChatResponse } from "@shared/baseline.ts"
 import type {
   BatchItemResult,
   BatchRequest,
@@ -154,6 +156,56 @@ api.post("/jev/batch", async (c) => {
     source: "live",
   }
   return c.json(batch)
+})
+
+/**
+ * One chat completion, for the measured baseline comparison.
+ *
+ * The client derives the request but does not get to name the model — an open
+ * proxy to any model on OpenRouter is how a demo becomes a surprise bill, so
+ * anything off the allowlist is refused before a call is made. There is no
+ * fixture path: a baseline is a *measured* second opinion, and a seeded one
+ * would be a contradiction, so without a key the route says so plainly rather
+ * than inventing an answer.
+ */
+api.post("/chat", async (c) => {
+  const body = await c.req.json<ChatRequest>()
+
+  if (!body?.model || !CHAT_MODELS.has(body.model)) {
+    return c.json(
+      { error: `Model ${JSON.stringify(body?.model)} is not on the baseline allowlist.` },
+      400,
+    )
+  }
+  if (!body.schema || !body.user) {
+    return c.json({ error: "A baseline request needs a prompt and a schema." }, 400)
+  }
+  if (MODE === "fixture") {
+    return c.json(
+      { error: "The measured baseline needs a live key — it is not seeded." },
+      503,
+    )
+  }
+
+  try {
+    const call = await askChat(
+      body.model,
+      body.system,
+      body.user,
+      body.schema,
+      c.req.raw.signal,
+    )
+    record(call.usage)
+    const result: ChatResponse = {
+      model: call.model,
+      content: call.content,
+      usage: call.usage,
+      latencyMs: call.latencyMs,
+    }
+    return c.json(result)
+  } catch (error) {
+    return c.json({ error: describe(error) }, statusFor(error))
+  }
 })
 
 /**

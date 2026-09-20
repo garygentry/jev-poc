@@ -1,4 +1,4 @@
-import type { SingleManifest } from "@/demos/_kit/types"
+import type { Displacement, SingleManifest } from "@/demos/_kit/types"
 
 export interface Ticket {
   subject: string
@@ -28,6 +28,20 @@ export const manifest: SingleManifest<Ticket> = {
   kind: "single",
   shape: { questions: "7", states: "1", requests: "1" },
   primitives: ["choice", "score", "noul"],
+
+  /**
+   * What triaging this ticket by chat model would cost instead — a stated
+   * assumption, not a benchmark. The number is the per-ticket Haiku 4.5 spend
+   * observed while planning this feature; it carries its source so a ratio can
+   * never be read without it, and it will go stale as prices move.
+   */
+  displaces: {
+    baseline: "one Haiku 4.5 call per ticket",
+    unit: "request",
+    baselineUsd: 0.000792,
+    source:
+      "Haiku 4.5 on OpenRouter ($1/$5 per M tokens); ~$0.000792/ticket observed 2026-09-19",
+  } satisfies Displacement,
 
   questions: {
     department: {
