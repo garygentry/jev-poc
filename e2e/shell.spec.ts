@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test"
 
-import { ROUTES, serverMode, watchConsole } from "./helpers"
+import { DEMOS, ROUTES, serverMode, watchConsole } from "./helpers"
 
 test.describe("app shell", () => {
-  test("the gallery lists all eight demos with their shapes", async ({ page }) => {
+  test("the gallery lists every demo with its shape", async ({ page }) => {
     const assertQuiet = watchConsole(page)
     await page.goto("/")
 
@@ -11,14 +11,17 @@ test.describe("app shell", () => {
       page.getByRole("heading", { name: "A model that decides instead of writing" }),
     ).toBeVisible()
 
-    // Scoped to the gallery grid: the sidebar links to the same eight hrefs.
+    // Derived from the roster rather than hardcoded, so a new demo does not
+    // need this number edited — the gallery cards and the sidebar link to the
+    // same set, so `main` alone counts each once.
+    const expected = DEMOS.length
     const gallery = page.locator("main")
     const cards = gallery.locator("a[href^='/demo/']")
-    await expect(cards).toHaveCount(8)
+    await expect(cards).toHaveCount(expected)
 
     // The shape strip is the through-line of the tour; every card carries one.
     for (const label of ["Questions", "States", "Requests"]) {
-      await expect(gallery.getByText(label, { exact: true })).toHaveCount(8)
+      await expect(gallery.getByText(label, { exact: true })).toHaveCount(expected)
     }
 
     assertQuiet()

@@ -1,0 +1,132 @@
+{
+  "balance": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "routine",
+        "probabilities": {
+          "involved": 0.08,
+          "routine": 0.92,
+          "expert": 0
+        },
+        "confidence": 0.88
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 505,
+      "output_tokens": 59,
+      "cost": 0.00002121
+    },
+    "id": "gen-dec-1789921637-7YnHrT6i2MmgTDwOkLL8",
+    "provider": "TypeSafe"
+  },
+  "reset": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "involved",
+        "probabilities": {
+          "expert": 0.03,
+          "routine": 0.44,
+          "involved": 0.53
+        },
+        "confidence": 0.3
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.51
+      }
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 61,
+      "cost": 0.00002163
+    },
+    "id": "gen-dec-1789921637-1b4kY0vlDp5RxucZHj0V",
+    "provider": "TypeSafe"
+  },
+  "double-charge": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "involved",
+        "probabilities": {
+          "routine": 0.35,
+          "involved": 0.65,
+          "expert": 0
+        },
+        "confidence": 0.46
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.88
+      }
+    },
+    "usage": {
+      "input_tokens": 532,
+      "output_tokens": 61,
+      "cost": 0.000022344
+    },
+    "id": "gen-dec-1789921637-LyQ0UJ2xyCsrxO2P9XZy",
+    "provider": "TypeSafe"
+  },
+  "data-export": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "expert",
+        "probabilities": {
+          "involved": 0.41,
+          "expert": 0.56,
+          "routine": 0.03
+        },
+        "confidence": 0.34
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 550,
+      "output_tokens": 59,
+      "cost": 0.0000231
+    },
+    "id": "gen-dec-1789921637-C37CXvUHZxfsudZN6IwK",
+    "provider": "TypeSafe"
+  },
+  "integration": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "involved",
+        "probabilities": {
+          "routine": 0.01,
+          "involved": 0.76,
+          "expert": 0.23
+        },
+        "confidence": 0.63
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "usage": {
+      "input_tokens": 542,
+      "output_tokens": 61,
+      "cost": 0.000022764
+    },
+    "id": "gen-dec-1789921637-edKopBqjpiSBhq6bZD0A",
+    "provider": "TypeSafe"
+  }
+}
