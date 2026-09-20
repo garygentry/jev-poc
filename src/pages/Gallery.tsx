@@ -34,7 +34,7 @@ export function Gallery() {
           <strong className="font-medium text-ink">in parallel</strong>, so
           asking seven costs about what asking one costs. Questions over{" "}
           <em>different</em> state cannot batch at all. Those two facts are what
-          the eight demos below are organised around.
+          the demos below are organised around.
         </p>
 
         <dl className="flex flex-wrap gap-x-8 gap-y-3 border-t border-[var(--hairline)] pt-4">
@@ -52,7 +52,7 @@ export function Gallery() {
 
       <section className="space-y-3">
         <h2 className="text-xs uppercase tracking-wide text-ink-muted">
-          Eight shapes
+          {demos.length} shapes
         </h2>
         <div className="grid gap-3 sm:grid-cols-2">
           {demos.map((demo, index) => (
