@@ -1,0 +1,164 @@
+{
+  "flaky-timeout": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "flaky",
+        "probabilities": {
+          "flaky": 1,
+          "infra": 0,
+          "unclear": 0,
+          "regression": 0
+        },
+        "confidence": 1
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.19
+      }
+    },
+    "usage": {
+      "input_tokens": 571,
+      "output_tokens": 70,
+      "cost": 0.000023982
+    },
+    "id": "gen-dec-1789936926-RPdDJvOo37IFq7b9AGia",
+    "provider": "TypeSafe"
+  },
+  "real-assertion": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "regression",
+        "probabilities": {
+          "unclear": 0,
+          "flaky": 0,
+          "infra": 0,
+          "regression": 1
+        },
+        "confidence": 1
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.94
+      }
+    },
+    "usage": {
+      "input_tokens": 577,
+      "output_tokens": 71,
+      "cost": 0.000024234
+    },
+    "id": "gen-dec-1789936926-7r0H04VaP1v15bxpqtgD",
+    "provider": "TypeSafe"
+  },
+  "infra-oom": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "infra",
+        "probabilities": {
+          "unclear": 0,
+          "regression": 0,
+          "flaky": 0,
+          "infra": 1
+        },
+        "confidence": 1
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.55
+      }
+    },
+    "usage": {
+      "input_tokens": 563,
+      "output_tokens": 69,
+      "cost": 0.000023646
+    },
+    "id": "gen-dec-1789936926-69mcwsBRu309WJV0swHT",
+    "provider": "TypeSafe"
+  },
+  "flaky-order": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "flaky",
+        "probabilities": {
+          "unclear": 0,
+          "flaky": 1,
+          "infra": 0,
+          "regression": 0
+        },
+        "confidence": 1
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.27
+      }
+    },
+    "usage": {
+      "input_tokens": 569,
+      "output_tokens": 70,
+      "cost": 0.000023898
+    },
+    "id": "gen-dec-1789936926-cNVWxJEEMvmB1zUf1hLS",
+    "provider": "TypeSafe"
+  },
+  "real-crash": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "regression",
+        "probabilities": {
+          "flaky": 0,
+          "infra": 0,
+          "unclear": 0,
+          "regression": 1
+        },
+        "confidence": 1
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 578,
+      "output_tokens": 71,
+      "cost": 0.000024276
+    },
+    "id": "gen-dec-1789936926-RTLuSU4sqXoFDropNvSG",
+    "provider": "TypeSafe"
+  },
+  "unclear": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "unclear",
+        "probabilities": {
+          "infra": 0.03,
+          "unclear": 0.97,
+          "regression": 0,
+          "flaky": 0
+        },
+        "confidence": 0.97
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.37
+      }
+    },
+    "usage": {
+      "input_tokens": 577,
+      "output_tokens": 70,
+      "cost": 0.000024234
+    },
+    "id": "gen-dec-1789936926-F9HI3o7rEJb7TJbSqxVh",
+    "provider": "TypeSafe"
+  }
+}
