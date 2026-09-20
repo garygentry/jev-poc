@@ -1,0 +1,338 @@
+{
+  "checkout-timeout/eu-latency-log": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 472,
+      "output_tokens": 22,
+      "cost": 0.000019824
+    },
+    "id": "gen-dec-1789922266-C3sSEhXTboEikEWppui4",
+    "provider": "TypeSafe"
+  },
+  "checkout-timeout/timeout-config": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "usage": {
+      "input_tokens": 453,
+      "output_tokens": 22,
+      "cost": 0.000019026
+    },
+    "id": "gen-dec-1789922266-dXs0cvTFzmTN8LPnIPvk",
+    "provider": "TypeSafe"
+  },
+  "checkout-timeout/tax-service-region": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.96
+      }
+    },
+    "usage": {
+      "input_tokens": 451,
+      "output_tokens": 22,
+      "cost": 0.000018942
+    },
+    "id": "gen-dec-1789922266-shOJ3fRdaUR4MasZc3No",
+    "provider": "TypeSafe"
+  },
+  "checkout-timeout/marketing-copy": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 438,
+      "output_tokens": 22,
+      "cost": 0.000018396
+    },
+    "id": "gen-dec-1789922266-11EttvW8BGVPVNEBHjqs",
+    "provider": "TypeSafe"
+  },
+  "checkout-timeout/old-changelog": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.47
+      }
+    },
+    "usage": {
+      "input_tokens": 454,
+      "output_tokens": 22,
+      "cost": 0.000019068
+    },
+    "id": "gen-dec-1789922266-aqIpK9xmsTFCQxXqqeRD",
+    "provider": "TypeSafe"
+  },
+  "checkout-timeout/unrelated-readme": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.61
+      }
+    },
+    "usage": {
+      "input_tokens": 444,
+      "output_tokens": 22,
+      "cost": 0.000018648
+    },
+    "id": "gen-dec-1789922266-Nf43bQQnDbVyeIvlpVCY",
+    "provider": "TypeSafe"
+  },
+  "checkout-timeout/inventory-note": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 448,
+      "output_tokens": 22,
+      "cost": 0.000018816
+    },
+    "id": "gen-dec-1789922266-jpQInpgl3xtZGG6I3ARp",
+    "provider": "TypeSafe"
+  },
+  "checkout-timeout/support-macro": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.18
+      }
+    },
+    "usage": {
+      "input_tokens": 442,
+      "output_tokens": 22,
+      "cost": 0.000018564
+    },
+    "id": "gen-dec-1789922266-QKdILM12Q5CilCPrlrw5",
+    "provider": "TypeSafe"
+  },
+  "enterprise-onboarding/enterprise-checklist": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 452,
+      "output_tokens": 22,
+      "cost": 0.000018984
+    },
+    "id": "gen-dec-1789922266-Z5L66tpmSavGWDcb9lLO",
+    "provider": "TypeSafe"
+  },
+  "enterprise-onboarding/sso-setup": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 443,
+      "output_tokens": 22,
+      "cost": 0.000018606
+    },
+    "id": "gen-dec-1789922266-06L2gICA68WW0TNROU4i",
+    "provider": "TypeSafe"
+  },
+  "enterprise-onboarding/role-mapping": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.94
+      }
+    },
+    "usage": {
+      "input_tokens": 450,
+      "output_tokens": 22,
+      "cost": 0.0000189
+    },
+    "id": "gen-dec-1789922266-eYBtrT6yc6eEXDTm55cv",
+    "provider": "TypeSafe"
+  },
+  "enterprise-onboarding/smb-selfserve": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.35
+      }
+    },
+    "usage": {
+      "input_tokens": 445,
+      "output_tokens": 22,
+      "cost": 0.00001869
+    },
+    "id": "gen-dec-1789922266-lYOtubGE6gFKWm4nUuAJ",
+    "provider": "TypeSafe"
+  },
+  "enterprise-onboarding/billing-faq": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 441,
+      "output_tokens": 22,
+      "cost": 0.000018522
+    },
+    "id": "gen-dec-1789922267-yOMQ7Q4Rml5gKQcsCY27",
+    "provider": "TypeSafe"
+  },
+  "enterprise-onboarding/blog-post": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 442,
+      "output_tokens": 22,
+      "cost": 0.000018564
+    },
+    "id": "gen-dec-1789922266-pX4i9RUz3ZOyzL6BGh1c",
+    "provider": "TypeSafe"
+  },
+  "enterprise-onboarding/security-whitepaper": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 446,
+      "output_tokens": 22,
+      "cost": 0.000018732
+    },
+    "id": "gen-dec-1789922266-ploPiqXnOy7JRcrkctLS",
+    "provider": "TypeSafe"
+  },
+  "payment-incident/postmortem-draft": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.98
+      }
+    },
+    "usage": {
+      "input_tokens": 465,
+      "output_tokens": 22,
+      "cost": 0.00001953
+    },
+    "id": "gen-dec-1789922267-6NNI6fnCF3QWeckPno50",
+    "provider": "TypeSafe"
+  },
+  "payment-incident/alert-timeline": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.98
+      }
+    },
+    "usage": {
+      "input_tokens": 464,
+      "output_tokens": 22,
+      "cost": 0.000019488
+    },
+    "id": "gen-dec-1789922267-yP2TYOqK13TZzvGdSa48",
+    "provider": "TypeSafe"
+  },
+  "payment-incident/customer-impact": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.96
+      }
+    },
+    "usage": {
+      "input_tokens": 453,
+      "output_tokens": 22,
+      "cost": 0.000019026
+    },
+    "id": "gen-dec-1789922267-PRVtW5Q1RKDEgltlu8vC",
+    "provider": "TypeSafe"
+  },
+  "payment-incident/other-outage": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 448,
+      "output_tokens": 22,
+      "cost": 0.000018816
+    },
+    "id": "gen-dec-1789922267-R4OGf6v4tjGNAeIY5ibn",
+    "provider": "TypeSafe"
+  },
+  "payment-incident/deploy-notes": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 436,
+      "output_tokens": 22,
+      "cost": 0.000018312
+    },
+    "id": "gen-dec-1789922267-ojhNIexZnVUAZTW7oDaC",
+    "provider": "TypeSafe"
+  },
+  "payment-incident/offsite-email": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "usage": {
+      "input_tokens": 441,
+      "output_tokens": 22,
+      "cost": 0.000018522
+    },
+    "id": "gen-dec-1789922267-jZyiS9hE2pOVcSW1gkdf",
+    "provider": "TypeSafe"
+  }
+}
