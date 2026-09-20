@@ -79,6 +79,7 @@ export const ROUTES = [
   "/demo/done-check",
   "/demo/loop-detector",
   "/demo/pr-triage",
+  "/demo/flaky-triage",
 ] as const
 
 /** How a demo is driven to ask: on mount, or behind a named run button. */
@@ -115,6 +116,7 @@ export const DEMOS: DemoCase[] = [
   { slug: "done-check", title: "done-check", ask: { on: "mount" }, fansOut: false },
   { slug: "loop-detector", title: "loop detector", ask: { on: "click", button: /Read \d+ windows/ }, fansOut: true },
   { slug: "pr-triage", title: "PR risk triage", ask: { on: "mount" }, fansOut: false },
+  { slug: "flaky-triage", title: "flaky vs regression", ask: { on: "mount" }, fansOut: false },
 ]
 
 /**
