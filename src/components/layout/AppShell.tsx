@@ -34,6 +34,20 @@ function Header() {
           <span className="text-sm font-semibold tracking-tight">Jev POC</span>
         </Link>
 
+        <NavLink
+          to="/method"
+          className={({ isActive }) =>
+            cn(
+              "text-sm transition-colors",
+              isActive
+                ? "font-medium text-ink"
+                : "text-ink-secondary hover:text-ink",
+            )
+          }
+        >
+          Method
+        </NavLink>
+
         <Badge variant={mode === "live" ? "good" : "default"} className="font-mono">
           {mode === "live" ? "live" : mode === "fixture" ? "fixture mode" : "…"}
         </Badge>
