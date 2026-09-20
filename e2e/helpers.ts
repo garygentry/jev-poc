@@ -84,6 +84,7 @@ export const ROUTES = [
   "/demo/semantic-grep",
   "/demo/moderation",
   "/demo/clause-risk",
+  "/demo/doc-sweep",
 ] as const
 
 /** How a demo is driven to ask: on mount, or behind a named run button. */
@@ -125,6 +126,7 @@ export const DEMOS: DemoCase[] = [
   { slug: "semantic-grep", title: "semantic grep", ask: { on: "click", button: /Search \d+ functions/ }, fansOut: true },
   { slug: "moderation", title: "multi-policy moderation", ask: { on: "mount" }, fansOut: false },
   { slug: "clause-risk", title: "clause risk", ask: { on: "click", button: /Read \d+ clauses/ }, fansOut: true },
+  { slug: "doc-sweep", title: "long-document sweep", ask: { on: "click", button: /Sweep \d+ chunks/ }, fansOut: true },
 ]
 
 /**

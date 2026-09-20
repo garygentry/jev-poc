@@ -1,0 +1,82 @@
+{
+  "privacy-policy/c0": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 456,
+      "output_tokens": 22,
+      "cost": 0.000019152
+    },
+    "id": "gen-dec-1789940078-5vHguRf1rQoLXqPRwqs9",
+    "provider": "TypeSafe"
+  },
+  "privacy-policy/c2": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 448,
+      "output_tokens": 22,
+      "cost": 0.000018816
+    },
+    "id": "gen-dec-1789940078-WQgaGS1byxB1CAKTOqO4",
+    "provider": "TypeSafe"
+  },
+  "privacy-policy/c4": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 463,
+      "output_tokens": 22,
+      "cost": 0.000019446
+    },
+    "id": "gen-dec-1789940078-1pVzdPHYms0RrQDdKHQi",
+    "provider": "TypeSafe"
+  },
+  "privacy-policy/c6": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0.75
+      }
+    },
+    "usage": {
+      "input_tokens": 458,
+      "output_tokens": 22,
+      "cost": 0.000019236
+    },
+    "id": "gen-dec-1789940078-azlLC57Ug0Ydpe357xIp",
+    "provider": "TypeSafe"
+  },
+  "privacy-policy/c8": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 452,
+      "output_tokens": 22,
+      "cost": 0.000018984
+    },
+    "id": "gen-dec-1789940078-rehfQfelCWDAveQiEY64",
+    "provider": "TypeSafe"
+  }
+}
