@@ -85,6 +85,7 @@ export const ROUTES = [
   "/demo/moderation",
   "/demo/clause-risk",
   "/demo/doc-sweep",
+  "/demo/threshold-fitter",
 ] as const
 
 /** How a demo is driven to ask: on mount, or behind a named run button. */
@@ -105,6 +106,8 @@ export interface DemoCase {
   title: string
   ask: AskTrigger
   fansOut: boolean
+  /** The one shape that calls nothing: it reads recorded answers and shows no wire. */
+  offline?: boolean
 }
 
 export const DEMOS: DemoCase[] = [
@@ -127,6 +130,7 @@ export const DEMOS: DemoCase[] = [
   { slug: "moderation", title: "multi-policy moderation", ask: { on: "mount" }, fansOut: false },
   { slug: "clause-risk", title: "clause risk", ask: { on: "click", button: /Read \d+ clauses/ }, fansOut: true },
   { slug: "doc-sweep", title: "long-document sweep", ask: { on: "click", button: /Sweep \d+ chunks/ }, fansOut: true },
+  { slug: "threshold-fitter", title: "threshold fitter", ask: { on: "mount" }, fansOut: false, offline: true },
 ]
 
 /**
@@ -137,6 +141,8 @@ export const DEMOS: DemoCase[] = [
  */
 export async function askDemo(page: Page, demo: DemoCase) {
   await page.goto(`/demo/${demo.slug}`)
+  // The offline shape calls nothing and shows no wire — there is nothing to ask.
+  if (demo.offline) return
   if (demo.ask.on === "click") {
     await page.getByRole("button", { name: demo.ask.button }).click()
   }

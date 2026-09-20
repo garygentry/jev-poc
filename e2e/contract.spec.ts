@@ -21,14 +21,19 @@ for (const demo of DEMOS) {
       await askDemo(page, demo)
 
       await expect(page.locator("main")).toBeVisible()
-      await expect(page.getByText("On the wire")).toBeVisible()
 
-      // Replayed answers are always badged; a live answer needs none, so the
-      // assertion is gated on the mode the suite pins itself to.
-      if ((await serverMode(page)) === "fixture") {
-        await expect(
-          page.getByText(/Seeded fixture|Synthetic/).first(),
-        ).toBeVisible()
+      // The offline shape calls nothing, so it has no wire and no source badge —
+      // its contract is only that it renders. Everything else asks and shows one.
+      if (!demo.offline) {
+        await expect(page.getByText("On the wire")).toBeVisible()
+
+        // Replayed answers are always badged; a live answer needs none, so the
+        // assertion is gated on the mode the suite pins itself to.
+        if ((await serverMode(page)) === "fixture") {
+          await expect(
+            page.getByText(/Seeded fixture|Synthetic/).first(),
+          ).toBeVisible()
+        }
       }
 
       assertQuiet()
