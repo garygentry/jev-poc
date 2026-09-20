@@ -9,8 +9,9 @@ import { projectJevSpend, UNDECIDED_FLOOR } from "@shared/jev.ts"
 /**
  * The spine of the tour.
  *
- * The gallery shows twenty shapes; this page is the one place that explains what
- * they have in common — the three primitives and how to pick one, why a request
+ * The gallery shows twenty demos, built from seven shapes; this page is the one
+ * place that explains what they have in common — the three primitives and how to
+ * pick one, why a request
  * carries a single state, how a threshold turns a probability into a decision,
  * and the honesty rules the whole repo holds itself to. Everything here is
  * stated once so a demo never has to re-teach it.
@@ -188,6 +189,53 @@ function Shapes() {
         </dl>
 
         <p className="max-w-3xl text-sm leading-relaxed text-ink-secondary">
+          From that one rule the tour builds{" "}
+          <strong className="font-medium text-ink">seven shapes</strong>. Every
+          demo is exactly one of them, and its card names which:
+        </p>
+
+        <dl className="space-y-2.5">
+          <ShapeKind
+            name="single"
+            def="One state, N questions, one request — the base case, and the
+              cheapest."
+          />
+          <ShapeKind
+            name="fanout"
+            grows
+            def="N states judged against one shared question set, fanned out under
+              the server's cap."
+          />
+          <ShapeKind
+            name="pairwise"
+            grows
+            def="Blocked N×N comparisons, then fanned out — for grouping items by
+              “same or not”."
+          />
+          <ShapeKind
+            name="rounds"
+            def="Sequential: each round's questions are built from the answers the
+              last round returned."
+          />
+          <ShapeKind
+            name="windowed"
+            grows
+            def="A sliding window over one input too long for the context, then the
+              per-window answers aggregated."
+          />
+          <ShapeKind
+            name="cascade"
+            def="A cheap Jev gate first, then an expensive model only for the cases
+              the gate lets through."
+          />
+          <ShapeKind
+            name="offline"
+            def="No calls at all — it works on answers that were already recorded,
+              so it spends nothing."
+          />
+        </dl>
+
+        <p className="max-w-3xl text-sm leading-relaxed text-ink-secondary">
           Fan-outs are capped server-side and never fire on render, and any demo
           whose cost grows with its input is badged for it. A single decision
           call is projected at roughly{" "}
@@ -210,6 +258,33 @@ function ShapeCell({ term, def }: { term: string; def: string }) {
       </dt>
       <dd className="mt-1 text-sm leading-relaxed text-ink-secondary">{def}</dd>
     </Card>
+  )
+}
+
+/** One of the seven shapes, named as its wire kind, with what it does. */
+function ShapeKind({
+  name,
+  def,
+  grows = false,
+}: {
+  name: string
+  def: string
+  grows?: boolean
+}) {
+  return (
+    <div className="flex flex-col gap-1.5 border-l-2 border-[var(--hairline)] pl-3 sm:flex-row sm:items-baseline sm:gap-3">
+      <dt className="flex shrink-0 items-center gap-2 sm:w-32">
+        <Badge variant="mark" className="font-mono">
+          {name}
+        </Badge>
+        {grows ? (
+          <span className="text-[10px] uppercase tracking-wide text-ink-muted">
+            grows with input
+          </span>
+        ) : null}
+      </dt>
+      <dd className="text-sm leading-relaxed text-ink-secondary">{def}</dd>
+    </div>
   )
 }
 
@@ -260,16 +335,24 @@ function Thresholds() {
           </p>
         </Card>
 
-        <Card className="border-dashed p-4 sm:p-5">
-          <Badge variant="outline" className="font-mono">
-            planned demo
+        <Card className="p-4 sm:p-5">
+          <Badge variant="mark" className="font-mono">
+            live demo
           </Badge>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-secondary">
-            A <span className="font-mono text-ink">threshold-fitter</span> demo —
-            fitting a floor against a corpus of real answers rather than picking
-            one by hand — is planned for a later tranche and is not built yet.
-            Until it lands, the fitting story lives here and in the calibration
-            note on <span className="font-mono text-ink">UNDECIDED_FLOOR</span>.
+            The{" "}
+            <Link
+              to="/demo/threshold-fitter"
+              className="font-mono text-[var(--mark)] underline underline-offset-2"
+            >
+              threshold-fitter
+            </Link>{" "}
+            demo turns this by-hand story into a knob: it fits a floor against a
+            corpus of recorded answers rather than picking one by eye, and does it{" "}
+            <em>offline</em> — no calls, so it costs nothing to explore. It is the
+            general form of what the calibration note on{" "}
+            <span className="font-mono text-ink">UNDECIDED_FLOOR</span> did once,
+            by hand.
           </p>
         </Card>
       </div>
