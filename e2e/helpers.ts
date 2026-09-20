@@ -74,3 +74,50 @@ export const ROUTES = [
   "/demo/bulk",
   "/demo/personas",
 ] as const
+
+/** How a demo is driven to ask: on mount, or behind a named run button. */
+export type AskTrigger = { on: "mount" } | { on: "click"; button: RegExp }
+
+/**
+ * The demo roster the contract sweep loops over.
+ *
+ * This is the one list that grows by a line when a demo is added — the price of
+ * a Node test runner that cannot import the Vite-resolved registry. It carries
+ * only what the contract needs: how to make the demo ask, and whether it fans
+ * out (and so must never fire on render). Everything a demo claims for *itself*
+ * lives in `e2e/demos/<slug>.spec.ts`.
+ */
+export interface DemoCase {
+  slug: string
+  /** A short name for the test titles. */
+  title: string
+  ask: AskTrigger
+  fansOut: boolean
+}
+
+export const DEMOS: DemoCase[] = [
+  { slug: "triage", title: "ticket triage", ask: { on: "mount" }, fansOut: false },
+  { slug: "guardrail", title: "command guardrail", ask: { on: "mount" }, fansOut: false },
+  { slug: "rerank", title: "semantic re-rank", ask: { on: "click", button: /Re-rank \d+ passages/ }, fansOut: true },
+  { slug: "typewriter", title: "live typewriter", ask: { on: "mount" }, fansOut: false },
+  { slug: "taxonomy", title: "taxonomy beam search", ask: { on: "click", button: /Descend the tree/ }, fansOut: false },
+  { slug: "router", title: "model router", ask: { on: "mount" }, fansOut: false },
+  { slug: "bulk", title: "bulk labelling", ask: { on: "click", button: /Label \d+ rows/ }, fansOut: true },
+  { slug: "personas", title: "persona panel", ask: { on: "click", button: /Poll \d+ readers/ }, fansOut: true },
+]
+
+/**
+ * Navigate to a demo and make it ask once, however it asks.
+ *
+ * Waits for the wire panel, which every demo shows once it has answered — a
+ * fan-out is given longer because it is N round trips, not one.
+ */
+export async function askDemo(page: Page, demo: DemoCase) {
+  await page.goto(`/demo/${demo.slug}`)
+  if (demo.ask.on === "click") {
+    await page.getByRole("button", { name: demo.ask.button }).click()
+  }
+  await expect(page.getByText("On the wire")).toBeVisible({
+    timeout: demo.fansOut ? 60_000 : 20_000,
+  })
+}
