@@ -1,0 +1,610 @@
+{
+  "debug-loop/w1": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 460,
+      "output_tokens": 21,
+      "cost": 0.00001932
+    },
+    "id": "gen-dec-1789931375-JlICb0CuyKlmacc5qy8Q",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w2": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.29
+      }
+    },
+    "usage": {
+      "input_tokens": 480,
+      "output_tokens": 21,
+      "cost": 0.00002016
+    },
+    "id": "gen-dec-1789931375-8XwcFIvjc6ISYJlyZL0I",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w3": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 487,
+      "output_tokens": 21,
+      "cost": 0.000020454
+    },
+    "id": "gen-dec-1789931375-SkYRClfn1ibP2RurnRIf",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w4": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.67
+      }
+    },
+    "usage": {
+      "input_tokens": 498,
+      "output_tokens": 21,
+      "cost": 0.000020916
+    },
+    "id": "gen-dec-1789931375-QpVNoVyjQYY4ococcenq",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w5": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 496,
+      "output_tokens": 21,
+      "cost": 0.000020832
+    },
+    "id": "gen-dec-1789931375-0tNQPopTg5x4z9XEFDjR",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w6": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.78
+      }
+    },
+    "usage": {
+      "input_tokens": 487,
+      "output_tokens": 21,
+      "cost": 0.000020454
+    },
+    "id": "gen-dec-1789931375-Czjk005WuhM9R9ayVflj",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w7": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.93
+      }
+    },
+    "usage": {
+      "input_tokens": 483,
+      "output_tokens": 21,
+      "cost": 0.000020286
+    },
+    "id": "gen-dec-1789931375-h5RluLfGB4EXfJirMu7Z",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w8": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.91
+      }
+    },
+    "usage": {
+      "input_tokens": 478,
+      "output_tokens": 21,
+      "cost": 0.000020076
+    },
+    "id": "gen-dec-1789931375-Zy4UBdowa2o7gj0QsRoJ",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w9": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "usage": {
+      "input_tokens": 479,
+      "output_tokens": 21,
+      "cost": 0.000020118
+    },
+    "id": "gen-dec-1789931375-f3INOAEDLigN0KWbKTUw",
+    "provider": "TypeSafe"
+  },
+  "debug-loop/w10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.93
+      }
+    },
+    "usage": {
+      "input_tokens": 479,
+      "output_tokens": 21,
+      "cost": 0.000020118
+    },
+    "id": "gen-dec-1789931375-vofN6BIagysJHDUJbUVi",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w1": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 455,
+      "output_tokens": 21,
+      "cost": 0.00001911
+    },
+    "id": "gen-dec-1789931375-i6X1z4h0b8HcYsuP4sKs",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w2": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 455,
+      "output_tokens": 21,
+      "cost": 0.00001911
+    },
+    "id": "gen-dec-1789931375-czb5QBfana04Qamspv1g",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w3": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 457,
+      "output_tokens": 21,
+      "cost": 0.000019194
+    },
+    "id": "gen-dec-1789931375-YaAvTMW3Zugm0TJOWoRl",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w4": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.09
+      }
+    },
+    "usage": {
+      "input_tokens": 457,
+      "output_tokens": 21,
+      "cost": 0.000019194
+    },
+    "id": "gen-dec-1789931375-BcmAD5XelDpiC1M5WmTT",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w5": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 460,
+      "output_tokens": 21,
+      "cost": 0.00001932
+    },
+    "id": "gen-dec-1789931375-7rrTNeS1WtQ8il1N2ASY",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w6": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.09
+      }
+    },
+    "usage": {
+      "input_tokens": 455,
+      "output_tokens": 21,
+      "cost": 0.00001911
+    },
+    "id": "gen-dec-1789931375-eayC1xRqBGJSrKKzJABx",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w7": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.08
+      }
+    },
+    "usage": {
+      "input_tokens": 456,
+      "output_tokens": 21,
+      "cost": 0.000019152
+    },
+    "id": "gen-dec-1789931375-8tcgthqCaQgBRDurpKOB",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w8": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.07
+      }
+    },
+    "usage": {
+      "input_tokens": 450,
+      "output_tokens": 21,
+      "cost": 0.0000189
+    },
+    "id": "gen-dec-1789931375-cyyrGyyfSZ1Mt8pm3TtP",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w9": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 450,
+      "output_tokens": 21,
+      "cost": 0.0000189
+    },
+    "id": "gen-dec-1789931375-XH3Q5a3smPBE9FAeGaTC",
+    "provider": "TypeSafe"
+  },
+  "steady-progress/w10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 441,
+      "output_tokens": 21,
+      "cost": 0.000018522
+    },
+    "id": "gen-dec-1789931376-TNeicEmrtkdqeUjmwHc0",
+    "provider": "TypeSafe"
+  },
+  "recovers/w1": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "usage": {
+      "input_tokens": 461,
+      "output_tokens": 21,
+      "cost": 0.000019362
+    },
+    "id": "gen-dec-1789931375-H6JoVl51kKzCKTAbzYvw",
+    "provider": "TypeSafe"
+  },
+  "recovers/w2": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 464,
+      "output_tokens": 21,
+      "cost": 0.000019488
+    },
+    "id": "gen-dec-1789931376-s4TzOD0Y3VBF6BETPyfO",
+    "provider": "TypeSafe"
+  },
+  "recovers/w3": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.4
+      }
+    },
+    "usage": {
+      "input_tokens": 465,
+      "output_tokens": 21,
+      "cost": 0.00001953
+    },
+    "id": "gen-dec-1789931376-R0kGVULw4xogIeOUiAVn",
+    "provider": "TypeSafe"
+  },
+  "recovers/w4": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.11
+      }
+    },
+    "usage": {
+      "input_tokens": 456,
+      "output_tokens": 21,
+      "cost": 0.000019152
+    },
+    "id": "gen-dec-1789931376-2Yakb5i2xiLSJhSDeD0Y",
+    "provider": "TypeSafe"
+  },
+  "recovers/w5": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.08
+      }
+    },
+    "usage": {
+      "input_tokens": 449,
+      "output_tokens": 21,
+      "cost": 0.000018858
+    },
+    "id": "gen-dec-1789931376-uvIxqnLp8EoKl66dFtC9",
+    "provider": "TypeSafe"
+  },
+  "recovers/w6": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.07
+      }
+    },
+    "usage": {
+      "input_tokens": 447,
+      "output_tokens": 21,
+      "cost": 0.000018774
+    },
+    "id": "gen-dec-1789931376-g1adEt7B8dYXMEfITAVx",
+    "provider": "TypeSafe"
+  },
+  "recovers/w7": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 451,
+      "output_tokens": 21,
+      "cost": 0.000018942
+    },
+    "id": "gen-dec-1789931376-YyLMErQDp6yQRJi6kdDU",
+    "provider": "TypeSafe"
+  },
+  "recovers/w8": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 445,
+      "output_tokens": 21,
+      "cost": 0.00001869
+    },
+    "id": "gen-dec-1789931376-Sh8bNA8jUEMUkQxojDUq",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w1": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.9
+      }
+    },
+    "usage": {
+      "input_tokens": 456,
+      "output_tokens": 21,
+      "cost": 0.000019152
+    },
+    "id": "gen-dec-1789931376-agta65y1qkv8Q29heCJe",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w2": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.91
+      }
+    },
+    "usage": {
+      "input_tokens": 467,
+      "output_tokens": 21,
+      "cost": 0.000019614
+    },
+    "id": "gen-dec-1789931376-FnpUDX4C9FGWkswyQrO1",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w3": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "usage": {
+      "input_tokens": 469,
+      "output_tokens": 21,
+      "cost": 0.000019698
+    },
+    "id": "gen-dec-1789931376-sLz02Zk060FersyZq8zg",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w4": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.93
+      }
+    },
+    "usage": {
+      "input_tokens": 469,
+      "output_tokens": 21,
+      "cost": 0.000019698
+    },
+    "id": "gen-dec-1789931376-z9TfzZIeK1p4vJEbam3i",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w5": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "usage": {
+      "input_tokens": 471,
+      "output_tokens": 21,
+      "cost": 0.000019782
+    },
+    "id": "gen-dec-1789931376-du3nSflt47Vq1STTpCQb",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w6": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "usage": {
+      "input_tokens": 473,
+      "output_tokens": 21,
+      "cost": 0.000019866
+    },
+    "id": "gen-dec-1789931376-eWju9VSEUMxFp1AFm74B",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w7": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.93
+      }
+    },
+    "usage": {
+      "input_tokens": 475,
+      "output_tokens": 21,
+      "cost": 0.00001995
+    },
+    "id": "gen-dec-1789931376-HJJXg5AT6tOa9FKAp9xC",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w8": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.93
+      }
+    },
+    "usage": {
+      "input_tokens": 475,
+      "output_tokens": 21,
+      "cost": 0.00001995
+    },
+    "id": "gen-dec-1789931376-c1uxFpHaeN2p69udqETc",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w9": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "usage": {
+      "input_tokens": 462,
+      "output_tokens": 21,
+      "cost": 0.000019404
+    },
+    "id": "gen-dec-1789931376-uZgfSQOCmRxINxKB2iSV",
+    "provider": "TypeSafe"
+  },
+  "tight-loop/w10": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.96
+      }
+    },
+    "usage": {
+      "input_tokens": 450,
+      "output_tokens": 21,
+      "cost": 0.0000189
+    },
+    "id": "gen-dec-1789931376-Brs8D7hYxPBzKF6cjJJ6",
+    "provider": "TypeSafe"
+  }
+}
