@@ -1,0 +1,194 @@
+{
+  "sound": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.93
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.97
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.97
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "usage": {
+      "input_tokens": 888,
+      "output_tokens": 95,
+      "cost": 0.000037296
+    },
+    "id": "gen-dec-1789927952-CQJxviFcDQrV64Zm5osI",
+    "provider": "TypeSafe"
+  },
+  "stub": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.93
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "usage": {
+      "input_tokens": 866,
+      "output_tokens": 95,
+      "cost": 0.000036372
+    },
+    "id": "gen-dec-1789927952-3NB1vDIidh3U1f779I9w",
+    "provider": "TypeSafe"
+  },
+  "red-suite": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 861,
+      "output_tokens": 95,
+      "cost": 0.000036162
+    },
+    "id": "gen-dec-1789927952-dhKNwu0lNeL7FwVmyR2k",
+    "provider": "TypeSafe"
+  },
+  "untested": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.93
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.88
+      }
+    },
+    "usage": {
+      "input_tokens": 828,
+      "output_tokens": 95,
+      "cost": 0.000034776
+    },
+    "id": "gen-dec-1789927952-sjYd4pp4CeEYqkm9A0b8",
+    "provider": "TypeSafe"
+  },
+  "half-done": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.78
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 866,
+      "output_tokens": 95,
+      "cost": 0.000036372
+    },
+    "id": "gen-dec-1789927952-xRO6jz7OW2Qxm8Lz5Oh1",
+    "provider": "TypeSafe"
+  },
+  "collateral": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.83
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.85
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.16
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.21
+      }
+    },
+    "usage": {
+      "input_tokens": 846,
+      "output_tokens": 95,
+      "cost": 0.000035532
+    },
+    "id": "gen-dec-1789927952-kDeI94sWk8oG9Y3eg3cS",
+    "provider": "TypeSafe"
+  }
+}
