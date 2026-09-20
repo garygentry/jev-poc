@@ -80,6 +80,7 @@ export const ROUTES = [
   "/demo/loop-detector",
   "/demo/pr-triage",
   "/demo/flaky-triage",
+  "/demo/alert-dedup",
 ] as const
 
 /** How a demo is driven to ask: on mount, or behind a named run button. */
@@ -117,6 +118,7 @@ export const DEMOS: DemoCase[] = [
   { slug: "loop-detector", title: "loop detector", ask: { on: "click", button: /Read \d+ windows/ }, fansOut: true },
   { slug: "pr-triage", title: "PR risk triage", ask: { on: "mount" }, fansOut: false },
   { slug: "flaky-triage", title: "flaky vs regression", ask: { on: "mount" }, fansOut: false },
+  { slug: "alert-dedup", title: "alert dedup", ask: { on: "click", button: /Compare \d+ pairs/ }, fansOut: true },
 ]
 
 /**

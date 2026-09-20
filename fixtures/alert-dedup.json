@@ -1,0 +1,402 @@
+{
+  "db-pool/checkout-latency--db-pool": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "usage": {
+      "input_tokens": 424,
+      "output_tokens": 22,
+      "cost": 0.000017808
+    },
+    "id": "gen-dec-1789937695-e44ce90WH8uMFXbxOa4A",
+    "provider": "TypeSafe"
+  },
+  "db-pool/checkout-latency--orders-503": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.83
+      }
+    },
+    "usage": {
+      "input_tokens": 415,
+      "output_tokens": 22,
+      "cost": 0.00001743
+    },
+    "id": "gen-dec-1789937695-zDyPoFn4q1nzw5Spafn7",
+    "provider": "TypeSafe"
+  },
+  "db-pool/checkout-latency--search-latency": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 424,
+      "output_tokens": 22,
+      "cost": 0.000017808
+    },
+    "id": "gen-dec-1789937695-e2vKtG5mHxpwIC0IWOdw",
+    "provider": "TypeSafe"
+  },
+  "db-pool/checkout-latency--disk": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 417,
+      "output_tokens": 22,
+      "cost": 0.000017514
+    },
+    "id": "gen-dec-1789937695-HnQdr1R28QUmFX0j1bOU",
+    "provider": "TypeSafe"
+  },
+  "db-pool/checkout-latency--cert": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 412,
+      "output_tokens": 22,
+      "cost": 0.000017304
+    },
+    "id": "gen-dec-1789937695-lzY8XncKQXa0TN50XpUm",
+    "provider": "TypeSafe"
+  },
+  "db-pool/db-pool--orders-503": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.94
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 22,
+      "cost": 0.000017682
+    },
+    "id": "gen-dec-1789937695-QfGWRyFe9pI7m3anIQGn",
+    "provider": "TypeSafe"
+  },
+  "db-pool/db-pool--search-latency": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 22,
+      "cost": 0.00001806
+    },
+    "id": "gen-dec-1789937695-RpafWsdG1fIuVJzdTxV4",
+    "provider": "TypeSafe"
+  },
+  "db-pool/db-pool--disk": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.17
+      }
+    },
+    "usage": {
+      "input_tokens": 423,
+      "output_tokens": 22,
+      "cost": 0.000017766
+    },
+    "id": "gen-dec-1789937695-VRNZDQxY8TkxuGlOEJiT",
+    "provider": "TypeSafe"
+  },
+  "db-pool/db-pool--cert": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 418,
+      "output_tokens": 22,
+      "cost": 0.000017556
+    },
+    "id": "gen-dec-1789937695-zDHy52ufH8ApxuBJ78mp",
+    "provider": "TypeSafe"
+  },
+  "db-pool/orders-503--search-latency": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 22,
+      "cost": 0.000017682
+    },
+    "id": "gen-dec-1789937695-jlichI7khwbcEx0jVcjM",
+    "provider": "TypeSafe"
+  },
+  "db-pool/orders-503--disk": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 414,
+      "output_tokens": 22,
+      "cost": 0.000017388
+    },
+    "id": "gen-dec-1789937695-eqJtYoE3EP1iG9SCyQil",
+    "provider": "TypeSafe"
+  },
+  "db-pool/orders-503--cert": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 409,
+      "output_tokens": 22,
+      "cost": 0.000017178
+    },
+    "id": "gen-dec-1789937695-kEb3UbMxo4vwiqSyBJWb",
+    "provider": "TypeSafe"
+  },
+  "db-pool/search-latency--disk": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 423,
+      "output_tokens": 22,
+      "cost": 0.000017766
+    },
+    "id": "gen-dec-1789937695-yhWNQXADtpWmsQe5mrBO",
+    "provider": "TypeSafe"
+  },
+  "db-pool/search-latency--cert": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "usage": {
+      "input_tokens": 418,
+      "output_tokens": 22,
+      "cost": 0.000017556
+    },
+    "id": "gen-dec-1789937695-DslTHSjkpGIY0HvGmcV0",
+    "provider": "TypeSafe"
+  },
+  "db-pool/disk--cert": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 411,
+      "output_tokens": 22,
+      "cost": 0.000017262
+    },
+    "id": "gen-dec-1789937695-cnIUMdxh9EFgyFr9XPZb",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/error-spike--deploy": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.89
+      }
+    },
+    "usage": {
+      "input_tokens": 436,
+      "output_tokens": 22,
+      "cost": 0.000018312
+    },
+    "id": "gen-dec-1789937696-FthClajFgv2Wibx0i6DO",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/error-spike--handler-500": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "usage": {
+      "input_tokens": 434,
+      "output_tokens": 22,
+      "cost": 0.000018228
+    },
+    "id": "gen-dec-1789937695-FWeVc9UHmFqdICwywFSQ",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/error-spike--backup": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 428,
+      "output_tokens": 22,
+      "cost": 0.000017976
+    },
+    "id": "gen-dec-1789937695-UW7GHjIh3fzZBikLCh7I",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/error-spike--cache-mem": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 426,
+      "output_tokens": 22,
+      "cost": 0.000017892
+    },
+    "id": "gen-dec-1789937695-xUjICavrAix5mfEPzbX0",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/deploy--handler-500": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "usage": {
+      "input_tokens": 434,
+      "output_tokens": 22,
+      "cost": 0.000018228
+    },
+    "id": "gen-dec-1789937695-ZCrCRZiUPwmFCbtLZLLH",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/deploy--backup": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 428,
+      "output_tokens": 22,
+      "cost": 0.000017976
+    },
+    "id": "gen-dec-1789937695-4toCGszSwpRr6zI0nbud",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/deploy--cache-mem": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.19
+      }
+    },
+    "usage": {
+      "input_tokens": 426,
+      "output_tokens": 22,
+      "cost": 0.000017892
+    },
+    "id": "gen-dec-1789937695-BxxVRpTrkXzdsl3EecES",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/handler-500--backup": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 426,
+      "output_tokens": 22,
+      "cost": 0.000017892
+    },
+    "id": "gen-dec-1789937695-17BdpZN6VESQB3oGMafw",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/handler-500--cache-mem": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.09
+      }
+    },
+    "usage": {
+      "input_tokens": 424,
+      "output_tokens": 22,
+      "cost": 0.000017808
+    },
+    "id": "gen-dec-1789937696-EWBbpzOgwPq0mfxECILL",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/backup--cache-mem": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 418,
+      "output_tokens": 22,
+      "cost": 0.000017556
+    },
+    "id": "gen-dec-1789937696-0budv5xK3cV6b2tYqHei",
+    "provider": "TypeSafe"
+  }
+}
