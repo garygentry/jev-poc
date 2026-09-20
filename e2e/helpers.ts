@@ -82,6 +82,7 @@ export const ROUTES = [
   "/demo/flaky-triage",
   "/demo/alert-dedup",
   "/demo/semantic-grep",
+  "/demo/moderation",
 ] as const
 
 /** How a demo is driven to ask: on mount, or behind a named run button. */
@@ -121,6 +122,7 @@ export const DEMOS: DemoCase[] = [
   { slug: "flaky-triage", title: "flaky vs regression", ask: { on: "mount" }, fansOut: false },
   { slug: "alert-dedup", title: "alert dedup", ask: { on: "click", button: /Compare \d+ pairs/ }, fansOut: true },
   { slug: "semantic-grep", title: "semantic grep", ask: { on: "click", button: /Search \d+ functions/ }, fansOut: true },
+  { slug: "moderation", title: "multi-policy moderation", ask: { on: "mount" }, fansOut: false },
 ]
 
 /**

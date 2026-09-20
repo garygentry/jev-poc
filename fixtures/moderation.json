@@ -1,0 +1,362 @@
+{
+  "clean": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "csae": {
+        "type": "noul",
+        "noul": 0
+      },
+      "threat": {
+        "type": "noul",
+        "noul": 0
+      },
+      "self_harm": {
+        "type": "noul",
+        "noul": 0
+      },
+      "weapons": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "illicit": {
+        "type": "noul",
+        "noul": 0
+      },
+      "malware": {
+        "type": "noul",
+        "noul": 0
+      },
+      "hate": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "harassment": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "sexual": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "pii": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "spam": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "misinfo": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "usage": {
+      "input_tokens": 1043,
+      "output_tokens": 208,
+      "cost": 0.000043806
+    },
+    "id": "gen-dec-1789938941-zrkGFm5UDDK7yP0ymq2C",
+    "provider": "TypeSafe"
+  },
+  "criticism": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "csae": {
+        "type": "noul",
+        "noul": 0
+      },
+      "threat": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "self_harm": {
+        "type": "noul",
+        "noul": 0
+      },
+      "weapons": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "illicit": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "malware": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "hate": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "harassment": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "sexual": {
+        "type": "noul",
+        "noul": 0
+      },
+      "pii": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "spam": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "misinfo": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "usage": {
+      "input_tokens": 1053,
+      "output_tokens": 208,
+      "cost": 0.000044226
+    },
+    "id": "gen-dec-1789938941-PN6Z0pbXpDadAIcQEcyl",
+    "provider": "TypeSafe"
+  },
+  "harassment": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "csae": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "threat": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "self_harm": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "weapons": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "illicit": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "malware": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "hate": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "harassment": {
+        "type": "noul",
+        "noul": 0.99
+      },
+      "sexual": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "pii": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "spam": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "misinfo": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 1044,
+      "output_tokens": 208,
+      "cost": 0.000043848
+    },
+    "id": "gen-dec-1789938941-fyDuRSmITNbKpETINqx4",
+    "provider": "TypeSafe"
+  },
+  "threat": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "csae": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "threat": {
+        "type": "noul",
+        "noul": 0.85
+      },
+      "self_harm": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "weapons": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "illicit": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "malware": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "hate": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "harassment": {
+        "type": "noul",
+        "noul": 0.88
+      },
+      "sexual": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "pii": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "spam": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "misinfo": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 1043,
+      "output_tokens": 208,
+      "cost": 0.000043806
+    },
+    "id": "gen-dec-1789938941-zXB4nfX9HLpQQ8Uz3aU4",
+    "provider": "TypeSafe"
+  },
+  "doxx": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "csae": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "threat": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "self_harm": {
+        "type": "noul",
+        "noul": 0
+      },
+      "weapons": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "illicit": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "malware": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "hate": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "harassment": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "sexual": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "pii": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "spam": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "misinfo": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "usage": {
+      "input_tokens": 1057,
+      "output_tokens": 208,
+      "cost": 0.000044394
+    },
+    "id": "gen-dec-1789938941-lWwcN0VhzWgNWpQZ4xjm",
+    "provider": "TypeSafe"
+  },
+  "scam": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "csae": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "threat": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "self_harm": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "weapons": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "illicit": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "malware": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "hate": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "harassment": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "sexual": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "pii": {
+        "type": "noul",
+        "noul": 0.01
+      },
+      "spam": {
+        "type": "noul",
+        "noul": 0.99
+      },
+      "misinfo": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "usage": {
+      "input_tokens": 1065,
+      "output_tokens": 208,
+      "cost": 0.00004473
+    },
+    "id": "gen-dec-1789938972-vYCxLcJupxKqtDF0lVPC",
+    "provider": "TypeSafe"
+  }
+}
