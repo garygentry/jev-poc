@@ -75,6 +75,7 @@ export const ROUTES = [
   "/demo/bulk",
   "/demo/personas",
   "/demo/cascade",
+  "/demo/context-pruner",
 ] as const
 
 /** How a demo is driven to ask: on mount, or behind a named run button. */
@@ -107,6 +108,7 @@ export const DEMOS: DemoCase[] = [
   { slug: "bulk", title: "bulk labelling", ask: { on: "click", button: /Label \d+ rows/ }, fansOut: true },
   { slug: "personas", title: "persona panel", ask: { on: "click", button: /Poll \d+ readers/ }, fansOut: true },
   { slug: "cascade", title: "cascade router", ask: { on: "mount" }, fansOut: false },
+  { slug: "context-pruner", title: "context pruner", ask: { on: "click", button: /Prune \d+ chunks/ }, fansOut: true },
 ]
 
 /**
