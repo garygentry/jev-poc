@@ -27,6 +27,8 @@ export type { LiveEnvelope } from "./runners/useLiveRun"
 export { useRounds } from "./runners/useRounds"
 export type { RoundsEnvelope } from "./runners/useRounds"
 export { useSingleRun } from "./runners/useSingleRun"
+export { useWindowed } from "./runners/useWindowed"
+export type { WindowedEnvelope } from "./runners/useWindowed"
 export type { RunEnvelope, RunnerOptions } from "./runners/types"
 export { fansOut } from "./types"
 export type {
