@@ -219,6 +219,23 @@ export interface HealthResponse {
 export const JEV_USD_PER_INPUT_TOKEN = 0.042 / 1_000_000
 
 /**
+ * A round figure for the input tokens one decision call carries, for projecting
+ * a fan-out's cost *before* it runs.
+ *
+ * Deliberately a single blunt number rather than a per-demo estimate: a
+ * projection shown next to a "this will spend real money" button only has to be
+ * the right order of magnitude to do its job, and a false precision there would
+ * read as a measurement. The measured cost always replaces it once the run is
+ * real.
+ */
+export const JEV_TOKENS_PER_CALL = 700
+
+/** Project what N decision calls would cost, in USD. Never a measured figure. */
+export function projectJevSpend(calls: number): number {
+  return calls * JEV_TOKENS_PER_CALL * JEV_USD_PER_INPUT_TOKEN
+}
+
+/**
  * Whether the distribution is flat enough that the answer means nothing.
  *
  * A near-zero confidence is Jev saying it cannot distinguish between the

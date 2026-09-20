@@ -1,4 +1,6 @@
-import { DemoScaffold, useSingleRun } from "@/demos/_kit"
+import { Baseline } from "@/components/jev/Baseline"
+import { Displacement } from "@/components/jev/Displacement"
+import { DemoScaffold, useBaseline, useSingleRun } from "@/demos/_kit"
 
 import { manifest } from "./demo"
 import { BILLING_CONFIDENCE, ROUTABLE_CONFIDENCE, route } from "./policy"
@@ -18,6 +20,7 @@ function departmentGate(name: string, answers: Record<string, JevAnswer>) {
 
 export default function TriageDemo() {
   const run = useSingleRun(manifest)
+  const baseline = useBaseline(manifest.questions, manifest.stateFor(run.input))
 
   return (
     <DemoScaffold
@@ -29,10 +32,27 @@ export default function TriageDemo() {
         thresholdFor: departmentGate,
       }}
     >
-      {({ input, verdict }) => (
+      {({ input, answers, verdict, run }) => (
         <>
           <TicketCard ticket={input} />
           {verdict ? <Verdict routed={verdict} /> : null}
+          {manifest.displaces ? (
+            <Displacement
+              displaces={manifest.displaces}
+              usage={run.usage}
+              latencyMs={run.latencyMs}
+              calls={run.calls}
+              source={run.source}
+            />
+          ) : null}
+          <Baseline
+            controller={baseline}
+            questions={manifest.questions}
+            jevAnswers={answers}
+            jevUsage={run.usage}
+            jevLatencyMs={run.latencyMs}
+            source={run.source}
+          />
         </>
       )}
     </DemoScaffold>

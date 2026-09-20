@@ -1,6 +1,7 @@
 import { useMemo, type ReactNode } from "react"
 
 import { AnswerCard } from "@/components/jev/AnswerCard"
+import { CostProjection } from "@/components/jev/CostProjection"
 import { PolicyTrace, type PolicyLine } from "@/components/jev/PolicyTrace"
 import { WirePanel } from "@/components/jev/WirePanel"
 import { DemoFrame } from "@/components/layout/DemoFrame"
@@ -8,7 +9,7 @@ import { ErrorNote, RunBar } from "@/components/layout/RunBar"
 import { demoBySlug } from "@/demos/registry"
 
 import type { RunEnvelope } from "./runners/types"
-import type { DemoManifest } from "./types"
+import { fansOut, type DemoManifest } from "./types"
 
 import type { JevAnswer } from "@shared/jev.ts"
 
@@ -113,6 +114,12 @@ export function DemoScaffold<TInput, TVerdict extends PolicyResult>({
 
   const body = children?.({ input: run.input, answers, verdict, run })
 
+  // A fan-out is the one shape whose cost scales with its input, so what a run
+  // will spend is shown before it is spent — and only before: once the measured
+  // figures exist (`usage`), they say what it actually cost instead.
+  const showProjection =
+    fansOut(manifest.kind) && !run.usage && !run.loading && !run.error
+
   return (
     <DemoFrame demo={demo}>
       {before}
@@ -137,6 +144,10 @@ export function DemoScaffold<TInput, TVerdict extends PolicyResult>({
       ) : null}
 
       {run.error ? <ErrorNote message={run.error} /> : null}
+
+      {showProjection ? (
+        <CostProjection calls={manifest.estimateCalls(run.input)} />
+      ) : null}
 
       {answerColumn ? (
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]">

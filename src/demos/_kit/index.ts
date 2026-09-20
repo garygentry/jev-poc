@@ -18,6 +18,8 @@ export type {
   ScaffoldRender,
 } from "./DemoScaffold"
 export { entryKey, fixtureKey, roundKey } from "./fixtures"
+export { useBaseline } from "./runners/useBaseline"
+export type { BaselineController } from "./runners/useBaseline"
 export { useFanOut } from "./runners/useFanOut"
 export type { FanOutEnvelope } from "./runners/useFanOut"
 export { useLiveRun } from "./runners/useLiveRun"
