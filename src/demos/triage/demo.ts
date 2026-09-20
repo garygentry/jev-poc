@@ -1,4 +1,4 @@
-import type { DemoManifest } from "@/demos/_kit/types"
+import type { SingleManifest } from "@/demos/_kit/types"
 
 export interface Ticket {
   subject: string
@@ -17,7 +17,7 @@ export interface Ticket {
  * fixed set is a Choice, a degree along a described dimension is a Score, and
  * whether a condition holds is a Noul.
  */
-export const manifest: DemoManifest<Ticket> = {
+export const manifest: SingleManifest<Ticket> = {
   slug: "triage",
   title: "Ticket triage",
   tagline: "Seven narrow questions beat one broad prompt",

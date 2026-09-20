@@ -1,7 +1,6 @@
 import { lazy, type LazyExoticComponent, type ComponentType } from "react"
 
 import { fansOut, type AnyDemoManifest, type DemoGroup } from "./_kit/types"
-import { LEGACY_DEMOS } from "./legacy"
 
 export type { DemoGroup, DemoShape, Primitive } from "./_kit/types"
 
@@ -90,9 +89,7 @@ const byTourPosition = (a: Demo, b: Demo) =>
  * wide and a demo that fans requests wide are teaching two genuinely different
  * things, and a set that only showed the first would miss half the model.
  */
-export const demos: Demo[] = [...discovered(), ...LEGACY_DEMOS].sort(
-  byTourPosition,
-)
+export const demos: Demo[] = discovered().sort(byTourPosition)
 
 export const demoBySlug = (slug: string) =>
   demos.find((demo) => demo.slug === slug)

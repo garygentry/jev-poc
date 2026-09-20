@@ -21,9 +21,32 @@ export interface PolicyResult {
 
 export interface ScaffoldRender<TInput, TVerdict> {
   input: TInput
-  answers: Answers
-  /** Null when the policy threw, or when there is no policy at all. */
+  /** Null until something has run. The demo decides what to show meanwhile. */
+  answers: Answers | null
+  /** Null when there is no policy, nothing has run, or the policy threw. */
   verdict: TVerdict | null
+  /** The measured figures, for the demos that report their own. */
+  run: RunEnvelope<TInput>
+}
+
+/**
+ * The answer column: one card per question, down the right-hand side.
+ *
+ * Only the demos that ask one question set of one state have this — a fan-out's
+ * answers are per row and belong in whatever view that demo builds for them.
+ * Passing it is what selects the two-column layout.
+ */
+export interface AnswerColumn {
+  /** Heading above the column. Its job is to name the shape out loud. */
+  title: string
+  /**
+   * The gate a named answer must clear, shown on its confidence meter.
+   *
+   * A function of the answers because the gate frequently depends on them:
+   * routing to billing demands more confidence than routing to support,
+   * because only one of those branches can move money.
+   */
+  thresholdFor?: (name: string, answers: Answers) => number | undefined
 }
 
 interface DemoScaffoldProps<TInput, TVerdict extends PolicyResult> {
@@ -37,47 +60,39 @@ interface DemoScaffoldProps<TInput, TVerdict extends PolicyResult> {
    * actually fired.
    */
   policy?: (answers: Answers) => TVerdict
-  /**
-   * The gate a named answer must clear, shown on its confidence meter.
-   *
-   * A function of the answers because the gate frequently depends on them:
-   * routing to billing demands more confidence than routing to support,
-   * because only one of those branches can move money.
-   */
-  thresholdFor?: (name: string, answers: Answers) => number | undefined
-  /** Heading above the answer column. Its job is to name the shape out loud. */
-  answersTitle: string
+  answers?: AnswerColumn
   runLabel?: string
-  /**
-   * The input under judgement, rendered before anything has been asked.
-   *
-   * Separate from `children` so the thing being judged is on screen while the
-   * request is still in flight, rather than the page sitting empty until an
-   * answer lands.
-   */
-  preview?: (input: TInput) => ReactNode
-  /** Rendered once answers land, above the policy trace: the bespoke view. */
+  /** Off for the demos whose input is edited rather than picked from a list. */
+  showExamples?: boolean
+  /** Off for the one demo that needs a control the run bar cannot express. */
+  showRunBar?: boolean
+  /** Above the run bar: an editor, or controls the run bar has no room for. */
+  before?: ReactNode
+  /** Below the wire panel: the standing caveats a demo carries. */
+  footer?: ReactNode
   children?: (context: ScaffoldRender<TInput, TVerdict>) => ReactNode
 }
 
 /**
  * Everything every demo repeats, in one place.
  *
- * Before this there were eleven identical structural elements in each demo's
- * file — the frame, the run bar, the example chips, the error note, the
- * two-column grid, the answer list, the trace, the wire panel and the source
- * badges — wrapped around ten or twenty lines of the thing the demo was
- * actually for. A demo now supplies its manifest, its policy and its own view,
- * and nothing else.
+ * The frame, the run bar, the example chips, the error note and the wire panel
+ * are common to all eight; the two-column grid, the answer cards and the policy
+ * trace are common to the demos that ask one question set of one state, and
+ * arrive together as `answers`. Everything past that is the demo's own, which
+ * is the point: a fan-out's view of twenty-four ranked rows has nothing to
+ * share with a permission gate beyond the chrome around it.
  */
 export function DemoScaffold<TInput, TVerdict extends PolicyResult>({
   manifest,
   run,
   policy,
-  thresholdFor,
-  answersTitle,
+  answers: answerColumn,
   runLabel = "Re-ask",
-  preview,
+  showExamples = true,
+  showRunBar = true,
+  before,
+  footer,
   children,
 }: DemoScaffoldProps<TInput, TVerdict>) {
   const demo = demoBySlug(manifest.slug)!
@@ -96,52 +111,70 @@ export function DemoScaffold<TInput, TVerdict extends PolicyResult>({
     }
   }, [answers, policy])
 
+  const body = children?.({ input: run.input, answers, verdict, run })
+
   return (
     <DemoFrame demo={demo}>
-      <RunBar
-        examples={manifest.examples.map(({ id, label }) => ({ id, label }))}
-        selected={run.selected}
-        onSelect={run.select}
-        onRun={run.run}
-        loading={run.loading}
-        runLabel={runLabel}
-        latencyMs={run.latencyMs}
-        usage={run.usage}
-        calls={run.calls}
-        source={run.source}
-      />
+      {before}
+
+      {showRunBar ? (
+        <RunBar
+          examples={
+            showExamples
+              ? manifest.examples.map(({ id, label }) => ({ id, label }))
+              : undefined
+          }
+          selected={run.selected ?? undefined}
+          onSelect={run.select}
+          onRun={run.run}
+          loading={run.loading}
+          runLabel={runLabel}
+          latencyMs={run.latencyMs}
+          usage={run.usage}
+          calls={run.calls}
+          source={run.source}
+        />
+      ) : null}
 
       {run.error ? <ErrorNote message={run.error} /> : null}
 
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]">
-        <div className="min-w-0 space-y-4">
-          {preview?.(run.input)}
-          {answers ? children?.({ input: run.input, answers, verdict }) : null}
-          {verdict ? <PolicyTrace lines={verdict.trace} /> : null}
-          {run.wire ? <WirePanel wire={run.wire} /> : null}
-        </div>
+      {answerColumn ? (
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]">
+          <div className="min-w-0 space-y-4">
+            {body}
+            {verdict ? <PolicyTrace lines={verdict.trace} /> : null}
+            {run.wire ? <WirePanel wire={run.wire} /> : null}
+          </div>
 
-        <div className="min-w-0 space-y-3">
-          <h3 className="text-xs uppercase tracking-wide text-ink-muted">
-            {answersTitle}
-          </h3>
-          {answers
-            ? Object.entries(manifest.questions).map(([name, question]) => {
-                const answer = answers[name]
-                if (!answer) return null
-                return (
-                  <AnswerCard
-                    key={name}
-                    name={name}
-                    question={question}
-                    answer={answer}
-                    threshold={thresholdFor?.(name, answers)}
-                  />
-                )
-              })
-            : null}
+          <div className="min-w-0 space-y-3">
+            <h3 className="text-xs uppercase tracking-wide text-ink-muted">
+              {answerColumn.title}
+            </h3>
+            {answers
+              ? Object.entries(manifest.questions).map(([name, question]) => {
+                  const answer = answers[name]
+                  if (!answer) return null
+                  return (
+                    <AnswerCard
+                      key={name}
+                      name={name}
+                      question={question}
+                      answer={answer}
+                      threshold={answerColumn.thresholdFor?.(name, answers)}
+                    />
+                  )
+                })
+              : null}
+          </div>
         </div>
-      </div>
+      ) : (
+        <>
+          {body}
+          {run.wire ? <WirePanel wire={run.wire} /> : null}
+        </>
+      )}
+
+      {footer}
     </DemoFrame>
   )
 }

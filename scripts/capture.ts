@@ -1,14 +1,15 @@
 /**
- * Re-record every seeded fixture against live Jev.
+ * Re-record every fixture against live Jev.
  *
- * The fixtures committed to this repo are **hand-written**. They are plausible
- * and they are shaped exactly like real responses, but nobody has ever received
- * them from the model — which is why the UI badges them rather than presenting
- * them as recordings. Running this with a key in `.env` replaces them with
- * responses the model actually gave, and the badge stops being a caveat.
- *
- *     pnpm capture              # every demo
+ *     pnpm capture              # every demo that has fixtures
  *     pnpm capture triage       # just one
+ *
+ * Nothing about a demo is described here. Each `src/demos/<slug>/demo.ts`
+ * declares its questions, its examples, its states and — for a walk — how one
+ * round leads to the next, and this script drives whatever it finds. Adding a
+ * demo therefore does not touch this file, which was the point of the kit: the
+ * previous version named all eight and had grown a bespoke branch for the one
+ * that could not be captured as a flat list.
  *
  * Costs real money, though not much: the full set is a few hundred calls at
  * $0.042 per million input tokens.
@@ -21,24 +22,11 @@ import { API_KEY, MODE, MODEL } from "../server/config.ts"
 import { mapWithConcurrency } from "../server/concurrency.ts"
 import { ProviderError, askJev } from "../server/transport.ts"
 
-import { entryKey } from "../src/demos/_kit/fixtures.ts"
-import type { DemoManifest } from "../src/demos/_kit/types.ts"
-import { manifest as triageManifest } from "../src/demos/triage/demo.ts"
-import { QUESTIONS as GUARD_Q } from "../src/demos/guardrail/questions.ts"
-import { COMMANDS, stateFor as guardState } from "../src/demos/guardrail/examples.ts"
-import { QUESTIONS as RERANK_Q } from "../src/demos/rerank/questions.ts"
-import { PASSAGES, QUERIES, stateFor as rerankState } from "../src/demos/rerank/corpus.ts"
-import { QUESTIONS as TYPE_Q } from "../src/demos/typewriter/questions.ts"
-import { DRAFTS } from "../src/demos/typewriter/examples.ts"
-import { QUESTIONS as ROUTER_Q } from "../src/demos/router/questions.ts"
-import { PROMPTS, stateFor as routerState } from "../src/demos/router/examples.ts"
-import { PERSONAS, stateFor as personaState } from "../src/demos/personas/personas.ts"
-import { DRAFTS as PERSONA_DRAFTS } from "../src/demos/personas/examples.ts"
-import { QUESTIONS as PERSONA_Q } from "../src/demos/personas/questions.ts"
-import { CASES, stateFor as taxonomyState } from "../src/demos/taxonomy/examples.ts"
-import { alive, expand, planRound, type Branch } from "../src/demos/taxonomy/beam.ts"
+import { entryKey, roundEntry } from "../src/demos/_kit/fixtures.ts"
+import { loadManifests } from "../src/demos/_kit/load-manifests.ts"
+import type { AnyDemoManifest } from "../src/demos/_kit/types.ts"
 
-import type { ChoiceAnswer, JevQuestionSet, JevState } from "../shared/jev.ts"
+import type { JevQuestionSet, JevState } from "../shared/jev.ts"
 
 const FIXTURES = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -48,6 +36,25 @@ const FIXTURES = path.resolve(
 /** Matches the server's own ceiling; capture is not a reason to hammer it. */
 const CONCURRENCY = 6
 
+/**
+ * Above this, capture asks first.
+ *
+ * The projection is cheap to compute from `estimateCalls` and is most of the
+ * reason that field exists, so a re-record that would cost real money cannot
+ * start by accident.
+ */
+const CONFIRM_ABOVE_USD = 0.25
+
+/** Jev's listed input price, for the projection only — never for reporting. */
+const USD_PER_INPUT_TOKEN = 0.042 / 1_000_000
+
+/**
+ * Input tokens a question set plus a state runs to, near enough to project a
+ * bill from. The measured figures on this repo's demos sit between 470 and 700;
+ * the high end is used so the projection errs towards asking.
+ */
+const TOKENS_PER_CALL = 700
+
 interface Job {
   key: string
   state: JevState
@@ -56,19 +63,39 @@ interface Job {
 
 type Recorded = Record<string, unknown>
 
-/**
- * One job per example, straight off the manifest.
- *
- * Every demo that has been migrated onto the kit captures through here — its
- * questions, its states and its fixture keys all come from the one declaration
- * the UI reads, so capture cannot record under a key the app will not ask for.
- */
-const jobsFor = <TInput,>(manifest: DemoManifest<TInput>): Job[] =>
-  manifest.examples.map((example) => ({
-    key: entryKey(example.id),
-    state: manifest.stateFor(example.input),
-    questions: manifest.questions,
-  }))
+const write = (demo: string, out: Recorded) =>
+  writeFileSync(
+    path.join(FIXTURES, `${demo}.json`),
+    JSON.stringify(out, null, 2) + "\n",
+  )
+
+/** Every call a demo needs, for the demos whose plan is known up front. */
+function jobsFor(manifest: AnyDemoManifest): Job[] {
+  switch (manifest.kind) {
+    case "fanout":
+    case "pairwise":
+    case "windowed":
+      return manifest.examples.flatMap((example) =>
+        manifest.itemsFor(example.input).map((item) => ({
+          key: entryKey(example.id, item.id),
+          state: item.state,
+          questions: manifest.questions,
+        })),
+      )
+
+    case "single":
+    case "cascade":
+      return manifest.examples.map((example) => ({
+        key: entryKey(example.id),
+        state: manifest.stateFor(example.input),
+        questions: manifest.questions,
+      }))
+
+    // `rounds` is walked rather than listed; `offline` makes no calls at all.
+    default:
+      return []
+  }
+}
 
 async function captureJobs(demo: string, jobs: Job[]): Promise<void> {
   process.stdout.write(`${demo.padEnd(12)} ${jobs.length} calls … `)
@@ -89,10 +116,7 @@ async function captureJobs(demo: string, jobs: Job[]): Promise<void> {
     out[outcome.value.key] = outcome.value.result.raw
   }
 
-  writeFileSync(
-    path.join(FIXTURES, `${demo}.json`),
-    JSON.stringify(out, null, 2) + "\n",
-  )
+  write(demo, out)
   console.log(
     failed === 0
       ? "ok"
@@ -101,100 +125,54 @@ async function captureJobs(demo: string, jobs: Job[]): Promise<void> {
 }
 
 /**
- * The taxonomy demo cannot be captured as a flat list: which questions get
- * asked at level 2 depends on what came back at level 1, so each case has to be
- * walked with the same beam logic the UI uses.
+ * Walk a `rounds` demo with the manifest's own plan.
+ *
+ * It cannot be captured as a flat list: which questions get asked at depth 2
+ * depends on what came back at depth 1. Using the manifest's `walk` is what
+ * guarantees the recording matches the tree the UI will descend — the previous
+ * version of this script reimplemented the beam here, and a change to either
+ * one would silently have invalidated the other.
  */
-async function captureTaxonomy(): Promise<void> {
-  process.stdout.write(`taxonomy     walking ${CASES.length} cases … `)
+async function captureWalk(
+  manifest: Extract<AnyDemoManifest, { kind: "rounds" }>,
+): Promise<void> {
+  const { walk } = manifest
+  process.stdout.write(
+    `${manifest.slug.padEnd(12)} walking ${manifest.examples.length} cases … `,
+  )
+
   const out: Recorded = {}
 
-  for (const item of CASES) {
-    const state = taxonomyState(item)
-    let branches: Branch[] = [{ path: [], probability: 1, confidence: 1 }]
+  for (const example of manifest.examples) {
+    const state = manifest.stateFor(example.input)
+    let carry = walk.initial
 
-    for (let depth = 0; depth < 3; depth += 1) {
-      const round = planRound(depth, alive(branches))
-      if (!round) break
+    for (let depth = 0; depth < walk.maxDepth; depth += 1) {
+      const planned = walk.plan(depth, carry)
+      if (!planned) break
 
-      const call = await askJev(state, round.questions)
-      out[`${item.id}-d${depth}`] = call.raw
-
-      const choices: Record<string, ChoiceAnswer> = {}
-      for (const [name, answer] of Object.entries(call.response.answers)) {
-        if (answer.type === "choice") choices[name] = answer
-      }
-
-      const stopped = branches.filter((branch) => branch.stoppedBecause)
-      branches = [...expand(round, choices), ...stopped]
+      const call = await askJev(state, planned.questions)
+      out[roundEntry(example.id, depth)] = call.raw
+      carry = walk.advance(planned.round, call.response.answers, carry)
     }
   }
 
-  writeFileSync(
-    path.join(FIXTURES, "taxonomy.json"),
-    JSON.stringify(out, null, 2) + "\n",
-  )
+  write(manifest.slug, out)
   console.log(`ok (${Object.keys(out).length} rounds)`)
 }
 
-const CAPTURES: Record<string, () => Promise<void>> = {
-  triage: () => captureJobs("triage", jobsFor(triageManifest)),
-
-  guardrail: () =>
-    captureJobs(
-      "guardrail",
-      COMMANDS.map((command) => ({
-        key: command.id,
-        state: guardState(command),
-        questions: GUARD_Q,
-      })),
-    ),
-
-  typewriter: () =>
-    captureJobs(
-      "typewriter",
-      DRAFTS.map((draft) => ({
-        key: draft.id,
-        state: { draft: draft.text },
-        questions: TYPE_Q,
-      })),
-    ),
-
-  router: () =>
-    captureJobs(
-      "router",
-      PROMPTS.map((prompt) => ({
-        key: prompt.id,
-        state: routerState(prompt),
-        questions: ROUTER_Q,
-      })),
-    ),
-
-  rerank: () =>
-    captureJobs(
-      "rerank",
-      QUERIES.flatMap((query) =>
-        PASSAGES.map((passage) => ({
-          key: `${query.id}/${passage.id}`,
-          state: rerankState(query, passage),
-          questions: RERANK_Q,
-        })),
+/** Calls and dollars this run would spend, before it spends any of them. */
+function project(manifests: AnyDemoManifest[]): { calls: number; usd: number } {
+  const calls = manifests.reduce(
+    (total, manifest) =>
+      total +
+      manifest.examples.reduce(
+        (sum: number, example) => sum + manifest.estimateCalls(example.input),
+        0,
       ),
-    ),
-
-  personas: () =>
-    captureJobs(
-      "personas",
-      PERSONA_DRAFTS.flatMap((draft) =>
-        PERSONAS.map((persona) => ({
-          key: `${draft.id}/${persona.id}`,
-          state: personaState(persona, draft.text),
-          questions: PERSONA_Q,
-        })),
-      ),
-    ),
-
-  taxonomy: captureTaxonomy,
+    0,
+  )
+  return { calls, usd: calls * TOKENS_PER_CALL * USD_PER_INPUT_TOKEN }
 }
 
 async function main(): Promise<number> {
@@ -206,21 +184,39 @@ async function main(): Promise<number> {
     return 1
   }
 
-  const requested = process.argv.slice(2)
-  const names = requested.length > 0 ? requested : Object.keys(CAPTURES)
+  const argv = process.argv.slice(2)
+  const confirmed = argv.includes("--yes")
+  const requested = argv.filter((arg) => !arg.startsWith("--"))
 
-  const unknown = names.filter((name) => !(name in CAPTURES))
-  if (unknown.length > 0) {
-    console.error(`Unknown demo(s): ${unknown.join(", ")}`)
-    console.error(`Available: ${Object.keys(CAPTURES).join(", ")}`)
+  const { manifests, missing } = await loadManifests(requested)
+  if (missing.length > 0) {
+    console.error(`Unknown demo(s): ${missing.join(", ")}`)
     return 1
   }
 
-  console.log(`Capturing against ${MODEL}\n`)
+  // A demo with no committed fixtures replays a deterministic stand-in instead,
+  // so there is nothing here to record for it.
+  const recordable = manifests.filter(
+    (manifest) => manifest.recorded !== false && manifest.kind !== "offline",
+  )
 
-  for (const name of names) {
+  const { calls, usd } = project(recordable)
+  console.log(`Capturing against ${MODEL}`)
+  console.log(
+    `${recordable.length} demos · ~${calls} calls · ~$${usd.toFixed(3)} projected\n`,
+  )
+
+  if (usd > CONFIRM_ABOVE_USD && !confirmed) {
+    console.error(
+      `That is over $${CONFIRM_ABOVE_USD.toFixed(2)}. Re-run with --yes to go ahead.`,
+    )
+    return 1
+  }
+
+  for (const manifest of recordable) {
     try {
-      await CAPTURES[name]!()
+      if (manifest.kind === "rounds") await captureWalk(manifest)
+      else await captureJobs(manifest.slug, jobsFor(manifest))
     } catch (error) {
       // One demo failing should not discard the ones already written.
       console.log("failed")
