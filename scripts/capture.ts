@@ -21,8 +21,9 @@ import { API_KEY, MODE, MODEL } from "../server/config.ts"
 import { mapWithConcurrency } from "../server/concurrency.ts"
 import { ProviderError, askJev } from "../server/transport.ts"
 
-import { QUESTIONS as TRIAGE_Q } from "../src/demos/triage/questions.ts"
-import { TICKETS, stateFor as triageState } from "../src/demos/triage/examples.ts"
+import { entryKey } from "../src/demos/_kit/fixtures.ts"
+import type { DemoManifest } from "../src/demos/_kit/types.ts"
+import { manifest as triageManifest } from "../src/demos/triage/demo.ts"
 import { QUESTIONS as GUARD_Q } from "../src/demos/guardrail/questions.ts"
 import { COMMANDS, stateFor as guardState } from "../src/demos/guardrail/examples.ts"
 import { QUESTIONS as RERANK_Q } from "../src/demos/rerank/questions.ts"
@@ -54,6 +55,20 @@ interface Job {
 }
 
 type Recorded = Record<string, unknown>
+
+/**
+ * One job per example, straight off the manifest.
+ *
+ * Every demo that has been migrated onto the kit captures through here — its
+ * questions, its states and its fixture keys all come from the one declaration
+ * the UI reads, so capture cannot record under a key the app will not ask for.
+ */
+const jobsFor = <TInput,>(manifest: DemoManifest<TInput>): Job[] =>
+  manifest.examples.map((example) => ({
+    key: entryKey(example.id),
+    state: manifest.stateFor(example.input),
+    questions: manifest.questions,
+  }))
 
 async function captureJobs(demo: string, jobs: Job[]): Promise<void> {
   process.stdout.write(`${demo.padEnd(12)} ${jobs.length} calls … `)
@@ -123,15 +138,7 @@ async function captureTaxonomy(): Promise<void> {
 }
 
 const CAPTURES: Record<string, () => Promise<void>> = {
-  triage: () =>
-    captureJobs(
-      "triage",
-      TICKETS.map((ticket) => ({
-        key: ticket.id,
-        state: triageState(ticket),
-        questions: TRIAGE_Q,
-      })),
-    ),
+  triage: () => captureJobs("triage", jobsFor(triageManifest)),
 
   guardrail: () =>
     captureJobs(

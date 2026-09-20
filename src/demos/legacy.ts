@@ -16,19 +16,6 @@ import type { Demo } from "./registry"
  */
 export const LEGACY_DEMOS: Demo[] = [
   {
-    slug: "triage",
-    title: "Ticket triage",
-    tagline: "Seven narrow questions beat one broad prompt",
-    thesis:
-      "Decomposition. Seven questions over one ticket cost roughly one question's wall-clock, and the routing policy stays in TypeScript where it can be read, tested and retuned without touching the model.",
-    group: "foundations",
-    order: 1,
-    shape: { questions: "7", states: "1", requests: "1" },
-    primitives: ["choice", "score", "noul"],
-    fansOut: false,
-    Component: lazy(() => import("./triage/Demo")),
-  },
-  {
     slug: "guardrail",
     title: "Command guardrail",
     tagline: "The agent permission gate, in the open",
