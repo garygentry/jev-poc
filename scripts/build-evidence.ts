@@ -144,7 +144,6 @@ async function main(): Promise<number> {
       title: manifest.title,
       kind: manifest.kind,
       group: manifest.group,
-      questions: manifest.questions,
       pairs: pairsFor(jev, baseline),
     }
     demos.push(summariseDemo(input))
