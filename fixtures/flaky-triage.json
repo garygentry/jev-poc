@@ -7,15 +7,15 @@
         "choice": "flaky",
         "probabilities": {
           "flaky": 1,
-          "infra": 0,
           "unclear": 0,
+          "infra": 0,
           "regression": 0
         },
         "confidence": 1
       },
       "deterministic": {
         "type": "noul",
-        "noul": 0.19
+        "noul": 0.21
       }
     },
     "usage": {
@@ -23,7 +23,7 @@
       "output_tokens": 70,
       "cost": 0.000023982
     },
-    "id": "gen-dec-1789936926-RPdDJvOo37IFq7b9AGia",
+    "id": "gen-dec-1789957250-YCyTxpo1tFdVLNl12WLO",
     "provider": "TypeSafe"
   },
   "real-assertion": {
@@ -34,9 +34,9 @@
         "choice": "regression",
         "probabilities": {
           "unclear": 0,
+          "regression": 1,
           "flaky": 0,
-          "infra": 0,
-          "regression": 1
+          "infra": 0
         },
         "confidence": 1
       },
@@ -50,7 +50,7 @@
       "output_tokens": 71,
       "cost": 0.000024234
     },
-    "id": "gen-dec-1789936926-7r0H04VaP1v15bxpqtgD",
+    "id": "gen-dec-1789957250-mt6b7c80qmWupJKTV6hT",
     "provider": "TypeSafe"
   },
   "infra-oom": {
@@ -60,16 +60,16 @@
         "type": "choice",
         "choice": "infra",
         "probabilities": {
-          "unclear": 0,
-          "regression": 0,
           "flaky": 0,
-          "infra": 1
+          "infra": 1,
+          "regression": 0,
+          "unclear": 0
         },
         "confidence": 1
       },
       "deterministic": {
         "type": "noul",
-        "noul": 0.55
+        "noul": 0.53
       }
     },
     "usage": {
@@ -77,7 +77,7 @@
       "output_tokens": 69,
       "cost": 0.000023646
     },
-    "id": "gen-dec-1789936926-69mcwsBRu309WJV0swHT",
+    "id": "gen-dec-1789957250-EJIJHGBJ5DLBUxt9T6Qm",
     "provider": "TypeSafe"
   },
   "flaky-order": {
@@ -88,15 +88,15 @@
         "choice": "flaky",
         "probabilities": {
           "unclear": 0,
-          "flaky": 1,
+          "regression": 0,
           "infra": 0,
-          "regression": 0
+          "flaky": 1
         },
         "confidence": 1
       },
       "deterministic": {
         "type": "noul",
-        "noul": 0.27
+        "noul": 0.28
       }
     },
     "usage": {
@@ -104,7 +104,7 @@
       "output_tokens": 70,
       "cost": 0.000023898
     },
-    "id": "gen-dec-1789936926-cNVWxJEEMvmB1zUf1hLS",
+    "id": "gen-dec-1789957250-CmtXduVeJmwOl8i4C1VI",
     "provider": "TypeSafe"
   },
   "real-crash": {
@@ -114,10 +114,10 @@
         "type": "choice",
         "choice": "regression",
         "probabilities": {
+          "regression": 1,
           "flaky": 0,
-          "infra": 0,
           "unclear": 0,
-          "regression": 1
+          "infra": 0
         },
         "confidence": 1
       },
@@ -131,7 +131,7 @@
       "output_tokens": 71,
       "cost": 0.000024276
     },
-    "id": "gen-dec-1789936926-RTLuSU4sqXoFDropNvSG",
+    "id": "gen-dec-1789957250-2SCfYEdvRpWf4bUOMUAg",
     "provider": "TypeSafe"
   },
   "unclear": {
@@ -141,12 +141,12 @@
         "type": "choice",
         "choice": "unclear",
         "probabilities": {
-          "infra": 0.03,
           "unclear": 0.97,
           "regression": 0,
+          "infra": 0.03,
           "flaky": 0
         },
-        "confidence": 0.97
+        "confidence": 0.95
       },
       "deterministic": {
         "type": "noul",
@@ -158,7 +158,7 @@
       "output_tokens": 70,
       "cost": 0.000024234
     },
-    "id": "gen-dec-1789936926-F9HI3o7rEJb7TJbSqxVh",
+    "id": "gen-dec-1789957250-dIaNcQbJbCBMukZ1yTET",
     "provider": "TypeSafe"
   }
 }

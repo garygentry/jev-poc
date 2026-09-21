@@ -22,8 +22,11 @@ import { defineConfig, devices } from "@playwright/test"
  * Live mode is verified separately: `pnpm capture` re-records the fixtures, and
  * the suite then asserts against what the model actually said.
  */
-const CLIENT_PORT = 5181
-const SERVER_PORT = 8788
+// Overridable so a run can dodge a port already taken by another local app —
+// e.g. `E2E_SERVER_PORT=8799 pnpm e2e`. Both ports flow through to the client,
+// its /api proxy target, and the sidecar, so they stay consistent when changed.
+const CLIENT_PORT = Number(process.env.E2E_CLIENT_PORT ?? 5181)
+const SERVER_PORT = Number(process.env.E2E_SERVER_PORT ?? 8788)
 
 export default defineConfig({
   testDir: "./e2e",

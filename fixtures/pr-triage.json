@@ -6,12 +6,12 @@
         "type": "choice",
         "choice": "docs_tests",
         "probabilities": {
-          "docs_tests": 1,
-          "other": 0,
-          "config": 0,
           "data": 0,
           "security": 0,
-          "core": 0
+          "other": 0,
+          "config": 0,
+          "core": 0,
+          "docs_tests": 1
         },
         "confidence": 1
       },
@@ -48,7 +48,7 @@
       "output_tokens": 128,
       "cost": 0.00003528
     },
-    "id": "gen-dec-1789936063-dl7O2hF5xpi3unUA2PGN",
+    "id": "gen-dec-1789957255-t0Sah9iyOUsqUt0dna6j",
     "provider": "TypeSafe"
   },
   "add-tests": {
@@ -58,18 +58,18 @@
         "type": "choice",
         "choice": "docs_tests",
         "probabilities": {
-          "security": 0,
           "data": 0,
-          "config": 0,
           "docs_tests": 1,
-          "other": 0,
-          "core": 0
+          "core": 0,
+          "config": 0,
+          "security": 0,
+          "other": 0
         },
         "confidence": 1
       },
       "blast_radius": {
         "type": "score",
-        "score": 0,
+        "score": 0.01,
         "legend": {
           "0": "Contained — one non-critical file; a mistake affects only this change.",
           "1": "A feature area — a mistake affects one flow or one part of the product.",
@@ -88,7 +88,7 @@
       },
       "has_tests": {
         "type": "noul",
-        "noul": 0.74
+        "noul": 0.75
       },
       "security_sensitive": {
         "type": "noul",
@@ -100,7 +100,7 @@
       "output_tokens": 128,
       "cost": 0.000035784
     },
-    "id": "gen-dec-1789936063-EhnNhOMNbc5pTKvxJpKK",
+    "id": "gen-dec-1789957255-Gjvlb6facP5drjBKpxX7",
     "provider": "TypeSafe"
   },
   "config-default": {
@@ -111,13 +111,13 @@
         "choice": "config",
         "probabilities": {
           "security": 0,
-          "core": 0.03,
-          "data": 0,
           "other": 0,
-          "config": 0.97,
-          "docs_tests": 0
+          "config": 0.96,
+          "docs_tests": 0,
+          "core": 0.04,
+          "data": 0
         },
-        "confidence": 0.97
+        "confidence": 0.95
       },
       "blast_radius": {
         "type": "score",
@@ -136,7 +136,7 @@
       },
       "reversible": {
         "type": "noul",
-        "noul": 0.94
+        "noul": 0.95
       },
       "has_tests": {
         "type": "noul",
@@ -152,7 +152,7 @@
       "output_tokens": 127,
       "cost": 0.000037338
     },
-    "id": "gen-dec-1789936063-exC0kF8RhwYAKo7Z09d0",
+    "id": "gen-dec-1789957255-Fp4Tl82Afd6sYwevaV7M",
     "provider": "TypeSafe"
   },
   "new-endpoint": {
@@ -162,18 +162,18 @@
         "type": "choice",
         "choice": "core",
         "probabilities": {
-          "config": 0,
-          "data": 0,
-          "security": 0,
           "core": 1,
+          "security": 0,
+          "other": 0,
+          "data": 0,
           "docs_tests": 0,
-          "other": 0
+          "config": 0
         },
         "confidence": 0.99
       },
       "blast_radius": {
         "type": "score",
-        "score": 1.83,
+        "score": 1.86,
         "legend": {
           "0": "Contained — one non-critical file; a mistake affects only this change.",
           "1": "A feature area — a mistake affects one flow or one part of the product.",
@@ -181,14 +181,14 @@
         },
         "probabilities": {
           "0": 0,
-          "1": 0.17,
-          "2": 0.83
+          "1": 0.14,
+          "2": 0.86
         },
-        "confidence": 0.75
+        "confidence": 0.8
       },
       "reversible": {
         "type": "noul",
-        "noul": 0.77
+        "noul": 0.75
       },
       "has_tests": {
         "type": "noul",
@@ -204,7 +204,7 @@
       "output_tokens": 127,
       "cost": 0.000036876
     },
-    "id": "gen-dec-1789936063-j1mvyVAdEfm2onh3lykk",
+    "id": "gen-dec-1789957255-AJw3AsFWYCDNm2paXuJM",
     "provider": "TypeSafe"
   },
   "auth-session": {
@@ -214,18 +214,18 @@
         "type": "choice",
         "choice": "security",
         "probabilities": {
-          "security": 1,
-          "core": 0,
-          "other": 0,
           "data": 0,
           "config": 0,
-          "docs_tests": 0
+          "core": 0,
+          "other": 0,
+          "docs_tests": 0,
+          "security": 1
         },
         "confidence": 1
       },
       "blast_radius": {
         "type": "score",
-        "score": 1.52,
+        "score": 1.55,
         "legend": {
           "0": "Contained — one non-critical file; a mistake affects only this change.",
           "1": "A feature area — a mistake affects one flow or one part of the product.",
@@ -233,10 +233,10 @@
         },
         "probabilities": {
           "0": 0.01,
-          "1": 0.47,
-          "2": 0.52
+          "1": 0.44,
+          "2": 0.55
         },
-        "confidence": 0.27
+        "confidence": 0.33
       },
       "reversible": {
         "type": "noul",
@@ -256,7 +256,7 @@
       "output_tokens": 127,
       "cost": 0.000037128
     },
-    "id": "gen-dec-1789936063-wGh7EAbIebkPTBqKP0wK",
+    "id": "gen-dec-1789957255-N0daOVxjyuhgk4RUL7Fn",
     "provider": "TypeSafe"
   },
   "drop-column": {
@@ -267,26 +267,26 @@
         "choice": "data",
         "probabilities": {
           "core": 0,
-          "config": 0,
           "other": 0,
           "data": 1,
           "security": 0,
+          "config": 0,
           "docs_tests": 0
         },
         "confidence": 1
       },
       "blast_radius": {
         "type": "score",
-        "score": 1.32,
+        "score": 1.22,
         "legend": {
           "0": "Contained — one non-critical file; a mistake affects only this change.",
           "1": "A feature area — a mistake affects one flow or one part of the product.",
           "2": "A shared path — a mistake reaches many requests or every caller of a common dependency."
         },
         "probabilities": {
-          "0": 0.16,
-          "1": 0.35,
-          "2": 0.49
+          "0": 0.21,
+          "1": 0.36,
+          "2": 0.43
         },
         "confidence": 0
       },
@@ -308,7 +308,7 @@
       "output_tokens": 127,
       "cost": 0.00003591
     },
-    "id": "gen-dec-1789936063-ZLd7KKekk26SarZw84E9",
+    "id": "gen-dec-1789957255-wdwr525VKMzoGXm2PiLX",
     "provider": "TypeSafe"
   }
 }

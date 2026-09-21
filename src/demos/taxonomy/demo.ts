@@ -70,8 +70,8 @@ export const manifest: RoundsManifest<Case, Branch[], Round> = {
       id: "ambiguous-billing",
       label: "Ambiguous inside billing",
       input: {
-        text: "Something's off with our account and money. I'm not sure if we were charged wrong or if we're on the wrong plan, but the numbers don't look right to me.",
-        expected: "billing (the subtype is genuinely unclear)",
+        text: "Something's wrong with how our card is being charged and I can't work out what. It might have been declined and retried, it might have gone through twice, or it might be tangled up with the new card we added last week — I honestly can't tell which. Either way the amount leaving our account is not what it should be.",
+        expected: "billing › payments (the leaf is genuinely unclear)",
       },
     },
     {

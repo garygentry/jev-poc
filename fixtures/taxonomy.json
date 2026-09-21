@@ -6,11 +6,11 @@
         "type": "choice",
         "choice": "technical",
         "probabilities": {
-          "billing": 0,
+          "feedback": 0,
           "technical": 1,
           "account": 0,
           "data": 0,
-          "feedback": 0
+          "billing": 0
         },
         "confidence": 1
       }
@@ -20,7 +20,7 @@
       "output_tokens": 52,
       "cost": 0.000018984
     },
-    "id": "gen-dec-1789857762-AKymlr4KsIriyUqyejhK",
+    "id": "gen-dec-1789961009-oHg63DMm5HJSV6qByJjP",
     "provider": "TypeSafe"
   },
   "webhook-d1": {
@@ -30,9 +30,9 @@
         "type": "choice",
         "choice": "delivery",
         "probabilities": {
-          "delivery": 0.99,
           "dashboards": 0,
-          "ingestion": 0.01
+          "ingestion": 0.01,
+          "delivery": 0.99
         },
         "confidence": 0.99
       }
@@ -42,7 +42,7 @@
       "output_tokens": 42,
       "cost": 0.000016884
     },
-    "id": "gen-dec-1789857762-P23Q693BerxpW4qpUvlS",
+    "id": "gen-dec-1789961010-3TGWxIePG8E8MAcTgXK5",
     "provider": "TypeSafe"
   },
   "webhook-d2": {
@@ -52,9 +52,9 @@
         "type": "choice",
         "choice": "webhook_not_firing",
         "probabilities": {
-          "webhook_retries": 0,
+          "webhook_not_firing": 1,
           "signature_mismatch": 0,
-          "webhook_not_firing": 1
+          "webhook_retries": 0
         },
         "confidence": 1
       }
@@ -64,7 +64,7 @@
       "output_tokens": 58,
       "cost": 0.00001701
     },
-    "id": "gen-dec-1789857762-vTJfqmobn6gNXko6oyIC",
+    "id": "gen-dec-1789961010-Gyt7exqAfsLXwPKGkpDz",
     "provider": "TypeSafe"
   },
   "double-bill-d0": {
@@ -74,11 +74,11 @@
         "type": "choice",
         "choice": "billing",
         "probabilities": {
-          "data": 0,
-          "technical": 0,
-          "account": 0,
+          "feedback": 0,
           "billing": 1,
-          "feedback": 0
+          "data": 0,
+          "account": 0,
+          "technical": 0
         },
         "confidence": 1
       }
@@ -88,7 +88,7 @@
       "output_tokens": 52,
       "cost": 0.00001848
     },
-    "id": "gen-dec-1789857762-sme7Tn64HdQLHS790Crh",
+    "id": "gen-dec-1789961010-AP0D01VM5kETqfJi9PcA",
     "provider": "TypeSafe"
   },
   "double-bill-d1": {
@@ -98,8 +98,8 @@
         "type": "choice",
         "choice": "invoices",
         "probabilities": {
-          "payments": 0,
           "plans": 0,
+          "payments": 0,
           "invoices": 1
         },
         "confidence": 1
@@ -110,7 +110,7 @@
       "output_tokens": 42,
       "cost": 0.00001638
     },
-    "id": "gen-dec-1789857763-7R7V5N5OhdBC0EpcFnLO",
+    "id": "gen-dec-1789961010-CrPDLAvLYTwAyzcWThL4",
     "provider": "TypeSafe"
   },
   "double-bill-d2": {
@@ -120,12 +120,12 @@
         "type": "choice",
         "choice": "invoice_line_items",
         "probabilities": {
-          "tax_and_vat": 0,
-          "invoice_line_items": 0.99,
+          "invoice_line_items": 0.98,
+          "invoice_amount": 0.02,
           "receipts": 0,
-          "invoice_amount": 0.01
+          "tax_and_vat": 0
         },
-        "confidence": 0.98
+        "confidence": 0.97
       }
     },
     "usage": {
@@ -133,7 +133,7 @@
       "output_tokens": 58,
       "cost": 0.000017262
     },
-    "id": "gen-dec-1789857763-I2V9tcodgtxqcEL21n0a",
+    "id": "gen-dec-1789961011-f2jt3gNx2v8X8V188hBy",
     "provider": "TypeSafe"
   },
   "leaving-d0": {
@@ -144,10 +144,10 @@
         "choice": "data",
         "probabilities": {
           "account": 0,
-          "billing": 0,
           "feedback": 0,
-          "technical": 0,
-          "data": 1
+          "data": 1,
+          "billing": 0,
+          "technical": 0
         },
         "confidence": 1
       }
@@ -157,7 +157,7 @@
       "output_tokens": 52,
       "cost": 0.000018774
     },
-    "id": "gen-dec-1789857763-DIgSr5Tvu8c1AjhqdBsQ",
+    "id": "gen-dec-1789961011-fIcGM1jHyrxdDOd6Xau4",
     "provider": "TypeSafe"
   },
   "leaving-d1": {
@@ -167,9 +167,9 @@
         "type": "choice",
         "choice": "export",
         "probabilities": {
-          "retention": 0,
           "export": 1,
-          "privacy": 0
+          "privacy": 0,
+          "retention": 0
         },
         "confidence": 1
       }
@@ -179,7 +179,7 @@
       "output_tokens": 40,
       "cost": 0.00001617
     },
-    "id": "gen-dec-1789857763-xlyjGZ0xAcJeHQFnirzp",
+    "id": "gen-dec-1789961011-z0LipPSs5XnxjVIVZKMB",
     "provider": "TypeSafe"
   },
   "leaving-d2": {
@@ -189,8 +189,8 @@
         "type": "choice",
         "choice": "full_export",
         "probabilities": {
-          "export_format": 0,
-          "full_export": 1
+          "full_export": 1,
+          "export_format": 0
         },
         "confidence": 1
       }
@@ -200,7 +200,7 @@
       "output_tokens": 36,
       "cost": 0.000015456
     },
-    "id": "gen-dec-1789857763-CUOM1E673NTdJgZkFoxv",
+    "id": "gen-dec-1789961011-D8PYpl8YV1C52PNUvZxe",
     "provider": "TypeSafe"
   },
   "ambiguous-billing-d0": {
@@ -210,21 +210,21 @@
         "type": "choice",
         "choice": "billing",
         "probabilities": {
-          "technical": 0,
-          "data": 0,
           "account": 0,
+          "billing": 1,
           "feedback": 0,
-          "billing": 1
+          "technical": 0,
+          "data": 0
         },
         "confidence": 1
       }
     },
     "usage": {
-      "input_tokens": 448,
+      "input_tokens": 481,
       "output_tokens": 52,
-      "cost": 0.000018816
+      "cost": 0.000020202
     },
-    "id": "gen-dec-1789857764-JJxQ6H9oK1OLGJLJiEso",
+    "id": "gen-dec-1789961012-tfQ9MzH524EunJ1QctDl",
     "provider": "TypeSafe"
   },
   "ambiguous-billing-d1": {
@@ -232,21 +232,43 @@
     "answers": {
       "billing": {
         "type": "choice",
-        "choice": "plans",
+        "choice": "payments",
         "probabilities": {
-          "invoices": 0.04,
-          "payments": 0.34,
-          "plans": 0.62
+          "invoices": 0,
+          "plans": 0,
+          "payments": 1
         },
-        "confidence": 0.43
+        "confidence": 1
       }
     },
     "usage": {
-      "input_tokens": 398,
+      "input_tokens": 431,
       "output_tokens": 40,
-      "cost": 0.000016716
+      "cost": 0.000018102
     },
-    "id": "gen-dec-1789857764-SBfLPklPjqNYf9dlciN1",
+    "id": "gen-dec-1789961012-Ir3cItUfQLALRWdO5gdO",
+    "provider": "TypeSafe"
+  },
+  "ambiguous-billing-d2": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "billing__payments": {
+        "type": "choice",
+        "choice": "payment_method_change",
+        "probabilities": {
+          "failed_payment_recovery": 0.37,
+          "payment_method_change": 0.45,
+          "card_declined": 0.18
+        },
+        "confidence": 0.18
+      }
+    },
+    "usage": {
+      "input_tokens": 436,
+      "output_tokens": 50,
+      "cost": 0.000018312
+    },
+    "id": "gen-dec-1789961012-AgziyqfYDflUwtoIFEW1",
     "provider": "TypeSafe"
   },
   "sso-d0": {
@@ -256,10 +278,10 @@
         "type": "choice",
         "choice": "account",
         "probabilities": {
+          "billing": 0.05,
+          "data": 0,
           "feedback": 0,
           "account": 0.88,
-          "data": 0,
-          "billing": 0.05,
           "technical": 0.07
         },
         "confidence": 0.85
@@ -270,7 +292,7 @@
       "output_tokens": 52,
       "cost": 0.000018564
     },
-    "id": "gen-dec-1789857764-HVbChD6CSJV47lxv7fzG",
+    "id": "gen-dec-1789961012-EHgCOY7NNreKduDRCmKz",
     "provider": "TypeSafe"
   },
   "sso-d1": {
@@ -289,18 +311,18 @@
         "type": "choice",
         "choice": "ingestion",
         "probabilities": {
-          "ingestion": 0.77,
-          "delivery": 0.22,
+          "delivery": 0.25,
+          "ingestion": 0.74,
           "dashboards": 0.01
         },
-        "confidence": 0.65
+        "confidence": 0.62
       },
       "billing": {
         "type": "choice",
         "choice": "plans",
         "probabilities": {
-          "invoices": 0,
           "plans": 1,
+          "invoices": 0,
           "payments": 0
         },
         "confidence": 1
@@ -311,7 +333,7 @@
       "output_tokens": 109,
       "cost": 0.000022974
     },
-    "id": "gen-dec-1789857764-rCvczQCH7IDZdkrsWibC",
+    "id": "gen-dec-1789961012-u6gDGekZP7282CKjzViP",
     "provider": "TypeSafe"
   },
   "sso-d2": {
@@ -331,22 +353,22 @@
         "type": "choice",
         "choice": "events_missing",
         "probabilities": {
-          "duplicate_events": 0.01,
-          "events_missing": 0.9,
           "rate_limited": 0.01,
-          "batch_rejected": 0.08
+          "events_missing": 0.92,
+          "duplicate_events": 0.01,
+          "batch_rejected": 0.06
         },
-        "confidence": 0.86
+        "confidence": 0.88
       },
       "billing__plans": {
         "type": "choice",
         "choice": "upgrade",
         "probabilities": {
+          "downgrade": 0,
           "upgrade": 1,
-          "cancellation": 0,
-          "downgrade": 0
+          "cancellation": 0
         },
-        "confidence": 0.99
+        "confidence": 1
       }
     },
     "usage": {
@@ -354,7 +376,7 @@
       "output_tokens": 143,
       "cost": 0.00002457
     },
-    "id": "gen-dec-1789857765-wm5p9kLnyx0f3fLNu8kZ",
+    "id": "gen-dec-1789961013-esM9PiCLIKc1UpkqMFPw",
     "provider": "TypeSafe"
   }
 }

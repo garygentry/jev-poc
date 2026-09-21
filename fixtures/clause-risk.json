@@ -24,7 +24,7 @@
       "output_tokens": 75,
       "cost": 0.000026502
     },
-    "id": "gen-dec-1789939563-RHiezANF0NNAjeaShBWp",
+    "id": "gen-dec-1789957248-NvZc4PURA7DTbLGSHyQw",
     "provider": "TypeSafe"
   },
   "services-agreement/payment": {
@@ -52,7 +52,7 @@
       "output_tokens": 75,
       "cost": 0.000027006
     },
-    "id": "gen-dec-1789939563-VNIF27eL1OZcDi9t5RFU",
+    "id": "gen-dec-1789957248-PFgu4vIaUXzlcxfv3OrU",
     "provider": "TypeSafe"
   },
   "services-agreement/auto-renewal": {
@@ -60,7 +60,7 @@
     "answers": {
       "one_sided": {
         "type": "noul",
-        "noul": 0.27
+        "noul": 0.28
       },
       "liability": {
         "type": "noul",
@@ -68,7 +68,7 @@
       },
       "lock_in": {
         "type": "noul",
-        "noul": 0.69
+        "noul": 0.7
       },
       "ip_or_data": {
         "type": "noul",
@@ -80,7 +80,7 @@
       "output_tokens": 75,
       "cost": 0.00002751
     },
-    "id": "gen-dec-1789939563-InB3IHJCmwdAxkf2zxAP",
+    "id": "gen-dec-1789957248-trpjcyqwX4C65F5BA1o2",
     "provider": "TypeSafe"
   },
   "services-agreement/indemnification": {
@@ -96,7 +96,7 @@
       },
       "lock_in": {
         "type": "noul",
-        "noul": 0.15
+        "noul": 0.16
       },
       "ip_or_data": {
         "type": "noul",
@@ -108,7 +108,7 @@
       "output_tokens": 75,
       "cost": 0.000026964
     },
-    "id": "gen-dec-1789939563-bGaWgYtcfU6l3lqT8fci",
+    "id": "gen-dec-1789957248-TZaNe2jo6FCIT3Ll6hPo",
     "provider": "TypeSafe"
   },
   "services-agreement/ip-assignment": {
@@ -124,7 +124,7 @@
       },
       "lock_in": {
         "type": "noul",
-        "noul": 0.15
+        "noul": 0.14
       },
       "ip_or_data": {
         "type": "noul",
@@ -136,7 +136,7 @@
       "output_tokens": 75,
       "cost": 0.000026376
     },
-    "id": "gen-dec-1789939563-obA7YVolHlloOhHQAMsh",
+    "id": "gen-dec-1789957248-ZoKR8Bdnsdz2dfbNE8Ac",
     "provider": "TypeSafe"
   },
   "services-agreement/confidentiality": {
@@ -152,7 +152,7 @@
       },
       "lock_in": {
         "type": "noul",
-        "noul": 0.08
+        "noul": 0.07
       },
       "ip_or_data": {
         "type": "noul",
@@ -164,7 +164,7 @@
       "output_tokens": 75,
       "cost": 0.000026922
     },
-    "id": "gen-dec-1789939563-cEt5MV6oXIhxW1qnSXbB",
+    "id": "gen-dec-1789957248-IM61CztqRJ4vT4itcdBh",
     "provider": "TypeSafe"
   },
   "services-agreement/termination": {
@@ -176,11 +176,11 @@
       },
       "liability": {
         "type": "noul",
-        "noul": 0.15
+        "noul": 0.14
       },
       "lock_in": {
         "type": "noul",
-        "noul": 0.57
+        "noul": 0.67
       },
       "ip_or_data": {
         "type": "noul",
@@ -192,7 +192,7 @@
       "output_tokens": 75,
       "cost": 0.000026964
     },
-    "id": "gen-dec-1789939563-iRxxMeYOpYYxHaLy6QjY",
+    "id": "gen-dec-1789957248-hmI9umjyK0Yk22OgVkg7",
     "provider": "TypeSafe"
   },
   "services-agreement/governing-law": {
@@ -200,7 +200,7 @@
     "answers": {
       "one_sided": {
         "type": "noul",
-        "noul": 0.15
+        "noul": 0.14
       },
       "liability": {
         "type": "noul",
@@ -220,7 +220,7 @@
       "output_tokens": 75,
       "cost": 0.000026712
     },
-    "id": "gen-dec-1789939564-62J4p1bRfIanaKhC72NG",
+    "id": "gen-dec-1789957248-SuJwATvpXBjZEj7ZpuWG",
     "provider": "TypeSafe"
   }
 }

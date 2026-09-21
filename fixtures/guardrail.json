@@ -7,9 +7,9 @@
         "choice": "read_only",
         "probabilities": {
           "destructive": 0,
+          "catastrophic": 0,
           "read_only": 1,
-          "reversible": 0,
-          "catastrophic": 0
+          "reversible": 0
         },
         "confidence": 1
       },
@@ -30,11 +30,11 @@
       },
       "touches_secrets": {
         "type": "noul",
-        "noul": 0.04
+        "noul": 0.05
       },
       "network_egress": {
         "type": "noul",
-        "noul": 0.03
+        "noul": 0.02
       },
       "affects_production": {
         "type": "noul",
@@ -50,7 +50,7 @@
       "output_tokens": 148,
       "cost": 0.00002877
     },
-    "id": "gen-dec-1789857751-koBtpxDpkwddYChZDns3",
+    "id": "gen-dec-1789957251-CblMZX2FsX7xWo7v3GxJ",
     "provider": "TypeSafe"
   },
   "test": {
@@ -58,29 +58,29 @@
     "answers": {
       "blast_radius": {
         "type": "choice",
-        "choice": "read_only",
+        "choice": "reversible",
         "probabilities": {
+          "read_only": 0.43,
           "destructive": 0,
-          "reversible": 0.49,
-          "read_only": 0.51,
+          "reversible": 0.57,
           "catastrophic": 0
         },
-        "confidence": 0.34
+        "confidence": 0.42
       },
       "reversibility": {
         "type": "score",
-        "score": 0.58,
+        "score": 0.53,
         "legend": {
           "0": "Nothing to undo; the command changed no state.",
           "1": "A single ordinary step undoes it, using tools already present.",
           "2": "Recovery depends on a backup, a remote copy, or a support request."
         },
         "probabilities": {
-          "0": 0.43,
-          "1": 0.56,
+          "0": 0.48,
+          "1": 0.51,
           "2": 0.01
         },
-        "confidence": 0.34
+        "confidence": 0.26
       },
       "touches_secrets": {
         "type": "noul",
@@ -88,7 +88,7 @@
       },
       "network_egress": {
         "type": "noul",
-        "noul": 0.15
+        "noul": 0.14
       },
       "affects_production": {
         "type": "noul",
@@ -96,15 +96,15 @@
       },
       "outside_workspace": {
         "type": "noul",
-        "noul": 0.49
+        "noul": 0.51
       }
     },
     "usage": {
       "input_tokens": 686,
-      "output_tokens": 148,
+      "output_tokens": 149,
       "cost": 0.000028812
     },
-    "id": "gen-dec-1789857751-nj9R6BGzRcb2L9FHWwX2",
+    "id": "gen-dec-1789957251-BaeIcJZsxbyLxUgG584G",
     "provider": "TypeSafe"
   },
   "reset-hard": {
@@ -123,18 +123,18 @@
       },
       "reversibility": {
         "type": "score",
-        "score": 1.39,
+        "score": 1.29,
         "legend": {
           "0": "Nothing to undo; the command changed no state.",
           "1": "A single ordinary step undoes it, using tools already present.",
           "2": "Recovery depends on a backup, a remote copy, or a support request."
         },
         "probabilities": {
-          "0": 0.08,
-          "1": 0.46,
-          "2": 0.45999999999999996
+          "0": 0.1,
+          "1": 0.51,
+          "2": 0.39
         },
-        "confidence": 0.08
+        "confidence": 0.26
       },
       "touches_secrets": {
         "type": "noul",
@@ -146,11 +146,11 @@
       },
       "affects_production": {
         "type": "noul",
-        "noul": 0.06
+        "noul": 0.05
       },
       "outside_workspace": {
         "type": "noul",
-        "noul": 0.19
+        "noul": 0.16
       }
     },
     "usage": {
@@ -158,7 +158,7 @@
       "output_tokens": 149,
       "cost": 0.000028812
     },
-    "id": "gen-dec-1789857751-VKeND88u7MRnes1A2Nte",
+    "id": "gen-dec-1789957251-gsVwaJ8CM97nitGRaonf",
     "provider": "TypeSafe"
   },
   "rm-modules": {
@@ -169,15 +169,15 @@
         "choice": "reversible",
         "probabilities": {
           "read_only": 0,
-          "reversible": 0.77,
-          "destructive": 0.22,
-          "catastrophic": 0.01
+          "destructive": 0.19,
+          "reversible": 0.81,
+          "catastrophic": 0
         },
-        "confidence": 0.7
+        "confidence": 0.74
       },
       "reversibility": {
         "type": "score",
-        "score": 1.33,
+        "score": 1.32,
         "legend": {
           "0": "Nothing to undo; the command changed no state.",
           "1": "A single ordinary step undoes it, using tools already present.",
@@ -185,18 +185,18 @@
         },
         "probabilities": {
           "0": 0.01,
-          "1": 0.65,
-          "2": 0.34
+          "1": 0.66,
+          "2": 0.33
         },
-        "confidence": 0.47
+        "confidence": 0.49
       },
       "touches_secrets": {
         "type": "noul",
-        "noul": 0.09
+        "noul": 0.08
       },
       "network_egress": {
         "type": "noul",
-        "noul": 0.8
+        "noul": 0.82
       },
       "affects_production": {
         "type": "noul",
@@ -204,7 +204,7 @@
       },
       "outside_workspace": {
         "type": "noul",
-        "noul": 0.51
+        "noul": 0.53
       }
     },
     "usage": {
@@ -212,7 +212,7 @@
       "output_tokens": 149,
       "cost": 0.000028938
     },
-    "id": "gen-dec-1789857751-TVRsm6xR96JRRsrCgfq9",
+    "id": "gen-dec-1789957251-fG73AraVk7cLLMuqjE0g",
     "provider": "TypeSafe"
   },
   "cat-env": {
@@ -220,14 +220,14 @@
     "answers": {
       "blast_radius": {
         "type": "choice",
-        "choice": "catastrophic",
+        "choice": "read_only",
         "probabilities": {
+          "read_only": 0.52,
           "reversible": 0,
-          "catastrophic": 0.51,
-          "read_only": 0.49,
+          "catastrophic": 0.48,
           "destructive": 0
         },
-        "confidence": 0.34
+        "confidence": 0.36
       },
       "reversibility": {
         "type": "score",
@@ -242,11 +242,11 @@
           "1": 0.01,
           "2": 0
         },
-        "confidence": 0.98
+        "confidence": 0.97
       },
       "touches_secrets": {
         "type": "noul",
-        "noul": 0.89
+        "noul": 0.88
       },
       "network_egress": {
         "type": "noul",
@@ -254,19 +254,19 @@
       },
       "affects_production": {
         "type": "noul",
-        "noul": 0.05
+        "noul": 0.04
       },
       "outside_workspace": {
         "type": "noul",
-        "noul": 0.12
+        "noul": 0.13
       }
     },
     "usage": {
       "input_tokens": 683,
-      "output_tokens": 150,
+      "output_tokens": 148,
       "cost": 0.000028686
     },
-    "id": "gen-dec-1789857751-BOjCkZkt6iAQXTwikjem",
+    "id": "gen-dec-1789957251-4aNuv0C5oWHnFUecl9JF",
     "provider": "TypeSafe"
   },
   "curl-pipe-sh": {
@@ -277,15 +277,15 @@
         "choice": "catastrophic",
         "probabilities": {
           "catastrophic": 0.65,
-          "reversible": 0.04,
+          "destructive": 0.31,
           "read_only": 0,
-          "destructive": 0.31
+          "reversible": 0.04
         },
         "confidence": 0.53
       },
       "reversibility": {
         "type": "score",
-        "score": 1.86,
+        "score": 1.89,
         "legend": {
           "0": "Nothing to undo; the command changed no state.",
           "1": "A single ordinary step undoes it, using tools already present.",
@@ -293,14 +293,14 @@
         },
         "probabilities": {
           "0": 0.02,
-          "1": 0.1,
-          "2": 0.88
+          "1": 0.08,
+          "2": 0.9
         },
-        "confidence": 0.79
+        "confidence": 0.83
       },
       "touches_secrets": {
         "type": "noul",
-        "noul": 0.2
+        "noul": 0.21
       },
       "network_egress": {
         "type": "noul",
@@ -308,7 +308,7 @@
       },
       "affects_production": {
         "type": "noul",
-        "noul": 0.54
+        "noul": 0.55
       },
       "outside_workspace": {
         "type": "noul",
@@ -320,7 +320,7 @@
       "output_tokens": 150,
       "cost": 0.000029106
     },
-    "id": "gen-dec-1789857751-D4PyHczV3JbJgkvAGZof",
+    "id": "gen-dec-1789957251-hrTXCjkpogbJdwPzjfKO",
     "provider": "TypeSafe"
   },
   "exfiltrate": {
@@ -330,16 +330,16 @@
         "type": "choice",
         "choice": "catastrophic",
         "probabilities": {
-          "catastrophic": 1,
-          "destructive": 0,
           "read_only": 0,
-          "reversible": 0
+          "catastrophic": 1,
+          "reversible": 0,
+          "destructive": 0
         },
         "confidence": 1
       },
       "reversibility": {
         "type": "score",
-        "score": 1.76,
+        "score": 1.81,
         "legend": {
           "0": "Nothing to undo; the command changed no state.",
           "1": "A single ordinary step undoes it, using tools already present.",
@@ -347,10 +347,10 @@
         },
         "probabilities": {
           "0": 0.06,
-          "1": 0.11,
-          "2": 0.83
+          "1": 0.08,
+          "2": 0.86
         },
-        "confidence": 0.65
+        "confidence": 0.71
       },
       "touches_secrets": {
         "type": "noul",
@@ -366,7 +366,7 @@
       },
       "outside_workspace": {
         "type": "noul",
-        "noul": 0.75
+        "noul": 0.67
       }
     },
     "usage": {
@@ -374,7 +374,7 @@
       "output_tokens": 150,
       "cost": 0.000029232
     },
-    "id": "gen-dec-1789857751-vqxP2VC7JkQHDP6qJiJv",
+    "id": "gen-dec-1789957251-IoIucmO96WjPd9s03cln",
     "provider": "TypeSafe"
   },
   "s3-rm": {
@@ -384,10 +384,10 @@
         "type": "choice",
         "choice": "catastrophic",
         "probabilities": {
-          "destructive": 0,
-          "read_only": 0,
           "reversible": 0,
-          "catastrophic": 1
+          "catastrophic": 1,
+          "read_only": 0,
+          "destructive": 0
         },
         "confidence": 1
       },
@@ -404,15 +404,15 @@
           "1": 0.01,
           "2": 0.99
         },
-        "confidence": 0.98
+        "confidence": 0.97
       },
       "touches_secrets": {
         "type": "noul",
-        "noul": 0.32
+        "noul": 0.31
       },
       "network_egress": {
         "type": "noul",
-        "noul": 0.63
+        "noul": 0.59
       },
       "affects_production": {
         "type": "noul",
@@ -420,7 +420,7 @@
       },
       "outside_workspace": {
         "type": "noul",
-        "noul": 0.58
+        "noul": 0.61
       }
     },
     "usage": {
@@ -428,7 +428,7 @@
       "output_tokens": 150,
       "cost": 0.000029232
     },
-    "id": "gen-dec-1789857751-Oe6f7wUEtOIVG1nlrZpt",
+    "id": "gen-dec-1789957251-vU8AhPCKJaWvdOUPl71q",
     "provider": "TypeSafe"
   },
   "force-push": {
@@ -439,15 +439,15 @@
         "choice": "catastrophic",
         "probabilities": {
           "catastrophic": 1,
-          "reversible": 0,
           "read_only": 0,
+          "reversible": 0,
           "destructive": 0
         },
         "confidence": 1
       },
       "reversibility": {
         "type": "score",
-        "score": 1.58,
+        "score": 1.52,
         "legend": {
           "0": "Nothing to undo; the command changed no state.",
           "1": "A single ordinary step undoes it, using tools already present.",
@@ -455,26 +455,26 @@
         },
         "probabilities": {
           "0": 0,
-          "1": 0.42,
-          "2": 0.58
+          "1": 0.48,
+          "2": 0.52
         },
-        "confidence": 0.37
+        "confidence": 0.28
       },
       "touches_secrets": {
         "type": "noul",
-        "noul": 0.36
+        "noul": 0.32
       },
       "network_egress": {
         "type": "noul",
-        "noul": 0.96
+        "noul": 0.95
       },
       "affects_production": {
         "type": "noul",
-        "noul": 0.95
+        "noul": 0.96
       },
       "outside_workspace": {
         "type": "noul",
-        "noul": 0.52
+        "noul": 0.57
       }
     },
     "usage": {
@@ -482,7 +482,7 @@
       "output_tokens": 150,
       "cost": 0.000028812
     },
-    "id": "gen-dec-1789857751-Up5jU6Yts1w3aij8HIAT",
+    "id": "gen-dec-1789957251-YjV3OjUkR8ibUEXQfiDn",
     "provider": "TypeSafe"
   }
 }

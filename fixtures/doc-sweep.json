@@ -12,7 +12,7 @@
       "output_tokens": 22,
       "cost": 0.000019152
     },
-    "id": "gen-dec-1789940078-5vHguRf1rQoLXqPRwqs9",
+    "id": "gen-dec-1789957250-O5w8eicp5dHDJBR2gaGM",
     "provider": "TypeSafe"
   },
   "privacy-policy/c2": {
@@ -28,7 +28,7 @@
       "output_tokens": 22,
       "cost": 0.000018816
     },
-    "id": "gen-dec-1789940078-WQgaGS1byxB1CAKTOqO4",
+    "id": "gen-dec-1789957250-TgytZ0icoky9pXsCTdTX",
     "provider": "TypeSafe"
   },
   "privacy-policy/c4": {
@@ -44,7 +44,7 @@
       "output_tokens": 22,
       "cost": 0.000019446
     },
-    "id": "gen-dec-1789940078-1pVzdPHYms0RrQDdKHQi",
+    "id": "gen-dec-1789957250-NZwtPW4KCLRB2v1AVsZB",
     "provider": "TypeSafe"
   },
   "privacy-policy/c6": {
@@ -52,7 +52,7 @@
     "answers": {
       "discloses": {
         "type": "noul",
-        "noul": 0.75
+        "noul": 0.77
       }
     },
     "usage": {
@@ -60,7 +60,7 @@
       "output_tokens": 22,
       "cost": 0.000019236
     },
-    "id": "gen-dec-1789940078-azlLC57Ug0Ydpe357xIp",
+    "id": "gen-dec-1789957250-J7qS0CuoTZcxlk2dBUzW",
     "provider": "TypeSafe"
   },
   "privacy-policy/c8": {
@@ -76,7 +76,7 @@
       "output_tokens": 22,
       "cost": 0.000018984
     },
-    "id": "gen-dec-1789940078-rehfQfelCWDAveQiEY64",
+    "id": "gen-dec-1789957250-o5i0taHmiCIc2ZZ9vN2t",
     "provider": "TypeSafe"
   }
 }

@@ -6,15 +6,15 @@
         "type": "choice",
         "choice": "routine",
         "probabilities": {
-          "involved": 0.08,
-          "routine": 0.92,
+          "involved": 0.1,
+          "routine": 0.9,
           "expert": 0
         },
-        "confidence": 0.88
+        "confidence": 0.84
       },
       "high_stakes": {
         "type": "noul",
-        "noul": 0.04
+        "noul": 0.03
       }
     },
     "usage": {
@@ -22,7 +22,7 @@
       "output_tokens": 59,
       "cost": 0.00002121
     },
-    "id": "gen-dec-1789921637-7YnHrT6i2MmgTDwOkLL8",
+    "id": "gen-dec-1789957248-2YOqn0acY0stJizrhfTC",
     "provider": "TypeSafe"
   },
   "reset": {
@@ -32,15 +32,15 @@
         "type": "choice",
         "choice": "involved",
         "probabilities": {
+          "routine": 0.45,
           "expert": 0.03,
-          "routine": 0.44,
-          "involved": 0.53
+          "involved": 0.52
         },
-        "confidence": 0.3
+        "confidence": 0.29
       },
       "high_stakes": {
         "type": "noul",
-        "noul": 0.51
+        "noul": 0.53
       }
     },
     "usage": {
@@ -48,7 +48,7 @@
       "output_tokens": 61,
       "cost": 0.00002163
     },
-    "id": "gen-dec-1789921637-1b4kY0vlDp5RxucZHj0V",
+    "id": "gen-dec-1789957248-kYNSLJdgjTwe7eGjmfvs",
     "provider": "TypeSafe"
   },
   "double-charge": {
@@ -58,15 +58,15 @@
         "type": "choice",
         "choice": "involved",
         "probabilities": {
-          "routine": 0.35,
-          "involved": 0.65,
+          "involved": 0.66,
+          "routine": 0.34,
           "expert": 0
         },
-        "confidence": 0.46
+        "confidence": 0.49
       },
       "high_stakes": {
         "type": "noul",
-        "noul": 0.88
+        "noul": 0.89
       }
     },
     "usage": {
@@ -74,7 +74,7 @@
       "output_tokens": 61,
       "cost": 0.000022344
     },
-    "id": "gen-dec-1789921637-LyQ0UJ2xyCsrxO2P9XZy",
+    "id": "gen-dec-1789957248-uxrFLxcjOLJdriKuWnFw",
     "provider": "TypeSafe"
   },
   "data-export": {
@@ -84,15 +84,15 @@
         "type": "choice",
         "choice": "expert",
         "probabilities": {
-          "involved": 0.41,
-          "expert": 0.56,
-          "routine": 0.03
+          "routine": 0.04,
+          "expert": 0.55,
+          "involved": 0.41
         },
-        "confidence": 0.34
+        "confidence": 0.32
       },
       "high_stakes": {
         "type": "noul",
-        "noul": 0.84
+        "noul": 0.85
       }
     },
     "usage": {
@@ -100,7 +100,7 @@
       "output_tokens": 59,
       "cost": 0.0000231
     },
-    "id": "gen-dec-1789921637-C37CXvUHZxfsudZN6IwK",
+    "id": "gen-dec-1789957248-0jXJDc8x8MBM126YaWIK",
     "provider": "TypeSafe"
   },
   "integration": {
@@ -110,11 +110,11 @@
         "type": "choice",
         "choice": "involved",
         "probabilities": {
-          "routine": 0.01,
-          "involved": 0.76,
-          "expert": 0.23
+          "expert": 0.25,
+          "involved": 0.74,
+          "routine": 0.01
         },
-        "confidence": 0.63
+        "confidence": 0.61
       },
       "high_stakes": {
         "type": "noul",
@@ -126,7 +126,7 @@
       "output_tokens": 61,
       "cost": 0.000022764
     },
-    "id": "gen-dec-1789921637-edKopBqjpiSBhq6bZD0A",
+    "id": "gen-dec-1789957248-jEXwxeUWzAsnNDk1VW69",
     "provider": "TypeSafe"
   }
 }

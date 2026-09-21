@@ -6,10 +6,10 @@
         "type": "choice",
         "choice": "curt",
         "probabilities": {
-          "neutral": 0.11,
-          "warm": 0.03,
-          "curt": 0.85,
-          "hostile": 0.01
+          "warm": 0.04,
+          "curt": 0.84,
+          "hostile": 0.01,
+          "neutral": 0.11
         },
         "confidence": 0.79
       },
@@ -17,10 +17,10 @@
         "type": "choice",
         "choice": "peer",
         "probabilities": {
-          "peer": 1,
+          "public": 0,
           "executive": 0,
           "customer": 0,
-          "public": 0
+          "peer": 1
         },
         "confidence": 0.99
       },
@@ -35,15 +35,15 @@
         },
         "probabilities": {
           "0": 0,
-          "1": 0.07,
-          "2": 0.62,
-          "3": 0.31
+          "1": 0.09,
+          "2": 0.59,
+          "3": 0.32
         },
-        "confidence": 0.61
+        "confidence": 0.59
       },
       "urgency": {
         "type": "score",
-        "score": 1.23,
+        "score": 1.2,
         "legend": {
           "0": "No time pressure is implied.",
           "1": "A timeframe is mentioned but nothing turns on it.",
@@ -51,10 +51,10 @@
         },
         "probabilities": {
           "0": 0,
-          "1": 0.77,
-          "2": 0.23
+          "1": 0.79,
+          "2": 0.21
         },
-        "confidence": 0.65
+        "confidence": 0.69
       },
       "hedging": {
         "type": "score",
@@ -69,15 +69,15 @@
           "1": 0.92,
           "2": 0
         },
-        "confidence": 0.87
+        "confidence": 0.88
       },
       "has_clear_ask": {
         "type": "noul",
-        "noul": 0.19
+        "noul": 0.18
       },
       "has_deadline": {
         "type": "noul",
-        "noul": 0.39
+        "noul": 0.46
       },
       "contains_pii": {
         "type": "noul",
@@ -105,7 +105,7 @@
       "output_tokens": 269,
       "cost": 0.000039102
     },
-    "id": "gen-dec-1789857751-KfZoEVyqiyW0zUfhiB0g",
+    "id": "gen-dec-1789957265-XNzsqVtBx1dmyTmOp442",
     "provider": "TypeSafe"
   },
   "clear-ask": {
@@ -115,27 +115,27 @@
         "type": "choice",
         "choice": "neutral",
         "probabilities": {
-          "warm": 0.01,
           "hostile": 0,
-          "neutral": 0.93,
-          "curt": 0.06
+          "neutral": 0.92,
+          "warm": 0.01,
+          "curt": 0.07
         },
-        "confidence": 0.91
+        "confidence": 0.9
       },
       "audience_fit": {
         "type": "choice",
         "choice": "peer",
         "probabilities": {
-          "executive": 0,
+          "peer": 1,
           "customer": 0,
           "public": 0,
-          "peer": 1
+          "executive": 0
         },
         "confidence": 1
       },
       "clarity": {
         "type": "score",
-        "score": 2.7,
+        "score": 2.71,
         "legend": {
           "0": "The reader would have to ask what is meant.",
           "1": "Understandable, but the reader must work for it.",
@@ -145,14 +145,14 @@
         "probabilities": {
           "0": 0,
           "1": 0.01,
-          "2": 0.29,
-          "3": 0.7
+          "2": 0.27,
+          "3": 0.72
         },
-        "confidence": 0.7
+        "confidence": 0.71
       },
       "urgency": {
         "type": "score",
-        "score": 1.86,
+        "score": 1.82,
         "legend": {
           "0": "No time pressure is implied.",
           "1": "A timeframe is mentioned but nothing turns on it.",
@@ -160,25 +160,25 @@
         },
         "probabilities": {
           "0": 0,
-          "1": 0.14,
-          "2": 0.86
+          "1": 0.18,
+          "2": 0.82
         },
-        "confidence": 0.79
+        "confidence": 0.72
       },
       "hedging": {
         "type": "score",
-        "score": 0.27,
+        "score": 0.24,
         "legend": {
           "0": "States things directly.",
           "1": "Occasional softeners that do not obscure the point.",
           "2": "So qualified that the actual position is hard to locate."
         },
         "probabilities": {
-          "0": 0.73,
-          "1": 0.27,
+          "0": 0.76,
+          "1": 0.24,
           "2": 0
         },
-        "confidence": 0.59
+        "confidence": 0.65
       },
       "has_clear_ask": {
         "type": "noul",
@@ -198,7 +198,7 @@
       },
       "passive_aggressive": {
         "type": "noul",
-        "noul": 0.58
+        "noul": 0.57
       },
       "reads_as_complaint": {
         "type": "noul",
@@ -214,7 +214,7 @@
       "output_tokens": 268,
       "cost": 0.00003864
     },
-    "id": "gen-dec-1789857751-hBcCtOPTQbGGR6ZGW4EM",
+    "id": "gen-dec-1789957265-odMl1BRtnQ3dd3kYe9dj",
     "provider": "TypeSafe"
   },
   "hedged": {
@@ -224,27 +224,27 @@
         "type": "choice",
         "choice": "neutral",
         "probabilities": {
+          "curt": 0,
           "hostile": 0,
-          "neutral": 0.59,
-          "warm": 0.41,
-          "curt": 0
+          "warm": 0.36,
+          "neutral": 0.64
         },
-        "confidence": 0.45
+        "confidence": 0.52
       },
       "audience_fit": {
         "type": "choice",
         "choice": "peer",
         "probabilities": {
-          "customer": 0,
-          "public": 0,
           "peer": 1,
-          "executive": 0
+          "public": 0,
+          "executive": 0,
+          "customer": 0
         },
         "confidence": 1
       },
       "clarity": {
         "type": "score",
-        "score": 1.26,
+        "score": 1.28,
         "legend": {
           "0": "The reader would have to ask what is meant.",
           "1": "Understandable, but the reader must work for it.",
@@ -253,11 +253,11 @@
         },
         "probabilities": {
           "0": 0.04,
-          "1": 0.68,
-          "2": 0.27,
+          "1": 0.66,
+          "2": 0.29,
           "3": 0.01
         },
-        "confidence": 0.67
+        "confidence": 0.65
       },
       "urgency": {
         "type": "score",
@@ -284,18 +284,18 @@
         },
         "probabilities": {
           "0": 0,
-          "1": 0.02,
-          "2": 0.98
+          "1": 0.01,
+          "2": 0.99
         },
-        "confidence": 0.97
+        "confidence": 0.98
       },
       "has_clear_ask": {
         "type": "noul",
-        "noul": 0.42
+        "noul": 0.39
       },
       "has_deadline": {
         "type": "noul",
-        "noul": 0.14
+        "noul": 0.11
       },
       "contains_pii": {
         "type": "noul",
@@ -307,7 +307,7 @@
       },
       "passive_aggressive": {
         "type": "noul",
-        "noul": 0.19
+        "noul": 0.2
       },
       "reads_as_complaint": {
         "type": "noul",
@@ -315,7 +315,7 @@
       },
       "ready_to_send": {
         "type": "noul",
-        "noul": 0.68
+        "noul": 0.65
       }
     },
     "usage": {
@@ -323,7 +323,7 @@
       "output_tokens": 268,
       "cost": 0.00003927
     },
-    "id": "gen-dec-1789857752-Feh17WgbC0q5Y0IQxNDD",
+    "id": "gen-dec-1789957265-zbQFgDb3sAJI4D7ZZTat",
     "provider": "TypeSafe"
   },
   "leaky": {
@@ -334,26 +334,26 @@
         "choice": "neutral",
         "probabilities": {
           "warm": 0.29,
-          "curt": 0.1,
-          "hostile": 0,
-          "neutral": 0.61
+          "neutral": 0.6,
+          "curt": 0.11,
+          "hostile": 0
         },
-        "confidence": 0.47
+        "confidence": 0.46
       },
       "audience_fit": {
         "type": "choice",
         "choice": "peer",
         "probabilities": {
-          "customer": 0,
-          "public": 0,
           "executive": 0,
-          "peer": 1
+          "public": 0,
+          "peer": 1,
+          "customer": 0
         },
         "confidence": 0.99
       },
       "clarity": {
         "type": "score",
-        "score": 2.35,
+        "score": 2.37,
         "legend": {
           "0": "The reader would have to ask what is meant.",
           "1": "Understandable, but the reader must work for it.",
@@ -363,14 +363,14 @@
         "probabilities": {
           "0": 0,
           "1": 0.05,
-          "2": 0.55,
-          "3": 0.4
+          "2": 0.53,
+          "3": 0.42
         },
-        "confidence": 0.55
+        "confidence": 0.52
       },
       "urgency": {
         "type": "score",
-        "score": 0.04,
+        "score": 0.05,
         "legend": {
           "0": "No time pressure is implied.",
           "1": "A timeframe is mentioned but nothing turns on it.",
@@ -381,26 +381,26 @@
           "1": 0.02,
           "2": 0.01
         },
-        "confidence": 0.94
+        "confidence": 0.93
       },
       "hedging": {
         "type": "score",
-        "score": 0.1,
+        "score": 0.07,
         "legend": {
           "0": "States things directly.",
           "1": "Occasional softeners that do not obscure the point.",
           "2": "So qualified that the actual position is hard to locate."
         },
         "probabilities": {
-          "0": 0.91,
-          "1": 0.09,
+          "0": 0.93,
+          "1": 0.07,
           "2": 0
         },
-        "confidence": 0.86
+        "confidence": 0.89
       },
       "has_clear_ask": {
         "type": "noul",
-        "noul": 0.68
+        "noul": 0.67
       },
       "has_deadline": {
         "type": "noul",
@@ -408,7 +408,7 @@
       },
       "contains_pii": {
         "type": "noul",
-        "noul": 0.29
+        "noul": 0.24
       },
       "contains_secret": {
         "type": "noul",
@@ -416,15 +416,15 @@
       },
       "passive_aggressive": {
         "type": "noul",
-        "noul": 0.23
+        "noul": 0.25
       },
       "reads_as_complaint": {
         "type": "noul",
-        "noul": 0.11
+        "noul": 0.12
       },
       "ready_to_send": {
         "type": "noul",
-        "noul": 0.75
+        "noul": 0.73
       }
     },
     "usage": {
@@ -432,7 +432,7 @@
       "output_tokens": 268,
       "cost": 0.000039396
     },
-    "id": "gen-dec-1789857751-Vo4zsmzx6h8lPVWMPT7o",
+    "id": "gen-dec-1789957265-vmpRzS4WfxKRMUaisIxH",
     "provider": "TypeSafe"
   },
   "unfinished": {
@@ -442,27 +442,27 @@
         "type": "choice",
         "choice": "warm",
         "probabilities": {
-          "hostile": 0,
-          "neutral": 0.32,
+          "warm": 0.65,
           "curt": 0.02,
-          "warm": 0.66
+          "hostile": 0,
+          "neutral": 0.33
         },
-        "confidence": 0.54
+        "confidence": 0.53
       },
       "audience_fit": {
         "type": "choice",
         "choice": "peer",
         "probabilities": {
-          "customer": 0,
           "public": 0,
+          "executive": 0,
           "peer": 1,
-          "executive": 0
+          "customer": 0
         },
         "confidence": 1
       },
       "clarity": {
         "type": "score",
-        "score": 0.64,
+        "score": 0.63,
         "legend": {
           "0": "The reader would have to ask what is meant.",
           "1": "Understandable, but the reader must work for it.",
@@ -470,12 +470,12 @@
           "3": "Plain on one reading, and the structure makes the key point unmissable."
         },
         "probabilities": {
-          "0": 0.45999999999999996,
+          "0": 0.47,
           "1": 0.43,
-          "2": 0.1,
+          "2": 0.09,
           "3": 0.01
         },
-        "confidence": 0.36
+        "confidence": 0.37
       },
       "urgency": {
         "type": "score",
@@ -494,18 +494,18 @@
       },
       "hedging": {
         "type": "score",
-        "score": 0.17,
+        "score": 0.15,
         "legend": {
           "0": "States things directly.",
           "1": "Occasional softeners that do not obscure the point.",
           "2": "So qualified that the actual position is hard to locate."
         },
         "probabilities": {
-          "0": 0.86,
-          "1": 0.12,
+          "0": 0.87,
+          "1": 0.11,
           "2": 0.02
         },
-        "confidence": 0.74
+        "confidence": 0.77
       },
       "has_clear_ask": {
         "type": "noul",
@@ -513,7 +513,7 @@
       },
       "has_deadline": {
         "type": "noul",
-        "noul": 0.05
+        "noul": 0.04
       },
       "contains_pii": {
         "type": "noul",
@@ -533,7 +533,7 @@
       },
       "ready_to_send": {
         "type": "noul",
-        "noul": 0.01
+        "noul": 0.02
       }
     },
     "usage": {
@@ -541,7 +541,7 @@
       "output_tokens": 268,
       "cost": 0.000037968
     },
-    "id": "gen-dec-1789857751-jEEmTT8GMZE0yGNtnRCd",
+    "id": "gen-dec-1789957266-XpdjvUQXVsofJUZySdEz",
     "provider": "TypeSafe"
   }
 }

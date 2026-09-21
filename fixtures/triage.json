@@ -7,8 +7,8 @@
         "choice": "technical",
         "probabilities": {
           "technical": 1,
-          "sales": 0,
           "other": 0,
+          "sales": 0,
           "billing": 0
         },
         "confidence": 1
@@ -57,7 +57,7 @@
       },
       "is_repeat_contact": {
         "type": "noul",
-        "noul": 0.26
+        "noul": 0.27
       }
     },
     "usage": {
@@ -65,7 +65,7 @@
       "output_tokens": 150,
       "cost": 0.00002898
     },
-    "id": "gen-dec-1789857751-atC1jzega1IYXwpFY6o1",
+    "id": "gen-dec-1789957265-bnGHn58yaXiycIQkeHx9",
     "provider": "TypeSafe"
   },
   "sso-question": {
@@ -75,12 +75,12 @@
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "technical": 0,
+          "sales": 1,
           "other": 0,
           "billing": 0,
-          "sales": 1
+          "technical": 0
         },
-        "confidence": 1
+        "confidence": 0.99
       },
       "frustration": {
         "type": "score",
@@ -114,7 +114,7 @@
       },
       "is_urgent": {
         "type": "noul",
-        "noul": 0.11
+        "noul": 0.12
       },
       "threatens_churn": {
         "type": "noul",
@@ -134,7 +134,7 @@
       "output_tokens": 150,
       "cost": 0.00002814
     },
-    "id": "gen-dec-1789857751-JwRUN00VQMwV5L6RGWsI",
+    "id": "gen-dec-1789957265-S4JZlrsoJKuMXTxI6EAo",
     "provider": "TypeSafe"
   },
   "chargeback-threat": {
@@ -144,10 +144,10 @@
         "type": "choice",
         "choice": "billing",
         "probabilities": {
-          "other": 0,
-          "sales": 0,
           "billing": 1,
-          "technical": 0
+          "technical": 0,
+          "other": 0,
+          "sales": 0
         },
         "confidence": 1
       },
@@ -168,18 +168,18 @@
       },
       "business_impact": {
         "type": "score",
-        "score": 0.84,
+        "score": 0.79,
         "legend": {
           "0": "No harm; a question or a preference.",
           "1": "Inconvenience; a workaround exists.",
           "2": "Active revenue or operational loss while this continues."
         },
         "probabilities": {
-          "0": 0.38,
-          "1": 0.4,
-          "2": 0.22
+          "0": 0.42,
+          "1": 0.37,
+          "2": 0.21
         },
-        "confidence": 0.09
+        "confidence": 0
       },
       "is_urgent": {
         "type": "noul",
@@ -203,7 +203,7 @@
       "output_tokens": 150,
       "cost": 0.000028308
     },
-    "id": "gen-dec-1789857751-Y0vr8Oc2UDfsFqNFdigr",
+    "id": "gen-dec-1789957265-TJKmApZ8FfJ6ZIfBhMVf",
     "provider": "TypeSafe"
   },
   "ambiguous": {
@@ -213,31 +213,31 @@
         "type": "choice",
         "choice": "billing",
         "probabilities": {
-          "sales": 0,
-          "other": 0,
           "technical": 0.13,
+          "other": 0,
+          "sales": 0,
           "billing": 0.87
         },
-        "confidence": 0.83
+        "confidence": 0.82
       },
       "frustration": {
         "type": "score",
-        "score": 0.9,
+        "score": 0.88,
         "legend": {
           "0": "Neutral or friendly; stating facts or asking a question.",
           "1": "Visibly annoyed but still civil.",
           "2": "Angry; strong language, threats, or accusations."
         },
         "probabilities": {
-          "0": 0.1,
-          "1": 0.89,
-          "2": 0.01
+          "0": 0.13,
+          "1": 0.87,
+          "2": 0
         },
-        "confidence": 0.84
+        "confidence": 0.81
       },
       "business_impact": {
         "type": "score",
-        "score": 1.84,
+        "score": 1.86,
         "legend": {
           "0": "No harm; a question or a preference.",
           "1": "Inconvenience; a workaround exists.",
@@ -245,14 +245,14 @@
         },
         "probabilities": {
           "0": 0.02,
-          "1": 0.11,
-          "2": 0.87
+          "1": 0.1,
+          "2": 0.88
         },
-        "confidence": 0.76
+        "confidence": 0.78
       },
       "is_urgent": {
         "type": "noul",
-        "noul": 0.64
+        "noul": 0.63
       },
       "threatens_churn": {
         "type": "noul",
@@ -260,11 +260,11 @@
       },
       "refund_requested": {
         "type": "noul",
-        "noul": 0.23
+        "noul": 0.24
       },
       "is_repeat_contact": {
         "type": "noul",
-        "noul": 0.19
+        "noul": 0.15
       }
     },
     "usage": {
@@ -272,7 +272,7 @@
       "output_tokens": 150,
       "cost": 0.000028686
     },
-    "id": "gen-dec-1789857750-FfcrU0NlrXN9gkO3RmVD",
+    "id": "gen-dec-1789957265-350KpnswUT3oJ2wIrDcD",
     "provider": "TypeSafe"
   }
 }
