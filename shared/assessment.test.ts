@@ -2,13 +2,6 @@ import { describe, expect, it } from "vitest"
 
 import { aggregate, rollup, summariseDemo } from "./assessment.ts"
 import type { DemoInput } from "./assessment.ts"
-import type { JevQuestionSet } from "./jev.ts"
-
-const questions: JevQuestionSet = {
-  dept: { type: "choice", instructions: "", criteria: { a: "", b: "" } },
-  sev: { type: "score", instructions: "", criteria: ["low", "mid", "high"] },
-  urgent: { type: "noul", instructions: "" },
-}
 
 /** Three calls: one full agreement, one full disagreement, one parse failure. */
 const demo: DemoInput = {
@@ -16,7 +9,6 @@ const demo: DemoInput = {
   title: "Demo",
   kind: "single",
   group: "foundations",
-  questions,
   pairs: [
     {
       key: "a",
@@ -123,7 +115,6 @@ describe("aggregate / rollup", () => {
     title: "Small",
     kind: "single",
     group: "foundations",
-    questions: { q: { type: "noul", instructions: "" } },
     pairs: [
       {
         key: "only",

@@ -14,13 +14,12 @@
  * more accurate" is a question this evidence cannot answer, and the assessment
  * instructions forbid inventing one.
  */
-import { compareAll } from "./baseline.ts"
 import type { BaselineAnswer } from "./baseline.ts"
 import { UNDECIDED_FLOOR, isUndecided, noulConfidence } from "./jev.ts"
-import type { JevAnswer, JevQuestion, JevQuestionSet, JevUsage } from "./jev.ts"
+import type { JevAnswer, JevUsage } from "./jev.ts"
 
-/** The three answer kinds, as a question declares them. */
-type QuestionType = JevQuestion["type"]
+/** The three answer kinds. */
+type QuestionType = JevAnswer["type"]
 
 // ---------------------------------------------------------------------------
 // Inputs — one aligned pair per recorded call
@@ -48,7 +47,6 @@ export interface DemoInput {
   title: string
   kind: string
   group: string
-  questions: JevQuestionSet
   pairs: EvidencePair[]
 }
 
@@ -132,6 +130,36 @@ function jevIsFlat(answer: JevAnswer): boolean {
     : isUndecided(answer)
 }
 
+/**
+ * Whether Jev and the baseline landed the same way — the loose test from
+ * `baseline.ts`: same choice, same rounded level, same side of a coin flip.
+ * Keyed off the answers themselves, not a question set, so a `rounds` demo whose
+ * questions change each round still compares.
+ */
+function agreesWith(jev: JevAnswer, base: BaselineAnswer): boolean {
+  if (jev.type === "choice" && base.type === "choice") return jev.choice === base.choice
+  if (jev.type === "score" && base.type === "score") return Math.round(jev.score) === base.score
+  if (jev.type === "noul" && base.type === "noul") return jev.noul >= 0.5 === base.noul >= 0.5
+  return false
+}
+
+/** A Jev answer for display, using its own legend for a score's level text. */
+function showJev(answer: JevAnswer): string {
+  if (answer.type === "choice") return answer.choice
+  if (answer.type === "noul") return answer.noul.toFixed(2)
+  const level = Math.round(answer.score)
+  const text = answer.legend?.[String(level)]
+  return text ? `${answer.score.toFixed(2)} (${text})` : answer.score.toFixed(2)
+}
+
+/** A baseline answer for display, borrowing the Jev score's legend when present. */
+function showBaseline(base: BaselineAnswer, jev: JevAnswer): string {
+  if (base.type === "choice") return base.choice
+  if (base.type === "noul") return base.noul.toFixed(2)
+  const text = jev.type === "score" ? jev.legend?.[String(base.score)] : undefined
+  return text ? `${base.score} (${text})` : String(base.score)
+}
+
 const ratio = (part: number, whole: number): number | null =>
   whole === 0 ? null : part / whole
 
@@ -150,7 +178,7 @@ const emptyByType = (): Record<QuestionType, { compared: number; agree: number }
 
 /** Reduce one demo's recorded pairs to the measured signals. */
 export function summariseDemo(input: DemoInput): DemoEvidence {
-  const { questions, pairs } = input
+  const { pairs } = input
 
   const cost: CostMetrics = {
     jevCalls: 0,
@@ -202,23 +230,27 @@ export function summariseDemo(input: DemoInput): DemoEvidence {
     parse.baselineCalls += 1
     if (pair.baseline.parseOk) parse.parseOk += 1
 
-    if (!pair.baseline.answers) continue
+    const baselineAnswers = pair.baseline.answers
+    if (!baselineAnswers) continue
 
-    for (const comparison of compareAll(questions, pair.jev.answers, pair.baseline.answers)) {
-      const type = questions[comparison.name]?.type
-      const bucket = type && agree.byType[type]
-      if (!bucket) continue
+    // Compare on the keys both sides actually answered, so a rounds demo's
+    // per-round questions line up without a question set to key against.
+    for (const [name, jevAnswer] of Object.entries(pair.jev.answers)) {
+      const baseAnswer = baselineAnswers[name]
+      if (!baseAnswer) continue
+
+      const bucket = agree.byType[jevAnswer.type]
       agree.compared += 1
       bucket.compared += 1
-      if (comparison.agree) {
+      if (agreesWith(jevAnswer, baseAnswer)) {
         agree.agree += 1
         bucket.agree += 1
       } else if (agree.disagreements.length < MAX_DISAGREEMENTS) {
         agree.disagreements.push({
           key: pair.key,
-          name: comparison.name,
-          jev: comparison.jev,
-          baseline: comparison.baseline,
+          name,
+          jev: showJev(jevAnswer),
+          baseline: showBaseline(baseAnswer, jevAnswer),
         })
       }
     }
