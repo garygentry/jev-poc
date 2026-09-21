@@ -181,6 +181,26 @@ The two suites divide the work.
 `pnpm e2e` starts its own server on ports 5181/8788 with the key blanked, so it runs beside your dev server, costs nothing, and is deterministic — asserting on live model output would be flaky by construction.
 To exercise the suite against real answers, run `pnpm capture` first and it will assert against what the model actually said.
 
+## Regenerating the assessment
+
+An on-demand report — *which use cases suit Jev best, where it is strongest, where it is weakest* — judged **only** on the recorded evidence, never on a model's training. Three steps, data collection kept separate from the report:
+
+```sh
+# 1. Record the chat-model baseline against the same states Jev saw.
+#    Jev's own side comes from `pnpm capture`; this is the other column.
+pnpm capture:baseline                    # OpenRouter Haiku 4.5 (honest per-call cost)
+pnpm capture:baseline --backend cli      # or via the local `claude` CLI, no key needed
+pnpm capture:baseline triage --model anthropic/claude-sonnet-5   # one demo / other model
+
+# 2. Reduce both fixture sets to measured signals — offline, no key, no model.
+pnpm evidence                            # writes docs/assessment/evidence.json (+ a summary)
+
+# 3. Have the `claude` CLI write the report from that evidence alone.
+pnpm assess --model opus --out docs/jev-assessment.md
+```
+
+The bundle carries only what the recordings show — cost, tokens, decisiveness, Jev-vs-baseline agreement, parse-reliability — and **no notion of "correct"**, because these fixtures have no ground truth. `docs/assessment/INSTRUCTIONS.md` is the contract the judging model follows and holds it to that. Use the `openrouter` backend for any cost claim: the `cli` backend's cost and token counts include the CLI turn's own overhead and are not a per-call API cost.
+
 ## Notes that cost something to learn
 
 - Jev is a **decisions model**. `POST /chat/completions` rejects it outright — the error message is what reveals `/api/alpha/decisions`, and it is not in OpenRouter's docs. That path is still `alpha`; `JEV_DECISIONS_URL` in `.env` overrides it without a code change.

@@ -22,12 +22,12 @@ import { API_KEY, MODE, MODEL } from "../server/config.ts"
 import { mapWithConcurrency } from "../server/concurrency.ts"
 import { ProviderError, askJev } from "../server/transport.ts"
 
-import { entryKey, roundEntry } from "../src/demos/_kit/fixtures.ts"
 import { loadManifests } from "../src/demos/_kit/load-manifests.ts"
+import { flatJobs, walkRounds } from "../src/demos/_kit/plan.ts"
+import type { PlannedJob } from "../src/demos/_kit/plan.ts"
 import type { AnyDemoManifest } from "../src/demos/_kit/types.ts"
 
 import { projectJevSpend } from "../shared/jev.ts"
-import type { JevQuestionSet, JevState } from "../shared/jev.ts"
 
 const FIXTURES = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -46,12 +46,6 @@ const CONCURRENCY = 6
  */
 const CONFIRM_ABOVE_USD = 0.25
 
-interface Job {
-  key: string
-  state: JevState
-  questions: JevQuestionSet
-}
-
 type Recorded = Record<string, unknown>
 
 const write = (demo: string, out: Recorded) =>
@@ -60,35 +54,7 @@ const write = (demo: string, out: Recorded) =>
     JSON.stringify(out, null, 2) + "\n",
   )
 
-/** Every call a demo needs, for the demos whose plan is known up front. */
-function jobsFor(manifest: AnyDemoManifest): Job[] {
-  switch (manifest.kind) {
-    case "fanout":
-    case "pairwise":
-    case "windowed":
-      return manifest.examples.flatMap((example) =>
-        manifest.itemsFor(example.input).map((item) => ({
-          key: entryKey(example.id, item.id),
-          state: item.state,
-          questions: manifest.questions,
-        })),
-      )
-
-    case "single":
-    case "cascade":
-      return manifest.examples.map((example) => ({
-        key: entryKey(example.id),
-        state: manifest.stateFor(example.input),
-        questions: manifest.questions,
-      }))
-
-    // `rounds` is walked rather than listed; `offline` makes no calls at all.
-    default:
-      return []
-  }
-}
-
-async function captureJobs(demo: string, jobs: Job[]): Promise<void> {
+async function captureJobs(demo: string, jobs: PlannedJob[]): Promise<void> {
   process.stdout.write(`${demo.padEnd(12)} ${jobs.length} calls … `)
 
   const settled = await mapWithConcurrency(jobs, CONCURRENCY, async (job) => ({
@@ -116,37 +82,26 @@ async function captureJobs(demo: string, jobs: Job[]): Promise<void> {
 }
 
 /**
- * Walk a `rounds` demo with the manifest's own plan.
+ * Walk a `rounds` demo with the manifest's own plan (see `walkRounds`).
  *
- * It cannot be captured as a flat list: which questions get asked at depth 2
- * depends on what came back at depth 1. Using the manifest's `walk` is what
- * guarantees the recording matches the tree the UI will descend — the previous
- * version of this script reimplemented the beam here, and a change to either
- * one would silently have invalidated the other.
+ * The walk itself lives in the kit so the baseline script descends the same
+ * tree; here it just asks Jev at each node, records the raw response, and hands
+ * those answers back so the beam advances on what Jev actually decided.
  */
 async function captureWalk(
   manifest: Extract<AnyDemoManifest, { kind: "rounds" }>,
 ): Promise<void> {
-  const { walk } = manifest
   process.stdout.write(
     `${manifest.slug.padEnd(12)} walking ${manifest.examples.length} cases … `,
   )
 
   const out: Recorded = {}
 
-  for (const example of manifest.examples) {
-    const state = manifest.stateFor(example.input)
-    let carry = walk.initial
-
-    for (let depth = 0; depth < walk.maxDepth; depth += 1) {
-      const planned = walk.plan(depth, carry)
-      if (!planned) break
-
-      const call = await askJev(state, planned.questions)
-      out[roundEntry(example.id, depth)] = call.raw
-      carry = walk.advance(planned.round, call.response.answers, carry)
-    }
-  }
+  await walkRounds(manifest, async ({ key, state, questions }) => {
+    const call = await askJev(state, questions)
+    out[key] = call.raw
+    return call.response.answers
+  })
 
   write(manifest.slug, out)
   console.log(`ok (${Object.keys(out).length} rounds)`)
@@ -207,7 +162,7 @@ async function main(): Promise<number> {
   for (const manifest of recordable) {
     try {
       if (manifest.kind === "rounds") await captureWalk(manifest)
-      else await captureJobs(manifest.slug, jobsFor(manifest))
+      else await captureJobs(manifest.slug, flatJobs(manifest))
     } catch (error) {
       // One demo failing should not discard the ones already written.
       console.log("failed")
