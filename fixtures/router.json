@@ -6,24 +6,24 @@
         "type": "choice",
         "choice": "trivial",
         "probabilities": {
-          "reasoning": 0.03,
-          "simple": 0.05,
+          "simple": 0.06,
+          "trivial": 0.9,
           "expert": 0,
-          "trivial": 0.92
+          "reasoning": 0.04
         },
-        "confidence": 0.9
+        "confidence": 0.86
       },
       "task_type": {
         "type": "choice",
         "choice": "extraction",
         "probabilities": {
-          "writing": 0.38,
+          "code": 0.16,
+          "writing": 0.39,
           "analysis": 0,
-          "code": 0.14,
-          "conversation": 0,
-          "extraction": 0.48
+          "extraction": 0.45,
+          "conversation": 0
         },
-        "confidence": 0.34
+        "confidence": 0.31
       },
       "needs_tools": {
         "type": "noul",
@@ -47,7 +47,7 @@
       "output_tokens": 180,
       "cost": 0.000031752
     },
-    "id": "gen-dec-1789858108-TQh0ebsLvCa0hSoEHM0A",
+    "id": "gen-dec-1789957261-MtHlHJb4C4Iq3NKFmVaW",
     "provider": "TypeSafe"
   },
   "summarize": {
@@ -57,24 +57,24 @@
         "type": "choice",
         "choice": "simple",
         "probabilities": {
-          "simple": 0.91,
-          "reasoning": 0.08,
-          "trivial": 0.01,
-          "expert": 0
+          "simple": 0.88,
+          "trivial": 0.02,
+          "expert": 0,
+          "reasoning": 0.1
         },
-        "confidence": 0.88
+        "confidence": 0.85
       },
       "task_type": {
         "type": "choice",
         "choice": "writing",
         "probabilities": {
-          "conversation": 0,
           "code": 0,
-          "writing": 0.77,
-          "extraction": 0.23,
-          "analysis": 0
+          "writing": 0.8,
+          "analysis": 0,
+          "extraction": 0.2,
+          "conversation": 0
         },
-        "confidence": 0.71
+        "confidence": 0.75
       },
       "needs_tools": {
         "type": "noul",
@@ -90,7 +90,7 @@
       },
       "is_ambiguous": {
         "type": "noul",
-        "noul": 0.04
+        "noul": 0.05
       }
     },
     "usage": {
@@ -98,7 +98,7 @@
       "output_tokens": 177,
       "cost": 0.000035658
     },
-    "id": "gen-dec-1789858108-lzFvSkWKYokNgddbVlCL",
+    "id": "gen-dec-1789957261-m2Ki051K9pLgCBahhCgU",
     "provider": "TypeSafe"
   },
   "debug-race": {
@@ -109,35 +109,35 @@
         "choice": "reasoning",
         "probabilities": {
           "simple": 0.01,
+          "reasoning": 0.89,
           "expert": 0.1,
-          "trivial": 0,
-          "reasoning": 0.89
+          "trivial": 0
         },
-        "confidence": 0.85
+        "confidence": 0.86
       },
       "task_type": {
         "type": "choice",
         "choice": "code",
         "probabilities": {
-          "extraction": 0,
           "writing": 0.01,
-          "analysis": 0.12,
-          "code": 0.87,
-          "conversation": 0
+          "extraction": 0,
+          "analysis": 0.17,
+          "conversation": 0,
+          "code": 0.82
         },
-        "confidence": 0.84
+        "confidence": 0.78
       },
       "needs_tools": {
         "type": "noul",
-        "noul": 0.15
+        "noul": 0.14
       },
       "needs_long_context": {
         "type": "noul",
-        "noul": 0.04
+        "noul": 0.05
       },
       "needs_vision": {
         "type": "noul",
-        "noul": 0.02
+        "noul": 0.03
       },
       "is_ambiguous": {
         "type": "noul",
@@ -149,7 +149,7 @@
       "output_tokens": 179,
       "cost": 0.000034272
     },
-    "id": "gen-dec-1789858108-3LITIk3eCLfHfHQkudp0",
+    "id": "gen-dec-1789957261-RQpVhFChjgBjAcXEYTLi",
     "provider": "TypeSafe"
   },
   "migration-plan": {
@@ -159,32 +159,32 @@
         "type": "choice",
         "choice": "expert",
         "probabilities": {
-          "reasoning": 0.5,
-          "expert": 0.5,
+          "expert": 0.51,
           "simple": 0,
+          "reasoning": 0.49,
           "trivial": 0
         },
-        "confidence": 0.33
+        "confidence": 0.35
       },
       "task_type": {
         "type": "choice",
         "choice": "analysis",
         "probabilities": {
-          "extraction": 0,
           "conversation": 0,
-          "writing": 0.07,
-          "analysis": 0.93,
+          "writing": 0.05,
+          "extraction": 0,
+          "analysis": 0.95,
           "code": 0
         },
-        "confidence": 0.91
+        "confidence": 0.93
       },
       "needs_tools": {
         "type": "noul",
-        "noul": 0.95
+        "noul": 0.96
       },
       "needs_long_context": {
         "type": "noul",
-        "noul": 0.73
+        "noul": 0.74
       },
       "needs_vision": {
         "type": "noul",
@@ -192,7 +192,7 @@
       },
       "is_ambiguous": {
         "type": "noul",
-        "noul": 0.18
+        "noul": 0.19
       }
     },
     "usage": {
@@ -200,7 +200,7 @@
       "output_tokens": 177,
       "cost": 0.000032592
     },
-    "id": "gen-dec-1789858108-oH2uyb2WPm0AqnTViB9I",
+    "id": "gen-dec-1789957261-yqkeS59N6ecWCH6c2G1B",
     "provider": "TypeSafe"
   },
   "vague": {
@@ -210,22 +210,22 @@
         "type": "choice",
         "choice": "reasoning",
         "probabilities": {
-          "reasoning": 0.45,
-          "expert": 0.35,
-          "simple": 0.19,
-          "trivial": 0.01
+          "trivial": 0.01,
+          "expert": 0.31,
+          "reasoning": 0.49,
+          "simple": 0.19
         },
-        "confidence": 0.26
+        "confidence": 0.32
       },
       "task_type": {
         "type": "choice",
         "choice": "code",
         "probabilities": {
+          "conversation": 0.47,
+          "extraction": 0,
           "code": 0.52,
-          "conversation": 0.46,
-          "writing": 0.01,
           "analysis": 0.01,
-          "extraction": 0
+          "writing": 0
         },
         "confidence": 0.4
       },
@@ -235,11 +235,11 @@
       },
       "needs_long_context": {
         "type": "noul",
-        "noul": 0.11
+        "noul": 0.12
       },
       "needs_vision": {
         "type": "noul",
-        "noul": 0.25
+        "noul": 0.24
       },
       "is_ambiguous": {
         "type": "noul",
@@ -251,7 +251,7 @@
       "output_tokens": 179,
       "cost": 0.000030912
     },
-    "id": "gen-dec-1789858108-WlSxuJIBu2CS2iEQc6qp",
+    "id": "gen-dec-1789957261-QI7YnfhVpcX91enpiVSa",
     "provider": "TypeSafe"
   }
 }

@@ -12,7 +12,7 @@
       "output_tokens": 22,
       "cost": 0.000017808
     },
-    "id": "gen-dec-1789937695-e44ce90WH8uMFXbxOa4A",
+    "id": "gen-dec-1789957247-UN3BuObNcfFUbrN5ynXa",
     "provider": "TypeSafe"
   },
   "db-pool/checkout-latency--orders-503": {
@@ -20,7 +20,7 @@
     "answers": {
       "same_incident": {
         "type": "noul",
-        "noul": 0.83
+        "noul": 0.84
       }
     },
     "usage": {
@@ -28,42 +28,10 @@
       "output_tokens": 22,
       "cost": 0.00001743
     },
-    "id": "gen-dec-1789937695-zDyPoFn4q1nzw5Spafn7",
+    "id": "gen-dec-1789957247-xR5AWJtQWleuyVtzzKig",
     "provider": "TypeSafe"
   },
   "db-pool/checkout-latency--search-latency": {
-    "model": "typesafe/jev-1.13-20260917",
-    "answers": {
-      "same_incident": {
-        "type": "noul",
-        "noul": 0.05
-      }
-    },
-    "usage": {
-      "input_tokens": 424,
-      "output_tokens": 22,
-      "cost": 0.000017808
-    },
-    "id": "gen-dec-1789937695-e2vKtG5mHxpwIC0IWOdw",
-    "provider": "TypeSafe"
-  },
-  "db-pool/checkout-latency--disk": {
-    "model": "typesafe/jev-1.13-20260917",
-    "answers": {
-      "same_incident": {
-        "type": "noul",
-        "noul": 0.14
-      }
-    },
-    "usage": {
-      "input_tokens": 417,
-      "output_tokens": 22,
-      "cost": 0.000017514
-    },
-    "id": "gen-dec-1789937695-HnQdr1R28QUmFX0j1bOU",
-    "provider": "TypeSafe"
-  },
-  "db-pool/checkout-latency--cert": {
     "model": "typesafe/jev-1.13-20260917",
     "answers": {
       "same_incident": {
@@ -72,11 +40,43 @@
       }
     },
     "usage": {
+      "input_tokens": 424,
+      "output_tokens": 22,
+      "cost": 0.000017808
+    },
+    "id": "gen-dec-1789957247-abKxFoy7oy1I5m7576jF",
+    "provider": "TypeSafe"
+  },
+  "db-pool/checkout-latency--disk": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "usage": {
+      "input_tokens": 417,
+      "output_tokens": 22,
+      "cost": 0.000017514
+    },
+    "id": "gen-dec-1789957247-hV5EBtPJaawDoZarg3M7",
+    "provider": "TypeSafe"
+  },
+  "db-pool/checkout-latency--cert": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
       "input_tokens": 412,
       "output_tokens": 22,
       "cost": 0.000017304
     },
-    "id": "gen-dec-1789937695-lzY8XncKQXa0TN50XpUm",
+    "id": "gen-dec-1789957247-3WMcs4XlQeuzCR8ry76w",
     "provider": "TypeSafe"
   },
   "db-pool/db-pool--orders-503": {
@@ -92,10 +92,42 @@
       "output_tokens": 22,
       "cost": 0.000017682
     },
-    "id": "gen-dec-1789937695-QfGWRyFe9pI7m3anIQGn",
+    "id": "gen-dec-1789957247-5DTKrc5WtXhEDhbSD3Wn",
     "provider": "TypeSafe"
   },
   "db-pool/db-pool--search-latency": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 22,
+      "cost": 0.00001806
+    },
+    "id": "gen-dec-1789957247-FVwmoa8HLUVHK5yeoovt",
+    "provider": "TypeSafe"
+  },
+  "db-pool/db-pool--disk": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.16
+      }
+    },
+    "usage": {
+      "input_tokens": 423,
+      "output_tokens": 22,
+      "cost": 0.000017766
+    },
+    "id": "gen-dec-1789957247-KTpnJ4UH73L4oANP4wfX",
+    "provider": "TypeSafe"
+  },
+  "db-pool/db-pool--cert": {
     "model": "typesafe/jev-1.13-20260917",
     "answers": {
       "same_incident": {
@@ -104,43 +136,11 @@
       }
     },
     "usage": {
-      "input_tokens": 430,
-      "output_tokens": 22,
-      "cost": 0.00001806
-    },
-    "id": "gen-dec-1789937695-RpafWsdG1fIuVJzdTxV4",
-    "provider": "TypeSafe"
-  },
-  "db-pool/db-pool--disk": {
-    "model": "typesafe/jev-1.13-20260917",
-    "answers": {
-      "same_incident": {
-        "type": "noul",
-        "noul": 0.17
-      }
-    },
-    "usage": {
-      "input_tokens": 423,
-      "output_tokens": 22,
-      "cost": 0.000017766
-    },
-    "id": "gen-dec-1789937695-VRNZDQxY8TkxuGlOEJiT",
-    "provider": "TypeSafe"
-  },
-  "db-pool/db-pool--cert": {
-    "model": "typesafe/jev-1.13-20260917",
-    "answers": {
-      "same_incident": {
-        "type": "noul",
-        "noul": 0.03
-      }
-    },
-    "usage": {
       "input_tokens": 418,
       "output_tokens": 22,
       "cost": 0.000017556
     },
-    "id": "gen-dec-1789937695-zDHy52ufH8ApxuBJ78mp",
+    "id": "gen-dec-1789957248-E6hu8F65EeKQcKYdr4oO",
     "provider": "TypeSafe"
   },
   "db-pool/orders-503--search-latency": {
@@ -156,7 +156,7 @@
       "output_tokens": 22,
       "cost": 0.000017682
     },
-    "id": "gen-dec-1789937695-jlichI7khwbcEx0jVcjM",
+    "id": "gen-dec-1789957247-CX612xw53nEuVeRUzvMw",
     "provider": "TypeSafe"
   },
   "db-pool/orders-503--disk": {
@@ -164,7 +164,7 @@
     "answers": {
       "same_incident": {
         "type": "noul",
-        "noul": 0.13
+        "noul": 0.12
       }
     },
     "usage": {
@@ -172,7 +172,7 @@
       "output_tokens": 22,
       "cost": 0.000017388
     },
-    "id": "gen-dec-1789937695-eqJtYoE3EP1iG9SCyQil",
+    "id": "gen-dec-1789957247-fUCNpyEajy76sGF1aC1o",
     "provider": "TypeSafe"
   },
   "db-pool/orders-503--cert": {
@@ -188,7 +188,7 @@
       "output_tokens": 22,
       "cost": 0.000017178
     },
-    "id": "gen-dec-1789937695-kEb3UbMxo4vwiqSyBJWb",
+    "id": "gen-dec-1789957247-YcunmM9ymqW8ExP8HUbG",
     "provider": "TypeSafe"
   },
   "db-pool/search-latency--disk": {
@@ -196,7 +196,7 @@
     "answers": {
       "same_incident": {
         "type": "noul",
-        "noul": 0.05
+        "noul": 0.06
       }
     },
     "usage": {
@@ -204,7 +204,7 @@
       "output_tokens": 22,
       "cost": 0.000017766
     },
-    "id": "gen-dec-1789937695-yhWNQXADtpWmsQe5mrBO",
+    "id": "gen-dec-1789957247-7p3W8PbkIpAjJQPlx5Sj",
     "provider": "TypeSafe"
   },
   "db-pool/search-latency--cert": {
@@ -220,7 +220,7 @@
       "output_tokens": 22,
       "cost": 0.000017556
     },
-    "id": "gen-dec-1789937695-DslTHSjkpGIY0HvGmcV0",
+    "id": "gen-dec-1789957247-JSV9nJdF1zM7XZkXNU8K",
     "provider": "TypeSafe"
   },
   "db-pool/disk--cert": {
@@ -236,7 +236,7 @@
       "output_tokens": 22,
       "cost": 0.000017262
     },
-    "id": "gen-dec-1789937695-cnIUMdxh9EFgyFr9XPZb",
+    "id": "gen-dec-1789957247-Fm93pa2C98sMyXmjyrr8",
     "provider": "TypeSafe"
   },
   "bad-deploy/error-spike--deploy": {
@@ -244,7 +244,7 @@
     "answers": {
       "same_incident": {
         "type": "noul",
-        "noul": 0.89
+        "noul": 0.88
       }
     },
     "usage": {
@@ -252,7 +252,7 @@
       "output_tokens": 22,
       "cost": 0.000018312
     },
-    "id": "gen-dec-1789937696-FthClajFgv2Wibx0i6DO",
+    "id": "gen-dec-1789957247-UGgYwnBmez4X2Ulz7LGP",
     "provider": "TypeSafe"
   },
   "bad-deploy/error-spike--handler-500": {
@@ -268,7 +268,7 @@
       "output_tokens": 22,
       "cost": 0.000018228
     },
-    "id": "gen-dec-1789937695-FWeVc9UHmFqdICwywFSQ",
+    "id": "gen-dec-1789957247-Ho9U81ObmfYtoA0SgKuo",
     "provider": "TypeSafe"
   },
   "bad-deploy/error-spike--backup": {
@@ -284,7 +284,7 @@
       "output_tokens": 22,
       "cost": 0.000017976
     },
-    "id": "gen-dec-1789937695-UW7GHjIh3fzZBikLCh7I",
+    "id": "gen-dec-1789957247-yPASFBLZAXWZ7RSWhM2i",
     "provider": "TypeSafe"
   },
   "bad-deploy/error-spike--cache-mem": {
@@ -300,7 +300,7 @@
       "output_tokens": 22,
       "cost": 0.000017892
     },
-    "id": "gen-dec-1789937695-xUjICavrAix5mfEPzbX0",
+    "id": "gen-dec-1789957247-4NOHZy5itS6Zc6uG4jiu",
     "provider": "TypeSafe"
   },
   "bad-deploy/deploy--handler-500": {
@@ -316,42 +316,10 @@
       "output_tokens": 22,
       "cost": 0.000018228
     },
-    "id": "gen-dec-1789937695-ZCrCRZiUPwmFCbtLZLLH",
+    "id": "gen-dec-1789957248-22tkN2KW6RjqfiFpNO9t",
     "provider": "TypeSafe"
   },
   "bad-deploy/deploy--backup": {
-    "model": "typesafe/jev-1.13-20260917",
-    "answers": {
-      "same_incident": {
-        "type": "noul",
-        "noul": 0.05
-      }
-    },
-    "usage": {
-      "input_tokens": 428,
-      "output_tokens": 22,
-      "cost": 0.000017976
-    },
-    "id": "gen-dec-1789937695-4toCGszSwpRr6zI0nbud",
-    "provider": "TypeSafe"
-  },
-  "bad-deploy/deploy--cache-mem": {
-    "model": "typesafe/jev-1.13-20260917",
-    "answers": {
-      "same_incident": {
-        "type": "noul",
-        "noul": 0.19
-      }
-    },
-    "usage": {
-      "input_tokens": 426,
-      "output_tokens": 22,
-      "cost": 0.000017892
-    },
-    "id": "gen-dec-1789937695-BxxVRpTrkXzdsl3EecES",
-    "provider": "TypeSafe"
-  },
-  "bad-deploy/handler-500--backup": {
     "model": "typesafe/jev-1.13-20260917",
     "answers": {
       "same_incident": {
@@ -360,11 +328,43 @@
       }
     },
     "usage": {
+      "input_tokens": 428,
+      "output_tokens": 22,
+      "cost": 0.000017976
+    },
+    "id": "gen-dec-1789957248-rfqAbwemTkpCbitBLDh9",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/deploy--cache-mem": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.18
+      }
+    },
+    "usage": {
       "input_tokens": 426,
       "output_tokens": 22,
       "cost": 0.000017892
     },
-    "id": "gen-dec-1789937695-17BdpZN6VESQB3oGMafw",
+    "id": "gen-dec-1789957248-V86SXQCD5zowx2BRwjVS",
+    "provider": "TypeSafe"
+  },
+  "bad-deploy/handler-500--backup": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 426,
+      "output_tokens": 22,
+      "cost": 0.000017892
+    },
+    "id": "gen-dec-1789957248-hQdSbOrUjyoQVtziyCph",
     "provider": "TypeSafe"
   },
   "bad-deploy/handler-500--cache-mem": {
@@ -372,7 +372,7 @@
     "answers": {
       "same_incident": {
         "type": "noul",
-        "noul": 0.09
+        "noul": 0.08
       }
     },
     "usage": {
@@ -380,7 +380,7 @@
       "output_tokens": 22,
       "cost": 0.000017808
     },
-    "id": "gen-dec-1789937696-EWBbpzOgwPq0mfxECILL",
+    "id": "gen-dec-1789957248-n4WRZniHbhvb3B8Wp1aR",
     "provider": "TypeSafe"
   },
   "bad-deploy/backup--cache-mem": {
@@ -396,7 +396,7 @@
       "output_tokens": 22,
       "cost": 0.000017556
     },
-    "id": "gen-dec-1789937696-0budv5xK3cV6b2tYqHei",
+    "id": "gen-dec-1789957248-tTHVPJRNDx8C2EKutHJz",
     "provider": "TypeSafe"
   }
 }

@@ -8,7 +8,7 @@
       },
       "threat": {
         "type": "noul",
-        "noul": 0
+        "noul": 0.01
       },
       "self_harm": {
         "type": "noul",
@@ -56,7 +56,7 @@
       "output_tokens": 208,
       "cost": 0.000043806
     },
-    "id": "gen-dec-1789938941-zrkGFm5UDDK7yP0ymq2C",
+    "id": "gen-dec-1789957253-D5qb3GJstAjRw6VPuENw",
     "provider": "TypeSafe"
   },
   "criticism": {
@@ -116,7 +116,7 @@
       "output_tokens": 208,
       "cost": 0.000044226
     },
-    "id": "gen-dec-1789938941-PN6Z0pbXpDadAIcQEcyl",
+    "id": "gen-dec-1789957253-PLQY3n5qCjef5NgqFFle",
     "provider": "TypeSafe"
   },
   "harassment": {
@@ -128,7 +128,7 @@
       },
       "threat": {
         "type": "noul",
-        "noul": 0.02
+        "noul": 0.03
       },
       "self_harm": {
         "type": "noul",
@@ -160,7 +160,7 @@
       },
       "pii": {
         "type": "noul",
-        "noul": 0.02
+        "noul": 0.01
       },
       "spam": {
         "type": "noul",
@@ -176,7 +176,7 @@
       "output_tokens": 208,
       "cost": 0.000043848
     },
-    "id": "gen-dec-1789938941-fyDuRSmITNbKpETINqx4",
+    "id": "gen-dec-1789957253-P46AmvOXWvAMXKOdRMez",
     "provider": "TypeSafe"
   },
   "threat": {
@@ -188,7 +188,7 @@
       },
       "threat": {
         "type": "noul",
-        "noul": 0.85
+        "noul": 0.84
       },
       "self_harm": {
         "type": "noul",
@@ -212,7 +212,7 @@
       },
       "harassment": {
         "type": "noul",
-        "noul": 0.88
+        "noul": 0.9
       },
       "sexual": {
         "type": "noul",
@@ -220,7 +220,7 @@
       },
       "pii": {
         "type": "noul",
-        "noul": 0.11
+        "noul": 0.12
       },
       "spam": {
         "type": "noul",
@@ -236,7 +236,7 @@
       "output_tokens": 208,
       "cost": 0.000043806
     },
-    "id": "gen-dec-1789938941-zXB4nfX9HLpQQ8Uz3aU4",
+    "id": "gen-dec-1789957253-1ECP2Lx3z6p1png8W50p",
     "provider": "TypeSafe"
   },
   "doxx": {
@@ -296,7 +296,7 @@
       "output_tokens": 208,
       "cost": 0.000044394
     },
-    "id": "gen-dec-1789938941-lWwcN0VhzWgNWpQZ4xjm",
+    "id": "gen-dec-1789957253-MnMovCaXooVFvKXFo9RW",
     "provider": "TypeSafe"
   },
   "scam": {
@@ -324,7 +324,7 @@
       },
       "malware": {
         "type": "noul",
-        "noul": 0.01
+        "noul": 0.02
       },
       "hate": {
         "type": "noul",
@@ -356,7 +356,7 @@
       "output_tokens": 208,
       "cost": 0.00004473
     },
-    "id": "gen-dec-1789938972-vYCxLcJupxKqtDF0lVPC",
+    "id": "gen-dec-1789957253-DruQJRAG7cEabwQAWMLf",
     "provider": "TypeSafe"
   }
 }

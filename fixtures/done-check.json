@@ -28,7 +28,7 @@
       "output_tokens": 95,
       "cost": 0.000037296
     },
-    "id": "gen-dec-1789927952-CQJxviFcDQrV64Zm5osI",
+    "id": "gen-dec-1789957250-ITwt40RXCjqRFLrq9dyF",
     "provider": "TypeSafe"
   },
   "stub": {
@@ -36,11 +36,11 @@
     "answers": {
       "meets_requirement": {
         "type": "noul",
-        "noul": 0.05
+        "noul": 0.04
       },
       "real_implementation": {
         "type": "noul",
-        "noul": 0.05
+        "noul": 0.06
       },
       "has_test": {
         "type": "noul",
@@ -52,7 +52,7 @@
       },
       "scoped": {
         "type": "noul",
-        "noul": 0.92
+        "noul": 0.91
       }
     },
     "usage": {
@@ -60,7 +60,7 @@
       "output_tokens": 95,
       "cost": 0.000036372
     },
-    "id": "gen-dec-1789927952-3NB1vDIidh3U1f779I9w",
+    "id": "gen-dec-1789957250-pP0a58D3tqK27bShxfGL",
     "provider": "TypeSafe"
   },
   "red-suite": {
@@ -68,11 +68,11 @@
     "answers": {
       "meets_requirement": {
         "type": "noul",
-        "noul": 0.32
+        "noul": 0.28
       },
       "real_implementation": {
         "type": "noul",
-        "noul": 0.76
+        "noul": 0.74
       },
       "has_test": {
         "type": "noul",
@@ -84,7 +84,7 @@
       },
       "scoped": {
         "type": "noul",
-        "noul": 0.82
+        "noul": 0.83
       }
     },
     "usage": {
@@ -92,7 +92,7 @@
       "output_tokens": 95,
       "cost": 0.000036162
     },
-    "id": "gen-dec-1789927952-dhKNwu0lNeL7FwVmyR2k",
+    "id": "gen-dec-1789957250-oO26Y2HjNHBRX6hFARF5",
     "provider": "TypeSafe"
   },
   "untested": {
@@ -100,23 +100,23 @@
     "answers": {
       "meets_requirement": {
         "type": "noul",
-        "noul": 0.76
+        "noul": 0.75
       },
       "real_implementation": {
         "type": "noul",
-        "noul": 0.77
+        "noul": 0.78
       },
       "has_test": {
         "type": "noul",
-        "noul": 0.04
+        "noul": 0.03
       },
       "tests_pass": {
         "type": "noul",
-        "noul": 0.93
+        "noul": 0.94
       },
       "scoped": {
         "type": "noul",
-        "noul": 0.88
+        "noul": 0.89
       }
     },
     "usage": {
@@ -124,7 +124,7 @@
       "output_tokens": 95,
       "cost": 0.000034776
     },
-    "id": "gen-dec-1789927952-sjYd4pp4CeEYqkm9A0b8",
+    "id": "gen-dec-1789957250-hQf4uxm8Z0uRD3p0wPR4",
     "provider": "TypeSafe"
   },
   "half-done": {
@@ -136,7 +136,7 @@
       },
       "real_implementation": {
         "type": "noul",
-        "noul": 0.78
+        "noul": 0.8
       },
       "has_test": {
         "type": "noul",
@@ -148,7 +148,7 @@
       },
       "scoped": {
         "type": "noul",
-        "noul": 0.86
+        "noul": 0.85
       }
     },
     "usage": {
@@ -156,7 +156,7 @@
       "output_tokens": 95,
       "cost": 0.000036372
     },
-    "id": "gen-dec-1789927952-xRO6jz7OW2Qxm8Lz5Oh1",
+    "id": "gen-dec-1789957250-Jhca89DgX1icrU5aYrRr",
     "provider": "TypeSafe"
   },
   "collateral": {
@@ -168,11 +168,11 @@
       },
       "real_implementation": {
         "type": "noul",
-        "noul": 0.85
+        "noul": 0.86
       },
       "has_test": {
         "type": "noul",
-        "noul": 0.16
+        "noul": 0.17
       },
       "tests_pass": {
         "type": "noul",
@@ -180,7 +180,7 @@
       },
       "scoped": {
         "type": "noul",
-        "noul": 0.21
+        "noul": 0.18
       }
     },
     "usage": {
@@ -188,7 +188,7 @@
       "output_tokens": 95,
       "cost": 0.000035532
     },
-    "id": "gen-dec-1789927952-kDeI94sWk8oG9Y3eg3cS",
+    "id": "gen-dec-1789957250-V5o0QDXr23lJzZdvmMh1",
     "provider": "TypeSafe"
   }
 }
