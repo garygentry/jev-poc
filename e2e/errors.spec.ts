@@ -172,7 +172,7 @@ test.describe("when the sidecar is unreachable", () => {
 
     await page.goto("/")
     await expect(
-      page.getByRole("heading", { name: "A model that decides instead of writing" }),
+      page.getByRole("heading", { name: "Jev demo catalog" }),
     ).toBeVisible()
     // Mode is unknown rather than wrongly claiming to be live.
     await expect(page.getByText("live", { exact: true })).toHaveCount(0)

@@ -8,7 +8,7 @@ test.describe("app shell", () => {
     await page.goto("/")
 
     await expect(
-      page.getByRole("heading", { name: "A model that decides instead of writing" }),
+      page.getByRole("heading", { name: "Jev demo catalog" }),
     ).toBeVisible()
 
     // Derived from the roster rather than hardcoded, so a new demo does not
@@ -19,9 +19,13 @@ test.describe("app shell", () => {
     const cards = gallery.locator("a[href^='/demo/']")
     await expect(cards).toHaveCount(expected)
 
-    // The shape strip is the through-line of the tour; every card carries one.
+    // Every summary card carries both the request shape and the same primitive
+    // chips shown on its demo page.
     for (const label of ["Questions", "States", "Requests"]) {
       await expect(gallery.getByText(label, { exact: true })).toHaveCount(expected)
+    }
+    for (const card of await cards.all()) {
+      await expect(card.locator(".font-mono.rounded-full").first()).toBeVisible()
     }
 
     assertQuiet()
@@ -53,6 +57,12 @@ test.describe("app shell", () => {
 
     await sidebar.getByRole("link", { name: /Persona panel/ }).click()
     await expect(page).toHaveURL(/\/demo\/personas$/)
+
+    await sidebar.getByRole("link", { name: "Home" }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(
+      page.getByRole("heading", { name: "Jev demo catalog" }),
+    ).toBeVisible()
   })
 
   test("an unknown demo slug falls back to the gallery", async ({ page }) => {
@@ -64,7 +74,7 @@ test.describe("app shell", () => {
     await page.goto("/nonsense")
     await expect(page).toHaveURL(/\/$/)
     await expect(
-      page.getByRole("heading", { name: "A model that decides instead of writing" }),
+      page.getByRole("heading", { name: "Jev demo catalog" }),
     ).toBeVisible()
   })
 

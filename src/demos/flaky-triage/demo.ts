@@ -15,9 +15,9 @@ import { FAILURES, stateFor, type Failure } from "./failures"
 export const manifest: SingleManifest<Failure> = {
   slug: "flaky-triage",
   title: "Flaky vs regression",
-  tagline: "Classify a CI failure before an auto-retry hides a real one",
+  tagline: "Classify a CI failure and constrain retry behavior in code",
   thesis:
-    "Auto-retrying every red build hides real regressions behind a green re-run; retrying none makes an engineer read every timeout by hand. A cheap gate reads the failure output — flaky, a real regression, or infra — and a confidence gate lets code auto-retry only the failures that will actually pass on a re-run, and surface the rest.",
+    "One request returns a failure category with confidence and a probability that the failure will reproduce. Policy code auto-retries only a high-confidence flake that also scores as nondeterministic, blocks confident regressions, reruns infrastructure failures on a clean runner, and sends ambiguous cases to a human.",
   group: "engineering",
   order: 2,
   kind: "single",

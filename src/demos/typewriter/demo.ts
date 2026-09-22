@@ -30,9 +30,9 @@ export const DEBOUNCE_MS = 260
 export const manifest: SingleManifest<Draft> = {
   slug: "typewriter",
   title: "Live typewriter",
-  tagline: "Twelve judgements, repainting as you type",
+  tagline: "Twelve draft assessments after each typing pause",
   thesis:
-    "What ~100ms buys you. Twelve questions re-answer on every pause in typing, which is a thing you simply cannot build against a model that streams prose.",
+    "After 40 characters, each 260 ms pause sends one request with twelve questions over the current draft. Choice, score, and condition-probability outputs repaint fixed UI meters; the model evaluates the text but does not generate or rewrite it.",
   group: "foundations",
   order: 4,
   kind: "single",

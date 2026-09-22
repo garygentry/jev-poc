@@ -75,9 +75,9 @@ const PROMPTS = [
 export const manifest: SingleManifest<Prompt> = {
   slug: "router",
   title: "Model router",
-  tagline: "Spend a hundredth of a cent to save a dollar",
+  tagline: "Classify the request once; route it with explicit code",
   thesis:
-    "The control plane around an agent. Jev picks the cheapest model that can do the job, and its own cost is a rounding error against the difference.",
+    "One Jev call returns six typed properties of a request. Deterministic policy code uses capability confidence, task type, tool and context needs, and ambiguity to choose a worker model or request clarification without a generative routing prompt.",
   group: "foundations",
   order: 6,
   kind: "single",

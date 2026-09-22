@@ -14,9 +14,9 @@ import { PRS, stateFor, type PullRequest } from "./prs"
 export const manifest: SingleManifest<PullRequest> = {
   slug: "pr-triage",
   title: "PR risk triage",
-  tagline: "Route review attention by risk, instead of reading every diff alike",
+  tagline: "Batch a PR's risk signals; route review with policy code",
   thesis:
-    "Reviewing every diff with the same care wastes attention on typos; reviewing none ships the dangerous ones unseen. A cheap gate reads a PR's risk along a few dimensions, and ordinary code turns that into the only question a reviewer's queue needs answered: does a human have to see this before it merges?",
+    "One request reads the title, description, and diff into typed outputs for area, blast radius, reversibility, test coverage, and security sensitivity. Policy code applies thresholds to choose merge without review, a quick glance, or careful review instead of asking the model to generate the routing decision.",
   group: "engineering",
   order: 1,
   kind: "single",

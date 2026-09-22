@@ -26,9 +26,9 @@ const MAX_DEPTH = 3
 export const manifest: RoundsManifest<Case, Branch[], Round> = {
   slug: "taxonomy",
   title: "Taxonomy beam search",
-  tagline: "Read the distribution, not the winner",
+  tagline: "Dynamic choice questions search a taxonomy",
   thesis:
-    "Beam search over a taxonomy, carrying several live branches down each level. It only works because the probabilities are calibrated and comparable — an uncalibrated top-1 tells you nothing about whether branch two was nearly as good.",
+    "Each level asks one choice question per live branch over the same ticket, batched into one request. Code multiplies the returned distributions into path probabilities, then applies beam width, pruning, and confidence stops over up to three sequential rounds.",
   group: "foundations",
   order: 5,
   kind: "rounds",

@@ -20,9 +20,9 @@ export interface Ticket {
 export const manifest: SingleManifest<Ticket> = {
   slug: "triage",
   title: "Ticket triage",
-  tagline: "Seven narrow questions beat one broad prompt",
+  tagline: "Seven ticket signals, one explicit routing policy",
   thesis:
-    "Decomposition. Seven questions over one ticket cost roughly one question's wall-clock, and the routing policy stays in TypeScript where it can be read, tested and retuned without touching the model.",
+    "One request asks seven scoped questions over the same ticket and customer state. Choice confidence, scores, and condition probabilities feed TypeScript rules for queue, priority, escalation, and human review instead of asking a generative model to produce the routing decision.",
   group: "foundations",
   order: 1,
   kind: "single",

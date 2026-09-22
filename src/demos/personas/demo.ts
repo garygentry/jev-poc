@@ -18,9 +18,9 @@ export interface Draft {
 export const manifest: FanOutManifest<Draft> = {
   slug: "personas",
   title: "Persona panel",
-  tagline: "One message, twelve readers, one distribution",
+  tagline: "Run one message against twelve explicit reader states",
   thesis:
-    "Probability across a population rather than an argmax over options. Where the panel splits is the signal, and it is a shape a chat model handles badly.",
+    "Each invented persona supplies separate state for the same message. Jev returns an action probability and reception score per reader; code measures the spread and flags opposing groups, demonstrating multi-state evaluation without treating simulated readers as user research.",
   group: "foundations",
   order: 8,
   kind: "fanout",

@@ -47,7 +47,7 @@ export function Method() {
           className="inline-flex items-center gap-1.5 text-sm text-[var(--mark)] underline underline-offset-2"
         >
           <ArrowLeft className="size-3.5" aria-hidden />
-          Back to the gallery
+          Back to Home
         </Link>
       </div>
     </div>
