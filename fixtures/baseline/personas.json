@@ -1,0 +1,1406 @@
+{
+  "technical/cto-fintech": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 717,
+      "output_tokens": 19,
+      "cost": 0.000812
+    },
+    "latencyMs": 1313,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.25,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.17",
+        "baseline": "0.25"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "1.20 (Bounces off; they would not finish reading it.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "technical/staff-eng": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 732,
+      "output_tokens": 19,
+      "cost": 0.000827
+    },
+    "latencyMs": 1325,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.53",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "2.21 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "technical/junior-dev": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 724,
+      "output_tokens": 19,
+      "cost": 0.000819
+    },
+    "latencyMs": 1507,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.35,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.49",
+        "baseline": "0.35"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "2.30 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "technical/eng-manager": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 727,
+      "output_tokens": 19,
+      "cost": 0.000822
+    },
+    "latencyMs": 1441,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.35,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.42",
+        "baseline": "0.35"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "2.15 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "technical/data-scientist": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 718,
+      "output_tokens": 19,
+      "cost": 0.000813
+    },
+    "latencyMs": 1314,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": false,
+        "jev": "0.40",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "2.12 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "technical/sre": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 720,
+      "output_tokens": 19,
+      "cost": 0.000815
+    },
+    "latencyMs": 1735,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.35,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.39",
+        "baseline": "0.35"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.88 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "technical/product-manager": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 723,
+      "output_tokens": 19,
+      "cost": 0.000818
+    },
+    "latencyMs": 1768,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.35,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.34",
+        "baseline": "0.35"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.82 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "technical/procurement": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 721,
+      "output_tokens": 19,
+      "cost": 0.000816
+    },
+    "latencyMs": 1015,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.62,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": false,
+        "jev": "0.29",
+        "baseline": "0.62"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "1.40 (Bounces off; they would not finish reading it.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "technical/security": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 717,
+      "output_tokens": 19,
+      "cost": 0.000812
+    },
+    "latencyMs": 1090,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 1
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 1
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.22",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.36 (Bounces off; they would not finish reading it.)",
+        "baseline": "1 (Bounces off; they would not finish reading it.)"
+      }
+    ]
+  },
+  "technical/founder": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 722,
+      "output_tokens": 19,
+      "cost": 0.000817
+    },
+    "latencyMs": 1023,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.70",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "2.74 (Speaks directly to what they care about and answers it.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "technical/academic": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 714,
+      "output_tokens": 19,
+      "cost": 0.000809
+    },
+    "latencyMs": 1114,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 1
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 1
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.14",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "0.91 (Bounces off; they would not finish reading it.)",
+        "baseline": "1 (Bounces off; they would not finish reading it.)"
+      }
+    ]
+  },
+  "technical/support-lead": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 725,
+      "output_tokens": 19,
+      "cost": 0.00082
+    },
+    "latencyMs": 1233,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "lands": {
+        "type": "score",
+        "score": 1
+      }
+    },
+    "raw": {
+      "would_act": 0.25,
+      "lands": 1
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.14",
+        "baseline": "0.25"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.08 (Bounces off; they would not finish reading it.)",
+        "baseline": "1 (Bounces off; they would not finish reading it.)"
+      }
+    ]
+  },
+  "outcome/cto-fintech": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 703,
+      "output_tokens": 19,
+      "cost": 0.000798
+    },
+    "latencyMs": 951,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.35,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.40",
+        "baseline": "0.35"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.91 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "outcome/staff-eng": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 718,
+      "output_tokens": 19,
+      "cost": 0.000813
+    },
+    "latencyMs": 1088,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.70",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "2.60 (Speaks directly to what they care about and answers it.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "outcome/junior-dev": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 710,
+      "output_tokens": 19,
+      "cost": 0.000805
+    },
+    "latencyMs": 1108,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.35,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.28",
+        "baseline": "0.35"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.85 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "outcome/eng-manager": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 713,
+      "output_tokens": 19,
+      "cost": 0.000808
+    },
+    "latencyMs": 1809,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.71",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "2.67 (Speaks directly to what they care about and answers it.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "outcome/data-scientist": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 704,
+      "output_tokens": 19,
+      "cost": 0.000799
+    },
+    "latencyMs": 1337,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.35,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.34",
+        "baseline": "0.35"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.75 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "outcome/sre": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 706,
+      "output_tokens": 19,
+      "cost": 0.000801
+    },
+    "latencyMs": 1093,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.53",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "1.96 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "outcome/product-manager": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 709,
+      "output_tokens": 19,
+      "cost": 0.000804
+    },
+    "latencyMs": 1171,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.50",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "2.22 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "outcome/procurement": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 707,
+      "output_tokens": 19,
+      "cost": 0.000802
+    },
+    "latencyMs": 1032,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.54",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "2.08 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "outcome/security": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 703,
+      "output_tokens": 19,
+      "cost": 0.000798
+    },
+    "latencyMs": 1009,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "lands": {
+        "type": "score",
+        "score": 1
+      }
+    },
+    "raw": {
+      "would_act": 0.25,
+      "lands": 1
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.45",
+        "baseline": "0.25"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "1.91 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "1 (Bounces off; they would not finish reading it.)"
+      }
+    ]
+  },
+  "outcome/founder": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 708,
+      "output_tokens": 19,
+      "cost": 0.000803
+    },
+    "latencyMs": 1068,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.78
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.78,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.77",
+        "baseline": "0.78"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "2.90 (Speaks directly to what they care about and answers it.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "outcome/academic": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 700,
+      "output_tokens": 19,
+      "cost": 0.000795
+    },
+    "latencyMs": 1069,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 1
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 1
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.18",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.08 (Bounces off; they would not finish reading it.)",
+        "baseline": "1 (Bounces off; they would not finish reading it.)"
+      }
+    ]
+  },
+  "outcome/support-lead": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 711,
+      "output_tokens": 19,
+      "cost": 0.000806
+    },
+    "latencyMs": 1079,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "lands": {
+        "type": "score",
+        "score": 3
+      }
+    },
+    "raw": {
+      "would_act": 0.72,
+      "lands": 3
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.68",
+        "baseline": "0.72"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "2.65 (Speaks directly to what they care about and answers it.)",
+        "baseline": "3 (Speaks directly to what they care about and answers it.)"
+      }
+    ]
+  },
+  "hype/cto-fintech": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 694,
+      "output_tokens": 19,
+      "cost": 0.000789
+    },
+    "latencyMs": 873,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.05,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.05"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "0.30 (Actively puts them off — wrong register, or triggers their scepticism.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/staff-eng": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 709,
+      "output_tokens": 19,
+      "cost": 0.000804
+    },
+    "latencyMs": 1100,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.10",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "0.24 (Actively puts them off — wrong register, or triggers their scepticism.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/junior-dev": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 701,
+      "output_tokens": 19,
+      "cost": 0.000796
+    },
+    "latencyMs": 1192,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 1
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 1
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.17",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.19 (Bounces off; they would not finish reading it.)",
+        "baseline": "1 (Bounces off; they would not finish reading it.)"
+      }
+    ]
+  },
+  "hype/eng-manager": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 704,
+      "output_tokens": 19,
+      "cost": 0.000799
+    },
+    "latencyMs": 994,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.10",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "0.45 (Actively puts them off — wrong register, or triggers their scepticism.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/data-scientist": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 695,
+      "output_tokens": 19,
+      "cost": 0.00079
+    },
+    "latencyMs": 1028,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.09",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "0.33 (Actively puts them off — wrong register, or triggers their scepticism.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/sre": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 697,
+      "output_tokens": 19,
+      "cost": 0.000792
+    },
+    "latencyMs": 878,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.05,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.13",
+        "baseline": "0.05"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "0.65 (Bounces off; they would not finish reading it.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/product-manager": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 700,
+      "output_tokens": 19,
+      "cost": 0.000795
+    },
+    "latencyMs": 1151,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.15,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.11",
+        "baseline": "0.15"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "0.83 (Bounces off; they would not finish reading it.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/procurement": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 698,
+      "output_tokens": 19,
+      "cost": 0.000793
+    },
+    "latencyMs": 1162,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.05,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.09",
+        "baseline": "0.05"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "0.58 (Bounces off; they would not finish reading it.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/security": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 694,
+      "output_tokens": 19,
+      "cost": 0.000789
+    },
+    "latencyMs": 1061,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.05,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.09",
+        "baseline": "0.05"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "0.41 (Actively puts them off — wrong register, or triggers their scepticism.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/founder": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 699,
+      "output_tokens": 19,
+      "cost": 0.000794
+    },
+    "latencyMs": 971,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "lands": {
+        "type": "score",
+        "score": 2
+      }
+    },
+    "raw": {
+      "would_act": 0.62,
+      "lands": 2
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": false,
+        "jev": "0.29",
+        "baseline": "0.62"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "1.65 (Holds their attention but leaves their main question unanswered.)",
+        "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+      }
+    ]
+  },
+  "hype/academic": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 691,
+      "output_tokens": 19,
+      "cost": 0.000786
+    },
+    "latencyMs": 1118,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.05,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.05"
+      },
+      {
+        "name": "lands",
+        "agree": true,
+        "jev": "0.21 (Actively puts them off — wrong register, or triggers their scepticism.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  },
+  "hype/support-lead": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 702,
+      "output_tokens": 19,
+      "cost": 0.000797
+    },
+    "latencyMs": 1060,
+    "parseOk": true,
+    "answers": {
+      "would_act": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "lands": {
+        "type": "score",
+        "score": 0
+      }
+    },
+    "raw": {
+      "would_act": 0.05,
+      "lands": 0
+    },
+    "comparisons": [
+      {
+        "name": "would_act",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.05"
+      },
+      {
+        "name": "lands",
+        "agree": false,
+        "jev": "0.87 (Bounces off; they would not finish reading it.)",
+        "baseline": "0 (Actively puts them off — wrong register, or triggers their scepticism.)"
+      }
+    ]
+  }
+}

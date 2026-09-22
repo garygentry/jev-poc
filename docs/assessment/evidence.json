@@ -1,0 +1,1317 @@
+{
+  "generatedAt": "2026-09-22T00:00:32.273Z",
+  "jevModel": "typesafe/jev-1.13-20260917",
+  "baselineModel": "anthropic/claude-haiku-4.5",
+  "baselineBackend": "openrouter",
+  "demoCount": 18,
+  "demosMissingBaseline": [],
+  "groundTruth": {
+    "available": false,
+    "note": "No committed ground truth. Agreement is not correctness; decisiveness, cost, tokens and parse-reliability are structural facts, not accuracy. Do not rank models by 'right'."
+  },
+  "notes": [
+    "Agreement rule (loose by design, to surface real divergence): a choice agrees on an exact match; a score agrees when Jev's rounded level equals the baseline's level; a noul agrees when both land on the same side of 0.5. It is not a correctness test.",
+    "Jev output tokens are free; a chat baseline's output tokens are its expensive half.",
+    "The baseline emits a single value per question with no probabilities or confidence, by design.",
+    "Only demos with a committed Jev fixture are included (the offline demo and synthetic wide fan-outs are excluded)."
+  ],
+  "totals": {
+    "key": "all",
+    "demos": 18,
+    "jevCost": 0.0075641159999999975,
+    "baselineCost": 0.235436,
+    "jevCostPerCall": 0.000021428090651558067,
+    "baselineCostPerCall": 0.000666957507082153,
+    "costRatio": 31.125382001016387,
+    "agreementRate": 0.9305354558610709,
+    "meanConfidence": 0.7954558610709114,
+    "parseOkRate": 1
+  },
+  "byShape": [
+    {
+      "key": "pairwise",
+      "demos": 1,
+      "jevCost": 0.00044352,
+      "baselineCost": 0.012280000000000001,
+      "jevCostPerCall": 0.000017740799999999998,
+      "baselineCostPerCall": 0.0004912,
+      "costRatio": 27.687590187590192,
+      "agreementRate": 0.96,
+      "meanConfidence": 0.8512000000000002,
+      "parseOkRate": 1
+    },
+    {
+      "key": "cascade",
+      "demos": 1,
+      "jevCost": 0.000111048,
+      "baselineCost": 0.00326,
+      "jevCostPerCall": 0.000022209599999999998,
+      "baselineCostPerCall": 0.000652,
+      "costRatio": 29.356674591167785,
+      "agreementRate": 0.9,
+      "meanConfidence": 0.583,
+      "parseOkRate": 1
+    },
+    {
+      "key": "fanout",
+      "demos": 5,
+      "jevCost": 0.004315751999999998,
+      "baselineCost": 0.121998,
+      "jevCostPerCall": 0.00001979702752293577,
+      "baselineCostPerCall": 0.0005596238532110092,
+      "costRatio": 28.268074717917077,
+      "agreementRate": 0.935251798561151,
+      "meanConfidence": 0.7797482014388485,
+      "parseOkRate": 1
+    },
+    {
+      "key": "windowed",
+      "demos": 2,
+      "jevCost": 0.0008376900000000001,
+      "baselineCost": 0.023010999999999997,
+      "jevCostPerCall": 0.000019481162790697675,
+      "baselineCostPerCall": 0.0005351395348837209,
+      "costRatio": 27.469588988766724,
+      "agreementRate": 0.9767441860465116,
+      "meanConfidence": 0.8088372093023256,
+      "parseOkRate": 1
+    },
+    {
+      "key": "single",
+      "demos": 8,
+      "jevCost": 0.0015779820000000001,
+      "baselineCost": 0.067525,
+      "jevCostPerCall": 0.00003357408510638298,
+      "baselineCostPerCall": 0.0014367021276595745,
+      "costRatio": 42.79199635990778,
+      "agreementRate": 0.9177215189873418,
+      "meanConfidence": 0.802246835443038,
+      "parseOkRate": 1
+    },
+    {
+      "key": "rounds",
+      "demos": 1,
+      "jevCost": 0.00027812400000000004,
+      "baselineCost": 0.0073620000000000005,
+      "jevCostPerCall": 0.000018541600000000002,
+      "baselineCostPerCall": 0.0004908,
+      "costRatio": 26.470207533330456,
+      "agreementRate": 0.9473684210526315,
+      "meanConfidence": 0.9205263157894736,
+      "parseOkRate": 1
+    }
+  ],
+  "byGroup": [
+    {
+      "key": "engineering",
+      "demos": 4,
+      "jevCost": 0.0009596159999999999,
+      "baselineCost": 0.028574000000000002,
+      "jevCostPerCall": 0.000020861217391304345,
+      "baselineCostPerCall": 0.0006211739130434783,
+      "costRatio": 29.7764939309057,
+      "agreementRate": 0.9605263157894737,
+      "meanConfidence": 0.8396052631578946,
+      "parseOkRate": 1
+    },
+    {
+      "key": "control-plane",
+      "demos": 4,
+      "jevCost": 0.0014655900000000001,
+      "baselineCost": 0.04235299999999999,
+      "jevCostPerCall": 0.000020937000000000003,
+      "baselineCostPerCall": 0.000605042857142857,
+      "costRatio": 28.898259404062514,
+      "agreementRate": 0.9494949494949495,
+      "meanConfidence": 0.7592929292929294,
+      "parseOkRate": 1
+    },
+    {
+      "key": "documents",
+      "demos": 2,
+      "jevCost": 0.00031059,
+      "baselineCost": 0.01059,
+      "jevCostPerCall": 0.000023891538461538462,
+      "baselineCostPerCall": 0.0008146153846153847,
+      "costRatio": 34.09639717956148,
+      "agreementRate": 1,
+      "meanConfidence": 0.827027027027027,
+      "parseOkRate": 1
+    },
+    {
+      "key": "foundations",
+      "demos": 7,
+      "jevCost": 0.004563509999999998,
+      "baselineCost": 0.14224299999999998,
+      "jevCostPerCall": 0.000020933532110091735,
+      "baselineCostPerCall": 0.0006524908256880733,
+      "costRatio": 31.16964792451425,
+      "agreementRate": 0.9066339066339066,
+      "meanConfidence": 0.7647665847665844,
+      "parseOkRate": 1
+    },
+    {
+      "key": "safety",
+      "demos": 1,
+      "jevCost": 0.00026481,
+      "baselineCost": 0.011676,
+      "jevCostPerCall": 0.000044135,
+      "baselineCostPerCall": 0.001946,
+      "costRatio": 44.09199048374307,
+      "agreementRate": 0.9722222222222222,
+      "meanConfidence": 0.9558333333333326,
+      "parseOkRate": 1
+    }
+  ],
+  "demos": [
+    {
+      "slug": "alert-dedup",
+      "title": "Alert dedup",
+      "kind": "pairwise",
+      "group": "engineering",
+      "cost": {
+        "jevCalls": 25,
+        "baselineCalls": 25,
+        "jevInputTokens": 10560,
+        "jevOutputTokens": 550,
+        "jevCost": 0.00044352,
+        "baselineInputTokens": 10655,
+        "baselineOutputTokens": 325,
+        "baselineCost": 0.012280000000000001,
+        "jevCostPerCall": 0.000017740799999999998,
+        "baselineCostPerCall": 0.0004912,
+        "costRatio": 27.687590187590192
+      },
+      "decisiveness": {
+        "answers": 25,
+        "meanConfidence": 0.8512000000000002,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 25,
+        "agree": 24,
+        "agreementRate": 0.96,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 25,
+            "agree": 24
+          }
+        },
+        "disagreements": [
+          {
+            "key": "bad-deploy/deploy--cache-mem",
+            "name": "same_incident",
+            "jev": "0.18",
+            "baseline": "0.75"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 25,
+        "parseOk": 25,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "cascade",
+      "title": "Cascade router",
+      "kind": "cascade",
+      "group": "control-plane",
+      "cost": {
+        "jevCalls": 5,
+        "baselineCalls": 5,
+        "jevInputTokens": 2644,
+        "jevOutputTokens": 301,
+        "jevCost": 0.000111048,
+        "baselineInputTokens": 2785,
+        "baselineOutputTokens": 95,
+        "baselineCost": 0.00326,
+        "jevCostPerCall": 0.000022209599999999998,
+        "baselineCostPerCall": 0.000652,
+        "costRatio": 29.356674591167785
+      },
+      "decisiveness": {
+        "answers": 10,
+        "meanConfidence": 0.583,
+        "undecidedShare": 0.1,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 10,
+        "agree": 9,
+        "agreementRate": 0.9,
+        "byType": {
+          "choice": {
+            "compared": 5,
+            "agree": 4
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 5,
+            "agree": 5
+          }
+        },
+        "disagreements": [
+          {
+            "key": "integration",
+            "name": "difficulty",
+            "jev": "involved",
+            "baseline": "expert"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 5,
+        "parseOk": 5,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "clause-risk",
+      "title": "Clause risk",
+      "kind": "fanout",
+      "group": "documents",
+      "cost": {
+        "jevCalls": 8,
+        "baselineCalls": 8,
+        "jevInputTokens": 5118,
+        "jevOutputTokens": 600,
+        "jevCost": 0.000214956,
+        "baselineInputTokens": 6294,
+        "baselineOutputTokens": 344,
+        "baselineCost": 0.008014,
+        "jevCostPerCall": 0.0000268695,
+        "baselineCostPerCall": 0.00100175,
+        "costRatio": 37.28204841921137
+      },
+      "decisiveness": {
+        "answers": 32,
+        "meanConfidence": 0.8218749999999999,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 32,
+        "agree": 32,
+        "agreementRate": 1,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 32,
+            "agree": 32
+          }
+        },
+        "disagreements": []
+      },
+      "parse": {
+        "baselineCalls": 8,
+        "parseOk": 8,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "context-pruner",
+      "title": "Context pruner",
+      "kind": "fanout",
+      "group": "control-plane",
+      "cost": {
+        "jevCalls": 21,
+        "baselineCalls": 21,
+        "jevInputTokens": 9428,
+        "jevOutputTokens": 462,
+        "jevCost": 0.000395976,
+        "baselineInputTokens": 9486,
+        "baselineOutputTokens": 231,
+        "baselineCost": 0.010640999999999998,
+        "jevCostPerCall": 0.000018856,
+        "baselineCostPerCall": 0.0005067142857142856,
+        "costRatio": 26.872840778228976
+      },
+      "decisiveness": {
+        "answers": 21,
+        "meanConfidence": 0.7514285714285714,
+        "undecidedShare": 0.047619047619047616,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 21,
+        "agree": 19,
+        "agreementRate": 0.9047619047619048,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 21,
+            "agree": 19
+          }
+        },
+        "disagreements": [
+          {
+            "key": "checkout-timeout/unrelated-readme",
+            "name": "relevant",
+            "jev": "0.60",
+            "baseline": "0.15"
+          },
+          {
+            "key": "payment-incident/deploy-notes",
+            "name": "relevant",
+            "jev": "0.74",
+            "baseline": "0.30"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 21,
+        "parseOk": 21,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "doc-sweep",
+      "title": "Long-document sweep",
+      "kind": "windowed",
+      "group": "documents",
+      "cost": {
+        "jevCalls": 5,
+        "baselineCalls": 5,
+        "jevInputTokens": 2277,
+        "jevOutputTokens": 110,
+        "jevCost": 0.00009563400000000001,
+        "baselineInputTokens": 2291,
+        "baselineOutputTokens": 57,
+        "baselineCost": 0.002576,
+        "jevCostPerCall": 0.0000191268,
+        "baselineCostPerCall": 0.0005152000000000001,
+        "costRatio": 26.936026936026938
+      },
+      "decisiveness": {
+        "answers": 5,
+        "meanConfidence": 0.86,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 5,
+        "agree": 5,
+        "agreementRate": 1,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 5,
+            "agree": 5
+          }
+        },
+        "disagreements": []
+      },
+      "parse": {
+        "baselineCalls": 5,
+        "parseOk": 5,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "done-check",
+      "title": "Done-check",
+      "kind": "single",
+      "group": "control-plane",
+      "cost": {
+        "jevCalls": 6,
+        "baselineCalls": 6,
+        "jevInputTokens": 5155,
+        "jevOutputTokens": 570,
+        "jevCost": 0.00021651,
+        "baselineInputTokens": 6457,
+        "baselineOutputTokens": 312,
+        "baselineCost": 0.008017,
+        "jevCostPerCall": 0.000036085,
+        "baselineCostPerCall": 0.0013361666666666667,
+        "costRatio": 37.02831278001017
+      },
+      "decisiveness": {
+        "answers": 30,
+        "meanConfidence": 0.7693333333333333,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 30,
+        "agree": 29,
+        "agreementRate": 0.9666666666666667,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 30,
+            "agree": 29
+          }
+        },
+        "disagreements": [
+          {
+            "key": "half-done",
+            "name": "meets_requirement",
+            "jev": "0.07",
+            "baseline": "0.50"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 6,
+        "parseOk": 6,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "flaky-triage",
+      "title": "Flaky vs regression",
+      "kind": "single",
+      "group": "engineering",
+      "cost": {
+        "jevCalls": 6,
+        "baselineCalls": 6,
+        "jevInputTokens": 3435,
+        "jevOutputTokens": 421,
+        "jevCost": 0.00014427,
+        "baselineInputTokens": 3526,
+        "baselineOutputTokens": 109,
+        "baselineCost": 0.004071,
+        "jevCostPerCall": 0.000024045,
+        "baselineCostPerCall": 0.0006785,
+        "costRatio": 28.21792472447494
+      },
+      "decisiveness": {
+        "answers": 12,
+        "meanConfidence": 0.7591666666666664,
+        "undecidedShare": 0.08333333333333333,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 12,
+        "agree": 11,
+        "agreementRate": 0.9166666666666666,
+        "byType": {
+          "choice": {
+            "compared": 6,
+            "agree": 6
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 6,
+            "agree": 5
+          }
+        },
+        "disagreements": [
+          {
+            "key": "unclear",
+            "name": "deterministic",
+            "jev": "0.37",
+            "baseline": "0.50"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 6,
+        "parseOk": 6,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "guardrail",
+      "title": "Command guardrail",
+      "kind": "single",
+      "group": "foundations",
+      "cost": {
+        "jevCalls": 9,
+        "baselineCalls": 9,
+        "jevInputTokens": 6200,
+        "jevOutputTokens": 1343,
+        "jevCost": 0.0002604,
+        "baselineInputTokens": 9416,
+        "baselineOutputTokens": 542,
+        "baselineCost": 0.012125999999999998,
+        "jevCostPerCall": 0.000028933333333333333,
+        "baselineCostPerCall": 0.0013473333333333332,
+        "costRatio": 46.566820276497694
+      },
+      "decisiveness": {
+        "answers": 54,
+        "meanConfidence": 0.693888888888889,
+        "undecidedShare": 0.07407407407407407,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 54,
+        "agree": 47,
+        "agreementRate": 0.8703703703703703,
+        "byType": {
+          "choice": {
+            "compared": 9,
+            "agree": 7
+          },
+          "score": {
+            "compared": 9,
+            "agree": 7
+          },
+          "noul": {
+            "compared": 36,
+            "agree": 33
+          }
+        },
+        "disagreements": [
+          {
+            "key": "test",
+            "name": "blast_radius",
+            "jev": "reversible",
+            "baseline": "read_only"
+          },
+          {
+            "key": "test",
+            "name": "reversibility",
+            "jev": "0.53 (A single ordinary step undoes it, using tools already present.)",
+            "baseline": "0 (Nothing to undo; the command changed no state.)"
+          },
+          {
+            "key": "test",
+            "name": "outside_workspace",
+            "jev": "0.51",
+            "baseline": "0.10"
+          },
+          {
+            "key": "reset-hard",
+            "name": "reversibility",
+            "jev": "1.29 (A single ordinary step undoes it, using tools already present.)",
+            "baseline": "2 (Recovery depends on a backup, a remote copy, or a support request.)"
+          },
+          {
+            "key": "rm-modules",
+            "name": "outside_workspace",
+            "jev": "0.53",
+            "baseline": "0.00"
+          },
+          {
+            "key": "cat-env",
+            "name": "blast_radius",
+            "jev": "read_only",
+            "baseline": "catastrophic"
+          },
+          {
+            "key": "curl-pipe-sh",
+            "name": "touches_secrets",
+            "jev": "0.21",
+            "baseline": "0.70"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 9,
+        "parseOk": 9,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "loop-detector",
+      "title": "Loop detector",
+      "kind": "windowed",
+      "group": "control-plane",
+      "cost": {
+        "jevCalls": 38,
+        "baselineCalls": 38,
+        "jevInputTokens": 17668,
+        "jevOutputTokens": 798,
+        "jevCost": 0.000742056,
+        "baselineInputTokens": 18345,
+        "baselineOutputTokens": 418,
+        "baselineCost": 0.020434999999999995,
+        "jevCostPerCall": 0.000019527789473684212,
+        "baselineCostPerCall": 0.0005377631578947367,
+        "costRatio": 27.538352900589704
+      },
+      "decisiveness": {
+        "answers": 38,
+        "meanConfidence": 0.8021052631578949,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 38,
+        "agree": 37,
+        "agreementRate": 0.9736842105263158,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 38,
+            "agree": 37
+          }
+        },
+        "disagreements": [
+          {
+            "key": "debug-loop/w2",
+            "name": "stuck",
+            "jev": "0.27",
+            "baseline": "0.85"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 38,
+        "parseOk": 38,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "moderation",
+      "title": "Multi-policy moderation",
+      "kind": "single",
+      "group": "safety",
+      "cost": {
+        "jevCalls": 6,
+        "baselineCalls": 6,
+        "jevInputTokens": 6305,
+        "jevOutputTokens": 1248,
+        "jevCost": 0.00026481,
+        "baselineInputTokens": 9166,
+        "baselineOutputTokens": 502,
+        "baselineCost": 0.011676,
+        "jevCostPerCall": 0.000044135,
+        "baselineCostPerCall": 0.001946,
+        "costRatio": 44.09199048374307
+      },
+      "decisiveness": {
+        "answers": 72,
+        "meanConfidence": 0.9558333333333326,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 72,
+        "agree": 70,
+        "agreementRate": 0.9722222222222222,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 72,
+            "agree": 70
+          }
+        },
+        "disagreements": [
+          {
+            "key": "harassment",
+            "name": "self_harm",
+            "jev": "0.10",
+            "baseline": "0.70"
+          },
+          {
+            "key": "threat",
+            "name": "pii",
+            "jev": "0.12",
+            "baseline": "0.70"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 6,
+        "parseOk": 6,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "personas",
+      "title": "Persona panel",
+      "kind": "fanout",
+      "group": "foundations",
+      "cost": {
+        "jevCalls": 36,
+        "baselineCalls": 36,
+        "jevInputTokens": 21237,
+        "jevOutputTokens": 1224,
+        "jevCost": 0.0008919539999999997,
+        "baselineInputTokens": 25536,
+        "baselineOutputTokens": 684,
+        "baselineCost": 0.028956000000000006,
+        "jevCostPerCall": 0.000024776499999999992,
+        "baselineCostPerCall": 0.0008043333333333335,
+        "costRatio": 32.463557537720575
+      },
+      "decisiveness": {
+        "answers": 72,
+        "meanConfidence": 0.5143055555555557,
+        "undecidedShare": 0.1111111111111111,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 72,
+        "agree": 57,
+        "agreementRate": 0.7916666666666666,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 36,
+            "agree": 24
+          },
+          "noul": {
+            "compared": 36,
+            "agree": 33
+          }
+        },
+        "disagreements": [
+          {
+            "key": "technical/cto-fintech",
+            "name": "lands",
+            "jev": "1.20 (Bounces off; they would not finish reading it.)",
+            "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+          },
+          {
+            "key": "technical/staff-eng",
+            "name": "lands",
+            "jev": "2.21 (Holds their attention but leaves their main question unanswered.)",
+            "baseline": "3 (Speaks directly to what they care about and answers it.)"
+          },
+          {
+            "key": "technical/data-scientist",
+            "name": "would_act",
+            "jev": "0.40",
+            "baseline": "0.72"
+          },
+          {
+            "key": "technical/data-scientist",
+            "name": "lands",
+            "jev": "2.12 (Holds their attention but leaves their main question unanswered.)",
+            "baseline": "3 (Speaks directly to what they care about and answers it.)"
+          },
+          {
+            "key": "technical/procurement",
+            "name": "would_act",
+            "jev": "0.29",
+            "baseline": "0.62"
+          },
+          {
+            "key": "technical/procurement",
+            "name": "lands",
+            "jev": "1.40 (Bounces off; they would not finish reading it.)",
+            "baseline": "2 (Holds their attention but leaves their main question unanswered.)"
+          },
+          {
+            "key": "outcome/sre",
+            "name": "lands",
+            "jev": "1.96 (Holds their attention but leaves their main question unanswered.)",
+            "baseline": "3 (Speaks directly to what they care about and answers it.)"
+          },
+          {
+            "key": "outcome/product-manager",
+            "name": "lands",
+            "jev": "2.22 (Holds their attention but leaves their main question unanswered.)",
+            "baseline": "3 (Speaks directly to what they care about and answers it.)"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 36,
+        "parseOk": 36,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "pr-triage",
+      "title": "PR risk triage",
+      "kind": "single",
+      "group": "engineering",
+      "cost": {
+        "jevCalls": 6,
+        "baselineCalls": 6,
+        "jevInputTokens": 5198,
+        "jevOutputTokens": 764,
+        "jevCost": 0.00021831599999999997,
+        "baselineInputTokens": 6768,
+        "baselineOutputTokens": 274,
+        "baselineCost": 0.008138,
+        "jevCostPerCall": 0.000036385999999999993,
+        "baselineCostPerCall": 0.0013563333333333333,
+        "costRatio": 37.27624177797322
+      },
+      "decisiveness": {
+        "answers": 30,
+        "meanConfidence": 0.8299999999999998,
+        "undecidedShare": 0.03333333333333333,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 30,
+        "agree": 29,
+        "agreementRate": 0.9666666666666667,
+        "byType": {
+          "choice": {
+            "compared": 6,
+            "agree": 6
+          },
+          "score": {
+            "compared": 6,
+            "agree": 5
+          },
+          "noul": {
+            "compared": 18,
+            "agree": 18
+          }
+        },
+        "disagreements": [
+          {
+            "key": "drop-column",
+            "name": "blast_radius",
+            "jev": "1.22 (A feature area — a mistake affects one flow or one part of the product.)",
+            "baseline": "2 (A shared path — a mistake reaches many requests or every caller of a common dependency.)"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 6,
+        "parseOk": 6,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "rerank",
+      "title": "Semantic re-rank",
+      "kind": "fanout",
+      "group": "foundations",
+      "cost": {
+        "jevCalls": 144,
+        "baselineCalls": 144,
+        "jevInputTokens": 63318,
+        "jevOutputTokens": 3168,
+        "jevCost": 0.002659355999999998,
+        "baselineInputTokens": 62562,
+        "baselineOutputTokens": 1548,
+        "baselineCost": 0.07030199999999999,
+        "jevCostPerCall": 0.000018467749999999986,
+        "baselineCostPerCall": 0.0004882083333333333,
+        "costRatio": 26.435723536074164
+      },
+      "decisiveness": {
+        "answers": 144,
+        "meanConfidence": 0.8968055555555545,
+        "undecidedShare": 0.006944444444444444,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 144,
+        "agree": 143,
+        "agreementRate": 0.9930555555555556,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 144,
+            "agree": 143
+          }
+        },
+        "disagreements": [
+          {
+            "key": "q5/p17",
+            "name": "relevant",
+            "jev": "0.49",
+            "baseline": "0.75"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 144,
+        "parseOk": 144,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "router",
+      "title": "Model router",
+      "kind": "single",
+      "group": "foundations",
+      "cost": {
+        "jevCalls": 5,
+        "baselineCalls": 5,
+        "jevInputTokens": 3933,
+        "jevOutputTokens": 892,
+        "jevCost": 0.000165186,
+        "baselineInputTokens": 5173,
+        "baselineOutputTokens": 303,
+        "baselineCost": 0.0066879999999999995,
+        "jevCostPerCall": 0.0000330372,
+        "baselineCostPerCall": 0.0013376,
+        "costRatio": 40.4876926616057
+      },
+      "decisiveness": {
+        "answers": 30,
+        "meanConfidence": 0.7570000000000001,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 30,
+        "agree": 27,
+        "agreementRate": 0.9,
+        "byType": {
+          "choice": {
+            "compared": 10,
+            "agree": 8
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 20,
+            "agree": 19
+          }
+        },
+        "disagreements": [
+          {
+            "key": "debug-race",
+            "name": "required_capability",
+            "jev": "reasoning",
+            "baseline": "expert"
+          },
+          {
+            "key": "vague",
+            "name": "task_type",
+            "jev": "code",
+            "baseline": "conversation"
+          },
+          {
+            "key": "vague",
+            "name": "needs_vision",
+            "jev": "0.24",
+            "baseline": "0.60"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 5,
+        "parseOk": 5,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "semantic-grep",
+      "title": "Semantic grep",
+      "kind": "fanout",
+      "group": "engineering",
+      "cost": {
+        "jevCalls": 9,
+        "baselineCalls": 9,
+        "jevInputTokens": 3655,
+        "jevOutputTokens": 180,
+        "jevCost": 0.00015351,
+        "baselineInputTokens": 3650,
+        "baselineOutputTokens": 87,
+        "baselineCost": 0.004085,
+        "jevCostPerCall": 0.00001705666666666667,
+        "baselineCostPerCall": 0.0004538888888888889,
+        "costRatio": 26.610644257703076
+      },
+      "decisiveness": {
+        "answers": 9,
+        "meanConfidence": 0.9466666666666667,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 9,
+        "agree": 9,
+        "agreementRate": 1,
+        "byType": {
+          "choice": {
+            "compared": 0,
+            "agree": 0
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 9,
+            "agree": 9
+          }
+        },
+        "disagreements": []
+      },
+      "parse": {
+        "baselineCalls": 9,
+        "parseOk": 9,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "taxonomy",
+      "title": "Taxonomy beam search",
+      "kind": "rounds",
+      "group": "foundations",
+      "cost": {
+        "jevCalls": 15,
+        "baselineCalls": 15,
+        "jevInputTokens": 6622,
+        "jevOutputTokens": 878,
+        "jevCost": 0.00027812400000000004,
+        "baselineInputTokens": 6382,
+        "baselineOutputTokens": 196,
+        "baselineCost": 0.0073620000000000005,
+        "jevCostPerCall": 0.000018541600000000002,
+        "baselineCostPerCall": 0.0004908,
+        "costRatio": 26.470207533330456
+      },
+      "decisiveness": {
+        "answers": 19,
+        "meanConfidence": 0.9205263157894736,
+        "undecidedShare": 0,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 19,
+        "agree": 18,
+        "agreementRate": 0.9473684210526315,
+        "byType": {
+          "choice": {
+            "compared": 19,
+            "agree": 18
+          },
+          "score": {
+            "compared": 0,
+            "agree": 0
+          },
+          "noul": {
+            "compared": 0,
+            "agree": 0
+          }
+        },
+        "disagreements": [
+          {
+            "key": "ambiguous-billing-d2",
+            "name": "billing__payments",
+            "jev": "payment_method_change",
+            "baseline": "failed_payment_recovery"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 15,
+        "parseOk": 15,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "triage",
+      "title": "Ticket triage",
+      "kind": "single",
+      "group": "foundations",
+      "cost": {
+        "jevCalls": 4,
+        "baselineCalls": 4,
+        "jevInputTokens": 2717,
+        "jevOutputTokens": 600,
+        "jevCost": 0.000114114,
+        "baselineInputTokens": 4261,
+        "baselineOutputTokens": 272,
+        "baselineCost": 0.005621,
+        "jevCostPerCall": 0.0000285285,
+        "baselineCostPerCall": 0.00140525,
+        "costRatio": 49.257759784075574
+      },
+      "decisiveness": {
+        "answers": 28,
+        "meanConfidence": 0.8357142857142857,
+        "undecidedShare": 0.03571428571428571,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 28,
+        "agree": 27,
+        "agreementRate": 0.9642857142857143,
+        "byType": {
+          "choice": {
+            "compared": 4,
+            "agree": 4
+          },
+          "score": {
+            "compared": 8,
+            "agree": 7
+          },
+          "noul": {
+            "compared": 16,
+            "agree": 16
+          }
+        },
+        "disagreements": [
+          {
+            "key": "chargeback-threat",
+            "name": "business_impact",
+            "jev": "0.79 (Inconvenience; a workaround exists.)",
+            "baseline": "0 (No harm; a question or a preference.)"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 4,
+        "parseOk": 4,
+        "parseOkRate": 1
+      }
+    },
+    {
+      "slug": "typewriter",
+      "title": "Live typewriter",
+      "kind": "single",
+      "group": "foundations",
+      "cost": {
+        "jevCalls": 5,
+        "baselineCalls": 5,
+        "jevInputTokens": 4628,
+        "jevOutputTokens": 1341,
+        "jevCost": 0.000194376,
+        "baselineInputTokens": 8333,
+        "baselineOutputTokens": 571,
+        "baselineCost": 0.011188,
+        "jevCostPerCall": 0.000038875200000000003,
+        "baselineCostPerCall": 0.0022376,
+        "costRatio": 57.55854632259127
+      },
+      "decisiveness": {
+        "answers": 60,
+        "meanConfidence": 0.7336666666666666,
+        "undecidedShare": 0.05,
+        "baselineHasConfidence": false
+      },
+      "agreement": {
+        "compared": 60,
+        "agree": 50,
+        "agreementRate": 0.8333333333333334,
+        "byType": {
+          "choice": {
+            "compared": 10,
+            "agree": 8
+          },
+          "score": {
+            "compared": 15,
+            "agree": 12
+          },
+          "noul": {
+            "compared": 35,
+            "agree": 30
+          }
+        },
+        "disagreements": [
+          {
+            "key": "passive-aggressive",
+            "name": "urgency",
+            "jev": "1.20 (A timeframe is mentioned but nothing turns on it.)",
+            "baseline": "2 (The message asserts that something is needed immediately.)"
+          },
+          {
+            "key": "passive-aggressive",
+            "name": "has_clear_ask",
+            "jev": "0.18",
+            "baseline": "0.70"
+          },
+          {
+            "key": "clear-ask",
+            "name": "hedging",
+            "jev": "0.24 (States things directly.)",
+            "baseline": "1 (Occasional softeners that do not obscure the point.)"
+          },
+          {
+            "key": "clear-ask",
+            "name": "passive_aggressive",
+            "jev": "0.57",
+            "baseline": "0.15"
+          },
+          {
+            "key": "hedged",
+            "name": "tone",
+            "jev": "neutral",
+            "baseline": "warm"
+          },
+          {
+            "key": "hedged",
+            "name": "ready_to_send",
+            "jev": "0.65",
+            "baseline": "0.20"
+          },
+          {
+            "key": "leaky",
+            "name": "contains_pii",
+            "jev": "0.24",
+            "baseline": "0.85"
+          },
+          {
+            "key": "leaky",
+            "name": "ready_to_send",
+            "jev": "0.73",
+            "baseline": "0.20"
+          }
+        ]
+      },
+      "parse": {
+        "baselineCalls": 5,
+        "parseOk": 5,
+        "parseOkRate": 1
+      }
+    }
+  ]
+}

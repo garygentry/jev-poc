@@ -1,0 +1,197 @@
+{
+  "balance": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 535,
+      "output_tokens": 19,
+      "cost": 0.00063
+    },
+    "latencyMs": 1309,
+    "parseOk": true,
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "routine"
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "difficulty": "routine",
+      "high_stakes": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "difficulty",
+        "agree": true,
+        "jev": "routine",
+        "baseline": "routine"
+      },
+      {
+        "name": "high_stakes",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "reset": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 547,
+      "output_tokens": 19,
+      "cost": 0.000642
+    },
+    "latencyMs": 1281,
+    "parseOk": true,
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "involved"
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.7
+      }
+    },
+    "raw": {
+      "difficulty": "involved",
+      "high_stakes": 0.7
+    },
+    "comparisons": [
+      {
+        "name": "difficulty",
+        "agree": true,
+        "jev": "involved",
+        "baseline": "involved"
+      },
+      {
+        "name": "high_stakes",
+        "agree": true,
+        "jev": "0.53",
+        "baseline": "0.70"
+      }
+    ]
+  },
+  "double-charge": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 557,
+      "output_tokens": 19,
+      "cost": 0.000652
+    },
+    "latencyMs": 1346,
+    "parseOk": true,
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "involved"
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "difficulty": "involved",
+      "high_stakes": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "difficulty",
+        "agree": true,
+        "jev": "involved",
+        "baseline": "involved"
+      },
+      {
+        "name": "high_stakes",
+        "agree": true,
+        "jev": "0.89",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "data-export": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 579,
+      "output_tokens": 19,
+      "cost": 0.000674
+    },
+    "latencyMs": 1275,
+    "parseOk": true,
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "expert"
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "difficulty": "expert",
+      "high_stakes": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "difficulty",
+        "agree": true,
+        "jev": "expert",
+        "baseline": "expert"
+      },
+      {
+        "name": "high_stakes",
+        "agree": true,
+        "jev": "0.85",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "integration": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 567,
+      "output_tokens": 19,
+      "cost": 0.000662
+    },
+    "latencyMs": 1329,
+    "parseOk": true,
+    "answers": {
+      "difficulty": {
+        "type": "choice",
+        "choice": "expert"
+      },
+      "high_stakes": {
+        "type": "noul",
+        "noul": 0.3
+      }
+    },
+    "raw": {
+      "difficulty": "expert",
+      "high_stakes": 0.3
+    },
+    "comparisons": [
+      {
+        "name": "difficulty",
+        "agree": false,
+        "jev": "involved",
+        "baseline": "expert"
+      },
+      {
+        "name": "high_stakes",
+        "agree": true,
+        "jev": "0.10",
+        "baseline": "0.30"
+      }
+    ]
+  }
+}

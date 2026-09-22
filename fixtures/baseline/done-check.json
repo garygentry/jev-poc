@@ -1,0 +1,434 @@
+{
+  "sound": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1112,
+      "output_tokens": 52,
+      "cost": 0.001372
+    },
+    "latencyMs": 1773,
+    "parseOk": true,
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "meets_requirement": 0.95,
+      "real_implementation": 0.9,
+      "has_test": 0.95,
+      "tests_pass": 0.95,
+      "scoped": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "meets_requirement",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "0.95"
+      },
+      {
+        "name": "real_implementation",
+        "agree": true,
+        "jev": "0.90",
+        "baseline": "0.90"
+      },
+      {
+        "name": "has_test",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      },
+      {
+        "name": "tests_pass",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      },
+      {
+        "name": "scoped",
+        "agree": true,
+        "jev": "0.92",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "stub": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1082,
+      "output_tokens": 52,
+      "cost": 0.001342
+    },
+    "latencyMs": 1834,
+    "parseOk": true,
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 1
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 1
+      }
+    },
+    "raw": {
+      "meets_requirement": 0.05,
+      "real_implementation": 0,
+      "has_test": 0,
+      "tests_pass": 1,
+      "scoped": 1
+    },
+    "comparisons": [
+      {
+        "name": "meets_requirement",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.05"
+      },
+      {
+        "name": "real_implementation",
+        "agree": true,
+        "jev": "0.06",
+        "baseline": "0.00"
+      },
+      {
+        "name": "has_test",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.00"
+      },
+      {
+        "name": "tests_pass",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "1.00"
+      },
+      {
+        "name": "scoped",
+        "agree": true,
+        "jev": "0.91",
+        "baseline": "1.00"
+      }
+    ]
+  },
+  "red-suite": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1079,
+      "output_tokens": 52,
+      "cost": 0.001339
+    },
+    "latencyMs": 1843,
+    "parseOk": true,
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.6
+      }
+    },
+    "raw": {
+      "meets_requirement": 0.3,
+      "real_implementation": 0.8,
+      "has_test": 0.7,
+      "tests_pass": 0,
+      "scoped": 0.6
+    },
+    "comparisons": [
+      {
+        "name": "meets_requirement",
+        "agree": true,
+        "jev": "0.28",
+        "baseline": "0.30"
+      },
+      {
+        "name": "real_implementation",
+        "agree": true,
+        "jev": "0.74",
+        "baseline": "0.80"
+      },
+      {
+        "name": "has_test",
+        "agree": true,
+        "jev": "0.81",
+        "baseline": "0.70"
+      },
+      {
+        "name": "tests_pass",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "scoped",
+        "agree": true,
+        "jev": "0.83",
+        "baseline": "0.60"
+      }
+    ]
+  },
+  "untested": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1038,
+      "output_tokens": 52,
+      "cost": 0.001298
+    },
+    "latencyMs": 1736,
+    "parseOk": true,
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.9
+      }
+    },
+    "raw": {
+      "meets_requirement": 0.95,
+      "real_implementation": 0.9,
+      "has_test": 0.05,
+      "tests_pass": 0.95,
+      "scoped": 0.9
+    },
+    "comparisons": [
+      {
+        "name": "meets_requirement",
+        "agree": true,
+        "jev": "0.75",
+        "baseline": "0.95"
+      },
+      {
+        "name": "real_implementation",
+        "agree": true,
+        "jev": "0.78",
+        "baseline": "0.90"
+      },
+      {
+        "name": "has_test",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.05"
+      },
+      {
+        "name": "tests_pass",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.95"
+      },
+      {
+        "name": "scoped",
+        "agree": true,
+        "jev": "0.89",
+        "baseline": "0.90"
+      }
+    ]
+  },
+  "half-done": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1082,
+      "output_tokens": 52,
+      "cost": 0.001342
+    },
+    "latencyMs": 1884,
+    "parseOk": true,
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.5
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 1
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 1
+      }
+    },
+    "raw": {
+      "meets_requirement": 0.5,
+      "real_implementation": 0.95,
+      "has_test": 0.9,
+      "tests_pass": 1,
+      "scoped": 1
+    },
+    "comparisons": [
+      {
+        "name": "meets_requirement",
+        "agree": false,
+        "jev": "0.07",
+        "baseline": "0.50"
+      },
+      {
+        "name": "real_implementation",
+        "agree": true,
+        "jev": "0.80",
+        "baseline": "0.95"
+      },
+      {
+        "name": "has_test",
+        "agree": true,
+        "jev": "0.92",
+        "baseline": "0.90"
+      },
+      {
+        "name": "tests_pass",
+        "agree": true,
+        "jev": "0.95",
+        "baseline": "1.00"
+      },
+      {
+        "name": "scoped",
+        "agree": true,
+        "jev": "0.85",
+        "baseline": "1.00"
+      }
+    ]
+  },
+  "collateral": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1064,
+      "output_tokens": 52,
+      "cost": 0.001324
+    },
+    "latencyMs": 1875,
+    "parseOk": true,
+    "answers": {
+      "meets_requirement": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "real_implementation": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "has_test": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "tests_pass": {
+        "type": "noul",
+        "noul": 0.5
+      },
+      "scoped": {
+        "type": "noul",
+        "noul": 0.2
+      }
+    },
+    "raw": {
+      "meets_requirement": 0.9,
+      "real_implementation": 0.95,
+      "has_test": 0.15,
+      "tests_pass": 0.5,
+      "scoped": 0.2
+    },
+    "comparisons": [
+      {
+        "name": "meets_requirement",
+        "agree": true,
+        "jev": "0.83",
+        "baseline": "0.90"
+      },
+      {
+        "name": "real_implementation",
+        "agree": true,
+        "jev": "0.86",
+        "baseline": "0.95"
+      },
+      {
+        "name": "has_test",
+        "agree": true,
+        "jev": "0.17",
+        "baseline": "0.15"
+      },
+      {
+        "name": "tests_pass",
+        "agree": true,
+        "jev": "0.95",
+        "baseline": "0.50"
+      },
+      {
+        "name": "scoped",
+        "agree": true,
+        "jev": "0.18",
+        "baseline": "0.20"
+      }
+    ]
+  }
+}

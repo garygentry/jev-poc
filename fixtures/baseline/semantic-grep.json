@@ -1,0 +1,254 @@
+{
+  "http-client/fetchUser": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 404,
+      "output_tokens": 11,
+      "cost": 0.000459
+    },
+    "latencyMs": 1539,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "matches": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.98",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "http-client/fetchOrders": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 429,
+      "output_tokens": 9,
+      "cost": 0.000474
+    },
+    "latencyMs": 1383,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "matches": 0
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "http-client/getWeather": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 405,
+      "output_tokens": 11,
+      "cost": 0.00046
+    },
+    "latencyMs": 1164,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "matches": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "http-client/postEvent": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 400,
+      "output_tokens": 9,
+      "cost": 0.000445
+    },
+    "latencyMs": 1201,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "matches": 0
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "http-client/download": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 396,
+      "output_tokens": 11,
+      "cost": 0.000451
+    },
+    "latencyMs": 1075,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "matches": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "http-client/pingHost": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 409,
+      "output_tokens": 9,
+      "cost": 0.000454
+    },
+    "latencyMs": 1246,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "matches": 0
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "http-client/sum": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 396,
+      "output_tokens": 9,
+      "cost": 0.000441
+    },
+    "latencyMs": 943,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "matches": 0
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "http-client/loadConfig": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 400,
+      "output_tokens": 9,
+      "cost": 0.000445
+    },
+    "latencyMs": 951,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "matches": 0
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "http-client/scrape": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 411,
+      "output_tokens": 9,
+      "cost": 0.000456
+    },
+    "latencyMs": 995,
+    "parseOk": true,
+    "answers": {
+      "matches": {
+        "type": "noul",
+        "noul": 1
+      }
+    },
+    "raw": {
+      "matches": 1
+    },
+    "comparisons": [
+      {
+        "name": "matches",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "1.00"
+      }
+    ]
+  }
+}

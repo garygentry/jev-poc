@@ -1,0 +1,466 @@
+{
+  "webhook-d0": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 412,
+      "output_tokens": 9,
+      "cost": 0.000457
+    },
+    "latencyMs": 1128,
+    "parseOk": true,
+    "answers": {
+      "root": {
+        "type": "choice",
+        "choice": "technical"
+      }
+    },
+    "raw": {
+      "root": "technical"
+    },
+    "comparisons": [
+      {
+        "name": "root",
+        "agree": true,
+        "jev": "technical",
+        "baseline": "technical"
+      }
+    ]
+  },
+  "webhook-d1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 364,
+      "output_tokens": 9,
+      "cost": 0.000409
+    },
+    "latencyMs": 1017,
+    "parseOk": true,
+    "answers": {
+      "technical": {
+        "type": "choice",
+        "choice": "delivery"
+      }
+    },
+    "raw": {
+      "technical": "delivery"
+    },
+    "comparisons": [
+      {
+        "name": "technical",
+        "agree": true,
+        "jev": "delivery",
+        "baseline": "delivery"
+      }
+    ]
+  },
+  "webhook-d2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 390,
+      "output_tokens": 15,
+      "cost": 0.000465
+    },
+    "latencyMs": 1186,
+    "parseOk": true,
+    "answers": {
+      "technical__delivery": {
+        "type": "choice",
+        "choice": "webhook_not_firing"
+      }
+    },
+    "raw": {
+      "technical__delivery": "webhook_not_firing"
+    },
+    "comparisons": [
+      {
+        "name": "technical__delivery",
+        "agree": true,
+        "jev": "webhook_not_firing",
+        "baseline": "webhook_not_firing"
+      }
+    ]
+  },
+  "double-bill-d0": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 402,
+      "output_tokens": 9,
+      "cost": 0.000447
+    },
+    "latencyMs": 933,
+    "parseOk": true,
+    "answers": {
+      "root": {
+        "type": "choice",
+        "choice": "billing"
+      }
+    },
+    "raw": {
+      "root": "billing"
+    },
+    "comparisons": [
+      {
+        "name": "root",
+        "agree": true,
+        "jev": "billing",
+        "baseline": "billing"
+      }
+    ]
+  },
+  "double-bill-d1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 356,
+      "output_tokens": 10,
+      "cost": 0.000406
+    },
+    "latencyMs": 1423,
+    "parseOk": true,
+    "answers": {
+      "billing": {
+        "type": "choice",
+        "choice": "invoices"
+      }
+    },
+    "raw": {
+      "billing": "invoices"
+    },
+    "comparisons": [
+      {
+        "name": "billing",
+        "agree": true,
+        "jev": "invoices",
+        "baseline": "invoices"
+      }
+    ]
+  },
+  "double-bill-d2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 410,
+      "output_tokens": 16,
+      "cost": 0.00049
+    },
+    "latencyMs": 1144,
+    "parseOk": true,
+    "answers": {
+      "billing__invoices": {
+        "type": "choice",
+        "choice": "invoice_line_items"
+      }
+    },
+    "raw": {
+      "billing__invoices": "invoice_line_items"
+    },
+    "comparisons": [
+      {
+        "name": "billing__invoices",
+        "agree": true,
+        "jev": "invoice_line_items",
+        "baseline": "invoice_line_items"
+      }
+    ]
+  },
+  "leaving-d0": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 409,
+      "output_tokens": 9,
+      "cost": 0.000454
+    },
+    "latencyMs": 990,
+    "parseOk": true,
+    "answers": {
+      "root": {
+        "type": "choice",
+        "choice": "data"
+      }
+    },
+    "raw": {
+      "root": "data"
+    },
+    "comparisons": [
+      {
+        "name": "root",
+        "agree": true,
+        "jev": "data",
+        "baseline": "data"
+      }
+    ]
+  },
+  "leaving-d1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 348,
+      "output_tokens": 9,
+      "cost": 0.000393
+    },
+    "latencyMs": 1094,
+    "parseOk": true,
+    "answers": {
+      "data": {
+        "type": "choice",
+        "choice": "export"
+      }
+    },
+    "raw": {
+      "data": "export"
+    },
+    "comparisons": [
+      {
+        "name": "data",
+        "agree": true,
+        "jev": "export",
+        "baseline": "export"
+      }
+    ]
+  },
+  "leaving-d2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 353,
+      "output_tokens": 13,
+      "cost": 0.000418
+    },
+    "latencyMs": 980,
+    "parseOk": true,
+    "answers": {
+      "data__export": {
+        "type": "choice",
+        "choice": "full_export"
+      }
+    },
+    "raw": {
+      "data__export": "full_export"
+    },
+    "comparisons": [
+      {
+        "name": "data__export",
+        "agree": true,
+        "jev": "full_export",
+        "baseline": "full_export"
+      }
+    ]
+  },
+  "ambiguous-billing-d0": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 444,
+      "output_tokens": 9,
+      "cost": 0.000489
+    },
+    "latencyMs": 968,
+    "parseOk": true,
+    "answers": {
+      "root": {
+        "type": "choice",
+        "choice": "billing"
+      }
+    },
+    "raw": {
+      "root": "billing"
+    },
+    "comparisons": [
+      {
+        "name": "root",
+        "agree": true,
+        "jev": "billing",
+        "baseline": "billing"
+      }
+    ]
+  },
+  "ambiguous-billing-d1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 398,
+      "output_tokens": 9,
+      "cost": 0.000443
+    },
+    "latencyMs": 1020,
+    "parseOk": true,
+    "answers": {
+      "billing": {
+        "type": "choice",
+        "choice": "payments"
+      }
+    },
+    "raw": {
+      "billing": "payments"
+    },
+    "comparisons": [
+      {
+        "name": "billing",
+        "agree": true,
+        "jev": "payments",
+        "baseline": "payments"
+      }
+    ]
+  },
+  "ambiguous-billing-d2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 427,
+      "output_tokens": 15,
+      "cost": 0.000502
+    },
+    "latencyMs": 2708,
+    "parseOk": true,
+    "answers": {
+      "billing__payments": {
+        "type": "choice",
+        "choice": "failed_payment_recovery"
+      }
+    },
+    "raw": {
+      "billing__payments": "failed_payment_recovery"
+    },
+    "comparisons": [
+      {
+        "name": "billing__payments",
+        "agree": false,
+        "jev": "payment_method_change",
+        "baseline": "failed_payment_recovery"
+      }
+    ]
+  },
+  "sso-d0": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 405,
+      "output_tokens": 9,
+      "cost": 0.00045
+    },
+    "latencyMs": 1063,
+    "parseOk": true,
+    "answers": {
+      "root": {
+        "type": "choice",
+        "choice": "account"
+      }
+    },
+    "raw": {
+      "root": "account"
+    },
+    "comparisons": [
+      {
+        "name": "root",
+        "agree": true,
+        "jev": "account",
+        "baseline": "account"
+      }
+    ]
+  },
+  "sso-d1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 583,
+      "output_tokens": 22,
+      "cost": 0.000693
+    },
+    "latencyMs": 1437,
+    "parseOk": true,
+    "answers": {
+      "account": {
+        "type": "choice",
+        "choice": "access"
+      },
+      "technical": {
+        "type": "choice",
+        "choice": "ingestion"
+      },
+      "billing": {
+        "type": "choice",
+        "choice": "plans"
+      }
+    },
+    "raw": {
+      "account": "access",
+      "technical": "ingestion",
+      "billing": "plans"
+    },
+    "comparisons": [
+      {
+        "name": "account",
+        "agree": true,
+        "jev": "access",
+        "baseline": "access"
+      },
+      {
+        "name": "technical",
+        "agree": true,
+        "jev": "ingestion",
+        "baseline": "ingestion"
+      },
+      {
+        "name": "billing",
+        "agree": true,
+        "jev": "plans",
+        "baseline": "plans"
+      }
+    ]
+  },
+  "sso-d2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 681,
+      "output_tokens": 33,
+      "cost": 0.000846
+    },
+    "latencyMs": 1280,
+    "parseOk": true,
+    "answers": {
+      "account__access": {
+        "type": "choice",
+        "choice": "sso_setup"
+      },
+      "technical__ingestion": {
+        "type": "choice",
+        "choice": "events_missing"
+      },
+      "billing__plans": {
+        "type": "choice",
+        "choice": "upgrade"
+      }
+    },
+    "raw": {
+      "account__access": "sso_setup",
+      "technical__ingestion": "events_missing",
+      "billing__plans": "upgrade"
+    },
+    "comparisons": [
+      {
+        "name": "account__access",
+        "agree": true,
+        "jev": "sso_setup",
+        "baseline": "sso_setup"
+      },
+      {
+        "name": "technical__ingestion",
+        "agree": true,
+        "jev": "events_missing",
+        "baseline": "events_missing"
+      },
+      {
+        "name": "billing__plans",
+        "agree": true,
+        "jev": "upgrade",
+        "baseline": "upgrade"
+      }
+    ]
+  }
+}
