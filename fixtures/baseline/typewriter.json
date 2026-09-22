@@ -1,0 +1,747 @@
+{
+  "passive-aggressive": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1671,
+      "output_tokens": 115,
+      "cost": 0.002246
+    },
+    "latencyMs": 2386,
+    "parseOk": true,
+    "answers": {
+      "tone": {
+        "type": "choice",
+        "choice": "curt"
+      },
+      "audience_fit": {
+        "type": "choice",
+        "choice": "peer"
+      },
+      "clarity": {
+        "type": "score",
+        "score": 2
+      },
+      "urgency": {
+        "type": "score",
+        "score": 2
+      },
+      "hedging": {
+        "type": "score",
+        "score": 1
+      },
+      "has_clear_ask": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "has_deadline": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "contains_pii": {
+        "type": "noul",
+        "noul": 0
+      },
+      "contains_secret": {
+        "type": "noul",
+        "noul": 0
+      },
+      "passive_aggressive": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "reads_as_complaint": {
+        "type": "noul",
+        "noul": 0.75
+      },
+      "ready_to_send": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "tone": "curt",
+      "audience_fit": "peer",
+      "clarity": 2,
+      "urgency": 2,
+      "hedging": 1,
+      "has_clear_ask": 0.7,
+      "has_deadline": 0.3,
+      "contains_pii": 0,
+      "contains_secret": 0,
+      "passive_aggressive": 0.8,
+      "reads_as_complaint": 0.75,
+      "ready_to_send": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "tone",
+        "agree": true,
+        "jev": "curt",
+        "baseline": "curt"
+      },
+      {
+        "name": "audience_fit",
+        "agree": true,
+        "jev": "peer",
+        "baseline": "peer"
+      },
+      {
+        "name": "clarity",
+        "agree": true,
+        "jev": "2.23 (Plain on one reading.)",
+        "baseline": "2 (Plain on one reading.)"
+      },
+      {
+        "name": "urgency",
+        "agree": false,
+        "jev": "1.20 (A timeframe is mentioned but nothing turns on it.)",
+        "baseline": "2 (The message asserts that something is needed immediately.)"
+      },
+      {
+        "name": "hedging",
+        "agree": true,
+        "jev": "0.92 (Occasional softeners that do not obscure the point.)",
+        "baseline": "1 (Occasional softeners that do not obscure the point.)"
+      },
+      {
+        "name": "has_clear_ask",
+        "agree": false,
+        "jev": "0.18",
+        "baseline": "0.70"
+      },
+      {
+        "name": "has_deadline",
+        "agree": true,
+        "jev": "0.46",
+        "baseline": "0.30"
+      },
+      {
+        "name": "contains_pii",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "contains_secret",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "passive_aggressive",
+        "agree": true,
+        "jev": "0.88",
+        "baseline": "0.80"
+      },
+      {
+        "name": "reads_as_complaint",
+        "agree": true,
+        "jev": "0.55",
+        "baseline": "0.75"
+      },
+      {
+        "name": "ready_to_send",
+        "agree": true,
+        "jev": "0.91",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "clear-ask": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1660,
+      "output_tokens": 114,
+      "cost": 0.00223
+    },
+    "latencyMs": 3156,
+    "parseOk": true,
+    "answers": {
+      "tone": {
+        "type": "choice",
+        "choice": "neutral"
+      },
+      "audience_fit": {
+        "type": "choice",
+        "choice": "peer"
+      },
+      "clarity": {
+        "type": "score",
+        "score": 3
+      },
+      "urgency": {
+        "type": "score",
+        "score": 2
+      },
+      "hedging": {
+        "type": "score",
+        "score": 1
+      },
+      "has_clear_ask": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "has_deadline": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "contains_pii": {
+        "type": "noul",
+        "noul": 0
+      },
+      "contains_secret": {
+        "type": "noul",
+        "noul": 0
+      },
+      "passive_aggressive": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "reads_as_complaint": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "ready_to_send": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "tone": "neutral",
+      "audience_fit": "peer",
+      "clarity": 3,
+      "urgency": 2,
+      "hedging": 1,
+      "has_clear_ask": 0.95,
+      "has_deadline": 0.9,
+      "contains_pii": 0,
+      "contains_secret": 0,
+      "passive_aggressive": 0.15,
+      "reads_as_complaint": 0.3,
+      "ready_to_send": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "tone",
+        "agree": true,
+        "jev": "neutral",
+        "baseline": "neutral"
+      },
+      {
+        "name": "audience_fit",
+        "agree": true,
+        "jev": "peer",
+        "baseline": "peer"
+      },
+      {
+        "name": "clarity",
+        "agree": true,
+        "jev": "2.71 (Plain on one reading, and the structure makes the key point unmissable.)",
+        "baseline": "3 (Plain on one reading, and the structure makes the key point unmissable.)"
+      },
+      {
+        "name": "urgency",
+        "agree": true,
+        "jev": "1.82 (The message asserts that something is needed immediately.)",
+        "baseline": "2 (The message asserts that something is needed immediately.)"
+      },
+      {
+        "name": "hedging",
+        "agree": false,
+        "jev": "0.24 (States things directly.)",
+        "baseline": "1 (Occasional softeners that do not obscure the point.)"
+      },
+      {
+        "name": "has_clear_ask",
+        "agree": true,
+        "jev": "0.91",
+        "baseline": "0.95"
+      },
+      {
+        "name": "has_deadline",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.90"
+      },
+      {
+        "name": "contains_pii",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "contains_secret",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      },
+      {
+        "name": "passive_aggressive",
+        "agree": false,
+        "jev": "0.57",
+        "baseline": "0.15"
+      },
+      {
+        "name": "reads_as_complaint",
+        "agree": true,
+        "jev": "0.15",
+        "baseline": "0.30"
+      },
+      {
+        "name": "ready_to_send",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "hedged": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1676,
+      "output_tokens": 114,
+      "cost": 0.002246
+    },
+    "latencyMs": 2945,
+    "parseOk": true,
+    "answers": {
+      "tone": {
+        "type": "choice",
+        "choice": "warm"
+      },
+      "audience_fit": {
+        "type": "choice",
+        "choice": "peer"
+      },
+      "clarity": {
+        "type": "score",
+        "score": 1
+      },
+      "urgency": {
+        "type": "score",
+        "score": 0
+      },
+      "hedging": {
+        "type": "score",
+        "score": 2
+      },
+      "has_clear_ask": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "has_deadline": {
+        "type": "noul",
+        "noul": 0
+      },
+      "contains_pii": {
+        "type": "noul",
+        "noul": 0
+      },
+      "contains_secret": {
+        "type": "noul",
+        "noul": 0
+      },
+      "passive_aggressive": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "reads_as_complaint": {
+        "type": "noul",
+        "noul": 0.4
+      },
+      "ready_to_send": {
+        "type": "noul",
+        "noul": 0.2
+      }
+    },
+    "raw": {
+      "tone": "warm",
+      "audience_fit": "peer",
+      "clarity": 1,
+      "urgency": 0,
+      "hedging": 2,
+      "has_clear_ask": 0.15,
+      "has_deadline": 0,
+      "contains_pii": 0,
+      "contains_secret": 0,
+      "passive_aggressive": 0.3,
+      "reads_as_complaint": 0.4,
+      "ready_to_send": 0.2
+    },
+    "comparisons": [
+      {
+        "name": "tone",
+        "agree": false,
+        "jev": "neutral",
+        "baseline": "warm"
+      },
+      {
+        "name": "audience_fit",
+        "agree": true,
+        "jev": "peer",
+        "baseline": "peer"
+      },
+      {
+        "name": "clarity",
+        "agree": true,
+        "jev": "1.28 (Understandable, but the reader must work for it.)",
+        "baseline": "1 (Understandable, but the reader must work for it.)"
+      },
+      {
+        "name": "urgency",
+        "agree": true,
+        "jev": "0.01 (No time pressure is implied.)",
+        "baseline": "0 (No time pressure is implied.)"
+      },
+      {
+        "name": "hedging",
+        "agree": true,
+        "jev": "1.98 (So qualified that the actual position is hard to locate.)",
+        "baseline": "2 (So qualified that the actual position is hard to locate.)"
+      },
+      {
+        "name": "has_clear_ask",
+        "agree": true,
+        "jev": "0.39",
+        "baseline": "0.15"
+      },
+      {
+        "name": "has_deadline",
+        "agree": true,
+        "jev": "0.11",
+        "baseline": "0.00"
+      },
+      {
+        "name": "contains_pii",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "contains_secret",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "passive_aggressive",
+        "agree": true,
+        "jev": "0.20",
+        "baseline": "0.30"
+      },
+      {
+        "name": "reads_as_complaint",
+        "agree": true,
+        "jev": "0.26",
+        "baseline": "0.40"
+      },
+      {
+        "name": "ready_to_send",
+        "agree": false,
+        "jev": "0.65",
+        "baseline": "0.20"
+      }
+    ]
+  },
+  "leaky": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1681,
+      "output_tokens": 114,
+      "cost": 0.002251
+    },
+    "latencyMs": 3124,
+    "parseOk": true,
+    "answers": {
+      "tone": {
+        "type": "choice",
+        "choice": "neutral"
+      },
+      "audience_fit": {
+        "type": "choice",
+        "choice": "peer"
+      },
+      "clarity": {
+        "type": "score",
+        "score": 2
+      },
+      "urgency": {
+        "type": "score",
+        "score": 0
+      },
+      "hedging": {
+        "type": "score",
+        "score": 0
+      },
+      "has_clear_ask": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "has_deadline": {
+        "type": "noul",
+        "noul": 0
+      },
+      "contains_pii": {
+        "type": "noul",
+        "noul": 0.85
+      },
+      "contains_secret": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "passive_aggressive": {
+        "type": "noul",
+        "noul": 0
+      },
+      "reads_as_complaint": {
+        "type": "noul",
+        "noul": 0
+      },
+      "ready_to_send": {
+        "type": "noul",
+        "noul": 0.2
+      }
+    },
+    "raw": {
+      "tone": "neutral",
+      "audience_fit": "peer",
+      "clarity": 2,
+      "urgency": 0,
+      "hedging": 0,
+      "has_clear_ask": 0.7,
+      "has_deadline": 0,
+      "contains_pii": 0.85,
+      "contains_secret": 0.95,
+      "passive_aggressive": 0,
+      "reads_as_complaint": 0,
+      "ready_to_send": 0.2
+    },
+    "comparisons": [
+      {
+        "name": "tone",
+        "agree": true,
+        "jev": "neutral",
+        "baseline": "neutral"
+      },
+      {
+        "name": "audience_fit",
+        "agree": true,
+        "jev": "peer",
+        "baseline": "peer"
+      },
+      {
+        "name": "clarity",
+        "agree": true,
+        "jev": "2.37 (Plain on one reading.)",
+        "baseline": "2 (Plain on one reading.)"
+      },
+      {
+        "name": "urgency",
+        "agree": true,
+        "jev": "0.05 (No time pressure is implied.)",
+        "baseline": "0 (No time pressure is implied.)"
+      },
+      {
+        "name": "hedging",
+        "agree": true,
+        "jev": "0.07 (States things directly.)",
+        "baseline": "0 (States things directly.)"
+      },
+      {
+        "name": "has_clear_ask",
+        "agree": true,
+        "jev": "0.67",
+        "baseline": "0.70"
+      },
+      {
+        "name": "has_deadline",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.00"
+      },
+      {
+        "name": "contains_pii",
+        "agree": false,
+        "jev": "0.24",
+        "baseline": "0.85"
+      },
+      {
+        "name": "contains_secret",
+        "agree": true,
+        "jev": "0.99",
+        "baseline": "0.95"
+      },
+      {
+        "name": "passive_aggressive",
+        "agree": true,
+        "jev": "0.25",
+        "baseline": "0.00"
+      },
+      {
+        "name": "reads_as_complaint",
+        "agree": true,
+        "jev": "0.12",
+        "baseline": "0.00"
+      },
+      {
+        "name": "ready_to_send",
+        "agree": false,
+        "jev": "0.73",
+        "baseline": "0.20"
+      }
+    ]
+  },
+  "unfinished": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1645,
+      "output_tokens": 114,
+      "cost": 0.002215
+    },
+    "latencyMs": 2838,
+    "parseOk": true,
+    "answers": {
+      "tone": {
+        "type": "choice",
+        "choice": "neutral"
+      },
+      "audience_fit": {
+        "type": "choice",
+        "choice": "peer"
+      },
+      "clarity": {
+        "type": "score",
+        "score": 0
+      },
+      "urgency": {
+        "type": "score",
+        "score": 0
+      },
+      "hedging": {
+        "type": "score",
+        "score": 0
+      },
+      "has_clear_ask": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "has_deadline": {
+        "type": "noul",
+        "noul": 0
+      },
+      "contains_pii": {
+        "type": "noul",
+        "noul": 0
+      },
+      "contains_secret": {
+        "type": "noul",
+        "noul": 0
+      },
+      "passive_aggressive": {
+        "type": "noul",
+        "noul": 0
+      },
+      "reads_as_complaint": {
+        "type": "noul",
+        "noul": 0
+      },
+      "ready_to_send": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "tone": "neutral",
+      "audience_fit": "peer",
+      "clarity": 0,
+      "urgency": 0,
+      "hedging": 0,
+      "has_clear_ask": 0.1,
+      "has_deadline": 0,
+      "contains_pii": 0,
+      "contains_secret": 0,
+      "passive_aggressive": 0,
+      "reads_as_complaint": 0,
+      "ready_to_send": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "tone",
+        "agree": false,
+        "jev": "warm",
+        "baseline": "neutral"
+      },
+      {
+        "name": "audience_fit",
+        "agree": true,
+        "jev": "peer",
+        "baseline": "peer"
+      },
+      {
+        "name": "clarity",
+        "agree": false,
+        "jev": "0.63 (Understandable, but the reader must work for it.)",
+        "baseline": "0 (The reader would have to ask what is meant.)"
+      },
+      {
+        "name": "urgency",
+        "agree": true,
+        "jev": "0.03 (No time pressure is implied.)",
+        "baseline": "0 (No time pressure is implied.)"
+      },
+      {
+        "name": "hedging",
+        "agree": true,
+        "jev": "0.15 (States things directly.)",
+        "baseline": "0 (States things directly.)"
+      },
+      {
+        "name": "has_clear_ask",
+        "agree": true,
+        "jev": "0.19",
+        "baseline": "0.10"
+      },
+      {
+        "name": "has_deadline",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.00"
+      },
+      {
+        "name": "contains_pii",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "contains_secret",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "passive_aggressive",
+        "agree": true,
+        "jev": "0.09",
+        "baseline": "0.00"
+      },
+      {
+        "name": "reads_as_complaint",
+        "agree": true,
+        "jev": "0.10",
+        "baseline": "0.00"
+      },
+      {
+        "name": "ready_to_send",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.05"
+      }
+    ]
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "readme-typo": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1099,
+      "output_tokens": 48,
+      "cost": 0.001339
+    },
+    "latencyMs": 2046,
+    "parseOk": true,
+    "answers": {
+      "area": {
+        "type": "choice",
+        "choice": "docs_tests"
+      },
+      "blast_radius": {
+        "type": "score",
+        "score": 0
+      },
+      "reversible": {
+        "type": "noul",
+        "noul": 1
+      },
+      "has_tests": {
+        "type": "noul",
+        "noul": 0
+      },
+      "security_sensitive": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "area": "docs_tests",
+      "blast_radius": 0,
+      "reversible": 1,
+      "has_tests": 0,
+      "security_sensitive": 0
+    },
+    "comparisons": [
+      {
+        "name": "area",
+        "agree": true,
+        "jev": "docs_tests",
+        "baseline": "docs_tests"
+      },
+      {
+        "name": "blast_radius",
+        "agree": true,
+        "jev": "0.00 (Contained — one non-critical file; a mistake affects only this change.)",
+        "baseline": "0 (Contained — one non-critical file; a mistake affects only this change.)"
+      },
+      {
+        "name": "reversible",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "1.00"
+      },
+      {
+        "name": "has_tests",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      },
+      {
+        "name": "security_sensitive",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "add-tests": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1113,
+      "output_tokens": 48,
+      "cost": 0.001353
+    },
+    "latencyMs": 1858,
+    "parseOk": true,
+    "answers": {
+      "area": {
+        "type": "choice",
+        "choice": "docs_tests"
+      },
+      "blast_radius": {
+        "type": "score",
+        "score": 0
+      },
+      "reversible": {
+        "type": "noul",
+        "noul": 1
+      },
+      "has_tests": {
+        "type": "noul",
+        "noul": 1
+      },
+      "security_sensitive": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "area": "docs_tests",
+      "blast_radius": 0,
+      "reversible": 1,
+      "has_tests": 1,
+      "security_sensitive": 0
+    },
+    "comparisons": [
+      {
+        "name": "area",
+        "agree": true,
+        "jev": "docs_tests",
+        "baseline": "docs_tests"
+      },
+      {
+        "name": "blast_radius",
+        "agree": true,
+        "jev": "0.01 (Contained — one non-critical file; a mistake affects only this change.)",
+        "baseline": "0 (Contained — one non-critical file; a mistake affects only this change.)"
+      },
+      {
+        "name": "reversible",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "1.00"
+      },
+      {
+        "name": "has_tests",
+        "agree": true,
+        "jev": "0.75",
+        "baseline": "1.00"
+      },
+      {
+        "name": "security_sensitive",
+        "agree": true,
+        "jev": "0.08",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "config-default": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1148,
+      "output_tokens": 46,
+      "cost": 0.001378
+    },
+    "latencyMs": 2202,
+    "parseOk": true,
+    "answers": {
+      "area": {
+        "type": "choice",
+        "choice": "config"
+      },
+      "blast_radius": {
+        "type": "score",
+        "score": 2
+      },
+      "reversible": {
+        "type": "noul",
+        "noul": 1
+      },
+      "has_tests": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "security_sensitive": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "area": "config",
+      "blast_radius": 2,
+      "reversible": 1,
+      "has_tests": 0.9,
+      "security_sensitive": 0
+    },
+    "comparisons": [
+      {
+        "name": "area",
+        "agree": true,
+        "jev": "config",
+        "baseline": "config"
+      },
+      {
+        "name": "blast_radius",
+        "agree": true,
+        "jev": "2.00 (A shared path — a mistake reaches many requests or every caller of a common dependency.)",
+        "baseline": "2 (A shared path — a mistake reaches many requests or every caller of a common dependency.)"
+      },
+      {
+        "name": "reversible",
+        "agree": true,
+        "jev": "0.95",
+        "baseline": "1.00"
+      },
+      {
+        "name": "has_tests",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.90"
+      },
+      {
+        "name": "security_sensitive",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "new-endpoint": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1139,
+      "output_tokens": 46,
+      "cost": 0.001369
+    },
+    "latencyMs": 1989,
+    "parseOk": true,
+    "answers": {
+      "area": {
+        "type": "choice",
+        "choice": "core"
+      },
+      "blast_radius": {
+        "type": "score",
+        "score": 2
+      },
+      "reversible": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "has_tests": {
+        "type": "noul",
+        "noul": 0
+      },
+      "security_sensitive": {
+        "type": "noul",
+        "noul": 0.3
+      }
+    },
+    "raw": {
+      "area": "core",
+      "blast_radius": 2,
+      "reversible": 0.9,
+      "has_tests": 0,
+      "security_sensitive": 0.3
+    },
+    "comparisons": [
+      {
+        "name": "area",
+        "agree": true,
+        "jev": "core",
+        "baseline": "core"
+      },
+      {
+        "name": "blast_radius",
+        "agree": true,
+        "jev": "1.86 (A shared path — a mistake reaches many requests or every caller of a common dependency.)",
+        "baseline": "2 (A shared path — a mistake reaches many requests or every caller of a common dependency.)"
+      },
+      {
+        "name": "reversible",
+        "agree": true,
+        "jev": "0.75",
+        "baseline": "0.90"
+      },
+      {
+        "name": "has_tests",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.00"
+      },
+      {
+        "name": "security_sensitive",
+        "agree": true,
+        "jev": "0.24",
+        "baseline": "0.30"
+      }
+    ]
+  },
+  "auth-session": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1153,
+      "output_tokens": 46,
+      "cost": 0.001383
+    },
+    "latencyMs": 2086,
+    "parseOk": true,
+    "answers": {
+      "area": {
+        "type": "choice",
+        "choice": "security"
+      },
+      "blast_radius": {
+        "type": "score",
+        "score": 2
+      },
+      "reversible": {
+        "type": "noul",
+        "noul": 1
+      },
+      "has_tests": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "security_sensitive": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "area": "security",
+      "blast_radius": 2,
+      "reversible": 1,
+      "has_tests": 0.9,
+      "security_sensitive": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "area",
+        "agree": true,
+        "jev": "security",
+        "baseline": "security"
+      },
+      {
+        "name": "blast_radius",
+        "agree": true,
+        "jev": "1.55 (A shared path — a mistake reaches many requests or every caller of a common dependency.)",
+        "baseline": "2 (A shared path — a mistake reaches many requests or every caller of a common dependency.)"
+      },
+      {
+        "name": "reversible",
+        "agree": true,
+        "jev": "0.89",
+        "baseline": "1.00"
+      },
+      {
+        "name": "has_tests",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.90"
+      },
+      {
+        "name": "security_sensitive",
+        "agree": true,
+        "jev": "0.98",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "drop-column": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1116,
+      "output_tokens": 40,
+      "cost": 0.001316
+    },
+    "latencyMs": 2077,
+    "parseOk": true,
+    "answers": {
+      "area": {
+        "type": "choice",
+        "choice": "data"
+      },
+      "blast_radius": {
+        "type": "score",
+        "score": 2
+      },
+      "reversible": {
+        "type": "noul",
+        "noul": 0
+      },
+      "has_tests": {
+        "type": "noul",
+        "noul": 0
+      },
+      "security_sensitive": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "area": "data",
+      "blast_radius": 2,
+      "reversible": 0,
+      "has_tests": 0,
+      "security_sensitive": 0
+    },
+    "comparisons": [
+      {
+        "name": "area",
+        "agree": true,
+        "jev": "data",
+        "baseline": "data"
+      },
+      {
+        "name": "blast_radius",
+        "agree": false,
+        "jev": "1.22 (A feature area — a mistake affects one flow or one part of the product.)",
+        "baseline": "2 (A shared path — a mistake reaches many requests or every caller of a common dependency.)"
+      },
+      {
+        "name": "reversible",
+        "agree": true,
+        "jev": "0.22",
+        "baseline": "0.00"
+      },
+      {
+        "name": "has_tests",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.00"
+      },
+      {
+        "name": "security_sensitive",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.00"
+      }
+    ]
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "flaky-timeout": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 586,
+      "output_tokens": 19,
+      "cost": 0.000681
+    },
+    "latencyMs": 1208,
+    "parseOk": true,
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "flaky"
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "category": "flaky",
+      "deterministic": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "category",
+        "agree": true,
+        "jev": "flaky",
+        "baseline": "flaky"
+      },
+      {
+        "name": "deterministic",
+        "agree": true,
+        "jev": "0.21",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "real-assertion": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 591,
+      "output_tokens": 18,
+      "cost": 0.000681
+    },
+    "latencyMs": 1267,
+    "parseOk": true,
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "regression"
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "category": "regression",
+      "deterministic": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "category",
+        "agree": true,
+        "jev": "regression",
+        "baseline": "regression"
+      },
+      {
+        "name": "deterministic",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "infra-oom": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 579,
+      "output_tokens": 19,
+      "cost": 0.000674
+    },
+    "latencyMs": 1201,
+    "parseOk": true,
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "infra"
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "category": "infra",
+      "deterministic": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "category",
+        "agree": true,
+        "jev": "infra",
+        "baseline": "infra"
+      },
+      {
+        "name": "deterministic",
+        "agree": true,
+        "jev": "0.53",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "flaky-order": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 589,
+      "output_tokens": 19,
+      "cost": 0.000684
+    },
+    "latencyMs": 1249,
+    "parseOk": true,
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "flaky"
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "raw": {
+      "category": "flaky",
+      "deterministic": 0.1
+    },
+    "comparisons": [
+      {
+        "name": "category",
+        "agree": true,
+        "jev": "flaky",
+        "baseline": "flaky"
+      },
+      {
+        "name": "deterministic",
+        "agree": true,
+        "jev": "0.28",
+        "baseline": "0.10"
+      }
+    ]
+  },
+  "real-crash": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 588,
+      "output_tokens": 16,
+      "cost": 0.000668
+    },
+    "latencyMs": 1173,
+    "parseOk": true,
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "regression"
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 1
+      }
+    },
+    "raw": {
+      "category": "regression",
+      "deterministic": 1
+    },
+    "comparisons": [
+      {
+        "name": "category",
+        "agree": true,
+        "jev": "regression",
+        "baseline": "regression"
+      },
+      {
+        "name": "deterministic",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "1.00"
+      }
+    ]
+  },
+  "unclear": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 593,
+      "output_tokens": 18,
+      "cost": 0.000683
+    },
+    "latencyMs": 1213,
+    "parseOk": true,
+    "answers": {
+      "category": {
+        "type": "choice",
+        "choice": "unclear"
+      },
+      "deterministic": {
+        "type": "noul",
+        "noul": 0.5
+      }
+    },
+    "raw": {
+      "category": "unclear",
+      "deterministic": 0.5
+    },
+    "comparisons": [
+      {
+        "name": "category",
+        "agree": true,
+        "jev": "unclear",
+        "baseline": "unclear"
+      },
+      {
+        "name": "deterministic",
+        "agree": false,
+        "jev": "0.37",
+        "baseline": "0.50"
+      }
+    ]
+  }
+}

@@ -1,0 +1,378 @@
+{
+  "stripe-payouts": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1078,
+      "output_tokens": 68,
+      "cost": 0.001418
+    },
+    "latencyMs": 1390,
+    "parseOk": true,
+    "answers": {
+      "department": {
+        "type": "choice",
+        "choice": "technical"
+      },
+      "frustration": {
+        "type": "score",
+        "score": 1
+      },
+      "business_impact": {
+        "type": "score",
+        "score": 2
+      },
+      "is_urgent": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "threatens_churn": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "refund_requested": {
+        "type": "noul",
+        "noul": 0
+      },
+      "is_repeat_contact": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "department": "technical",
+      "frustration": 1,
+      "business_impact": 2,
+      "is_urgent": 0.95,
+      "threatens_churn": 0.3,
+      "refund_requested": 0,
+      "is_repeat_contact": 0
+    },
+    "comparisons": [
+      {
+        "name": "department",
+        "agree": true,
+        "jev": "technical",
+        "baseline": "technical"
+      },
+      {
+        "name": "frustration",
+        "agree": true,
+        "jev": "1.01 (Visibly annoyed but still civil.)",
+        "baseline": "1 (Visibly annoyed but still civil.)"
+      },
+      {
+        "name": "business_impact",
+        "agree": true,
+        "jev": "2.00 (Active revenue or operational loss while this continues.)",
+        "baseline": "2 (Active revenue or operational loss while this continues.)"
+      },
+      {
+        "name": "is_urgent",
+        "agree": true,
+        "jev": "0.98",
+        "baseline": "0.95"
+      },
+      {
+        "name": "threatens_churn",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.30"
+      },
+      {
+        "name": "refund_requested",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      },
+      {
+        "name": "is_repeat_contact",
+        "agree": true,
+        "jev": "0.27",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "sso-question": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1056,
+      "output_tokens": 68,
+      "cost": 0.001396
+    },
+    "latencyMs": 1377,
+    "parseOk": true,
+    "answers": {
+      "department": {
+        "type": "choice",
+        "choice": "sales"
+      },
+      "frustration": {
+        "type": "score",
+        "score": 0
+      },
+      "business_impact": {
+        "type": "score",
+        "score": 0
+      },
+      "is_urgent": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "threatens_churn": {
+        "type": "noul",
+        "noul": 0
+      },
+      "refund_requested": {
+        "type": "noul",
+        "noul": 0
+      },
+      "is_repeat_contact": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "department": "sales",
+      "frustration": 0,
+      "business_impact": 0,
+      "is_urgent": 0.1,
+      "threatens_churn": 0,
+      "refund_requested": 0,
+      "is_repeat_contact": 0
+    },
+    "comparisons": [
+      {
+        "name": "department",
+        "agree": true,
+        "jev": "sales",
+        "baseline": "sales"
+      },
+      {
+        "name": "frustration",
+        "agree": true,
+        "jev": "0.00 (Neutral or friendly; stating facts or asking a question.)",
+        "baseline": "0 (Neutral or friendly; stating facts or asking a question.)"
+      },
+      {
+        "name": "business_impact",
+        "agree": true,
+        "jev": "0.00 (No harm; a question or a preference.)",
+        "baseline": "0 (No harm; a question or a preference.)"
+      },
+      {
+        "name": "is_urgent",
+        "agree": true,
+        "jev": "0.12",
+        "baseline": "0.10"
+      },
+      {
+        "name": "threatens_churn",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "refund_requested",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "is_repeat_contact",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "chargeback-threat": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1060,
+      "output_tokens": 68,
+      "cost": 0.0014
+    },
+    "latencyMs": 1409,
+    "parseOk": true,
+    "answers": {
+      "department": {
+        "type": "choice",
+        "choice": "billing"
+      },
+      "frustration": {
+        "type": "score",
+        "score": 2
+      },
+      "business_impact": {
+        "type": "score",
+        "score": 0
+      },
+      "is_urgent": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "threatens_churn": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "refund_requested": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "is_repeat_contact": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "department": "billing",
+      "frustration": 2,
+      "business_impact": 0,
+      "is_urgent": 0.9,
+      "threatens_churn": 0.95,
+      "refund_requested": 0.95,
+      "is_repeat_contact": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "department",
+        "agree": true,
+        "jev": "billing",
+        "baseline": "billing"
+      },
+      {
+        "name": "frustration",
+        "agree": true,
+        "jev": "2.00 (Angry; strong language, threats, or accusations.)",
+        "baseline": "2 (Angry; strong language, threats, or accusations.)"
+      },
+      {
+        "name": "business_impact",
+        "agree": false,
+        "jev": "0.79 (Inconvenience; a workaround exists.)",
+        "baseline": "0 (No harm; a question or a preference.)"
+      },
+      {
+        "name": "is_urgent",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.90"
+      },
+      {
+        "name": "threatens_churn",
+        "agree": true,
+        "jev": "0.98",
+        "baseline": "0.95"
+      },
+      {
+        "name": "refund_requested",
+        "agree": true,
+        "jev": "0.98",
+        "baseline": "0.95"
+      },
+      {
+        "name": "is_repeat_contact",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "ambiguous": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1067,
+      "output_tokens": 68,
+      "cost": 0.001407
+    },
+    "latencyMs": 1974,
+    "parseOk": true,
+    "answers": {
+      "department": {
+        "type": "choice",
+        "choice": "billing"
+      },
+      "frustration": {
+        "type": "score",
+        "score": 1
+      },
+      "business_impact": {
+        "type": "score",
+        "score": 2
+      },
+      "is_urgent": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "threatens_churn": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "refund_requested": {
+        "type": "noul",
+        "noul": 0.4
+      },
+      "is_repeat_contact": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "department": "billing",
+      "frustration": 1,
+      "business_impact": 2,
+      "is_urgent": 0.7,
+      "threatens_churn": 0.3,
+      "refund_requested": 0.4,
+      "is_repeat_contact": 0
+    },
+    "comparisons": [
+      {
+        "name": "department",
+        "agree": true,
+        "jev": "billing",
+        "baseline": "billing"
+      },
+      {
+        "name": "frustration",
+        "agree": true,
+        "jev": "0.88 (Visibly annoyed but still civil.)",
+        "baseline": "1 (Visibly annoyed but still civil.)"
+      },
+      {
+        "name": "business_impact",
+        "agree": true,
+        "jev": "1.86 (Active revenue or operational loss while this continues.)",
+        "baseline": "2 (Active revenue or operational loss while this continues.)"
+      },
+      {
+        "name": "is_urgent",
+        "agree": true,
+        "jev": "0.63",
+        "baseline": "0.70"
+      },
+      {
+        "name": "threatens_churn",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.30"
+      },
+      {
+        "name": "refund_requested",
+        "agree": true,
+        "jev": "0.24",
+        "baseline": "0.40"
+      },
+      {
+        "name": "is_repeat_contact",
+        "agree": true,
+        "jev": "0.15",
+        "baseline": "0.00"
+      }
+    ]
+  }
+}

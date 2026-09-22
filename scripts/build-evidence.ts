@@ -163,6 +163,9 @@ async function main(): Promise<number> {
         "tokens and parse-reliability are structural facts, not accuracy. Do not rank models by 'right'.",
     },
     notes: [
+      "Agreement rule (loose by design, to surface real divergence): a choice agrees on an " +
+        "exact match; a score agrees when Jev's rounded level equals the baseline's level; a " +
+        "noul agrees when both land on the same side of 0.5. It is not a correctness test.",
       "Jev output tokens are free; a chat baseline's output tokens are its expensive half.",
       "The baseline emits a single value per question with no probabilities or confidence, by design.",
       "Only demos with a committed Jev fixture are included (the offline demo and synthetic wide fan-outs are excluded).",

@@ -1,0 +1,490 @@
+{
+  "services-agreement/definitions": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 778,
+      "output_tokens": 43,
+      "cost": 0.000993
+    },
+    "latencyMs": 1763,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "one_sided": 0,
+      "liability": 0,
+      "lock_in": 0,
+      "ip_or_data": 0
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.09",
+        "baseline": "0.00"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "services-agreement/payment": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 790,
+      "output_tokens": 43,
+      "cost": 0.001005
+    },
+    "latencyMs": 1827,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "one_sided": 0.15,
+      "liability": 0.1,
+      "lock_in": 0.05,
+      "ip_or_data": 0
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.42",
+        "baseline": "0.15"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.10"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.05"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "services-agreement/auto-renewal": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 799,
+      "output_tokens": 43,
+      "cost": 0.001014
+    },
+    "latencyMs": 1773,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "one_sided": 0.3,
+      "liability": 0,
+      "lock_in": 0.7,
+      "ip_or_data": 0
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.28",
+        "baseline": "0.30"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.70",
+        "baseline": "0.70"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "services-agreement/indemnification": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 789,
+      "output_tokens": 43,
+      "cost": 0.001004
+    },
+    "latencyMs": 1714,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "raw": {
+      "one_sided": 0.95,
+      "liability": 0.92,
+      "lock_in": 0.05,
+      "ip_or_data": 0.02
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.92"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.16",
+        "baseline": "0.05"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.02"
+      }
+    ]
+  },
+  "services-agreement/ip-assignment": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 777,
+      "output_tokens": 43,
+      "cost": 0.000992
+    },
+    "latencyMs": 1736,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0.98
+      }
+    },
+    "raw": {
+      "one_sided": 0.95,
+      "liability": 0.1,
+      "lock_in": 0.05,
+      "ip_or_data": 0.98
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.95"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.10"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.14",
+        "baseline": "0.05"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.98",
+        "baseline": "0.98"
+      }
+    ]
+  },
+  "services-agreement/confidentiality": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 790,
+      "output_tokens": 43,
+      "cost": 0.001005
+    },
+    "latencyMs": 1798,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "one_sided": 0,
+      "liability": 0.1,
+      "lock_in": 0,
+      "ip_or_data": 0
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.00"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.10"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.00"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "services-agreement/termination": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 787,
+      "output_tokens": 43,
+      "cost": 0.001002
+    },
+    "latencyMs": 1109,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0.85
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "one_sided": 0.95,
+      "liability": 0.1,
+      "lock_in": 0.85,
+      "ip_or_data": 0
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.14",
+        "baseline": "0.10"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.67",
+        "baseline": "0.85"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "services-agreement/governing-law": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 784,
+      "output_tokens": 43,
+      "cost": 0.000999
+    },
+    "latencyMs": 1112,
+    "parseOk": true,
+    "answers": {
+      "one_sided": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "liability": {
+        "type": "noul",
+        "noul": 0
+      },
+      "lock_in": {
+        "type": "noul",
+        "noul": 0
+      },
+      "ip_or_data": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "one_sided": 0.3,
+      "liability": 0,
+      "lock_in": 0,
+      "ip_or_data": 0
+    },
+    "comparisons": [
+      {
+        "name": "one_sided",
+        "agree": true,
+        "jev": "0.14",
+        "baseline": "0.30"
+      },
+      {
+        "name": "liability",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "lock_in",
+        "agree": true,
+        "jev": "0.06",
+        "baseline": "0.00"
+      },
+      {
+        "name": "ip_or_data",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      }
+    ]
+  }
+}

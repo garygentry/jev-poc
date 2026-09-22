@@ -1,0 +1,142 @@
+{
+  "privacy-policy/c0": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 459,
+      "output_tokens": 11,
+      "cost": 0.000514
+    },
+    "latencyMs": 1252,
+    "parseOk": true,
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "discloses": 0
+    },
+    "comparisons": [
+      {
+        "name": "discloses",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "privacy-policy/c2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 451,
+      "output_tokens": 11,
+      "cost": 0.000506
+    },
+    "latencyMs": 1302,
+    "parseOk": true,
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "discloses": 0
+    },
+    "comparisons": [
+      {
+        "name": "discloses",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "privacy-policy/c4": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 463,
+      "output_tokens": 11,
+      "cost": 0.000518
+    },
+    "latencyMs": 1236,
+    "parseOk": true,
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 1
+      }
+    },
+    "raw": {
+      "discloses": 1
+    },
+    "comparisons": [
+      {
+        "name": "discloses",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "1.00"
+      }
+    ]
+  },
+  "privacy-policy/c6": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 462,
+      "output_tokens": 13,
+      "cost": 0.000527
+    },
+    "latencyMs": 1363,
+    "parseOk": true,
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0.7
+      }
+    },
+    "raw": {
+      "discloses": 0.7
+    },
+    "comparisons": [
+      {
+        "name": "discloses",
+        "agree": true,
+        "jev": "0.77",
+        "baseline": "0.70"
+      }
+    ]
+  },
+  "privacy-policy/c8": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 456,
+      "output_tokens": 11,
+      "cost": 0.000511
+    },
+    "latencyMs": 1272,
+    "parseOk": true,
+    "answers": {
+      "discloses": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "discloses": 0
+    },
+    "comparisons": [
+      {
+        "name": "discloses",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      }
+    ]
+  }
+}
