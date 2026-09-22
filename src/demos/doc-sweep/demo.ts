@@ -13,9 +13,9 @@ import { DOCUMENTS, TOPIC, chunksOf, stateFor, type Document } from "./document"
 export const manifest: FanOutManifest<Document> = {
   slug: "doc-sweep",
   title: "Long-document sweep",
-  tagline: "Chunk, judge, aggregate — and say what chunking costs",
+  tagline: "Judge overlapping document windows; aggregate passage-level hits",
   thesis:
-    "A document too long for the context cannot be stuffed into one call — it truncates, or the answer drowns. Sweeping it in overlapping windows judges each chunk against one question and aggregates the hits, finding a disclosure buried two-thirds of the way down. The honest catch, stated in the same view: a chunk is judged without the pages around it.",
+    "The document is split into three-section windows with one-section overlap, and the same disclosure question is asked once per window. Code thresholds each probability at 0.6 and unions sections from hit windows, testing bounded-context screening while repeating overlap work and losing references outside each window.",
   group: "documents",
   order: 2,
   kind: "windowed",

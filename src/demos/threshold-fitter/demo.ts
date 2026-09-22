@@ -15,9 +15,9 @@ import { SAMPLES, type Sample } from "./data"
 export const manifest: OfflineManifest<Sample[]> = {
   slug: "threshold-fitter",
   title: "Threshold fitter",
-  tagline: "Fit the number every other demo guesses — for free, from recorded answers",
+  tagline: "Fit a decision cutoff from labelled, recorded Jev answers",
   thesis:
-    "Every threshold in this tour is set by hand and defended in a comment. Here is the honest way to set one: sweep it against recorded answers with known labels and read off the value that best separates them. No model is called — the answers already exist — so fitting costs nothing, and it turns a guess into a measurement.",
+    "Recorded relevance probabilities are paired with human labels; code evaluates cutoffs from 0 to 1 in 0.05 steps and selects the F1 maximum, with lower cutoffs winning ties. The result drives deterministic keep/drop decisions and confusion metrics without a model call, but depends on representative labels.",
   group: "method",
   order: 1,
   kind: "offline",

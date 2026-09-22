@@ -24,9 +24,9 @@ export const CONCURRENCY = 8
 export const manifest: FanOutManifest<Batch> = {
   slug: "bulk",
   title: "Bulk labelling",
-  tagline: "Free output tokens change the arithmetic",
+  tagline: "Four labels per row, with uncertain choices sent to review",
   thesis:
-    "Classification at a price where you stop rationing it. The interesting output is not the labels but the low-confidence queue: the rows Jev declined to call, routed to a human.",
+    "Each feedback row becomes one request returning sentiment, theme, severity, and actionability; batches of up to 200 run eight requests at a time. Code builds aggregate metrics and sends failed, flat, or low-confidence choice results to human review, while request count still grows with row count.",
   group: "foundations",
   order: 7,
   kind: "fanout",

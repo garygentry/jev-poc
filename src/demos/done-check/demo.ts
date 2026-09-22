@@ -18,9 +18,9 @@ import { TASKS, stateFor, type Task } from "./evidence"
 export const manifest: SingleManifest<Task> = {
   slug: "done-check",
   title: "Done-check",
-  tagline: "One noul per acceptance criterion, against the evidence — not the agent's word",
+  tagline: "Check task evidence against five completion criteria in one request",
   thesis:
-    "The other half of the control plane: before an agent's 'done' is trusted, each acceptance criterion is checked against the diff and the test run it left behind. Five checks share one state, so they cost one request — and the matrix names exactly which criteria a false 'done' breaks, which a monolithic yes/no cannot.",
+    "One request evaluates the task, diff, and test run for completeness, real implementation, coverage, passing tests, and scope. Policy code marks the task done only when every condition reaches 0.6 and otherwise lists the blockers, favoring recheck over accepting uncertain work.",
   group: "control-plane",
   order: 3,
   kind: "single",

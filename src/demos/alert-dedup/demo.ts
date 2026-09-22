@@ -15,9 +15,9 @@ import { STORMS, pairsOf, type Storm } from "./alerts"
 export const manifest: FanOutManifest<Storm> = {
   slug: "alert-dedup",
   title: "Alert dedup",
-  tagline: "Group alerts by incident, not by the template they happen to share",
+  tagline: "Compare every alert pair, then cluster accepted incident edges",
   thesis:
-    "Template dedup keys on the message shape, so it groups two services that both fire 'p99 > 5s' and splits one incident across three alerts that read differently. Asking 'same incident?' of each pair builds the clustering from the events themselves — a question a template match cannot pose.",
+    "For n alerts, the demo makes n(n−1)/2 separate pairwise requests and receives a same-incident probability for each. Edges scoring at least 0.6 become connected components and are compared with template grouping, exposing both semantic matching and the quadratic request growth and transitive merges it introduces.",
   group: "engineering",
   order: 3,
   kind: "pairwise",

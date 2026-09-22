@@ -19,9 +19,9 @@ export interface Command {
 export const manifest: SingleManifest<Command> = {
   slug: "guardrail",
   title: "Command guardrail",
-  tagline: "The agent permission gate, in the open",
+  tagline: "Classify command risk; enforce permissions in code",
   thesis:
-    "Confidence thresholds scale to the stakes of the branch they guard. Misrouting a read-only command is free; waving through a destructive one is not, so they cannot share a cutoff.",
+    "One request evaluates six properties of a command, working directory, and repository state. TypeScript combines blast-radius confidence with secret, network, and production signals to allow, ask, or deny, using stricter thresholds for higher-impact branches.",
   group: "foundations",
   order: 2,
   kind: "single",

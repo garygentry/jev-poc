@@ -15,9 +15,9 @@ import { SCENARIOS, stateFor, type Scenario } from "./context"
 export const manifest: FanOutManifest<Scenario> = {
   slug: "context-pruner",
   title: "Context pruner",
-  tagline: "The saving is the tokens you never send",
+  tagline: "Judge each context chunk before sending it downstream",
   thesis:
-    "The other half of the control plane's cost story. Instead of stuffing an agent's whole context into every expensive call — or truncating it blindly — Jev judges each chunk against the goal for a fraction of a cent, and only what earns its place is sent on.",
+    "Each chunk is a separate Jev request containing the goal and candidate context. Code keeps unanswered or at-least-0.5 relevance results, drops the rest, and estimates tokens removed before a generative call, exposing both pruning overhead and false-negative risk.",
   group: "control-plane",
   order: 2,
   kind: "fanout",

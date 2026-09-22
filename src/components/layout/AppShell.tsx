@@ -118,6 +118,20 @@ function ThemeToggle() {
 function DemoNav() {
   return (
     <nav className="sticky top-[73px] hidden h-fit w-56 shrink-0 lg:block">
+      <NavLink
+        to="/"
+        end
+        className={({ isActive }) =>
+          cn(
+            "mb-3 block rounded-md px-3 py-1.5 text-sm transition-colors",
+            isActive
+              ? "bg-[var(--surface-raised)] font-medium text-ink"
+              : "text-ink-secondary hover:bg-[var(--surface-raised)] hover:text-ink",
+          )
+        }
+      >
+        Home
+      </NavLink>
       <p className="px-3 pb-2 text-[11px] uppercase tracking-wide text-ink-muted">
         Demos
       </p>
