@@ -1,0 +1,702 @@
+{
+  "db-pool/checkout-latency--db-pool": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 427,
+      "output_tokens": 13,
+      "cost": 0.000492
+    },
+    "latencyMs": 1762,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "raw": {
+      "same_incident": 0.92
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.92",
+        "baseline": "0.92"
+      }
+    ]
+  },
+  "db-pool/checkout-latency--orders-503": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 13,
+      "cost": 0.000486
+    },
+    "latencyMs": 1753,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.75
+      }
+    },
+    "raw": {
+      "same_incident": 0.75
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.84",
+        "baseline": "0.75"
+      }
+    ]
+  },
+  "db-pool/checkout-latency--search-latency": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 429,
+      "output_tokens": 13,
+      "cost": 0.000494
+    },
+    "latencyMs": 1400,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "db-pool/checkout-latency--disk": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 424,
+      "output_tokens": 13,
+      "cost": 0.000489
+    },
+    "latencyMs": 1382,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "same_incident": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.15",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "db-pool/checkout-latency--cert": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 422,
+      "output_tokens": 13,
+      "cost": 0.000487
+    },
+    "latencyMs": 1694,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "raw": {
+      "same_incident": 0.02
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.02"
+      }
+    ]
+  },
+  "db-pool/db-pool--orders-503": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 424,
+      "output_tokens": 13,
+      "cost": 0.000489
+    },
+    "latencyMs": 1643,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "same_incident": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "db-pool/db-pool--search-latency": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 432,
+      "output_tokens": 13,
+      "cost": 0.000497
+    },
+    "latencyMs": 1066,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "same_incident": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "db-pool/db-pool--disk": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 427,
+      "output_tokens": 13,
+      "cost": 0.000492
+    },
+    "latencyMs": 1592,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "same_incident": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.16",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "db-pool/db-pool--cert": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 425,
+      "output_tokens": 13,
+      "cost": 0.00049
+    },
+    "latencyMs": 1346,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "raw": {
+      "same_incident": 0.01
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.01"
+      }
+    ]
+  },
+  "db-pool/orders-503--search-latency": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 426,
+      "output_tokens": 13,
+      "cost": 0.000491
+    },
+    "latencyMs": 1400,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "db-pool/orders-503--disk": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 13,
+      "cost": 0.000486
+    },
+    "latencyMs": 1003,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.12",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "db-pool/orders-503--cert": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 419,
+      "output_tokens": 13,
+      "cost": 0.000484
+    },
+    "latencyMs": 1657,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "raw": {
+      "same_incident": 0.02
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.02"
+      }
+    ]
+  },
+  "db-pool/search-latency--disk": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 429,
+      "output_tokens": 13,
+      "cost": 0.000494
+    },
+    "latencyMs": 861,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.06",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "db-pool/search-latency--cert": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 427,
+      "output_tokens": 13,
+      "cost": 0.000492
+    },
+    "latencyMs": 1090,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.02
+      }
+    },
+    "raw": {
+      "same_incident": 0.02
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.02"
+      }
+    ]
+  },
+  "db-pool/disk--cert": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 422,
+      "output_tokens": 13,
+      "cost": 0.000487
+    },
+    "latencyMs": 1014,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.01
+      }
+    },
+    "raw": {
+      "same_incident": 0.01
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.01"
+      }
+    ]
+  },
+  "bad-deploy/error-spike--deploy": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 434,
+      "output_tokens": 13,
+      "cost": 0.000499
+    },
+    "latencyMs": 1020,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "raw": {
+      "same_incident": 0.92
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.88",
+        "baseline": "0.92"
+      }
+    ]
+  },
+  "bad-deploy/error-spike--handler-500": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 430,
+      "output_tokens": 13,
+      "cost": 0.000495
+    },
+    "latencyMs": 935,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "same_incident": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.92",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "bad-deploy/error-spike--backup": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 427,
+      "output_tokens": 13,
+      "cost": 0.000492
+    },
+    "latencyMs": 999,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "bad-deploy/error-spike--cache-mem": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 427,
+      "output_tokens": 13,
+      "cost": 0.000492
+    },
+    "latencyMs": 1210,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "same_incident": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.14",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "bad-deploy/deploy--handler-500": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 432,
+      "output_tokens": 13,
+      "cost": 0.000497
+    },
+    "latencyMs": 1019,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "same_incident": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.95",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "bad-deploy/deploy--backup": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 429,
+      "output_tokens": 13,
+      "cost": 0.000494
+    },
+    "latencyMs": 1724,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "bad-deploy/deploy--cache-mem": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 429,
+      "output_tokens": 13,
+      "cost": 0.000494
+    },
+    "latencyMs": 1031,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.75
+      }
+    },
+    "raw": {
+      "same_incident": 0.75
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": false,
+        "jev": "0.18",
+        "baseline": "0.75"
+      }
+    ]
+  },
+  "bad-deploy/handler-500--backup": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 425,
+      "output_tokens": 13,
+      "cost": 0.00049
+    },
+    "latencyMs": 935,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "bad-deploy/handler-500--cache-mem": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 425,
+      "output_tokens": 13,
+      "cost": 0.00049
+    },
+    "latencyMs": 922,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.08",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "bad-deploy/backup--cache-mem": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 422,
+      "output_tokens": 13,
+      "cost": 0.000487
+    },
+    "latencyMs": 1047,
+    "parseOk": true,
+    "answers": {
+      "same_incident": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "same_incident": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "same_incident",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.05"
+      }
+    ]
+  }
+}

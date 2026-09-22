@@ -183,7 +183,7 @@ To exercise the suite against real answers, run `pnpm capture` first and it will
 
 ## Regenerating the assessment
 
-An on-demand report — *which use cases suit Jev best, where it is strongest, where it is weakest* — judged **only** on the recorded evidence, never on a model's training. Three steps, data collection kept separate from the report:
+An on-demand report — *which use cases suit Jev best, where it is strongest, where it is weakest* — judged **only** on the recorded evidence, never on a model's training. The latest generated report is [`docs/jev-assessment.md`](docs/jev-assessment.md), written by Opus 5 from a full 18-demo baseline captured over the OpenRouter API. Three steps, data collection kept separate from the report:
 
 ```sh
 # 1. Record the chat-model baseline against the same states Jev saw.
@@ -257,6 +257,7 @@ It spans every label now.
 - [Jev](https://jev-agent.com) · [TypeSafe docs](https://docs.typesafe.ai) · [primitives](https://docs.typesafe.ai/primitives) · [confidence](https://docs.typesafe.ai/confidence)
 - [Jev on OpenRouter](https://openrouter.ai/typesafe)
 - [Known limitations of Jev 1.13](https://docs.typesafe.ai/model-jaggedness/jev-1.13)
+- Assessment: the [report](docs/jev-assessment.md), the judge's [instructions](docs/assessment/INSTRUCTIONS.md), and the [evidence bundle](docs/assessment/evidence.json) it was built from
 
 ## License
 

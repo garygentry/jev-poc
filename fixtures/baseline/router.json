@@ -1,0 +1,417 @@
+{
+  "reformat": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1003,
+      "output_tokens": 55,
+      "cost": 0.001278
+    },
+    "latencyMs": 2043,
+    "parseOk": true,
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "trivial"
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "extraction"
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "required_capability": "trivial",
+      "task_type": "extraction",
+      "needs_tools": 0,
+      "needs_long_context": 0,
+      "needs_vision": 0,
+      "is_ambiguous": 0
+    },
+    "comparisons": [
+      {
+        "name": "required_capability",
+        "agree": true,
+        "jev": "trivial",
+        "baseline": "trivial"
+      },
+      {
+        "name": "task_type",
+        "agree": true,
+        "jev": "extraction",
+        "baseline": "extraction"
+      },
+      {
+        "name": "needs_tools",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      },
+      {
+        "name": "needs_long_context",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "needs_vision",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "is_ambiguous",
+        "agree": true,
+        "jev": "0.08",
+        "baseline": "0.00"
+      }
+    ]
+  },
+  "summarize": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1099,
+      "output_tokens": 62,
+      "cost": 0.001409
+    },
+    "latencyMs": 2086,
+    "parseOk": true,
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "simple"
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "writing"
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "required_capability": "simple",
+      "task_type": "writing",
+      "needs_tools": 0,
+      "needs_long_context": 0,
+      "needs_vision": 0,
+      "is_ambiguous": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "required_capability",
+        "agree": true,
+        "jev": "simple",
+        "baseline": "simple"
+      },
+      {
+        "name": "task_type",
+        "agree": true,
+        "jev": "writing",
+        "baseline": "writing"
+      },
+      {
+        "name": "needs_tools",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.00"
+      },
+      {
+        "name": "needs_long_context",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      },
+      {
+        "name": "needs_vision",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "is_ambiguous",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "debug-race": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1073,
+      "output_tokens": 62,
+      "cost": 0.001383
+    },
+    "latencyMs": 2083,
+    "parseOk": true,
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "expert"
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "code"
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "required_capability": "expert",
+      "task_type": "code",
+      "needs_tools": 0,
+      "needs_long_context": 0,
+      "needs_vision": 0,
+      "is_ambiguous": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "required_capability",
+        "agree": false,
+        "jev": "reasoning",
+        "baseline": "expert"
+      },
+      {
+        "name": "task_type",
+        "agree": true,
+        "jev": "code",
+        "baseline": "code"
+      },
+      {
+        "name": "needs_tools",
+        "agree": true,
+        "jev": "0.14",
+        "baseline": "0.00"
+      },
+      {
+        "name": "needs_long_context",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.00"
+      },
+      {
+        "name": "needs_vision",
+        "agree": true,
+        "jev": "0.03",
+        "baseline": "0.00"
+      },
+      {
+        "name": "is_ambiguous",
+        "agree": true,
+        "jev": "0.09",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "migration-plan": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 1018,
+      "output_tokens": 62,
+      "cost": 0.001328
+    },
+    "latencyMs": 2134,
+    "parseOk": true,
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "expert"
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "analysis"
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "required_capability": "expert",
+      "task_type": "analysis",
+      "needs_tools": 0.95,
+      "needs_long_context": 0.92,
+      "needs_vision": 0,
+      "is_ambiguous": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "required_capability",
+        "agree": true,
+        "jev": "expert",
+        "baseline": "expert"
+      },
+      {
+        "name": "task_type",
+        "agree": true,
+        "jev": "analysis",
+        "baseline": "analysis"
+      },
+      {
+        "name": "needs_tools",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.95"
+      },
+      {
+        "name": "needs_long_context",
+        "agree": true,
+        "jev": "0.74",
+        "baseline": "0.92"
+      },
+      {
+        "name": "needs_vision",
+        "agree": true,
+        "jev": "0.02",
+        "baseline": "0.00"
+      },
+      {
+        "name": "is_ambiguous",
+        "agree": true,
+        "jev": "0.19",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "vague": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 980,
+      "output_tokens": 62,
+      "cost": 0.00129
+    },
+    "latencyMs": 2061,
+    "parseOk": true,
+    "answers": {
+      "required_capability": {
+        "type": "choice",
+        "choice": "reasoning"
+      },
+      "task_type": {
+        "type": "choice",
+        "choice": "conversation"
+      },
+      "needs_tools": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "needs_long_context": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "needs_vision": {
+        "type": "noul",
+        "noul": 0.6
+      },
+      "is_ambiguous": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "required_capability": "reasoning",
+      "task_type": "conversation",
+      "needs_tools": 0.7,
+      "needs_long_context": 0.3,
+      "needs_vision": 0.6,
+      "is_ambiguous": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "required_capability",
+        "agree": true,
+        "jev": "reasoning",
+        "baseline": "reasoning"
+      },
+      {
+        "name": "task_type",
+        "agree": false,
+        "jev": "code",
+        "baseline": "conversation"
+      },
+      {
+        "name": "needs_tools",
+        "agree": true,
+        "jev": "0.73",
+        "baseline": "0.70"
+      },
+      {
+        "name": "needs_long_context",
+        "agree": true,
+        "jev": "0.12",
+        "baseline": "0.30"
+      },
+      {
+        "name": "needs_vision",
+        "agree": false,
+        "jev": "0.24",
+        "baseline": "0.60"
+      },
+      {
+        "name": "is_ambiguous",
+        "agree": true,
+        "jev": "0.85",
+        "baseline": "0.85"
+      }
+    ]
+  }
+}

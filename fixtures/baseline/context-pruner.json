@@ -1,0 +1,590 @@
+{
+  "checkout-timeout/eu-latency-log": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 471,
+      "output_tokens": 11,
+      "cost": 0.000526
+    },
+    "latencyMs": 1630,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "relevant": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "checkout-timeout/timeout-config": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 453,
+      "output_tokens": 11,
+      "cost": 0.000508
+    },
+    "latencyMs": 1459,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "relevant": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "checkout-timeout/tax-service-region": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 459,
+      "output_tokens": 11,
+      "cost": 0.000514
+    },
+    "latencyMs": 1219,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "relevant": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "checkout-timeout/marketing-copy": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 440,
+      "output_tokens": 11,
+      "cost": 0.000495
+    },
+    "latencyMs": 1416,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "relevant": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "checkout-timeout/old-changelog": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 457,
+      "output_tokens": 11,
+      "cost": 0.000512
+    },
+    "latencyMs": 1229,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "relevant": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.46",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "checkout-timeout/unrelated-readme": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 446,
+      "output_tokens": 11,
+      "cost": 0.000501
+    },
+    "latencyMs": 1485,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "relevant": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": false,
+        "jev": "0.60",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "checkout-timeout/inventory-note": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 453,
+      "output_tokens": 11,
+      "cost": 0.000508
+    },
+    "latencyMs": 1059,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.75
+      }
+    },
+    "raw": {
+      "relevant": 0.75
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.86",
+        "baseline": "0.75"
+      }
+    ]
+  },
+  "checkout-timeout/support-macro": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 442,
+      "output_tokens": 11,
+      "cost": 0.000497
+    },
+    "latencyMs": 1962,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "relevant": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.16",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "enterprise-onboarding/enterprise-checklist": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 455,
+      "output_tokens": 11,
+      "cost": 0.00051
+    },
+    "latencyMs": 1122,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "relevant": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "enterprise-onboarding/sso-setup": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 450,
+      "output_tokens": 11,
+      "cost": 0.000505
+    },
+    "latencyMs": 1188,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "raw": {
+      "relevant": 0.92
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.92"
+      }
+    ]
+  },
+  "enterprise-onboarding/role-mapping": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 455,
+      "output_tokens": 11,
+      "cost": 0.00051
+    },
+    "latencyMs": 1138,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "relevant": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "enterprise-onboarding/smb-selfserve": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 446,
+      "output_tokens": 11,
+      "cost": 0.000501
+    },
+    "latencyMs": 1010,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "relevant": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.36",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "enterprise-onboarding/billing-faq": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 442,
+      "output_tokens": 11,
+      "cost": 0.000497
+    },
+    "latencyMs": 970,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "relevant": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.06",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "enterprise-onboarding/blog-post": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 446,
+      "output_tokens": 11,
+      "cost": 0.000501
+    },
+    "latencyMs": 1051,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "relevant": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.15",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "enterprise-onboarding/security-whitepaper": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 453,
+      "output_tokens": 11,
+      "cost": 0.000508
+    },
+    "latencyMs": 1633,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.75
+      }
+    },
+    "raw": {
+      "relevant": 0.75
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.83",
+        "baseline": "0.75"
+      }
+    ]
+  },
+  "payment-incident/postmortem-draft": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 465,
+      "output_tokens": 11,
+      "cost": 0.00052
+    },
+    "latencyMs": 1115,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.98
+      }
+    },
+    "raw": {
+      "relevant": 0.98
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.98",
+        "baseline": "0.98"
+      }
+    ]
+  },
+  "payment-incident/alert-timeline": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 469,
+      "output_tokens": 11,
+      "cost": 0.000524
+    },
+    "latencyMs": 1000,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "relevant": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "payment-incident/customer-impact": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 451,
+      "output_tokens": 11,
+      "cost": 0.000506
+    },
+    "latencyMs": 911,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.92
+      }
+    },
+    "raw": {
+      "relevant": 0.92
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.92"
+      }
+    ]
+  },
+  "payment-incident/other-outage": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 449,
+      "output_tokens": 11,
+      "cost": 0.000504
+    },
+    "latencyMs": 985,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "relevant": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "payment-incident/deploy-notes": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 440,
+      "output_tokens": 11,
+      "cost": 0.000495
+    },
+    "latencyMs": 1021,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0.3
+      }
+    },
+    "raw": {
+      "relevant": 0.3
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": false,
+        "jev": "0.74",
+        "baseline": "0.30"
+      }
+    ]
+  },
+  "payment-incident/offsite-email": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 444,
+      "output_tokens": 11,
+      "cost": 0.000499
+    },
+    "latencyMs": 1127,
+    "parseOk": true,
+    "answers": {
+      "relevant": {
+        "type": "noul",
+        "noul": 0
+      }
+    },
+    "raw": {
+      "relevant": 0
+    },
+    "comparisons": [
+      {
+        "name": "relevant",
+        "agree": true,
+        "jev": "0.01",
+        "baseline": "0.00"
+      }
+    ]
+  }
+}

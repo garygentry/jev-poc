@@ -1,0 +1,1066 @@
+{
+  "debug-loop/w1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 475,
+      "output_tokens": 11,
+      "cost": 0.00053
+    },
+    "latencyMs": 1102,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "raw": {
+      "stuck": 0.1
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.10"
+      }
+    ]
+  },
+  "debug-loop/w2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 498,
+      "output_tokens": 11,
+      "cost": 0.000553
+    },
+    "latencyMs": 1642,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "stuck": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": false,
+        "jev": "0.27",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "debug-loop/w3": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 506,
+      "output_tokens": 11,
+      "cost": 0.000561
+    },
+    "latencyMs": 1781,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "stuck": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.87",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "debug-loop/w4": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 517,
+      "output_tokens": 11,
+      "cost": 0.000572
+    },
+    "latencyMs": 1673,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "stuck": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.67",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "debug-loop/w5": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 512,
+      "output_tokens": 11,
+      "cost": 0.000567
+    },
+    "latencyMs": 1690,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "stuck": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.86",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "debug-loop/w6": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 502,
+      "output_tokens": 11,
+      "cost": 0.000557
+    },
+    "latencyMs": 1634,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "raw": {
+      "stuck": 0.85
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.77",
+        "baseline": "0.85"
+      }
+    ]
+  },
+  "debug-loop/w7": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 498,
+      "output_tokens": 11,
+      "cost": 0.000553
+    },
+    "latencyMs": 1012,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "debug-loop/w8": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 11,
+      "cost": 0.000547
+    },
+    "latencyMs": 1036,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.91",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "debug-loop/w9": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 495,
+      "output_tokens": 11,
+      "cost": 0.00055
+    },
+    "latencyMs": 882,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "debug-loop/w10": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 495,
+      "output_tokens": 11,
+      "cost": 0.00055
+    },
+    "latencyMs": 856,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.92",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "steady-progress/w1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 479,
+      "output_tokens": 11,
+      "cost": 0.000534
+    },
+    "latencyMs": 1007,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "stuck": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "steady-progress/w2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 480,
+      "output_tokens": 11,
+      "cost": 0.000535
+    },
+    "latencyMs": 937,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "raw": {
+      "stuck": 0.1
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.06",
+        "baseline": "0.10"
+      }
+    ]
+  },
+  "steady-progress/w3": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 482,
+      "output_tokens": 11,
+      "cost": 0.000537
+    },
+    "latencyMs": 935,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "stuck": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.06",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "steady-progress/w4": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 478,
+      "output_tokens": 11,
+      "cost": 0.000533
+    },
+    "latencyMs": 1143,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "raw": {
+      "stuck": 0.1
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.10",
+        "baseline": "0.10"
+      }
+    ]
+  },
+  "steady-progress/w5": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 480,
+      "output_tokens": 11,
+      "cost": 0.000535
+    },
+    "latencyMs": 883,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "stuck": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.13",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "steady-progress/w6": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 476,
+      "output_tokens": 11,
+      "cost": 0.000531
+    },
+    "latencyMs": 1034,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "stuck": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.08",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "steady-progress/w7": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 477,
+      "output_tokens": 11,
+      "cost": 0.000532
+    },
+    "latencyMs": 1068,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "raw": {
+      "stuck": 0.1
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.08",
+        "baseline": "0.10"
+      }
+    ]
+  },
+  "steady-progress/w8": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 469,
+      "output_tokens": 11,
+      "cost": 0.000524
+    },
+    "latencyMs": 965,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "raw": {
+      "stuck": 0.1
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.10"
+      }
+    ]
+  },
+  "steady-progress/w9": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 467,
+      "output_tokens": 11,
+      "cost": 0.000522
+    },
+    "latencyMs": 864,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "stuck": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.06",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "steady-progress/w10": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 457,
+      "output_tokens": 11,
+      "cost": 0.000512
+    },
+    "latencyMs": 961,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "stuck": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "recovers/w1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 477,
+      "output_tokens": 11,
+      "cost": 0.000532
+    },
+    "latencyMs": 1071,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.95",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "recovers/w2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 481,
+      "output_tokens": 11,
+      "cost": 0.000536
+    },
+    "latencyMs": 1130,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.97",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "recovers/w3": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 481,
+      "output_tokens": 11,
+      "cost": 0.000536
+    },
+    "latencyMs": 1745,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.25
+      }
+    },
+    "raw": {
+      "stuck": 0.25
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.39",
+        "baseline": "0.25"
+      }
+    ]
+  },
+  "recovers/w4": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 475,
+      "output_tokens": 11,
+      "cost": 0.00053
+    },
+    "latencyMs": 1027,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "stuck": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.11",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "recovers/w5": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 469,
+      "output_tokens": 11,
+      "cost": 0.000524
+    },
+    "latencyMs": 1376,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "stuck": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.08",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "recovers/w6": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 471,
+      "output_tokens": 11,
+      "cost": 0.000526
+    },
+    "latencyMs": 1108,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "raw": {
+      "stuck": 0.15
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.07",
+        "baseline": "0.15"
+      }
+    ]
+  },
+  "recovers/w7": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 474,
+      "output_tokens": 11,
+      "cost": 0.000529
+    },
+    "latencyMs": 1010,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "stuck": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.05",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "recovers/w8": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 467,
+      "output_tokens": 11,
+      "cost": 0.000522
+    },
+    "latencyMs": 843,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.05
+      }
+    },
+    "raw": {
+      "stuck": 0.05
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.04",
+        "baseline": "0.05"
+      }
+    ]
+  },
+  "tight-loop/w1": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 473,
+      "output_tokens": 11,
+      "cost": 0.000528
+    },
+    "latencyMs": 994,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.90",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w2": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 482,
+      "output_tokens": 11,
+      "cost": 0.000537
+    },
+    "latencyMs": 924,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.91",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w3": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 482,
+      "output_tokens": 11,
+      "cost": 0.000537
+    },
+    "latencyMs": 837,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.91",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w4": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 482,
+      "output_tokens": 11,
+      "cost": 0.000537
+    },
+    "latencyMs": 986,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w5": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 484,
+      "output_tokens": 11,
+      "cost": 0.000539
+    },
+    "latencyMs": 830,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.92",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w6": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 486,
+      "output_tokens": 11,
+      "cost": 0.000541
+    },
+    "latencyMs": 1483,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w7": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 488,
+      "output_tokens": 11,
+      "cost": 0.000543
+    },
+    "latencyMs": 1025,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.92",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w8": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 488,
+      "output_tokens": 11,
+      "cost": 0.000543
+    },
+    "latencyMs": 850,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.93",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w9": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 479,
+      "output_tokens": 11,
+      "cost": 0.000534
+    },
+    "latencyMs": 980,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.94",
+        "baseline": "0.95"
+      }
+    ]
+  },
+  "tight-loop/w10": {
+    "model": "anthropic/claude-haiku-4.5",
+    "backend": "openrouter",
+    "usage": {
+      "input_tokens": 471,
+      "output_tokens": 11,
+      "cost": 0.000526
+    },
+    "latencyMs": 1065,
+    "parseOk": true,
+    "answers": {
+      "stuck": {
+        "type": "noul",
+        "noul": 0.95
+      }
+    },
+    "raw": {
+      "stuck": 0.95
+    },
+    "comparisons": [
+      {
+        "name": "stuck",
+        "agree": true,
+        "jev": "0.96",
+        "baseline": "0.95"
+      }
+    ]
+  }
+}
