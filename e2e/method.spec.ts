@@ -59,12 +59,12 @@ test.describe("the method page", () => {
     await expect(page.getByText(/only ever used to/)).toBeVisible()
   })
 
-  test("links back to the gallery", async ({ page }) => {
+  test("links back home", async ({ page }) => {
     await page.goto("/method")
-    await page.getByRole("link", { name: /Back to the gallery/ }).click()
+    await page.getByRole("link", { name: /Back to Home/ }).click()
     await expect(page).toHaveURL(/\/$/)
     await expect(
-      page.getByRole("heading", { name: "A model that decides instead of writing" }),
+      page.getByRole("heading", { name: "Jev demo catalog" }),
     ).toBeVisible()
   })
 })

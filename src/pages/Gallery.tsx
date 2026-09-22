@@ -18,23 +18,14 @@ export function Gallery() {
           typesafe/jev-1.13
         </Badge>
         <h1 className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-          A model that decides instead of writing
+          Jev demo catalog
         </h1>
-        <p className="text-sm leading-relaxed text-ink-secondary">
-          Jev is a <em>System One</em> model. You send it{" "}
-          <span className="font-mono text-ink">state</span> plus a map of named{" "}
-          <span className="font-mono text-ink">questions</span>, and it returns
-          typed answers with calibrated probabilities. There is no prose to
-          parse, and no free-text-to-struct failure mode — the output is
-          constrained to the options you supplied, so the interesting work moves
-          out of prompt engineering and into ordinary code.
-        </p>
-        <p className="text-sm leading-relaxed text-ink-secondary">
-          Every question in one request is answered against the same state{" "}
-          <strong className="font-medium text-ink">in parallel</strong>, so
-          asking seven costs about what asking one costs. Questions over{" "}
-          <em>different</em> state cannot batch at all. Those two facts are what
-          the demos below are organised around.
+        <p className="text-sm leading-relaxed text-ink-secondary sm:text-base">
+          Jev evaluates named choice, score, and condition-probability questions
+          against supplied state, returning typed probabilities instead of
+          generated prose. This site collects practical demos of using those
+          outputs in application code for routing, filtering, classification,
+          safety checks, and agent control.
         </p>
 
         <dl className="flex flex-wrap gap-x-8 gap-y-3 border-t border-[var(--hairline)] pt-4">
@@ -50,25 +41,52 @@ export function Gallery() {
 
       {mode === "fixture" ? <NoKeyNotice /> : null}
 
-      <section className="space-y-3">
+      <section className="space-y-4">
         <h2 className="text-xs uppercase tracking-wide text-ink-muted">
-          {demos.length} shapes
+          {demos.length} demos
         </h2>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-4 xl:grid-cols-2">
           {demos.map((demo, index) => (
-            <Card key={demo.slug} className="transition-colors hover:border-[var(--mark)]/40">
-              <Link to={`/demo/${demo.slug}`} className="block p-4 sm:p-5">
-                <div className="flex items-baseline gap-2.5">
-                  <span className="tabular font-mono text-[11px] text-ink-muted">
+            <Card
+              key={demo.slug}
+              className="h-full transition-colors hover:border-[var(--mark)]/40"
+            >
+              <Link
+                to={`/demo/${demo.slug}`}
+                className="flex h-full flex-col p-5 sm:p-6"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="tabular pt-0.5 font-mono text-[11px] text-ink-muted">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-sm font-semibold text-ink">{demo.title}</h3>
-                  <ArrowRight className="ml-auto size-3.5 shrink-0 text-ink-muted" />
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-base font-semibold text-ink">
+                      {demo.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-ink-secondary">
+                      {demo.tagline}
+                    </p>
+                  </div>
+                  <ArrowRight className="mt-1 size-4 shrink-0 text-ink-muted" />
                 </div>
-                <p className="mt-1 pl-[26px] text-sm text-ink-secondary">
-                  {demo.tagline}
+
+                <div className="mt-4 flex flex-wrap gap-1.5 pl-[31px]">
+                  {demo.primitives.map((primitive) => (
+                    <Badge
+                      key={primitive}
+                      variant="mark"
+                      className="font-mono"
+                    >
+                      {primitive}
+                    </Badge>
+                  ))}
+                </div>
+
+                <p className="mt-4 flex-1 pl-[31px] text-sm leading-relaxed text-ink-secondary">
+                  {demo.thesis}
                 </p>
-                <div className="mt-3 pl-[26px]">
+
+                <div className="mt-5 pl-[31px]">
                   <ShapeStrip demo={demo} />
                 </div>
               </Link>

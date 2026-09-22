@@ -13,9 +13,9 @@ import { CONTRACTS, stateFor, type Contract } from "./contract"
 export const manifest: FanOutManifest<Contract> = {
   slug: "clause-risk",
   title: "Clause risk",
-  tagline: "Read every clause on every risk — surface only the ones that carry it",
+  tagline: "Ask four risk questions per clause; threshold a review queue",
   thesis:
-    "A lawyer reads every clause of every contract to find the few that matter. Four risk questions per clause, fanned across the contract, turn that into a matrix where only the clauses that actually carry risk surface — the boilerplate stays quiet, and the review lands where it is worth spending.",
+    "Each clause is separate state; four risk questions batch into one request per clause while requests fan out across the contract. Code surfaces a clause when any probability reaches 0.6 and names the triggering dimensions, testing exhaustive screening for human review without making cross-clause or legal conclusions.",
   group: "documents",
   order: 1,
   kind: "fanout",

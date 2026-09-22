@@ -58,9 +58,9 @@ const REQUESTS = [
 export const manifest: SingleManifest<Request> = {
   slug: "cascade",
   title: "Cascade router",
-  tagline: "Gate for a hundredth of a cent, pay the frontier only when it earns it",
+  tagline: "Use a typed gate to choose the generative model tier",
   thesis:
-    "The headline of the control plane. A cheap Jev gate reads how hard each request is; the routine ones are answered by Haiku and the rest by Opus. Every figure — the gate, the cheap tier, the frontier — is measured, so the saving rests on nothing but usage.",
+    "One Jev call rates request difficulty and the probability that resolution requires an irreversible action. Policy code sends expert, high-stakes, or uncertain cases to Opus and the rest to Haiku; the comparison reports both paths' measured latency and cost.",
   group: "control-plane",
   order: 1,
   kind: "cascade",

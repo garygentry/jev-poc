@@ -13,9 +13,9 @@ import { RULE, SEARCHES, stateFor, type Search } from "./corpus"
 export const manifest: FanOutManifest<Search> = {
   slug: "semantic-grep",
   title: "Semantic grep",
-  tagline: "Search by a rule stated in English — the regex nobody can write",
+  tagline: "Apply one semantic rule per function; threshold scores into hits",
   thesis:
-    "Some searches cannot be a regex: 'a network call without a timeout' has a dozen syntaxes and turns on what is absent. One cheap noul per function judges each against the rule in plain English — finding the calls a pattern misses and skipping the ones it would flag for setting a timeout it cannot see.",
+    "Each function body is separate state for the same question: does it make a network request without a timeout? Code thresholds each probability at 0.6 and compares the hit with a regex, testing meaning-based matching across varied APIs and absent safeguards with one request per function and a cutoff that requires calibration.",
   group: "engineering",
   order: 4,
   kind: "fanout",

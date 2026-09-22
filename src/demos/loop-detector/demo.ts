@@ -16,9 +16,9 @@ import { TRACES, stateFor, windowsOf, type Trace } from "./trace"
 export const manifest: FanOutManifest<Trace> = {
   slug: "loop-detector",
   title: "Loop detector",
-  tagline: "Read 'no progress' off the trace, instead of counting steps",
+  tagline: "Score overlapping trace windows for repeated, unproductive actions",
   thesis:
-    "A max-iteration counter cuts a good long run short and lets a bad one burn to the cap, because it counts steps without reading them. A cheap noul over a sliding window reads whether the agent is circling — the same action meeting the same result — and stops a loop at its onset while never cutting a run that is still advancing.",
+    "Each request receives the goal and one three-step trace window, then returns a stuck probability. Policy code requires three consecutive scores of at least 0.6 before stopping, testing semantic progress detection against a fixed step cap at the cost of one request per window and delayed confirmation.",
   group: "control-plane",
   order: 4,
   kind: "windowed",

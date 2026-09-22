@@ -15,9 +15,9 @@ import { POLICIES, buildQuestions } from "./policies"
 export const manifest: SingleManifest<Content> = {
   slug: "moderation",
   title: "Multi-policy moderation",
-  tagline: "Twelve policies in one request, each with its own threshold",
+  tagline: "Evaluate twelve policies on one message; route with code",
   thesis:
-    "The per-request economics, shown plainly: twelve moderation policies share one state, so they cost one request rather than twelve. Each policy carries its own threshold — a death threat and a spam link do not answer to the same cutoff — and the whole matrix comes back typed, in a single call.",
+    "One message is the shared state for twelve condition-probability questions in a single request. Code applies a separate threshold to each policy, then reduces triggered policies to allow, review, or block, testing batched typed judgments while keeping the final action outside the model.",
   group: "safety",
   order: 1,
   kind: "single",

@@ -16,9 +16,9 @@ import { PASSAGES, QUERIES, stateFor, type Query } from "./corpus"
 export const manifest: FanOutManifest<Query> = {
   slug: "rerank",
   title: "Semantic re-rank",
-  tagline: "Probability as a sort key",
+  tagline: "One relevance probability per candidate passage",
   thesis:
-    "The mirror image of triage. Every candidate is different state, so the questions cannot batch — the calls fan out instead, and the returned probability sorts.",
+    "Each query–passage pair is separate state, so one relevance question fans out as a concurrent request per candidate. The returned probabilities become sort and filter inputs in ordinary code and are compared with a word-overlap baseline.",
   group: "foundations",
   order: 3,
   kind: "fanout",
