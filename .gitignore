@@ -25,3 +25,7 @@ test-results/
 playwright-report/
 blob-report/
 .playwright/
+
+# Local agent state
+.claude/settings.local.json
+.handoff/

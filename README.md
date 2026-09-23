@@ -2,6 +2,8 @@
 
 > A hands-on tour of **Jev**, TypeSafe's first *System One* model — a model that returns typed, calibrated decisions instead of prose — in twenty demos across seven shapes.
 
+[![CI](https://img.shields.io/github/actions/workflow/status/garygentry/jev-poc/ci.yml?branch=main&label=CI)](https://github.com/garygentry/jev-poc/actions/workflows/ci.yml) [![Node 22+](https://img.shields.io/badge/node-%E2%89%A522-339933?logo=node.js&logoColor=white)](.nvmrc) [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Jev does not generate text.
 You send it `state` plus a map of named `questions`, and it returns typed answers with calibrated probabilities.
 There is no prose to parse and no free-text-to-struct failure mode, because the output is constrained to the options you supplied — so the interesting work moves out of prompt engineering and into ordinary code.
@@ -33,6 +35,25 @@ There is no prose to parse and no free-text-to-struct failure mode, because the 
   "usage": { "input_tokens": 471, "output_tokens": 84, "cost": 0.000019782 }
 }
 ```
+
+> [!NOTE]
+> An independent proof-of-concept — not affiliated with or endorsed by TypeSafe or OpenRouter.
+> It calls an `alpha` endpoint that may change or disappear without notice; see [Notes that cost something to learn](#notes-that-cost-something-to-learn).
+
+## Quickstart
+
+Requires Node 22+ and [pnpm](https://pnpm.io/installation).
+
+```sh
+git clone https://github.com/garygentry/jev-poc.git && cd jev-poc
+pnpm install
+cp .env.example .env     # optional — paste an OpenRouter key to go live
+pnpm dev                 # client on :5180, sidecar on :8787
+```
+
+Open <http://localhost:5180>.
+It works with **no key**: every demo replays a committed fixture and badges itself as doing so.
+To go live, put an [OpenRouter key](https://openrouter.ai/settings/keys) in `.env` and restart.
 
 ## Architecture
 
@@ -155,23 +176,14 @@ Read `/method` in the app for the long version; each demo's page shows its shape
 |---|---|---|---|
 | 20 | Threshold fitter | offline | Fit the number every other demo guesses — for free, from recorded answers |
 
-## Quickstart
+## Testing
 
 ```sh
-pnpm install
-cp .env.example .env     # optional — paste an OpenRouter key to go live
-pnpm dev                 # client on :5180, sidecar on :8787
-```
-
-It works with **no key**: every demo replays a committed fixture and badges itself as doing so.
-To go live, put an [OpenRouter key](https://openrouter.ai/settings/keys) in `.env` and restart.
-
-```sh
-pnpm test        # 171 unit tests — pure policy logic, no key, no network
+pnpm test        # 181 unit tests — pure policy logic, no key, no network
 pnpm e2e         # 150 end-to-end tests — starts its own fixture-mode server
 pnpm typecheck
-pnpm capture     # re-record the fixtures against live Jev (needs a key)
 pnpm build
+pnpm capture     # re-record the fixtures against live Jev (needs a key)
 ```
 
 The two suites divide the work.
@@ -181,9 +193,13 @@ The two suites divide the work.
 `pnpm e2e` starts its own server on ports 5181/8788 with the key blanked, so it runs beside your dev server, costs nothing, and is deterministic — asserting on live model output would be flaky by construction.
 To exercise the suite against real answers, run `pnpm capture` first and it will assert against what the model actually said.
 
+CI runs typecheck, unit tests, build, the end-to-end suite and a [gitleaks](https://github.com/gitleaks/gitleaks) secret scan on every push and pull request.
+
 ## Regenerating the assessment
 
-An on-demand report — *which use cases suit Jev best, where it is strongest, where it is weakest* — judged **only** on the recorded evidence, never on a model's training. The latest generated report is [`docs/jev-assessment.md`](docs/jev-assessment.md), written by Opus 5 from a full 18-demo baseline captured over the OpenRouter API. Three steps, data collection kept separate from the report:
+An on-demand report — *which use cases suit Jev best, where it is strongest, where it is weakest* — judged **only** on the recorded evidence, never on a model's training.
+The latest generated report is [`docs/jev-assessment.md`](docs/jev-assessment.md), written by Opus 5 from a full 18-demo baseline captured over the OpenRouter API.
+Three steps, data collection kept separate from the report:
 
 ```sh
 # 1. Record the chat-model baseline against the same states Jev saw.
@@ -199,7 +215,9 @@ pnpm evidence                            # writes docs/assessment/evidence.json 
 pnpm assess --model opus --out docs/jev-assessment.md
 ```
 
-The bundle carries only what the recordings show — cost, tokens, decisiveness, Jev-vs-baseline agreement, parse-reliability — and **no notion of "correct"**, because these fixtures have no ground truth. `docs/assessment/INSTRUCTIONS.md` is the contract the judging model follows and holds it to that. Use the `openrouter` backend for any cost claim: the `cli` backend's cost and token counts include the CLI turn's own overhead and are not a per-call API cost.
+The bundle carries only what the recordings show — cost, tokens, decisiveness, Jev-vs-baseline agreement, parse-reliability — and **no notion of "correct"**, because these fixtures have no ground truth.
+`docs/assessment/INSTRUCTIONS.md` is the contract the judging model follows and holds it to that.
+Use the `openrouter` backend for any cost claim: the `cli` backend's cost and token counts include the CLI turn's own overhead and are not a per-call API cost.
 
 ## Notes that cost something to learn
 
@@ -258,6 +276,13 @@ It spans every label now.
 - [Jev on OpenRouter](https://openrouter.ai/typesafe)
 - [Known limitations of Jev 1.13](https://docs.typesafe.ai/model-jaggedness/jev-1.13)
 - Assessment: the [report](docs/jev-assessment.md), the judge's [instructions](docs/assessment/INSTRUCTIONS.md), and the [evidence bundle](docs/assessment/evidence.json) it was built from
+
+## Contributing
+
+Issues and pull requests are welcome.
+Adding a demo is a directory under `src/demos/` plus one line in `e2e/helpers.ts` — see [Architecture](#architecture).
+Run `pnpm typecheck && pnpm test && pnpm e2e` before opening a pull request; CI runs the same checks.
+Report security issues privately, as described in [SECURITY.md](SECURITY.md).
 
 ## License
 
