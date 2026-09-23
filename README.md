@@ -261,5 +261,4 @@ It spans every label now.
 
 ## License
 
-Private proof-of-concept — not published, and shipped without a license.
-All rights reserved; ask before reusing.
+Licensed under the [MIT License](LICENSE).
