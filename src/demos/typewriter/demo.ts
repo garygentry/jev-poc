@@ -155,7 +155,7 @@ export const manifest: SingleManifest<Draft> = {
     {
       id: "leaky",
       label: "Leaks a credential",
-      input: { text: "Here's the staging config so you can reproduce it: DATABASE_URL=postgres://svc_app:hunter2@db-staging.internal:5432/app and the API key is sk-live-4f8a2c91bd7e. Ping me if it still fails." },
+      input: { text: "Here's the staging config so you can reproduce it: DATABASE_URL=postgres://svc_app:hunter2@db-staging.internal:5432/app and the API key is sk-example-not-a-real-key. Ping me if it still fails." },
     },
     {
       id: "unfinished",

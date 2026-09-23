@@ -1,0 +1,9 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Assessment fixture identifier mistaken for a generic API key"
+regexTarget = "secret"
+regexes = [
+  '''^ambiguous-billing-d2$''',
+]

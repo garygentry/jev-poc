@@ -2,6 +2,15 @@
   "name": "jev-poc",
   "private": true,
   "version": "0.1.0",
+  "description": "A hands-on tour of Jev, TypeSafe's decisions model, in twenty demos across seven shapes",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garygentry/jev-poc.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "type": "module",
   "packageManager": "pnpm@10.34.5",
   "pnpm": {
@@ -58,6 +67,6 @@
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vite": "^6.0.7",
-    "vitest": "^2.1.8"
+    "vitest": "^4.1.11"
   }
 }

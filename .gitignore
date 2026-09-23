@@ -1,7 +1,7 @@
 node_modules/
 dist/
-.env
-.env.local
+.env*
+!.env.example
 *.local
 
 # Browser verification output
@@ -25,3 +25,7 @@ test-results/
 playwright-report/
 blob-report/
 .playwright/
+
+# Local agent state
+.claude/settings.local.json
+.handoff/

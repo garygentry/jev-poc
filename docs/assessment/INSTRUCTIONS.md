@@ -77,7 +77,7 @@ A `null` rate means "no data to compute it from" — treat it as absent, never a
 
 ## 3. The report to write
 
-Match the house style of `README.md` and `docs/EXPANSION-PLAN.md`: a title, a short bolded
+Match the house style of `README.md`: a title, a short bolded
 metadata line (date, models, demo count — take these from the bundle), numbered `##` sections,
 tables where they earn their place, and honest labelling of every number.
 
