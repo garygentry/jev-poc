@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react"
 
-import { health, resetSpend } from "./jev-client"
+import { health } from "./jev-client"
 
 import type { HealthResponse, ServerMode } from "@shared/jev.ts"
 
@@ -18,7 +18,6 @@ interface SpendContextValue {
   spend: HealthResponse["spend"]
   /** Re-read cumulative usage from the sidecar after a billed call. */
   refresh: () => Promise<void>
-  clear: () => Promise<void>
 }
 
 const EMPTY: HealthResponse["spend"] = {
@@ -55,18 +54,13 @@ export function SpendProvider({ children }: { children: ReactNode }) {
     }
   }, [])
 
-  const clear = useCallback(async () => {
-    await resetSpend()
-    await refresh()
-  }, [refresh])
-
   useEffect(() => {
     void refresh()
   }, [refresh])
 
   const value = useMemo(
-    () => ({ mode, model, spend, refresh, clear }),
-    [mode, model, spend, refresh, clear],
+    () => ({ mode, model, spend, refresh }),
+    [mode, model, spend, refresh],
   )
 
   return <SpendContext.Provider value={value}>{children}</SpendContext.Provider>

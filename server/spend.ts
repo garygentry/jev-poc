@@ -25,13 +25,6 @@ export function snapshot(): Spend {
   return { ...spend }
 }
 
-export function reset(): void {
-  spend.calls = 0
-  spend.input_tokens = 0
-  spend.output_tokens = 0
-  spend.cost = 0
-}
-
 /** Sum a set of per-item usages into one, for a batch's aggregate line. */
 export function sumUsage(usages: Array<JevUsage | undefined>): JevUsage {
   return usages.reduce<JevUsage>(

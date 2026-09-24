@@ -29,3 +29,6 @@ blob-report/
 # Local agent state
 .claude/settings.local.json
 .handoff/
+
+# Local planning notes (not published)
+plans/

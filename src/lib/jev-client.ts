@@ -90,7 +90,3 @@ export async function health(): Promise<HealthResponse> {
   if (!response.ok) throw new JevRequestError("Sidecar unreachable", response.status)
   return (await response.json()) as HealthResponse
 }
-
-export async function resetSpend(): Promise<void> {
-  await fetch("/api/jev/spend/reset", { method: "POST" })
-}
