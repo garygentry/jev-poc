@@ -23,6 +23,32 @@ describe("readAccessConfig", () => {
     expect(readAccessConfig({})).toEqual({ enabled: false })
   })
 
+  it("refuses to run ungated in production without an explicit opt-out", () => {
+    expect(() => readAccessConfig({ NODE_ENV: "production" })).toThrow(
+      /not configured/,
+    )
+    expect(() =>
+      readAccessConfig({
+        NODE_ENV: "production",
+        CF_ACCESS_TEAM_DOMAIN: "",
+        CF_ACCESS_AUD: "",
+      }),
+    ).toThrow(/not configured/)
+    expect(
+      readAccessConfig({ NODE_ENV: "production", CF_ACCESS_DISABLED: "1" }),
+    ).toEqual({ enabled: false })
+  })
+
+  it("rejects an opt-out combined with Access settings", () => {
+    expect(() =>
+      readAccessConfig({
+        CF_ACCESS_DISABLED: "1",
+        CF_ACCESS_TEAM_DOMAIN: enabledConfig.teamDomain,
+        CF_ACCESS_AUD: enabledConfig.audience,
+      }),
+    ).toThrow(/conflicts/)
+  })
+
   it("fails closed when only one setting is present", () => {
     expect(() =>
       readAccessConfig({ CF_ACCESS_TEAM_DOMAIN: enabledConfig.teamDomain }),

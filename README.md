@@ -180,7 +180,7 @@ Read `/method` in the app for the long version; each demo's page shows its shape
 ## Testing
 
 ```sh
-pnpm test        # 193 unit tests — pure policy and server logic, no key, no network
+pnpm test        # 196 unit tests — pure policy and server logic, no key, no network
 pnpm e2e         # 150 end-to-end tests — starts its own fixture-mode server
 pnpm typecheck
 pnpm build
@@ -209,30 +209,38 @@ Build and run the same constrained shape used by CI:
 docker build --platform linux/amd64 -t jev-poc:local .
 docker run --rm \
   --read-only --tmpfs /tmp \
-  --user 1000:1000 --memory 256m --pids-limit 64 \
+  --memory 256m --pids-limit 64 \
+  -e CF_ACCESS_DISABLED=1 \
   -p 8080:8080 jev-poc:local
 ```
 
 The image defaults to port **8080**, runs as uid 1000, needs no writable path
 outside `/tmp`, and starts safely in fixture mode when `OPENROUTER_API_KEY` is
-absent. `GET /healthz` returns only `ok`; `/api/health` includes mode and spend.
+absent. `GET /healthz` (and `HEAD`) returns only `ok`; `/api/health` includes
+mode and spend.
 
-For deployment behind Cloudflare Access, set both variables below or neither:
+For deployment behind Cloudflare Access, set both:
 
 - `CF_ACCESS_TEAM_DOMAIN` — the HTTPS team origin, such as
   `https://example.cloudflareaccess.com`
-- `CF_ACCESS_AUD` — the Access application audience
+- `CF_ACCESS_AUD` — the Access application audience tag
 
 When both are set, every route except the exact `/healthz` probe requires a
-valid `Cf-Access-Jwt-Assertion`. The server checks its signature against
-Cloudflare's cached JWKS plus its audience and expiration. Supplying only one
-variable aborts startup rather than accidentally serving an ungated site. Never
-bake `OPENROUTER_API_KEY` or an `.env` file into the image.
+valid `Cf-Access-Jwt-Assertion`. The server checks its RS256 signature against
+Cloudflare's cached JWKS plus its issuer, audience and expiration.
 
-Pushes to `main` publish `ghcr.io/garygentry/jev-poc:main` and a
-`sha-<shortsha>` tag after all CI checks and a read-only image smoke test pass.
-`v*` tags publish the version and `latest`. Deploy immutable version/SHA tags
-pinned with their registry digest rather than the moving `main` or `latest` tag.
+The image fails closed: with `NODE_ENV=production` (set in the image) it refuses
+to start unless both variables are set, or `CF_ACCESS_DISABLED=1` explicitly
+opts out of the gate. Supplying only one variable always aborts startup. Local
+development (`pnpm dev`, `pnpm start`) is ungated by default. Never bake
+`OPENROUTER_API_KEY` or an `.env` file into the image.
+
+Every pull request builds the image and runs `scripts/smoke-image.sh` against it.
+Pushes to `main` then publish that exact image as `ghcr.io/garygentry/jev-poc:main`
+and `sha-<shortsha>` once all CI checks pass; a commit superseded by a quick
+follow-up push may be skipped. `vX.Y.Z` tags publish the version and, for
+non-prereleases, `latest`. Deploy an immutable version or SHA tag pinned with its
+registry digest rather than the moving `main` or `latest` tag.
 
 ## Regenerating the assessment
 

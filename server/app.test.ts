@@ -29,6 +29,17 @@ describe("production app", () => {
     const response = await app().request("/healthz")
     expect(response.status).toBe(200)
     expect(await response.text()).toBe("ok")
+
+    const head = await app().request("/healthz", { method: "HEAD" })
+    expect(head.status).toBe(200)
+  })
+
+  it("returns 404, not the SPA shell, for missing files", async () => {
+    for (const requestPath of ["/assets/index-stale.js", "/missing.css"]) {
+      const response = await app().request(requestPath)
+      expect(response.status).toBe(404)
+      expect(response.headers.get("content-type") ?? "").not.toContain("text/html")
+    }
   })
 
   it("serves static files and the SPA fallback", async () => {

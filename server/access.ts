@@ -17,14 +17,37 @@ export type AccessConfig =
 
 export type AccessTokenVerifier = (token: string) => Promise<void>
 
-/** Read the Cloudflare Access settings once and fail closed on partial config. */
+/**
+ * Read the Cloudflare Access settings once and fail closed on partial config.
+ *
+ * In production (`NODE_ENV=production`, which the image sets) a missing config
+ * is also an error unless `CF_ACCESS_DISABLED=1` opts out explicitly, so a
+ * forgotten env file cannot silently publish an ungated origin.
+ */
 export function readAccessConfig(
   env: NodeJS.ProcessEnv = process.env,
 ): AccessConfig {
   const rawDomain = (env.CF_ACCESS_TEAM_DOMAIN ?? "").trim()
   const audience = (env.CF_ACCESS_AUD ?? "").trim()
+  const optedOut = (env.CF_ACCESS_DISABLED ?? "").trim() === "1"
 
-  if (!rawDomain && !audience) return { enabled: false }
+  if (optedOut) {
+    if (rawDomain || audience) {
+      throw new Error(
+        "CF_ACCESS_DISABLED=1 conflicts with CF_ACCESS_TEAM_DOMAIN/CF_ACCESS_AUD; set one or the other.",
+      )
+    }
+    return { enabled: false }
+  }
+
+  if (!rawDomain && !audience) {
+    if (env.NODE_ENV === "production") {
+      throw new Error(
+        "Cloudflare Access is not configured. Set CF_ACCESS_TEAM_DOMAIN and CF_ACCESS_AUD, or CF_ACCESS_DISABLED=1 to serve ungated.",
+      )
+    }
+    return { enabled: false }
+  }
   if (!rawDomain || !audience) {
     throw new Error(
       "CF_ACCESS_TEAM_DOMAIN and CF_ACCESS_AUD must either both be set or both be unset.",

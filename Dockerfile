@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim AS build
+FROM node:22-bookworm-slim@sha256:43ac6c60b8f89723f746e8a92ce91abd5017e627ce1ddfe4238355d3a30b772c AS build
 
 WORKDIR /app
 RUN corepack enable
@@ -16,7 +16,7 @@ COPY fixtures ./fixtures
 
 RUN pnpm build
 
-FROM node:22-bookworm-slim AS runtime
+FROM node:22-bookworm-slim@sha256:43ac6c60b8f89723f746e8a92ce91abd5017e627ce1ddfe4238355d3a30b772c AS runtime
 
 ARG VCS_REF=unknown
 ARG VERSION=dev
@@ -29,7 +29,8 @@ ENV NODE_ENV=production \
     PORT=8080
 
 WORKDIR /app
-COPY --from=build --chown=node:node /app/dist ./dist
+# Root-owned: the runtime user can read the app but never rewrite it.
+COPY --from=build /app/dist ./dist
 
 USER 1000:1000
 EXPOSE 8080

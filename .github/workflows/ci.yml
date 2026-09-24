@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
-    tags: ["v*"]
+    tags: ["v[0-9]+.[0-9]+.[0-9]+*"]
   pull_request:
 
 permissions:
@@ -18,9 +18,9 @@ jobs:
     name: Typecheck, unit tests, build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
@@ -33,16 +33,16 @@ jobs:
     name: End-to-end (fixture mode)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm e2e
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: failure()
         with:
           name: playwright-report
@@ -55,38 +55,36 @@ jobs:
     name: Secret scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
       - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  publish:
-    name: Build, smoke, and publish image
-    if: github.event_name == 'push'
-    needs: [check, e2e, secrets]
+  image:
+    name: Build and smoke image
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
+    outputs:
+      tags: ${{ steps.meta.outputs.tags }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3.12.0
-      - uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef # v3.6.0
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3.12.0
       - id: meta
         uses: docker/metadata-action@c299e40c65443455700f0fdfc63efafe5b349051 # v5.10.0
         with:
           images: ghcr.io/garygentry/jev-poc
+          flavor: latest=false
           tags: |
+            type=ref,event=pr
             type=raw,value=main,enable=${{ github.ref == 'refs/heads/main' }}
             type=sha,prefix=sha-,format=short,enable=${{ github.ref == 'refs/heads/main' }}
-            type=ref,event=tag,enable=${{ startsWith(github.ref, 'refs/tags/v') }}
-            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/v') }}
+            type=semver,pattern=v{{version}}
+            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, '-') }}
           labels: |
             org.opencontainers.image.source=https://github.com/garygentry/jev-poc
             org.opencontainers.image.revision=${{ github.sha }}
@@ -94,23 +92,51 @@ jobs:
         with:
           context: .
           platforms: linux/amd64
-          load: true
-          push: false
+          outputs: type=docker,dest=${{ runner.temp }}/image.tar
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             VCS_REF=${{ github.sha }}
             VERSION=${{ steps.meta.outputs.version }}
           cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # Only trusted pushes write the shared cache, so PRs cannot poison it.
+          cache-to: ${{ github.event_name == 'push' && 'type=gha,mode=max' || '' }}
+      - run: docker load --input "$RUNNER_TEMP/image.tar"
       - name: Smoke image under production constraints
         env:
           IMAGE: ghcr.io/garygentry/jev-poc:${{ steps.meta.outputs.version }}
         run: scripts/smoke-image.sh "$IMAGE"
+      - if: github.event_name == 'push'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: image
+          path: ${{ runner.temp }}/image.tar
+          retention-days: 1
+
+  publish:
+    name: Publish image
+    if: github.event_name == 'push'
+    needs: [check, e2e, secrets, image]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      # Push the exact image the smoke test verified, not a rebuild.
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: image
+          path: ${{ runner.temp }}
+      - run: docker load --input "$RUNNER_TEMP/image.tar"
+      - uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef # v3.6.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Push verified tags
         env:
-          TAGS: ${{ steps.meta.outputs.tags }}
+          TAGS: ${{ needs.image.outputs.tags }}
         run: |
           while IFS= read -r tag; do
-            docker push "$tag"
+            if [[ -n "$tag" ]]; then docker push "$tag"; fi
           done <<< "$TAGS"
