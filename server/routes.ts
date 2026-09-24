@@ -33,12 +33,6 @@ api.get("/health", (c) => {
   return c.json(body)
 })
 
-api.post("/jev/spend/reset", async (c) => {
-  const { reset } = await import("./spend.ts")
-  reset()
-  return c.json(snapshot())
-})
-
 /**
  * One state, N questions, one upstream call.
  *

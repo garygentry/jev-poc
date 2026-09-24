@@ -65,9 +65,10 @@ To go live, put an [OpenRouter key](https://openrouter.ai/settings/keys) in `.en
 
 ```
 shared/jev.ts          the wire contract, used verbatim by both sides
-server/                Hono sidecar on :8787 — the API key never leaves it
+server/                Hono server; production also serves the built SPA
   transport.ts         bounded retries, timeouts, strict response validation
   routes.ts            /api/health · /api/jev/decide · /api/jev/batch · /api/chat
+  access.ts            optional Cloudflare Access JWT verification at the origin
   config.ts            fan-out caps (8 concurrent, 200 rows), clamped server-side
   concurrency.ts       the bounded worker pool the fan-outs run through
   fixtures.ts          replay when no key is set
@@ -179,7 +180,7 @@ Read `/method` in the app for the long version; each demo's page shows its shape
 ## Testing
 
 ```sh
-pnpm test        # 181 unit tests — pure policy logic, no key, no network
+pnpm test        # 193 unit tests — pure policy and server logic, no key, no network
 pnpm e2e         # 150 end-to-end tests — starts its own fixture-mode server
 pnpm typecheck
 pnpm build
@@ -194,6 +195,44 @@ The two suites divide the work.
 To exercise the suite against real answers, run `pnpm capture` first and it will assert against what the model actually said.
 
 CI runs typecheck, unit tests, build, the end-to-end suite and a [gitleaks](https://github.com/gitleaks/gitleaks) secret scan on every push and pull request.
+
+## Production container
+
+`pnpm build` creates a self-contained production tree in `dist/`: the Vite SPA,
+a bundled plain-JavaScript Hono server, and the read-only fixtures. After building,
+`pnpm start` serves both the SPA and API from one process. Client-side routes fall
+back to the SPA, while unknown `/api/*` routes remain JSON 404 responses.
+
+Build and run the same constrained shape used by CI:
+
+```sh
+docker build --platform linux/amd64 -t jev-poc:local .
+docker run --rm \
+  --read-only --tmpfs /tmp \
+  --user 1000:1000 --memory 256m --pids-limit 64 \
+  -p 8080:8080 jev-poc:local
+```
+
+The image defaults to port **8080**, runs as uid 1000, needs no writable path
+outside `/tmp`, and starts safely in fixture mode when `OPENROUTER_API_KEY` is
+absent. `GET /healthz` returns only `ok`; `/api/health` includes mode and spend.
+
+For deployment behind Cloudflare Access, set both variables below or neither:
+
+- `CF_ACCESS_TEAM_DOMAIN` — the HTTPS team origin, such as
+  `https://example.cloudflareaccess.com`
+- `CF_ACCESS_AUD` — the Access application audience
+
+When both are set, every route except the exact `/healthz` probe requires a
+valid `Cf-Access-Jwt-Assertion`. The server checks its signature against
+Cloudflare's cached JWKS plus its audience and expiration. Supplying only one
+variable aborts startup rather than accidentally serving an ungated site. Never
+bake `OPENROUTER_API_KEY` or an `.env` file into the image.
+
+Pushes to `main` publish `ghcr.io/garygentry/jev-poc:main` and a
+`sha-<shortsha>` tag after all CI checks and a read-only image smoke test pass.
+`v*` tags publish the version and `latest`. Deploy immutable version/SHA tags
+pinned with their registry digest rather than the moving `main` or `latest` tag.
 
 ## Regenerating the assessment
 

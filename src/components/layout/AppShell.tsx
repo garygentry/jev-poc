@@ -1,5 +1,5 @@
 import { NavLink, Outlet, Link } from "react-router-dom"
-import { Moon, RotateCcw, Sun, Zap } from "lucide-react"
+import { Moon, Sun, Zap } from "lucide-react"
 import { useEffect, useState } from "react"
 
 import { Badge } from "@/components/ui/badge"
@@ -24,7 +24,7 @@ export function AppShell() {
 }
 
 function Header() {
-  const { mode, model, spend, clear } = useSpend()
+  const { mode, model, spend } = useSpend()
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--hairline)] bg-plane/90 backdrop-blur">
@@ -57,17 +57,6 @@ function Header() {
 
         <div className="ml-auto flex items-center gap-3">
           <UsageReadout usage={spend} calls={spend.calls} />
-          {spend.calls > 0 ? (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => void clear()}
-              title="Reset the session spend counter"
-            >
-              <RotateCcw />
-              <span className="sr-only">Reset spend</span>
-            </Button>
-          ) : null}
           <ThemeToggle />
         </div>
       </div>

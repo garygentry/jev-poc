@@ -220,14 +220,15 @@ test.describe("POST /api/jev/batch", () => {
 })
 
 test.describe("spend meter", () => {
-  test("resets on request", async ({ request }) => {
+  test("the removed reset endpoint is not accepted", async ({ request }) => {
     const response = await request.post("/api/jev/spend/reset")
-    expect(response.ok()).toBe(true)
-    expect(await response.json()).toMatchObject({ calls: 0, cost: 0 })
+    expect(response.status()).toBe(404)
+    expect(response.headers()["content-type"]).toContain("application/json")
   })
 
   test("counts only real calls", async ({ request }) => {
-    await request.post("/api/jev/spend/reset")
+    const before = await (await request.get("/api/health")).json()
+
     await request.post("/api/jev/decide", {
       data: {
         state: "x",
@@ -236,13 +237,13 @@ test.describe("spend meter", () => {
       },
     })
 
-    const health = await (await request.get("/api/health")).json()
-    if (health.mode === "live") {
-      expect(health.spend.calls).toBe(1)
+    const after = await (await request.get("/api/health")).json()
+    if (after.mode === "live") {
+      expect(after.spend.calls).toBe(before.spend.calls + 1)
     } else {
       // A replayed answer costs nothing and must not appear in the meter.
-      expect(health.spend.calls).toBe(0)
-      expect(health.spend.cost).toBe(0)
+      expect(after.spend.calls).toBe(before.spend.calls)
+      expect(after.spend.cost).toBe(before.spend.cost)
     }
   })
 })
