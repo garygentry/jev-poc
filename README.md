@@ -68,7 +68,6 @@ shared/jev.ts          the wire contract, used verbatim by both sides
 server/                Hono server; production also serves the built SPA
   transport.ts         bounded retries, timeouts, strict response validation
   routes.ts            /api/health · /api/jev/decide · /api/jev/batch · /api/chat
-  access.ts            optional Cloudflare Access JWT verification at the origin
   config.ts            fan-out caps (8 concurrent, 200 rows), clamped server-side
   concurrency.ts       the bounded worker pool the fan-outs run through
   fixtures.ts          replay when no key is set
@@ -210,7 +209,6 @@ docker build --platform linux/amd64 -t jev-poc:local .
 docker run --rm \
   --read-only --tmpfs /tmp \
   --memory 256m --pids-limit 64 \
-  -e CF_ACCESS_DISABLED=1 \
   -p 8080:8080 jev-poc:local
 ```
 
@@ -219,20 +217,10 @@ outside `/tmp`, and starts safely in fixture mode when `OPENROUTER_API_KEY` is
 absent. `GET /healthz` (and `HEAD`) returns only `ok`; `/api/health` includes
 mode and spend.
 
-For deployment behind Cloudflare Access, set both:
-
-- `CF_ACCESS_TEAM_DOMAIN` — the HTTPS team origin, such as
-  `https://example.cloudflareaccess.com`
-- `CF_ACCESS_AUD` — the Access application audience tag
-
-When both are set, every route except the exact `/healthz` probe requires a
-valid `Cf-Access-Jwt-Assertion`. The server checks its RS256 signature against
-Cloudflare's cached JWKS plus its issuer, audience and expiration.
-
-The image fails closed: with `NODE_ENV=production` (set in the image) it refuses
-to start unless both variables are set, or `CF_ACCESS_DISABLED=1` explicitly
-opts out of the gate. Supplying only one variable always aborts startup. Local
-development (`pnpm dev`, `pnpm start`) is ungated by default. Never bake
+The app does no authentication itself. In production it sits behind the
+deploying host's login gate, which is the only way to reach it. The gate passes
+the signed-in user as `X-Forwarded-Email`, `X-Forwarded-User` and
+`X-Forwarded-Groups` headers; the app currently ignores them. Never bake
 `OPENROUTER_API_KEY` or an `.env` file into the image.
 
 Every pull request builds the image and runs `scripts/smoke-image.sh` against it.

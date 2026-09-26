@@ -25,7 +25,7 @@ fail() {
   exit 1
 }
 
-# Start a constrained container with extra `-e` args; sets $container and $base.
+# Start a constrained container with extra `docker run` args; sets $container and $base.
 start() {
   container=$(docker run --detach \
     --read-only \
@@ -62,15 +62,8 @@ status_of() {
 [[ $(docker inspect --format '{{.Config.User}}' "$image") == "1000:1000" ]] ||
   fail "image does not run as 1000:1000"
 
-# 1. Production refuses to start ungated without an explicit opt-out.
-refused=$(docker run --detach --read-only --tmpfs /tmp "$image")
-containers+=("$refused")
-docker wait "$refused" >/dev/null
-[[ $(docker inspect --format '{{.State.ExitCode}}' "$refused") != 0 ]] ||
-  fail "started without Access config or CF_ACCESS_DISABLED=1"
-
-# 2. Fixture mode, explicitly ungated.
-start -e CF_ACCESS_DISABLED=1
+# Fixture mode: no OpenRouter key and no other configuration.
+start
 
 [[ $(docker exec "$container" id -u) == 1000 ]] || fail "process is not uid 1000"
 [[ $(status_of --head "$base/healthz") == 200 ]] || fail "HEAD /healthz"
@@ -102,16 +95,5 @@ elapsed=$((SECONDS - started))
 [[ $elapsed -lt 6 ]] || fail "SIGTERM shutdown took ${elapsed}s"
 [[ $(docker inspect --format '{{.State.ExitCode}}' "$container") == 0 ]] ||
   fail "non-zero exit after SIGTERM"
-
-# 3. Access enabled: everything but /healthz needs a valid assertion.
-start \
-  -e CF_ACCESS_TEAM_DOMAIN=https://smoke.cloudflareaccess.com \
-  -e CF_ACCESS_AUD=smoke-audience
-
-for path in / /method /api/health; do
-  [[ $(status_of "$base$path") == 403 ]] || fail "$path was not gated"
-done
-[[ $(status_of -H 'Cf-Access-Jwt-Assertion: bogus' "$base/api/health") == 403 ]] ||
-  fail "a bogus assertion was accepted"
 
 echo "smoke: ok"
