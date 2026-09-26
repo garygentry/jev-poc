@@ -2,9 +2,9 @@ import { serve } from "@hono/node-server"
 import type { Server } from "node:http"
 
 import { createApp } from "./app.ts"
-import { ACCESS_CONFIG, MODE, MODEL, PORT } from "./config.ts"
+import { MODE, MODEL, PORT } from "./config.ts"
 
-const app = createApp({ access: ACCESS_CONFIG })
+const app = createApp()
 const server = serve(
   { fetch: app.fetch, hostname: "0.0.0.0", port: PORT },
   (info) => {
@@ -13,7 +13,6 @@ const server = serve(
     console.log(
       `  model         ${MODE === "live" ? MODEL : "— set OPENROUTER_API_KEY to go live"}`,
     )
-    console.log(`  access        ${ACCESS_CONFIG.enabled ? "required" : "disabled"}`)
   },
 ) as Server
 

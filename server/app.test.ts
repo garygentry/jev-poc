@@ -22,8 +22,7 @@ afterAll(async () => {
 })
 
 describe("production app", () => {
-  const app = () =>
-    createApp({ access: { enabled: false }, clientRoot })
+  const app = () => createApp({ clientRoot })
 
   it("exposes a minimal external health route", async () => {
     const response = await app().request("/healthz")
@@ -77,33 +76,5 @@ describe("production app", () => {
       expect(response.status).toBe(404)
       expect(response.headers.get("content-type")).not.toContain("text/html")
     }
-  })
-
-  it("protects the SPA and API but bypasses health when Access is enabled", async () => {
-    const protectedApp = createApp({
-      access: {
-        enabled: true,
-        teamDomain: "https://team.cloudflareaccess.com",
-        audience: "audience",
-        jwksUrl: new URL(
-          "https://team.cloudflareaccess.com/cdn-cgi/access/certs",
-        ),
-      },
-      verifyAccessToken: async (token) => {
-        if (token !== "good") throw new Error("bad token")
-      },
-      clientRoot,
-    })
-
-    expect((await protectedApp.request("/healthz")).status).toBe(200)
-    expect((await protectedApp.request("/")).status).toBe(403)
-    expect((await protectedApp.request("/api/health")).status).toBe(403)
-    expect(
-      (
-        await protectedApp.request("/api/health", {
-          headers: { "Cf-Access-Jwt-Assertion": "good" },
-        })
-      ).status,
-    ).toBe(200)
   })
 })
