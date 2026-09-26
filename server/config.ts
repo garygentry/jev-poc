@@ -3,8 +3,6 @@ import { config as loadEnv } from "dotenv"
 import { CHAT_PRICES } from "@shared/baseline.ts"
 import type { ServerMode } from "@shared/jev.ts"
 
-import { readAccessConfig } from "./access.ts"
-
 loadEnv()
 
 /**
@@ -22,7 +20,6 @@ const DEFAULT_MODEL = "typesafe/jev-1.13"
 const DEFAULT_CHAT_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 export const PORT = Number(process.env.PORT ?? 8787)
-export const ACCESS_CONFIG = readAccessConfig()
 export const API_KEY = (process.env.OPENROUTER_API_KEY ?? "").trim()
 export const MODEL = (process.env.JEV_MODEL ?? "").trim() || DEFAULT_MODEL
 export const DECISIONS_URL =
